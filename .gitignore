@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+logs/
+backtest_out/
+.env
+files copy/
