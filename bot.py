@@ -31,8 +31,8 @@ from anthropic import Anthropic
 # ---------- Config ----------
 GAMMA_API = "https://gamma-api.polymarket.com"
 CLOB_API = "https://clob.polymarket.com"
-LOG_DIR = Path("./logs")
-LOG_DIR.mkdir(exist_ok=True)
+LOG_DIR = Path(os.environ.get("LOG_DIR", "./logs"))
+LOG_DIR.mkdir(parents=True, exist_ok=True)
 
 DEFAULT_CONFIG = {
     # Trade decision thresholds
