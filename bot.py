@@ -34,6 +34,9 @@ CLOB_API = "https://clob.polymarket.com"
 LOG_DIR = Path(os.environ.get("LOG_DIR", "./logs"))
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
+
 DEFAULT_CONFIG = {
     # Trade decision thresholds
     "min_edge": 0.10,            # min EV per $1 staked (matches backtest)
@@ -63,6 +66,20 @@ logging.basicConfig(
     ],
 )
 log = logging.getLogger(__name__)
+
+
+# ---------- Telegram notifications ----------
+def send_telegram(msg):
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        return
+    try:
+        requests.post(
+            f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
+            json={"chat_id": TELEGRAM_CHAT_ID, "text": msg, "parse_mode": "Markdown"},
+            timeout=10,
+        )
+    except Exception as e:
+        log.warning(f"Telegram send failed: {e}")
 
 
 # ---------- Market fetching ----------
@@ -317,6 +334,12 @@ def update_resolutions():
         t["resolved_at"] = datetime.now(timezone.utc).isoformat()
         changed = True
         log.info(f"Resolved {t['market_id'][:8]}: {t['side']} -> {'WIN' if won else 'LOSS'} pnl=${pnl:.2f}")
+        send_telegram(
+            f"{'✅' if won else '❌'} *Trade Resolved*\n"
+            f"Market: {t['question'][:80]}\n"
+            f"Side: {t['side']} → *{'WIN' if won else 'LOSS'}*\n"
+            f"P&L: ${pnl:+.2f}"
+        )
 
     if changed:
         save_trades(trades)
@@ -430,6 +453,14 @@ def run_scan(client, cfg, mode, bankroll):
 
         log_trade(record)
         trades_placed += 1
+
+        send_telegram(
+            f"📊 *New Paper Trade*\n"
+            f"Market: {m['question'][:80]}\n"
+            f"Side: *{side}* @ {record['entry_price']:.2f}\n"
+            f"Size: ${size:.2f} | Edge: {edge:+.1%}\n"
+            f"Reasoning: {reason[:150]}"
+        )
 
         # Small delay to avoid hammering APIs
         time.sleep(2)
