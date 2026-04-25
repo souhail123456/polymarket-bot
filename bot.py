@@ -1,8 +1,8 @@
 """
 Polymarket EV Trading Bot
 -------------------------
-Scans active Polymarket markets, uses Claude to estimate true probability,
-calculates expected value, places trades when edge exceeds threshold.
+Scans active Polymarket markets, uses Llama 3.3 70B (via Groq) to estimate
+true probability, calculates expected value, places trades when edge exceeds threshold.
 
 Strategy: pure expected-value — trade any market where estimated probability
 differs from market price by more than MIN_EDGE, sized by fractional Kelly.
@@ -26,7 +26,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 import requests
-from anthropic import Anthropic
+from openai import OpenAI
 
 # ---------- Config ----------
 GAMMA_API = "https://gamma-api.polymarket.com"
@@ -178,12 +178,12 @@ def estimate_probability(client, market):
         resolution=(market.get("resolutionSource") or "See description")[:300],
     )
     try:
-        resp = client.messages.create(
-            model="claude-sonnet-4-6",
+        resp = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
             max_tokens=400,
             messages=[{"role": "user", "content": prompt}],
         )
-        text = resp.content[0].text.strip()
+        text = resp.choices[0].message.content.strip()
         if text.startswith("```"):
             text = text.split("```", 2)[1]
             if text.startswith("json"):
@@ -451,12 +451,12 @@ def main():
         calibration_report()
         return
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
-        log.error("Set ANTHROPIC_API_KEY environment variable.")
+        log.error("Set GROQ_API_KEY environment variable.")
         return
 
-    client = Anthropic(api_key=api_key)
+    client = OpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1")
     cfg = DEFAULT_CONFIG.copy()
     if args.max_position:
         cfg["max_position_usd"] = args.max_position
