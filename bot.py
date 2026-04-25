@@ -381,6 +381,40 @@ def calibration_report():
     print(f"\nReady for live? Need: n>=30, positive P&L, calibration within ~15%.")
 
 
+# ---------- Daily summary ----------
+def send_daily_summary():
+    today = datetime.now(timezone.utc).date().isoformat()
+    trades = load_trades()
+    todays_trades = [t for t in trades if t.get("date") == today]
+    all_resolved = [t for t in trades if t.get("resolved")]
+    total_pnl = sum(float(t.get("realized_pnl") or 0) for t in all_resolved)
+    todays_pnl = sum(float(t.get("realized_pnl") or 0) for t in todays_trades if t.get("resolved"))
+    open_trades = [t for t in trades if not t.get("resolved")]
+    wins = sum(1 for t in all_resolved if t.get("won"))
+
+    msg = (
+        f"📋 *Daily Summary — {today}*\n\n"
+        f"Trades today: {len(todays_trades)}\n"
+        f"Today's P&L: ${todays_pnl:+.2f}\n\n"
+        f"Open trades: {len(open_trades)}\n"
+        f"Total resolved: {len(all_resolved)}\n"
+        f"Win rate: {100*wins/len(all_resolved):.0f}%\n" if all_resolved else ""
+        f"Total P&L: ${total_pnl:+.2f}\n"
+    )
+
+    if not todays_trades:
+        msg = (
+            f"📋 *Daily Summary — {today}*\n\n"
+            f"No trades today.\n\n"
+            f"Open trades: {len(open_trades)}\n"
+            f"Total resolved: {len(all_resolved)}\n"
+            f"Total P&L: ${total_pnl:+.2f}"
+        )
+
+    send_telegram(msg)
+    log.info(f"Daily summary sent: {len(todays_trades)} trades today, total P&L ${total_pnl:+.2f}")
+
+
 # ---------- Live trading (disabled stub) ----------
 def submit_live_order(market, side, size_usd, price):
     raise NotImplementedError(
@@ -474,12 +508,18 @@ def main():
     ap.add_argument("--mode", choices=["paper", "live"], default="paper")
     ap.add_argument("--loop", action="store_true", help="Run continuously every 30 min")
     ap.add_argument("--report", action="store_true", help="Print calibration report and exit")
+    ap.add_argument("--daily-summary", action="store_true", help="Send daily summary to Telegram and exit")
     ap.add_argument("--max-position", type=float, default=None)
     args = ap.parse_args()
 
     if args.report:
         update_resolutions()
         calibration_report()
+        return
+
+    if args.daily_summary:
+        update_resolutions()
+        send_daily_summary()
         return
 
     api_key = os.environ.get("GROQ_API_KEY")
