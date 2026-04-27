@@ -187,50 +187,52 @@ def parse_event_date(event_title):
 
 
 # ---------- Fetch ensemble forecast ----------
+ENSEMBLE_MODELS = ["gfs_seamless", "ecmwf_ifs025", "icon_seamless"]
+# GFS: 31 members, ECMWF: 51 members, ICON: 40 members = ~122 total
+
+
 def fetch_ensemble_forecast(city_key, date_str):
-    """Get 31-member GFS ensemble forecast for a city and date.
-    Open-Meteo auto-returns all ensemble members when you request temperature_2m."""
+    """Get multi-model ensemble forecast from Open-Meteo.
+    Combines GFS (31), ECMWF (51), and ICON (40) for ~122 members."""
     city = CITIES[city_key]
-    try:
-        r = requests.get(
-            ENSEMBLE_API,
-            params={
-                "latitude": city["lat"],
-                "longitude": city["lon"],
-                "hourly": "temperature_2m",
-                "models": "gfs_seamless",
-                "start_date": date_str,
-                "end_date": date_str,
-                "temperature_unit": city["unit"],
-            },
-            timeout=15,
-        )
-        r.raise_for_status()
-        return r.json()
-    except Exception as e:
-        log.warning(f"Ensemble fetch failed for {city_key} {date_str}: {e}")
-        return None
+    all_maxes = []
+    for model in ENSEMBLE_MODELS:
+        try:
+            r = requests.get(
+                ENSEMBLE_API,
+                params={
+                    "latitude": city["lat"],
+                    "longitude": city["lon"],
+                    "hourly": "temperature_2m",
+                    "models": model,
+                    "start_date": date_str,
+                    "end_date": date_str,
+                    "temperature_unit": city["unit"],
+                },
+                timeout=15,
+            )
+            r.raise_for_status()
+            maxes = compute_daily_maxes(r.json())
+            all_maxes.extend(maxes)
+            log.debug(f"{model}: {len(maxes)} members for {city_key} {date_str}")
+        except Exception as e:
+            log.warning(f"Ensemble fetch failed for {model} {city_key} {date_str}: {e}")
+    return all_maxes
 
 
 def compute_daily_maxes(ensemble_data):
-    """Extract daily max temperature for each ensemble member.
-    Returns list of 31 max temperatures."""
+    """Extract daily max temperature for each ensemble member."""
     hourly = ensemble_data.get("hourly", {})
     maxes = []
 
-    # Mean member
-    temps = hourly.get("temperature_2m", [])
-    if temps:
-        maxes.append(max(t for t in temps if t is not None))
-
-    # Members 01-30
-    for i in range(1, 31):
-        key = f"temperature_2m_member{i:02d}"
-        temps = hourly.get(key, [])
-        if temps:
-            valid = [t for t in temps if t is not None]
-            if valid:
-                maxes.append(max(valid))
+    for key, temps in hourly.items():
+        if not key.startswith("temperature_2m"):
+            continue
+        if not temps:
+            continue
+        valid = [t for t in temps if t is not None]
+        if valid:
+            maxes.append(max(valid))
 
     return maxes
 
@@ -398,11 +400,7 @@ def run_scan(cfg, mode, bankroll):
         # Fetch ensemble (cached per city+date)
         cache_key = f"{city_key}_{date_str}"
         if cache_key not in forecast_cache:
-            data = fetch_ensemble_forecast(city_key, date_str)
-            if data:
-                forecast_cache[cache_key] = compute_daily_maxes(data)
-            else:
-                forecast_cache[cache_key] = None
+            forecast_cache[cache_key] = fetch_ensemble_forecast(city_key, date_str)
 
         maxes = forecast_cache.get(cache_key)
         if not maxes:

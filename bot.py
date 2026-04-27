@@ -195,23 +195,29 @@ def estimate_probability(client, market):
         hours_left=market["_hours_left"],
         resolution=(market.get("resolutionSource") or "See description")[:300],
     )
-    try:
-        resp = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            max_tokens=400,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        text = resp.choices[0].message.content.strip()
-        if text.startswith("```"):
-            text = text.split("```", 2)[1]
-            if text.startswith("json"):
-                text = text[4:]
-            text = text.strip()
-        data = json.loads(text)
-        return float(data["true_probability"]), float(data["confidence"]), data.get("reasoning", "")
-    except Exception as e:
-        log.warning(f"estimate_probability failed for {market.get('_market_id')}: {e}")
-        return None, None, None
+    for attempt in range(3):
+        try:
+            resp = client.chat.completions.create(
+                model="llama-3.3-70b-versatile",
+                max_tokens=400,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            text = resp.choices[0].message.content.strip()
+            if text.startswith("```"):
+                text = text.split("```", 2)[1]
+                if text.startswith("json"):
+                    text = text[4:]
+                text = text.strip()
+            data = json.loads(text)
+            return float(data["true_probability"]), float(data["confidence"]), data.get("reasoning", "")
+        except Exception as e:
+            if "429" in str(e) and attempt < 2:
+                wait = (attempt + 1) * 10
+                log.info(f"Rate limited, waiting {wait}s...")
+                time.sleep(wait)
+                continue
+            log.warning(f"estimate_probability failed for {market.get('_market_id')}: {e}")
+            return None, None, None
 
 
 # ---------- EV math ----------
