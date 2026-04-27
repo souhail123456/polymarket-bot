@@ -45,6 +45,7 @@ DEFAULT_CONFIG = {
     "max_position_usd": 5.0,     # cap per trade — keep small for paper
     "daily_loss_cap_usd": 20.0,
     "kelly_fraction": 0.25,      # quarter-Kelly
+    "taker_fee_rate": 0.05,      # conservative default (5%); actual varies by category
     # Market filters — tuned for FAST RESOLUTION so we hit 30 trades quickly
     "min_liquidity_usd": 500.0,
     "max_liquidity_usd": 500000.0, # skip mega-markets (>$500K liq)
@@ -214,6 +215,15 @@ def estimate_probability(client, market):
 
 
 # ---------- EV math ----------
+def calculate_fee(price, size_usd, fee_rate):
+    """Polymarket taker fee: feeRate * price * (1 - price) * shares.
+    Shares = size_usd / price, so fee = feeRate * (1 - price) * size_usd."""
+    if price <= 0 or price >= 1:
+        return 0.0
+    shares = size_usd / price
+    return fee_rate * price * (1 - price) * shares
+
+
 def expected_value(true_p, market_p, side):
     if side == "YES":
         return true_p * (1 - market_p) - (1 - true_p) * market_p
@@ -237,16 +247,21 @@ def kelly_size(true_p, market_p, side, bankroll, fraction, cap):
 
 def decide_trade(true_p, market_p, confidence, bankroll, cfg):
     if confidence < cfg["min_confidence"]:
-        return None, 0.0, 0.0
+        return None, 0.0, 0.0, 0.0
     ev_yes = expected_value(true_p, market_p, "YES")
     ev_no = expected_value(true_p, market_p, "NO")
-    side, edge = ("YES", ev_yes) if ev_yes >= ev_no else ("NO", ev_no)
+    side, gross_edge = ("YES", ev_yes) if ev_yes >= ev_no else ("NO", ev_no)
+    # Estimate fee as fraction of $1 staked
+    entry_price = market_p if side == "YES" else 1 - market_p
+    fee_per_dollar = calculate_fee(entry_price, 1.0, cfg["taker_fee_rate"])
+    edge = gross_edge - fee_per_dollar
     if edge < cfg["min_edge"]:
-        return None, 0.0, edge
+        return None, 0.0, edge, fee_per_dollar
     size = kelly_size(true_p, market_p, side, bankroll, cfg["kelly_fraction"], cfg["max_position_usd"])
     if size < 1.0:
-        return None, 0.0, edge
-    return side, size, edge
+        return None, 0.0, edge, fee_per_dollar
+    fee_usd = calculate_fee(entry_price, size, cfg["taker_fee_rate"])
+    return side, size, edge, fee_usd
 
 
 # ---------- Trade log ----------
@@ -447,12 +462,12 @@ def run_scan(client, cfg, mode, bankroll):
         if true_p is None:
             continue
         market_p = m["_yes_price"]
-        side, size, edge = decide_trade(true_p, market_p, conf, bankroll, cfg)
+        side, size, edge, fee_usd = decide_trade(true_p, market_p, conf, bankroll, cfg)
 
         log.info(
             f"[{m['_market_id'][:8]}] {m['question'][:60]!r} "
             f"mkt={market_p:.2f} est={true_p:.2f} conf={conf:.2f} edge={edge:+.1%} "
-            f"=> {side or 'skip'} ${size:.2f}"
+            f"fee=${fee_usd:.2f} => {side or 'skip'} ${size:.2f}"
         )
 
         if side is None:
@@ -473,6 +488,7 @@ def run_scan(client, cfg, mode, bankroll):
             "entry_price": market_p if side == "YES" else 1 - market_p,
             "size_usd": round(size, 2),
             "edge": round(edge, 4),
+            "fee_usd": round(fee_usd, 4),
             "resolved": False,
         }
 
