@@ -340,12 +340,20 @@ def update_resolutions():
         t["realized_pnl"] = round(pnl, 4)
         t["resolved_at"] = datetime.now(SHANGHAI_TZ).isoformat()
         changed = True
-        log.info(f"Resolved {t['market_id'][:8]}: {t['side']} -> {'WIN' if won else 'LOSS'} pnl=${pnl:.2f}")
+
+        # Calculate current balance
+        all_resolved = [tr for tr in trades if tr.get("resolved")]
+        total_pnl = sum(float(tr.get("realized_pnl", 0)) for tr in all_resolved)
+        balance = CONFIG["starting_bankroll"] + total_pnl
+        t["balance"] = round(balance, 2)
+
+        log.info(f"Resolved {t['market_id'][:8]}: {t['side']} -> {'WIN' if won else 'LOSS'} pnl=${pnl:.2f} balance=${balance:.2f}")
         send_telegram(
             f"{'✅' if won else '❌'} *Weather Trade Resolved*\n"
             f"Market: {t['question'][:80]}\n"
             f"Side: {t['side']} -> *{'WIN' if won else 'LOSS'}*\n"
-            f"P&L: ${pnl:+.2f}"
+            f"P&L: ${pnl:+.2f}\n"
+            f"Balance: ${balance:.2f}"
         )
     if changed:
         save_trades(trades)
@@ -423,6 +431,8 @@ def run_scan(cfg, mode, bankroll):
         if side is None:
             continue
 
+        bankroll -= size  # deduct from bankroll
+
         record = {
             "timestamp": datetime.now(SHANGHAI_TZ).isoformat(),
             "date": datetime.now(SHANGHAI_TZ).date().isoformat(),
@@ -441,6 +451,7 @@ def run_scan(cfg, mode, bankroll):
             "size_usd": round(size, 2),
             "edge": round(edge, 4),
             "fee_usd": round(fee_usd, 4),
+            "balance": round(bankroll, 2),
             "resolved": False,
         }
 
@@ -453,7 +464,8 @@ def run_scan(cfg, mode, bankroll):
             f"Bucket: {question[:60]}\n"
             f"Side: *{side}* @ {record['entry_price']:.2f}\n"
             f"Model: {model_prob:.0%} vs Market: {yes_price:.0%}\n"
-            f"Size: ${size:.2f} | Edge: {edge:+.1%}"
+            f"Size: ${size:.2f} | Edge: {edge:+.1%}\n"
+            f"Balance: ${bankroll:.2f}"
         )
 
         time.sleep(1)
