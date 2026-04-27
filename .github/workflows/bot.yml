@@ -38,3 +38,11 @@ jobs:
         with:
           path: logs/
           key: trade-logs-${{ github.run_id }}
+
+      - name: Commit trade logs to repo
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f logs/trades.jsonl logs/bot.log 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "Update trade logs [skip ci]" && git push) || true
