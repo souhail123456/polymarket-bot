@@ -44,12 +44,12 @@ CONFIG = {
     "daily_loss_cap_usd": 20.0,
 }
 
-# Scaled position sizing by edge
+# Scaled position sizing by edge — conservative until proven
 def max_size_for_edge(edge):
     if edge >= 0.25:
-        return 15.0
+        return 8.0
     elif edge >= 0.15:
-        return 10.0
+        return 6.0
     else:
         return 5.0
 
