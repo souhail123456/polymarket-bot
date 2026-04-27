@@ -26,6 +26,7 @@ from pathlib import Path
 import requests
 
 # ---------- Config ----------
+SHANGHAI_TZ = timezone(timedelta(hours=8))
 GAMMA_API = "https://gamma-api.polymarket.com"
 ENSEMBLE_API = "https://ensemble-api.open-meteo.com/v1/ensemble"
 LOG_DIR = Path(os.environ.get("LOG_DIR", "./logs"))
@@ -337,7 +338,7 @@ def update_resolutions():
         t["resolved"] = True
         t["won"] = won
         t["realized_pnl"] = round(pnl, 4)
-        t["resolved_at"] = datetime.now(timezone.utc).isoformat()
+        t["resolved_at"] = datetime.now(SHANGHAI_TZ).isoformat()
         changed = True
         log.info(f"Resolved {t['market_id'][:8]}: {t['side']} -> {'WIN' if won else 'LOSS'} pnl=${pnl:.2f}")
         send_telegram(
@@ -423,8 +424,8 @@ def run_scan(cfg, mode, bankroll):
             continue
 
         record = {
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "date": datetime.now(timezone.utc).date().isoformat(),
+            "timestamp": datetime.now(SHANGHAI_TZ).isoformat(),
+            "date": datetime.now(SHANGHAI_TZ).date().isoformat(),
             "mode": mode,
             "strategy": "weather",
             "market_id": mid,
@@ -462,7 +463,7 @@ def run_scan(cfg, mode, bankroll):
 
 # ---------- Daily summary ----------
 def send_daily_summary():
-    today = datetime.now(timezone.utc).date().isoformat()
+    today = datetime.now(SHANGHAI_TZ).date().isoformat()
     trades = load_trades()
     todays_trades = [t for t in trades if t.get("date") == today]
     all_resolved = [t for t in trades if t.get("resolved")]

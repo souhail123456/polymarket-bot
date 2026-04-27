@@ -29,6 +29,7 @@ import requests
 from openai import OpenAI
 
 # ---------- Config ----------
+SHANGHAI_TZ = timezone(timedelta(hours=8))
 GAMMA_API = "https://gamma-api.polymarket.com"
 CLOB_API = "https://clob.polymarket.com"
 LOG_DIR = Path(os.environ.get("LOG_DIR", "./logs"))
@@ -303,7 +304,7 @@ def already_traded_market_ids():
 
 
 def todays_realized_pnl():
-    today = datetime.now(timezone.utc).date().isoformat()
+    today = datetime.now(SHANGHAI_TZ).date().isoformat()
     return sum(
         float(t.get("realized_pnl") or 0)
         for t in load_trades()
@@ -352,7 +353,7 @@ def update_resolutions():
         t["resolved"] = True
         t["won"] = won
         t["realized_pnl"] = round(pnl, 4)
-        t["resolved_at"] = datetime.now(timezone.utc).isoformat()
+        t["resolved_at"] = datetime.now(SHANGHAI_TZ).isoformat()
         changed = True
         log.info(f"Resolved {t['market_id'][:8]}: {t['side']} -> {'WIN' if won else 'LOSS'} pnl=${pnl:.2f}")
         send_telegram(
@@ -404,7 +405,7 @@ def calibration_report():
 
 # ---------- Daily summary ----------
 def send_daily_summary():
-    today = datetime.now(timezone.utc).date().isoformat()
+    today = datetime.now(SHANGHAI_TZ).date().isoformat()
     trades = load_trades()
     todays_trades = [t for t in trades if t.get("date") == today]
     all_resolved = [t for t in trades if t.get("resolved")]
@@ -480,8 +481,8 @@ def run_scan(client, cfg, mode, bankroll):
             continue
 
         record = {
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "date": datetime.now(timezone.utc).date().isoformat(),
+            "timestamp": datetime.now(SHANGHAI_TZ).isoformat(),
+            "date": datetime.now(SHANGHAI_TZ).date().isoformat(),
             "mode": mode,
             "market_id": m["_market_id"],
             "question": m["question"][:200],
