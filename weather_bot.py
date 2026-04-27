@@ -431,6 +431,10 @@ def run_scan(cfg, mode, bankroll):
         if side is None:
             continue
 
+        # Only take NO bets — ensemble models are better at ruling out temps
+        if side == "YES":
+            continue
+
         bankroll -= size  # deduct from bankroll
 
         record = {
