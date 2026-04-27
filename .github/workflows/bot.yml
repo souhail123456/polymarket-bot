@@ -45,7 +45,15 @@ jobs:
       - name: Commit trade logs to repo
         if: always()
         run: |
+          echo "=== Files in logs/ ==="
+          ls -la logs/ 2>/dev/null || echo "No logs directory"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f logs/trades.jsonl logs/bot.log 2>/dev/null || true
-          git diff --cached --quiet || (git commit -m "Update trade logs [skip ci]" && git push) || true
+          git add -f logs/trades.jsonl logs/bot.log 2>&1 || echo "Nothing to add"
+          if ! git diff --cached --quiet 2>/dev/null; then
+            echo "Committing trade logs..."
+            git commit -m "Update trade logs [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
