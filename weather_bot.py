@@ -37,12 +37,21 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 CONFIG = {
     "min_edge": 0.08,             # 8% min edge for weather
-    "max_position_usd": 5.0,
+    "max_position_usd": 15.0,    # max cap (for 25%+ edge)
     "kelly_fraction": 0.15,       # 15% Kelly
     "taker_fee_rate": 0.05,
     "starting_bankroll": 100.0,
     "daily_loss_cap_usd": 20.0,
 }
+
+# Scaled position sizing by edge
+def max_size_for_edge(edge):
+    if edge >= 0.25:
+        return 15.0
+    elif edge >= 0.15:
+        return 10.0
+    else:
+        return 5.0
 
 # Cities Polymarket tracks, with coordinates and units
 CITIES = {
@@ -295,7 +304,8 @@ def decide_trade(true_p, market_p, bankroll, cfg):
     edge = gross_edge - fee_per_dollar
     if edge < cfg["min_edge"]:
         return None, 0.0, edge, 0.0
-    size = kelly_size(true_p, market_p, side, bankroll, cfg["kelly_fraction"], cfg["max_position_usd"])
+    cap = max_size_for_edge(edge)
+    size = kelly_size(true_p, market_p, side, bankroll, cfg["kelly_fraction"], cap)
     if size < 1.0:
         return None, 0.0, edge, 0.0
     fee_usd = calculate_fee(entry_price, size, cfg["taker_fee_rate"])
