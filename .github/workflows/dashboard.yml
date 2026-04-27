@@ -1,0 +1,48 @@
+name: Update Dashboard
+
+on:
+  workflow_run:
+    workflows: ["Weather Bot", "Polymarket Bot", "Daily Summary"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Restore trade logs
+        uses: actions/cache/restore@v4
+        with:
+          path: logs/
+          key: trade-logs-
+          restore-keys: trade-logs-
+
+      - name: Generate dashboard
+        run: python generate_dashboard.py
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
