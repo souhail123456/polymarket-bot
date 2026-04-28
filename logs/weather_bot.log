@@ -660,3 +660,19 @@
 2026-04-28 09:17:29,411 | INFO | [Shanghai] Will the highest temperature in Shanghai be 12°C o mkt=0.05 model=0.24 edge=+14.4% fee=$0.12 => YES $2.49
 2026-04-28 09:17:29,411 | INFO | [Shanghai] Will the highest temperature in Shanghai be 16°C o mkt=0.05 model=0.00 edge=+4.8% fee=$0.00 => skip $0.00
 2026-04-28 09:17:29,412 | INFO | Weather scan complete. Placed 0 trades.
+2026-04-28 10:16:12,973 | INFO | === Weather Scan | mode=paper | bankroll=$85.84 ===
+2026-04-28 10:16:17,597 | INFO | Found 297 weather sub-markets
+2026-04-28 10:16:19,145 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.03 model=0.05 edge=-3.3% fee=$0.00 => skip $0.00
+2026-04-28 10:16:19,146 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.23 model=0.20 edge=+1.8% fee=$0.00 => skip $0.00
+2026-04-28 10:16:20,576 | INFO | [NYC] Will the highest temperature in New York City be 5 mkt=0.08 model=0.01 edge=+6.5% fee=$0.00 => skip $0.00
+2026-04-28 10:16:20,576 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.09 model=0.09 edge=-0.2% fee=$0.00 => skip $0.00
+2026-04-28 10:16:21,990 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.03 model=0.00 edge=+3.1% fee=$0.00 => skip $0.00
+2026-04-28 10:16:21,990 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.05 model=0.00 edge=+4.3% fee=$0.00 => skip $0.00
+2026-04-28 10:16:23,427 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.06 model=0.17 edge=+7.0% fee=$0.00 => skip $0.00
+2026-04-28 10:16:24,854 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.03 model=0.00 edge=+2.9% fee=$0.00 => skip $0.00
+2026-04-28 10:16:24,855 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.05 model=0.01 edge=+4.2% fee=$0.00 => skip $0.00
+2026-04-28 10:16:24,855 | INFO | [Denver] Will the highest temperature in Denver be 56°F or  mkt=0.74 model=0.73 edge=-2.2% fee=$0.00 => skip $0.00
+2026-04-28 10:16:39,995 | WARNING | Ensemble fetch failed for gfs_seamless shanghai 2026-04-29: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-28 10:16:55,139 | WARNING | Ensemble fetch failed for ecmwf_ifs025 shanghai 2026-04-29: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-28 10:17:10,287 | WARNING | Ensemble fetch failed for icon_seamless shanghai 2026-04-29: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-28 10:17:10,288 | INFO | Weather scan complete. Placed 0 trades.
