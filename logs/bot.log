@@ -2405,25 +2405,23 @@
 2026-04-28 18:02:25,398 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-04-28 18:02:25,399 | INFO | [2047423] 'US x Iran diplomatic meeting by May 5, 2026?' mkt=0.17 est=0.18 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
 2026-04-28 18:02:25,399 | INFO | Scan complete. Placed 0 trades.
-2026-04-28 21:25:39,408 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-28 21:25:39,602 | INFO | Fetched 150 active markets
-2026-04-28 21:25:39,603 | INFO | 5 candidates after filters
-2026-04-28 21:25:40,171 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 21:25:40,177 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.51 est=0.52 conf=0.60 edge=-1.0% fee=$0.02 => skip $0.00
-2026-04-28 21:25:40,574 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 21:25:40,575 | INFO | [2100196] 'Madrid Open: Daniil Medvedev vs Flavio Cobolli' mkt=0.56 est=0.57 conf=0.60 edge=-2.0% fee=$0.02 => skip $0.00
-2026-04-28 21:25:40,904 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 21:25:40,905 | INFO | [2015747] 'NBA Playoffs: Who Will Win Series? - Pistons vs. Magic ' mkt=0.28 est=0.28 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
-2026-04-28 21:25:40,936 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-28 21:25:40,937 | INFO | Rate limited, waiting 10s...
-2026-04-28 21:25:50,976 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-28 21:25:50,976 | INFO | Rate limited, waiting 20s...
-2026-04-28 21:26:11,057 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-28 21:26:11,057 | WARNING | estimate_probability failed for 2100200: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99570, Requested 869. Please try again in 6m19.296s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-2026-04-28 21:26:11,086 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-28 21:26:11,087 | INFO | Rate limited, waiting 10s...
-2026-04-28 21:26:21,125 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-28 21:26:21,126 | INFO | Rate limited, waiting 20s...
-2026-04-28 21:26:41,166 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-28 21:26:41,166 | WARNING | estimate_probability failed for 2047423: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99535, Requested 860. Please try again in 5m41.28s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-2026-04-28 21:26:41,166 | INFO | Scan complete. Placed 0 trades.
+2026-04-28 21:49:12,508 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-28 21:49:12,621 | INFO | Fetched 150 active markets
+2026-04-28 21:49:12,622 | INFO | 4 candidates after filters
+2026-04-28 21:49:13,282 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 21:49:13,288 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.52 est=0.52 conf=0.60 edge=-1.9% fee=$0.02 => skip $0.00
+2026-04-28 21:49:13,655 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 21:49:13,656 | INFO | [2015747] 'NBA Playoffs: Who Will Win Series? - Pistons vs. Magic ' mkt=0.28 est=0.28 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
+2026-04-28 21:49:13,699 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 21:49:13,700 | INFO | Rate limited, waiting 10s...
+2026-04-28 21:49:23,759 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 21:49:23,759 | INFO | Rate limited, waiting 20s...
+2026-04-28 21:49:43,815 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 21:49:43,816 | WARNING | estimate_probability failed for 2100200: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99678, Requested 528. Please try again in 2m57.984s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-04-28 21:49:43,859 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 21:49:43,859 | INFO | Rate limited, waiting 10s...
+2026-04-28 21:49:53,918 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 21:49:53,918 | INFO | Rate limited, waiting 20s...
+2026-04-28 21:50:14,004 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 21:50:14,005 | WARNING | estimate_probability failed for 2047423: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99643, Requested 860. Please try again in 7m14.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-04-28 21:50:14,006 | INFO | Scan complete. Placed 0 trades.
