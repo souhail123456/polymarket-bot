@@ -2405,17 +2405,19 @@
 2026-04-28 18:02:25,398 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-04-28 18:02:25,399 | INFO | [2047423] 'US x Iran diplomatic meeting by May 5, 2026?' mkt=0.17 est=0.18 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
 2026-04-28 18:02:25,399 | INFO | Scan complete. Placed 0 trades.
-2026-04-28 19:03:01,664 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-28 19:03:02,088 | INFO | Fetched 150 active markets
-2026-04-28 19:03:02,088 | INFO | 5 candidates after filters
-2026-04-28 19:03:02,772 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 19:03:02,779 | INFO | [2100196] 'Madrid Open: Daniil Medvedev vs Flavio Cobolli' mkt=0.51 est=0.52 conf=0.60 edge=-1.4% fee=$0.02 => skip $0.00
-2026-04-28 19:03:03,116 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 19:03:03,117 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.57 est=0.59 conf=0.60 edge=-0.6% fee=$0.02 => skip $0.00
-2026-04-28 19:03:03,471 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 19:03:03,472 | INFO | [2096455] 'LoL: Team Vitality vs Solary (BO3) - Esports World Cup EMEA ' mkt=0.71 est=0.72 conf=0.60 edge=-0.4% fee=$0.01 => skip $0.00
-2026-04-28 19:03:03,760 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 19:03:03,760 | INFO | [2097855] 'Madrid Open: Aryna Sabalenka vs Hailey Baptiste' mkt=0.80 est=0.79 conf=0.70 edge=-3.0% fee=$0.04 => skip $0.00
-2026-04-28 19:03:04,259 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 19:03:04,260 | INFO | [2047423] 'US x Iran diplomatic meeting by May 5, 2026?' mkt=0.17 est=0.18 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
-2026-04-28 19:03:04,260 | INFO | Scan complete. Placed 0 trades.
+2026-04-28 20:01:53,442 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-28 20:01:53,536 | INFO | Fetched 150 active markets
+2026-04-28 20:01:53,536 | INFO | 6 candidates after filters
+2026-04-28 20:01:54,073 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 20:01:54,079 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.55 est=0.53 conf=0.60 edge=-1.2% fee=$0.03 => skip $0.00
+2026-04-28 20:01:54,533 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 20:01:54,534 | INFO | [2065743] 'LoL: FlyQuest vs Team Liquid (BO3) - Esports World Cup North' mkt=0.36 est=0.36 conf=0.60 edge=-3.2% fee=$0.03 => skip $0.00
+2026-04-28 20:01:54,928 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 20:01:54,929 | INFO | [2015747] 'NBA Playoffs: Who Will Win Series? - Pistons vs. Magic ' mkt=0.28 est=0.28 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
+2026-04-28 20:01:55,608 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 20:01:55,609 | INFO | [2097855] 'Madrid Open: Aryna Sabalenka vs Hailey Baptiste' mkt=0.74 est=0.74 conf=0.60 edge=-1.0% fee=$0.01 => skip $0.00
+2026-04-28 20:01:55,882 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 20:01:55,883 | INFO | [2100196] 'Madrid Open: Daniil Medvedev vs Flavio Cobolli' mkt=0.26 est=0.26 conf=0.60 edge=-3.7% fee=$0.04 => skip $0.00
+2026-04-28 20:01:56,325 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 20:01:56,325 | INFO | [2047423] 'US x Iran diplomatic meeting by May 5, 2026?' mkt=0.17 est=0.18 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
+2026-04-28 20:01:56,325 | INFO | Scan complete. Placed 0 trades.
