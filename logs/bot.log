@@ -2395,17 +2395,15 @@
 2026-04-28 13:09:26,129 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-28 13:09:26,130 | WARNING | estimate_probability failed for 2047423: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99617, Requested 512. Please try again in 1m51.455999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-28 13:09:26,130 | INFO | Scan complete. Placed 0 trades.
-2026-04-28 15:19:11,754 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-28 15:19:11,892 | INFO | Fetched 150 active markets
-2026-04-28 15:19:11,893 | INFO | 5 candidates after filters
-2026-04-28 15:19:12,597 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 15:19:12,604 | INFO | [2000968] 'Paris Saint-Germain FC vs. FC Bayern München: O/U 3.5' mkt=0.47 est=0.47 conf=0.60 edge=-1.7% fee=$0.03 => skip $0.00
-2026-04-28 15:19:12,813 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 15:19:12,814 | INFO | [2044761] 'Indian Premier League: Punjab Kings vs Rajasthan Royals' mkt=0.56 est=0.56 conf=0.60 edge=-2.2% fee=$0.02 => skip $0.00
-2026-04-28 15:19:13,161 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 15:19:13,162 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.68 est=0.65 conf=0.60 edge=-0.9% fee=$0.03 => skip $0.00
-2026-04-28 15:19:13,516 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 15:19:13,517 | INFO | [1929170] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in April?' mkt=0.20 est=0.22 conf=0.60 edge=-2.5% fee=$0.04 => skip $0.00
-2026-04-28 15:19:13,861 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 15:19:13,862 | INFO | [2047423] 'US x Iran diplomatic meeting by May 5, 2026?' mkt=0.17 est=0.18 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
-2026-04-28 15:19:13,862 | INFO | Scan complete. Placed 0 trades.
+2026-04-28 16:14:40,996 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-28 16:14:41,106 | INFO | Fetched 150 active markets
+2026-04-28 16:14:41,107 | INFO | 4 candidates after filters
+2026-04-28 16:14:41,827 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 16:14:41,834 | INFO | [2044761] 'Indian Premier League: Punjab Kings vs Rajasthan Royals' mkt=0.54 est=0.53 conf=0.60 edge=-1.7% fee=$0.03 => skip $0.00
+2026-04-28 16:14:42,273 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 16:14:42,274 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.62 est=0.60 conf=0.70 edge=-0.6% fee=$0.03 => skip $0.00
+2026-04-28 16:14:42,652 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 16:14:42,653 | INFO | [1929170] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in April?' mkt=0.20 est=0.20 conf=0.60 edge=-3.5% fee=$0.04 => skip $0.00
+2026-04-28 16:14:42,966 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 16:14:42,967 | INFO | [2047423] 'US x Iran diplomatic meeting by May 5, 2026?' mkt=0.17 est=0.18 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
+2026-04-28 16:14:42,967 | INFO | Scan complete. Placed 0 trades.
