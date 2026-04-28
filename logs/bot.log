@@ -2051,3 +2051,31 @@
 2026-04-28 03:07:59,313 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-04-28 03:07:59,314 | INFO | [1823776] 'Will Bitcoin reach $80,000 in April?' mkt=0.20 est=0.22 conf=0.60 edge=-2.5% fee=$0.04 => skip $0.00
 2026-04-28 03:07:59,314 | INFO | Scan complete. Placed 0 trades.
+2026-04-28 06:02:43,296 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-28 06:02:43,514 | INFO | Fetched 150 active markets
+2026-04-28 06:02:43,514 | INFO | 8 candidates after filters
+2026-04-28 06:02:44,154 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 06:02:44,161 | INFO | [951183] 'Will the Bharatiya Janata Party (BJP) win the most seats in ' mkt=0.48 est=0.47 conf=0.60 edge=-1.3% fee=$0.02 => skip $0.00
+2026-04-28 06:02:44,452 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 06:02:44,453 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.42 est=0.45 conf=0.60 edge=-0.4% fee=$0.03 => skip $0.00
+2026-04-28 06:02:44,720 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 06:02:44,721 | INFO | [1695988] 'Will Trump talk to Ursula von der Leyen in April?' mkt=0.72 est=0.70 conf=0.60 edge=-1.2% fee=$0.04 => skip $0.00
+2026-04-28 06:02:45,049 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 06:02:45,050 | INFO | [2010975] 'Will Elon Musk post 220-239 tweets from April 21 to April 28' mkt=0.72 est=0.72 conf=0.60 edge=-1.4% fee=$0.01 => skip $0.00
+2026-04-28 06:02:45,574 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 06:02:45,575 | INFO | [1980676] 'Will WTI Crude Oil (WTI) hit (HIGH) $100 in April?' mkt=0.73 est=0.72 conf=0.60 edge=-2.2% fee=$0.04 => skip $0.00
+2026-04-28 06:02:45,915 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 06:02:45,916 | INFO | [2010978] 'Will Elon Musk post 240-259 tweets from April 21 to April 28' mkt=0.24 est=0.24 conf=0.60 edge=-3.8% fee=$0.04 => skip $0.00
+2026-04-28 06:02:45,941 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 06:02:45,942 | INFO | Rate limited, waiting 10s...
+2026-04-28 06:02:55,978 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 06:02:55,979 | INFO | Rate limited, waiting 20s...
+2026-04-28 06:03:16,013 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 06:03:16,014 | WARNING | estimate_probability failed for 1823776: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99845, Requested 473. Please try again in 4m34.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-04-28 06:03:16,038 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 06:03:16,039 | INFO | Rate limited, waiting 10s...
+2026-04-28 06:03:26,073 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 06:03:26,074 | INFO | Rate limited, waiting 20s...
+2026-04-28 06:03:46,109 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-28 06:03:46,109 | WARNING | estimate_probability failed for 2047423: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99810, Requested 521. Please try again in 4m45.984s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-04-28 06:03:46,110 | INFO | Scan complete. Placed 0 trades.
