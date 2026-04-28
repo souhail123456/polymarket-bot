@@ -2327,15 +2327,3 @@
 2026-04-28 11:16:37,158 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-28 11:16:37,158 | WARNING | estimate_probability failed for 2047423: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99557, Requested 516. Please try again in 1m3.071999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-28 11:16:37,158 | INFO | Scan complete. Placed 0 trades.
-2026-04-28 12:06:13,632 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-28 12:06:13,812 | INFO | Fetched 150 active markets
-2026-04-28 12:06:13,813 | INFO | 4 candidates after filters
-2026-04-28 12:06:14,389 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 12:06:14,396 | INFO | [2000789] 'Will FC Bayern München win on 2026-04-28?' mkt=0.38 est=0.38 conf=0.60 edge=-2.6% fee=$0.03 => skip $0.00
-2026-04-28 12:06:14,763 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 12:06:14,764 | INFO | [2065743] 'LoL: FlyQuest vs Team Liquid (BO3) - Esports World Cup North' mkt=0.35 est=0.36 conf=0.60 edge=-2.7% fee=$0.03 => skip $0.00
-2026-04-28 12:06:15,080 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 12:06:15,081 | INFO | [1929170] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in April?' mkt=0.23 est=0.25 conf=0.60 edge=-2.3% fee=$0.04 => skip $0.00
-2026-04-28 12:06:15,369 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-28 12:06:15,370 | INFO | [2010978] 'Will Elon Musk post 240-259 tweets from April 21 to April 28' mkt=0.21 est=0.22 conf=0.60 edge=-3.4% fee=$0.04 => skip $0.00
-2026-04-28 12:06:15,370 | INFO | Scan complete. Placed 0 trades.
