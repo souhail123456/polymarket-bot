@@ -717,3 +717,18 @@
 2026-04-28 15:20:39,633 | WARNING | Ensemble fetch failed for ecmwf_ifs025 shanghai 2026-04-29: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
 2026-04-28 15:20:54,821 | WARNING | Ensemble fetch failed for icon_seamless shanghai 2026-04-29: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
 2026-04-28 15:20:54,822 | INFO | Weather scan complete. Placed 0 trades.
+2026-04-28 16:14:04,595 | INFO | === Weather Scan | mode=paper | bankroll=$94.03 ===
+2026-04-28 16:14:09,535 | INFO | Found 275 weather sub-markets
+2026-04-28 16:14:10,968 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.26 model=0.33 edge=+3.1% fee=$0.00 => skip $0.00
+2026-04-28 16:14:12,345 | INFO | [NYC] Will the highest temperature in New York City be 5 mkt=0.03 model=0.00 edge=+3.1% fee=$0.00 => skip $0.00
+2026-04-28 16:14:12,346 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.07 model=0.10 edge=-2.1% fee=$0.00 => skip $0.00
+2026-04-28 16:14:13,705 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.12 model=0.00 edge=+11.3% fee=$0.03 => NO $5.00
+2026-04-28 16:14:16,502 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.07 model=0.18 edge=+6.4% fee=$0.00 => skip $0.00
+2026-04-28 16:14:17,918 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.02 model=0.00 edge=+1.9% fee=$0.00 => skip $0.00
+2026-04-28 16:14:17,918 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.04 model=0.00 edge=+3.9% fee=$0.00 => skip $0.00
+2026-04-28 16:14:17,918 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.14 model=0.06 edge=+7.5% fee=$0.00 => skip $0.00
+2026-04-28 16:14:17,918 | INFO | [Denver] Will the highest temperature in Denver be 56°F or  mkt=0.41 model=0.63 edge=+18.7% fee=$0.14 => YES $4.93
+2026-04-28 16:14:33,063 | WARNING | Ensemble fetch failed for gfs_seamless shanghai 2026-04-29: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-28 16:14:48,207 | WARNING | Ensemble fetch failed for ecmwf_ifs025 shanghai 2026-04-29: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-28 16:15:03,356 | WARNING | Ensemble fetch failed for icon_seamless shanghai 2026-04-29: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-28 16:15:03,357 | INFO | Weather scan complete. Placed 1 trades.
