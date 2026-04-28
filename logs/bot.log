@@ -2395,3 +2395,27 @@
 2026-04-28 13:09:26,129 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-28 13:09:26,130 | WARNING | estimate_probability failed for 2047423: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99617, Requested 512. Please try again in 1m51.455999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-28 13:09:26,130 | INFO | Scan complete. Placed 0 trades.
+2026-04-28 18:02:24,045 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-28 18:02:24,137 | INFO | Fetched 150 active markets
+2026-04-28 18:02:24,138 | INFO | 3 candidates after filters
+2026-04-28 18:02:24,687 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 18:02:24,694 | INFO | [2100194] 'Madrid Open: Francisco Cerundolo vs Alexander Blockx' mkt=0.58 est=0.59 conf=0.60 edge=-1.1% fee=$0.02 => skip $0.00
+2026-04-28 18:02:24,968 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 18:02:24,969 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.58 est=0.57 conf=0.60 edge=-1.4% fee=$0.03 => skip $0.00
+2026-04-28 18:02:25,398 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 18:02:25,399 | INFO | [2047423] 'US x Iran diplomatic meeting by May 5, 2026?' mkt=0.17 est=0.18 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
+2026-04-28 18:02:25,399 | INFO | Scan complete. Placed 0 trades.
+2026-04-28 19:03:01,664 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-28 19:03:02,088 | INFO | Fetched 150 active markets
+2026-04-28 19:03:02,088 | INFO | 5 candidates after filters
+2026-04-28 19:03:02,772 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 19:03:02,779 | INFO | [2100196] 'Madrid Open: Daniil Medvedev vs Flavio Cobolli' mkt=0.51 est=0.52 conf=0.60 edge=-1.4% fee=$0.02 => skip $0.00
+2026-04-28 19:03:03,116 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 19:03:03,117 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.57 est=0.59 conf=0.60 edge=-0.6% fee=$0.02 => skip $0.00
+2026-04-28 19:03:03,471 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 19:03:03,472 | INFO | [2096455] 'LoL: Team Vitality vs Solary (BO3) - Esports World Cup EMEA ' mkt=0.71 est=0.72 conf=0.60 edge=-0.4% fee=$0.01 => skip $0.00
+2026-04-28 19:03:03,760 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 19:03:03,760 | INFO | [2097855] 'Madrid Open: Aryna Sabalenka vs Hailey Baptiste' mkt=0.80 est=0.79 conf=0.70 edge=-3.0% fee=$0.04 => skip $0.00
+2026-04-28 19:03:04,259 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 19:03:04,260 | INFO | [2047423] 'US x Iran diplomatic meeting by May 5, 2026?' mkt=0.17 est=0.18 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
+2026-04-28 19:03:04,260 | INFO | Scan complete. Placed 0 trades.
