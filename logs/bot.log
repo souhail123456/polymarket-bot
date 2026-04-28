@@ -2029,3 +2029,25 @@
 2026-04-28 01:39:06,004 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-28 01:39:06,004 | WARNING | estimate_probability failed for 1695988: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99879, Requested 727. Please try again in 8m43.584s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-28 01:39:06,004 | INFO | Scan complete. Placed 0 trades.
+2026-04-28 03:07:55,340 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-28 03:07:55,481 | INFO | Fetched 150 active markets
+2026-04-28 03:07:55,482 | INFO | 9 candidates after filters
+2026-04-28 03:07:56,064 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 03:07:56,070 | INFO | [951183] 'Will the Bharatiya Janata Party (BJP) win the most seats in ' mkt=0.52 est=0.52 conf=0.60 edge=-2.0% fee=$0.03 => skip $0.00
+2026-04-28 03:07:56,429 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 03:07:56,430 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.47 est=0.45 conf=0.60 edge=+0.1% fee=$0.02 => skip $0.00
+2026-04-28 03:07:56,814 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 03:07:56,815 | INFO | [2043545] 'Chicago Cubs vs. San Diego Padres' mkt=0.60 est=0.60 conf=0.60 edge=-2.0% fee=$0.02 => skip $0.00
+2026-04-28 03:07:57,273 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 03:07:57,273 | INFO | [2010975] 'Will Elon Musk post 220-239 tweets from April 21 to April 28' mkt=0.65 est=0.65 conf=0.60 edge=-1.3% fee=$0.02 => skip $0.00
+2026-04-28 03:07:57,754 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 03:07:57,755 | INFO | [2010978] 'Will Elon Musk post 240-259 tweets from April 21 to April 28' mkt=0.28 est=0.28 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
+2026-04-28 03:07:58,098 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 03:07:58,099 | INFO | [2047423] 'US x Iran diplomatic meeting by May 5, 2026?' mkt=0.24 est=0.25 conf=0.60 edge=-3.3% fee=$0.04 => skip $0.00
+2026-04-28 03:07:58,434 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 03:07:58,435 | INFO | [1695988] 'Will Trump talk to Ursula von der Leyen in April?' mkt=0.77 est=0.76 conf=0.60 edge=-2.8% fee=$0.04 => skip $0.00
+2026-04-28 03:07:58,855 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 03:07:58,856 | INFO | [2043538] 'Los Angeles Angels vs. Chicago White Sox' mkt=0.79 est=0.79 conf=0.60 edge=-1.1% fee=$0.01 => skip $0.00
+2026-04-28 03:07:59,313 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 03:07:59,314 | INFO | [1823776] 'Will Bitcoin reach $80,000 in April?' mkt=0.20 est=0.22 conf=0.60 edge=-2.5% fee=$0.04 => skip $0.00
+2026-04-28 03:07:59,314 | INFO | Scan complete. Placed 0 trades.
