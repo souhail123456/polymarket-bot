@@ -2559,17 +2559,19 @@
 2026-04-29 00:38:47,219 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-29 00:38:47,219 | WARNING | estimate_probability failed for 2052474: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99765, Requested 467. Please try again in 3m20.448s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-29 00:38:47,219 | INFO | Scan complete. Placed 0 trades.
-2026-04-29 08:17:07,339 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-29 08:17:07,481 | INFO | Fetched 150 active markets
-2026-04-29 08:17:07,481 | INFO | 5 candidates after filters
-2026-04-29 08:17:08,025 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 08:17:08,032 | INFO | [2084041] 'LoL: Nongshim Red Force vs T1 - Game 1 Winner' mkt=0.42 est=0.42 conf=0.60 edge=-2.9% fee=$0.03 => skip $0.00
-2026-04-29 08:17:08,401 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 08:17:08,402 | INFO | [2084063] 'LoL: KT Rolster vs Hanwha Life Esports (BO3) - LCK Rounds 1-' mkt=0.42 est=0.42 conf=0.60 edge=-2.9% fee=$0.03 => skip $0.00
-2026-04-29 08:17:08,720 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 08:17:08,721 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.28 est=0.29 conf=0.60 edge=-3.1% fee=$0.04 => skip $0.00
-2026-04-29 08:17:08,958 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 08:17:08,958 | INFO | [2015747] 'NBA Playoffs: Who Will Win Series? - Pistons vs. Magic ' mkt=0.28 est=0.28 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
-2026-04-29 08:17:09,215 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 08:17:09,216 | INFO | [2084040] 'LoL: Nongshim Red Force vs T1 (BO3) - LCK Rounds 1-2' mkt=0.23 est=0.24 conf=0.60 edge=-3.3% fee=$0.04 => skip $0.00
-2026-04-29 08:17:09,216 | INFO | Scan complete. Placed 0 trades.
+2026-04-29 09:16:04,973 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-29 09:16:05,136 | INFO | Fetched 150 active markets
+2026-04-29 09:16:05,137 | INFO | 6 candidates after filters
+2026-04-29 09:16:05,642 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 09:16:05,648 | INFO | [2084063] 'LoL: KT Rolster vs Hanwha Life Esports (BO3) - LCK Rounds 1-' mkt=0.42 est=0.42 conf=0.60 edge=-2.9% fee=$0.03 => skip $0.00
+2026-04-29 09:16:06,061 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 09:16:06,062 | INFO | [1980675] 'Will WTI Crude Oil (WTI) hit (HIGH) $105 in April?' mkt=0.67 est=0.65 conf=0.60 edge=-1.8% fee=$0.03 => skip $0.00
+2026-04-29 09:16:06,578 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 09:16:06,579 | INFO | [2015747] 'NBA Playoffs: Who Will Win Series? - Pistons vs. Magic ' mkt=0.28 est=0.28 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-04-29 09:16:07,177 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 09:16:07,178 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.27 est=0.27 conf=0.60 edge=-3.2% fee=$0.04 => skip $0.00
+2026-04-29 09:16:07,752 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 09:16:07,753 | INFO | [1929170] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in April?' mkt=0.18 est=0.18 conf=0.60 edge=-4.1% fee=$0.04 => skip $0.00
+2026-04-29 09:16:08,357 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 09:16:08,358 | INFO | [2084042] 'LoL: Nongshim Red Force vs T1 - Game 2 Winner' mkt=0.18 est=0.19 conf=0.60 edge=-3.1% fee=$0.04 => skip $0.00
+2026-04-29 09:16:08,358 | INFO | Scan complete. Placed 0 trades.
