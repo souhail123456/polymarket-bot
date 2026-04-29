@@ -2755,23 +2755,19 @@
 2026-04-29 20:55:32,810 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-29 20:55:32,810 | WARNING | estimate_probability failed for 1929845: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99756, Requested 930. Please try again in 9m52.704s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-29 20:55:32,810 | INFO | Scan complete. Placed 0 trades.
-2026-04-29 22:48:16,764 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-29 22:48:17,013 | INFO | Fetched 150 active markets
-2026-04-29 22:48:17,014 | INFO | 5 candidates after filters
-2026-04-29 22:48:17,844 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 22:48:17,851 | INFO | [2059860] 'St. Louis Cardinals vs. Pittsburgh Pirates' mkt=0.45 est=0.45 conf=0.60 edge=-2.8% fee=$0.03 => skip $0.00
-2026-04-29 22:48:18,361 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 22:48:18,362 | INFO | [1929859] 'Games Total: O/U 2.5' mkt=0.34 est=0.33 conf=0.60 edge=-0.2% fee=$0.02 => skip $0.00
-2026-04-29 22:48:18,683 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 22:48:18,684 | INFO | [2110677] 'Madrid Open: Casper Ruud vs Alexander Blockx' mkt=0.73 est=0.73 conf=0.60 edge=-1.3% fee=$0.01 => skip $0.00
-2026-04-29 22:48:18,755 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-29 22:48:18,755 | INFO | Rate limited, waiting 10s...
-2026-04-29 22:48:29,185 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 22:48:29,186 | INFO | [2059805] 'Chicago Cubs vs. San Diego Padres' mkt=0.82 est=0.81 conf=0.60 edge=-3.1% fee=$0.04 => skip $0.00
-2026-04-29 22:48:29,228 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-29 22:48:29,229 | INFO | Rate limited, waiting 10s...
-2026-04-29 22:48:39,338 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-29 22:48:39,339 | INFO | Rate limited, waiting 20s...
-2026-04-29 22:48:59,407 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-29 22:48:59,408 | WARNING | estimate_probability failed for 1929853: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99782, Requested 595. Please try again in 5m25.728s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-2026-04-29 22:48:59,408 | INFO | Scan complete. Placed 0 trades.
+2026-04-29 23:20:53,892 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-29 23:20:54,003 | INFO | Fetched 150 active markets
+2026-04-29 23:20:54,004 | INFO | 4 candidates after filters
+2026-04-29 23:20:54,793 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 23:20:54,800 | INFO | [2059866] 'Detroit Tigers vs. Atlanta Braves' mkt=0.56 est=0.56 conf=0.60 edge=-2.2% fee=$0.02 => skip $0.00
+2026-04-29 23:20:55,102 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 23:20:55,103 | INFO | [2059860] 'St. Louis Cardinals vs. Pittsburgh Pirates' mkt=0.42 est=0.42 conf=0.60 edge=-2.9% fee=$0.03 => skip $0.00
+2026-04-29 23:20:55,651 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 23:20:55,652 | INFO | [1929859] 'Games Total: O/U 2.5' mkt=0.28 est=0.30 conf=0.60 edge=-2.1% fee=$0.04 => skip $0.00
+2026-04-29 23:20:55,697 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-29 23:20:55,698 | INFO | Rate limited, waiting 10s...
+2026-04-29 23:21:05,744 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-29 23:21:05,745 | INFO | Rate limited, waiting 20s...
+2026-04-29 23:21:25,797 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-04-29 23:21:25,797 | WARNING | estimate_probability failed for 2110677: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99860, Requested 522. Please try again in 5m30.048s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-04-29 23:21:25,797 | INFO | Scan complete. Placed 0 trades.
