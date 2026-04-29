@@ -2559,17 +2559,21 @@
 2026-04-29 00:38:47,219 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-29 00:38:47,219 | WARNING | estimate_probability failed for 2052474: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99765, Requested 467. Please try again in 3m20.448s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-29 00:38:47,219 | INFO | Scan complete. Placed 0 trades.
-2026-04-29 14:16:07,807 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-29 14:16:08,020 | INFO | Fetched 150 active markets
-2026-04-29 14:16:08,020 | INFO | 5 candidates after filters
-2026-04-29 14:16:08,709 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 14:16:08,717 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.40 est=0.39 conf=0.60 edge=-1.0% fee=$0.02 => skip $0.00
-2026-04-29 14:16:09,026 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 14:16:09,027 | INFO | [2078392] 'Indian Premier League: Mumbai Indians vs Sunrisers Hyderabad' mkt=0.62 est=0.62 conf=0.60 edge=-1.9% fee=$0.02 => skip $0.00
-2026-04-29 14:16:09,258 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 14:16:09,258 | INFO | [2015747] 'NBA Playoffs: Who Will Win Series? - Pistons vs. Magic ' mkt=0.30 est=0.32 conf=0.60 edge=-1.5% fee=$0.03 => skip $0.00
-2026-04-29 14:16:09,538 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 14:16:09,539 | INFO | [2110677] 'Madrid Open: Casper Ruud vs Alexander Blockx' mkt=0.74 est=0.73 conf=0.60 edge=-2.7% fee=$0.04 => skip $0.00
-2026-04-29 14:16:09,915 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 14:16:09,916 | INFO | [1929170] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in April?' mkt=0.18 est=0.20 conf=0.60 edge=-2.1% fee=$0.04 => skip $0.00
-2026-04-29 14:16:09,916 | INFO | Scan complete. Placed 0 trades.
+2026-04-29 15:16:54,968 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-29 15:16:55,307 | INFO | Fetched 150 active markets
+2026-04-29 15:16:55,308 | INFO | 7 candidates after filters
+2026-04-29 15:16:55,912 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 15:16:55,918 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.47 est=0.45 conf=0.60 edge=+0.1% fee=$0.02 => skip $0.00
+2026-04-29 15:16:56,363 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 15:16:56,364 | INFO | [2015747] 'NBA Playoffs: Who Will Win Series? - Pistons vs. Magic ' mkt=0.31 est=0.32 conf=0.60 edge=-2.4% fee=$0.03 => skip $0.00
+2026-04-29 15:16:57,083 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 15:16:57,083 | INFO | [2110677] 'Madrid Open: Casper Ruud vs Alexander Blockx' mkt=0.74 est=0.74 conf=0.60 edge=-1.3% fee=$0.01 => skip $0.00
+2026-04-29 15:16:57,502 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 15:16:57,503 | INFO | [2078392] 'Indian Premier League: Mumbai Indians vs Sunrisers Hyderabad' mkt=0.77 est=0.77 conf=0.70 edge=-1.2% fee=$0.01 => skip $0.00
+2026-04-29 15:16:57,957 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 15:16:57,958 | INFO | [1929823] 'Map Handicap: VIT (-1.5) vs FUT Esports (+1.5)' mkt=0.78 est=0.79 conf=0.60 edge=-0.1% fee=$0.01 => skip $0.00
+2026-04-29 15:16:58,430 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 15:16:58,431 | INFO | [1929820] 'Counter-Strike: Vitality vs FUT Esports - Map 1 Winner' mkt=0.81 est=0.81 conf=0.70 edge=-3.1% fee=$0.04 => skip $0.00
+2026-04-29 15:16:58,791 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 15:16:58,792 | INFO | [1929170] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in April?' mkt=0.18 est=0.20 conf=0.60 edge=-2.6% fee=$0.04 => skip $0.00
+2026-04-29 15:16:58,792 | INFO | Scan complete. Placed 0 trades.
