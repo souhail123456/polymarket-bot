@@ -2559,19 +2559,17 @@
 2026-04-29 00:38:47,219 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-29 00:38:47,219 | WARNING | estimate_probability failed for 2052474: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99765, Requested 467. Please try again in 3m20.448s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-29 00:38:47,219 | INFO | Scan complete. Placed 0 trades.
-2026-04-29 09:16:04,973 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-29 09:16:05,136 | INFO | Fetched 150 active markets
-2026-04-29 09:16:05,137 | INFO | 6 candidates after filters
-2026-04-29 09:16:05,642 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 09:16:05,648 | INFO | [2084063] 'LoL: KT Rolster vs Hanwha Life Esports (BO3) - LCK Rounds 1-' mkt=0.42 est=0.42 conf=0.60 edge=-2.9% fee=$0.03 => skip $0.00
-2026-04-29 09:16:06,061 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 09:16:06,062 | INFO | [1980675] 'Will WTI Crude Oil (WTI) hit (HIGH) $105 in April?' mkt=0.67 est=0.65 conf=0.60 edge=-1.8% fee=$0.03 => skip $0.00
-2026-04-29 09:16:06,578 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 09:16:06,579 | INFO | [2015747] 'NBA Playoffs: Who Will Win Series? - Pistons vs. Magic ' mkt=0.28 est=0.28 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
-2026-04-29 09:16:07,177 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 09:16:07,178 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.27 est=0.27 conf=0.60 edge=-3.2% fee=$0.04 => skip $0.00
-2026-04-29 09:16:07,752 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 09:16:07,753 | INFO | [1929170] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in April?' mkt=0.18 est=0.18 conf=0.60 edge=-4.1% fee=$0.04 => skip $0.00
-2026-04-29 09:16:08,357 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-29 09:16:08,358 | INFO | [2084042] 'LoL: Nongshim Red Force vs T1 - Game 2 Winner' mkt=0.18 est=0.19 conf=0.60 edge=-3.1% fee=$0.04 => skip $0.00
-2026-04-29 09:16:08,358 | INFO | Scan complete. Placed 0 trades.
+2026-04-29 10:15:23,903 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-29 10:15:24,005 | INFO | Fetched 150 active markets
+2026-04-29 10:15:24,005 | INFO | 5 candidates after filters
+2026-04-29 10:15:24,663 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 10:15:24,669 | INFO | [2084063] 'LoL: KT Rolster vs Hanwha Life Esports (BO3) - LCK Rounds 1-' mkt=0.40 est=0.41 conf=0.60 edge=-2.0% fee=$0.03 => skip $0.00
+2026-04-29 10:15:24,975 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 10:15:24,976 | INFO | [1980675] 'Will WTI Crude Oil (WTI) hit (HIGH) $105 in April?' mkt=0.69 est=0.68 conf=0.60 edge=-2.0% fee=$0.03 => skip $0.00
+2026-04-29 10:15:25,330 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 10:15:25,331 | INFO | [2015747] 'NBA Playoffs: Who Will Win Series? - Pistons vs. Magic ' mkt=0.30 est=0.32 conf=0.60 edge=-1.5% fee=$0.03 => skip $0.00
+2026-04-29 10:15:25,608 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 10:15:25,609 | INFO | [1823776] 'Will Bitcoin reach $80,000 in April?' mkt=0.23 est=0.23 conf=0.60 edge=-3.4% fee=$0.04 => skip $0.00
+2026-04-29 10:15:26,277 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 10:15:26,278 | INFO | [1929170] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in April?' mkt=0.18 est=0.20 conf=0.60 edge=-2.6% fee=$0.04 => skip $0.00
+2026-04-29 10:15:26,278 | INFO | Scan complete. Placed 0 trades.
