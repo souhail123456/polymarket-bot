@@ -2559,3 +2559,15 @@
 2026-04-29 00:38:47,219 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-29 00:38:47,219 | WARNING | estimate_probability failed for 2052474: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99765, Requested 467. Please try again in 3m20.448s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-29 00:38:47,219 | INFO | Scan complete. Placed 0 trades.
+2026-04-29 01:37:41,574 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-29 01:37:41,678 | INFO | Fetched 150 active markets
+2026-04-29 01:37:41,679 | INFO | 4 candidates after filters
+2026-04-29 01:37:42,121 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 01:37:42,125 | INFO | [2052497] 'Seattle Mariners vs. Minnesota Twins' mkt=0.54 est=0.54 conf=0.60 edge=-2.3% fee=$0.02 => skip $0.00
+2026-04-29 01:37:42,408 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 01:37:42,409 | INFO | [2054872] 'Will Bitcoin dip to $75,000 in April?' mkt=0.55 est=0.53 conf=0.60 edge=-0.7% fee=$0.03 => skip $0.00
+2026-04-29 01:37:42,742 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 01:37:42,743 | INFO | [2052500] 'New York Yankees vs. Texas Rangers' mkt=0.71 est=0.72 conf=0.60 edge=-0.9% fee=$0.01 => skip $0.00
+2026-04-29 01:37:43,045 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-29 01:37:43,046 | INFO | [2047423] 'US x Iran diplomatic meeting by May 5, 2026?' mkt=0.17 est=0.18 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
+2026-04-29 01:37:43,046 | INFO | Scan complete. Placed 0 trades.
