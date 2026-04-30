@@ -2783,11 +2783,21 @@
 2026-04-30 00:40:20,611 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-30 00:40:20,612 | WARNING | estimate_probability failed for 2059860: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99530, Requested 816. Please try again in 4m58.944s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-30 00:40:20,612 | INFO | Scan complete. Placed 0 trades.
-2026-04-30 04:41:55,749 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-30 04:41:55,866 | INFO | Fetched 150 active markets
-2026-04-30 04:41:55,867 | INFO | 2 candidates after filters
-2026-04-30 04:41:56,358 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 04:41:56,363 | INFO | [2053128] 'LoL: ThunderTalk Gaming vs LGD Gaming (BO3) - LPL Group Nirv' mkt=0.46 est=0.46 conf=0.60 edge=-2.7% fee=$0.03 => skip $0.00
-2026-04-30 04:41:56,665 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 04:41:56,666 | INFO | [2110677] 'Madrid Open: Casper Ruud vs Alexander Blockx' mkt=0.72 est=0.72 conf=0.60 edge=-1.4% fee=$0.01 => skip $0.00
-2026-04-30 04:41:56,666 | INFO | Scan complete. Placed 0 trades.
+2026-04-30 06:02:13,712 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-04-30 06:02:13,819 | INFO | Fetched 150 active markets
+2026-04-30 06:02:13,820 | INFO | 7 candidates after filters
+2026-04-30 06:02:14,406 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-30 06:02:14,413 | INFO | [2119146] 'Counter-Strike: FUT Esports vs Astralis (BO3) - BLAST Rivals' mkt=0.47 est=0.47 conf=0.60 edge=-2.7% fee=$0.03 => skip $0.00
+2026-04-30 06:02:14,821 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-30 06:02:14,822 | INFO | [2053128] 'LoL: ThunderTalk Gaming vs LGD Gaming (BO3) - LPL Group Nirv' mkt=0.46 est=0.46 conf=0.60 edge=-2.7% fee=$0.03 => skip $0.00
+2026-04-30 06:02:15,191 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-30 06:02:15,192 | INFO | [2040036] 'Will Elon Musk post 180-199 tweets from April 24 to May 1, 2' mkt=0.39 est=0.38 conf=0.60 edge=-0.6% fee=$0.02 => skip $0.00
+2026-04-30 06:02:15,680 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-30 06:02:15,681 | INFO | [2006664] 'NBA Playoffs: Who Will Win Series? - Lakers vs. Rockets ' mkt=0.71 est=0.73 conf=0.60 edge=+0.1% fee=$0.01 => skip $0.00
+2026-04-30 06:02:16,007 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-30 06:02:16,008 | INFO | [2110677] 'Madrid Open: Casper Ruud vs Alexander Blockx' mkt=0.72 est=0.72 conf=0.60 edge=-1.4% fee=$0.01 => skip $0.00
+2026-04-30 06:02:16,424 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-30 06:02:16,425 | INFO | [2068570] 'LoL: DN SOOPers Challengers vs KT Rolster Challengers (BO3) ' mkt=0.24 est=0.25 conf=0.60 edge=-2.8% fee=$0.04 => skip $0.00
+2026-04-30 06:02:16,687 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-30 06:02:16,688 | INFO | [2040030] 'Will Elon Musk post 160-179 tweets from April 24 to May 1, 2' mkt=0.19 est=0.20 conf=0.60 edge=-3.2% fee=$0.04 => skip $0.00
+2026-04-30 06:02:16,688 | INFO | Scan complete. Placed 0 trades.
