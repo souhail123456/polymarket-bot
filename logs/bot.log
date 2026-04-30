@@ -2795,17 +2795,3 @@
 2026-04-30 13:02:55,101 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-04-30 13:02:55,102 | INFO | [2040030] 'Will Elon Musk post 160-179 tweets from April 24 to May 1, 2' mkt=0.28 est=0.29 conf=0.60 edge=-2.7% fee=$0.04 => skip $0.00
 2026-04-30 13:02:55,102 | INFO | Scan complete. Placed 0 trades.
-2026-04-30 16:01:26,437 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-30 16:01:26,542 | INFO | Fetched 150 active markets
-2026-04-30 16:01:26,543 | INFO | 4 candidates after filters
-2026-04-30 16:01:27,113 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 16:01:27,118 | INFO | [2040030] 'Will Elon Musk post 160-179 tweets from April 24 to May 1, 2' mkt=0.32 est=0.32 conf=0.60 edge=-3.2% fee=$0.03 => skip $0.00
-2026-04-30 16:01:27,418 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 16:01:27,419 | INFO | [2006664] 'NBA Playoffs: Who Will Win Series? - Lakers vs. Rockets ' mkt=0.74 est=0.73 conf=0.60 edge=-2.6% fee=$0.04 => skip $0.00
-2026-04-30 16:01:27,705 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 16:01:27,706 | INFO | [2119146] 'Counter-Strike: FUT Esports vs Astralis (BO3) - BLAST Rivals' mkt=0.18 est=0.18 conf=0.60 edge=-4.1% fee=$0.04 => skip $0.00
-2026-04-30 16:01:27,753 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-30 16:01:27,754 | INFO | Rate limited, waiting 10s...
-2026-04-30 16:01:38,071 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 16:01:38,072 | INFO | [2040041] 'Will Elon Musk post 200-219 tweets from April 24 to May 1, 2' mkt=0.15 est=0.16 conf=0.60 edge=-3.7% fee=$0.04 => skip $0.00
-2026-04-30 16:01:38,072 | INFO | Scan complete. Placed 0 trades.
