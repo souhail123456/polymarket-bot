@@ -2923,25 +2923,3 @@
 2026-04-30 18:35:52,079 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-04-30 18:35:52,079 | WARNING | estimate_probability failed for 2119173: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99755, Requested 924. Please try again in 9m46.656s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-04-30 18:35:52,079 | INFO | Scan complete. Placed 0 trades.
-2026-04-30 19:32:58,207 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-04-30 19:32:58,467 | INFO | Fetched 150 active markets
-2026-04-30 19:32:58,468 | INFO | 6 candidates after filters
-2026-04-30 19:32:59,105 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 19:32:59,111 | INFO | [2040036] 'Will Elon Musk post 180-199 tweets from April 24 to May 1, 2' mkt=0.60 est=0.59 conf=0.60 edge=-1.7% fee=$0.03 => skip $0.00
-2026-04-30 19:32:59,549 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 19:32:59,550 | INFO | [2067554] 'Kansas City Royals vs. Athletics' mkt=0.38 est=0.38 conf=0.60 edge=-3.1% fee=$0.03 => skip $0.00
-2026-04-30 19:33:00,043 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 19:33:00,044 | INFO | [2119173] 'Counter-Strike: Vitality vs G2 (BO3) - BLAST Rivals Group A' mkt=0.69 est=0.67 conf=0.60 edge=-1.9% fee=$0.03 => skip $0.00
-2026-04-30 19:33:00,383 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 19:33:00,384 | INFO | [2040041] 'Will Elon Musk post 200-219 tweets from April 24 to May 1, 2' mkt=0.26 est=0.25 conf=0.60 edge=-0.3% fee=$0.01 => skip $0.00
-2026-04-30 19:33:00,449 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-30 19:33:00,450 | INFO | Rate limited, waiting 10s...
-2026-04-30 19:33:10,827 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-04-30 19:33:10,828 | INFO | [2006664] 'NBA Playoffs: Who Will Win Series? - Lakers vs. Rockets ' mkt=0.75 est=0.76 conf=0.60 edge=-0.1% fee=$0.01 => skip $0.00
-2026-04-30 19:33:10,891 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-30 19:33:10,891 | INFO | Rate limited, waiting 10s...
-2026-04-30 19:33:20,983 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-30 19:33:20,984 | INFO | Rate limited, waiting 20s...
-2026-04-30 19:33:41,071 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-04-30 19:33:41,071 | WARNING | estimate_probability failed for 2067547: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99925, Requested 810. Please try again in 10m35.04s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-2026-04-30 19:33:41,071 | INFO | Scan complete. Placed 0 trades.
