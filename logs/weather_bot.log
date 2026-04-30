@@ -3117,3 +3117,41 @@
 2026-04-30 21:50:10,455 | INFO | [Paris] Will the highest temperature in Paris be 27°C on M mkt=0.06 model=0.00 edge=+5.3% fee=$0.00 => skip $0.00
 2026-04-30 21:50:11,807 | INFO | [Shanghai] Will the highest temperature in Shanghai be 21°C o mkt=0.04 model=0.01 edge=+2.6% fee=$0.00 => skip $0.00
 2026-04-30 21:50:11,808 | INFO | Weather scan complete. Placed 0 trades.
+2026-04-30 22:47:11,600 | INFO | === Weather Scan | mode=paper | bankroll=$104.42 ===
+2026-04-30 22:47:11,948 | INFO | Resolved 2102161: NO -> WIN pnl=$1.06 balance=$105.48
+2026-04-30 22:47:22,098 | INFO | Found 352 weather sub-markets
+2026-04-30 22:47:23,839 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.28 model=0.30 edge=-1.7% fee=$0.00 => skip $0.00
+2026-04-30 22:47:25,496 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.03 model=0.03 edge=-0.1% fee=$0.00 => skip $0.00
+2026-04-30 22:47:25,497 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.14 model=0.08 edge=+4.6% fee=$0.00 => skip $0.00
+2026-04-30 22:47:25,497 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.32 model=0.30 edge=+0.4% fee=$0.00 => skip $0.00
+2026-04-30 22:47:25,497 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.33 model=0.34 edge=-2.3% fee=$0.00 => skip $0.00
+2026-04-30 22:47:25,497 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.17 model=0.18 edge=-3.4% fee=$0.00 => skip $0.00
+2026-04-30 22:47:25,497 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.06 model=0.06 edge=-4.5% fee=$0.00 => skip $0.00
+2026-04-30 22:47:27,165 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.02 model=0.12 edge=+5.2% fee=$0.00 => skip $0.00
+2026-04-30 22:47:28,832 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.14 model=0.28 edge=+9.1% fee=$0.10 => YES $2.45
+2026-04-30 22:47:28,832 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.27 model=0.39 edge=+9.2% fee=$0.10 => YES $2.74
+2026-04-30 22:47:44,547 | WARNING | Ensemble fetch failed for ecmwf_ifs025 miami 2026-05-01: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-30 22:47:59,716 | WARNING | Ensemble fetch failed for icon_seamless miami 2026-05-01: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-30 22:47:59,716 | INFO | [Miami] Will the highest temperature in Miami be between 9 mkt=0.02 model=0.00 edge=+2.3% fee=$0.00 => skip $0.00
+2026-04-30 22:48:14,883 | WARNING | Ensemble fetch failed for gfs_seamless la 2026-05-02: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-30 22:48:30,062 | WARNING | Ensemble fetch failed for ecmwf_ifs025 la 2026-05-02: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-30 22:48:30,593 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.03 model=0.33 edge=+24.6% fee=$0.23 => YES $4.75
+2026-04-30 22:48:30,593 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.04 model=0.00 edge=+3.3% fee=$0.00 => skip $0.00
+2026-04-30 22:48:30,593 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be 74° mkt=0.05 model=0.00 edge=+4.8% fee=$0.00 => skip $0.00
+2026-04-30 22:48:46,306 | WARNING | Ensemble fetch failed for ecmwf_ifs025 la 2026-05-01: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-30 22:49:01,478 | WARNING | Ensemble fetch failed for icon_seamless la 2026-05-01: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-30 22:49:01,479 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.02 model=0.00 edge=+2.3% fee=$0.00 => skip $0.00
+2026-04-30 22:49:17,182 | WARNING | Ensemble fetch failed for ecmwf_ifs025 denver 2026-04-30: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-30 22:49:32,350 | WARNING | Ensemble fetch failed for icon_seamless denver 2026-04-30: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-30 22:49:32,350 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.03 model=0.00 edge=+2.7% fee=$0.00 => skip $0.00
+2026-04-30 22:49:33,987 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.20 model=0.43 edge=+19.9% fee=$0.19 => YES $4.66
+2026-04-30 22:49:35,608 | INFO | [Paris] Will the highest temperature in Paris be 23°C on M mkt=0.05 model=0.22 edge=+12.7% fee=$0.14 => YES $2.87
+2026-04-30 22:49:35,608 | INFO | [Paris] Will the highest temperature in Paris be 24°C on M mkt=0.34 model=0.32 edge=+0.8% fee=$0.00 => skip $0.00
+2026-04-30 22:49:37,287 | INFO | [Paris] Will the highest temperature in Paris be 23°C on M mkt=0.09 model=0.16 edge=+3.3% fee=$0.00 => skip $0.00
+2026-04-30 22:49:37,287 | INFO | [Paris] Will the highest temperature in Paris be 24°C on M mkt=0.31 model=0.38 edge=+3.3% fee=$0.00 => skip $0.00
+2026-04-30 22:49:37,287 | INFO | [Paris] Will the highest temperature in Paris be 27°C on M mkt=0.05 model=0.00 edge=+5.1% fee=$0.00 => skip $0.00
+2026-04-30 22:49:38,929 | INFO | [Shanghai] Will the highest temperature in Shanghai be 22°C o mkt=0.02 model=0.06 edge=-1.4% fee=$0.00 => skip $0.00
+2026-04-30 22:49:54,633 | WARNING | Ensemble fetch failed for ecmwf_ifs025 shanghai 2026-05-02: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-30 22:50:09,802 | WARNING | Ensemble fetch failed for icon_seamless shanghai 2026-05-02: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-04-30 22:50:09,803 | INFO | [Shanghai] Will the highest temperature in Shanghai be 21°C o mkt=0.04 model=0.00 edge=+3.5% fee=$0.00 => skip $0.00
+2026-04-30 22:50:09,803 | INFO | Weather scan complete. Placed 0 trades.
