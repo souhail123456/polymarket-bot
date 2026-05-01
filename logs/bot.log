@@ -3141,19 +3141,17 @@
 2026-05-01 00:42:20,828 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-05-01 00:42:20,829 | WARNING | estimate_probability failed for 2040041: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99635, Requested 863. Please try again in 7m10.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-05-01 00:42:20,829 | INFO | Scan complete. Placed 0 trades.
-2026-05-01 09:09:11,284 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-01 09:09:11,394 | INFO | Fetched 150 active markets
-2026-05-01 09:09:11,395 | INFO | 6 candidates after filters
-2026-05-01 09:09:12,008 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 09:09:12,014 | INFO | [2084137] 'LoL: DN SOOPers vs HANJIN BRION - Game 2 Winner' mkt=0.47 est=0.47 conf=0.60 edge=-2.6% fee=$0.03 => skip $0.00
-2026-05-01 09:09:12,261 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 09:09:12,262 | INFO | [2084287] "LoL: Top Esports vs Anyone's Legend (BO3) - LPL Group Ascend" mkt=0.43 est=0.42 conf=0.60 edge=-0.7% fee=$0.02 => skip $0.00
-2026-05-01 09:09:12,536 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 09:09:12,537 | INFO | [2084158] 'LoL: Hanwha Life Esports vs T1 (BO3) - LCK Rounds 1-2' mkt=0.57 est=0.57 conf=0.60 edge=-2.1% fee=$0.02 => skip $0.00
-2026-05-01 09:09:12,727 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 09:09:12,728 | INFO | [2124740] 'SPY (SPY) Up or Down on May 1?' mkt=0.68 est=0.68 conf=0.60 edge=-1.6% fee=$0.02 => skip $0.00
-2026-05-01 09:09:13,003 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 09:09:13,004 | INFO | [2084135] 'LoL: DN SOOPers vs HANJIN BRION (BO3) - LCK Rounds 1-2' mkt=0.26 est=0.26 conf=0.60 edge=-3.2% fee=$0.04 => skip $0.00
-2026-05-01 09:09:13,236 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 09:09:13,237 | INFO | [2068932] 'Will the price of Bitcoin be above $78,000 on May 1?' mkt=0.21 est=0.22 conf=0.60 edge=-3.4% fee=$0.04 => skip $0.00
-2026-05-01 09:09:13,237 | INFO | Scan complete. Placed 0 trades.
+2026-05-01 10:02:44,210 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-01 10:02:44,318 | INFO | Fetched 150 active markets
+2026-05-01 10:02:44,318 | INFO | 5 candidates after filters
+2026-05-01 10:02:44,878 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:02:44,884 | INFO | [2084158] 'LoL: Hanwha Life Esports vs T1 (BO3) - LCK Rounds 1-2' mkt=0.58 est=0.58 conf=0.60 edge=-2.1% fee=$0.02 => skip $0.00
+2026-05-01 10:02:45,124 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:02:45,125 | INFO | [2125938] 'La Bisbal: Alina Charaeva vs Daria Kasatkina' mkt=0.58 est=0.58 conf=0.60 edge=-2.1% fee=$0.02 => skip $0.00
+2026-05-01 10:02:45,496 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:02:45,497 | INFO | [2124740] 'SPY (SPY) Up or Down on May 1?' mkt=0.69 est=0.68 conf=0.60 edge=-2.4% fee=$0.03 => skip $0.00
+2026-05-01 10:02:45,673 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:02:45,674 | INFO | [2084287] "LoL: Top Esports vs Anyone's Legend (BO3) - LPL Group Ascend" mkt=0.21 est=0.22 conf=0.60 edge=-3.4% fee=$0.04 => skip $0.00
+2026-05-01 10:02:46,019 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:02:46,020 | INFO | [2068932] 'Will the price of Bitcoin be above $78,000 on May 1?' mkt=0.15 est=0.16 conf=0.60 edge=-3.7% fee=$0.04 => skip $0.00
+2026-05-01 10:02:46,020 | INFO | Scan complete. Placed 0 trades.
