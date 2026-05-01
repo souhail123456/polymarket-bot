@@ -3141,27 +3141,3 @@
 2026-05-01 00:42:20,828 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-05-01 00:42:20,829 | WARNING | estimate_probability failed for 2040041: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99635, Requested 863. Please try again in 7m10.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-05-01 00:42:20,829 | INFO | Scan complete. Placed 0 trades.
-2026-05-01 11:28:22,904 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-01 11:28:23,093 | INFO | Fetched 150 active markets
-2026-05-01 11:28:23,094 | INFO | 6 candidates after filters
-2026-05-01 11:28:23,857 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 11:28:23,864 | INFO | [2084314] 'Game Handicap: WB (-1.5) vs Invictus Gaming (+1.5)' mkt=0.38 est=0.40 conf=0.60 edge=-0.6% fee=$0.03 => skip $0.00
-2026-05-01 11:28:24,168 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 11:28:24,169 | INFO | [2084310] 'LoL: Weibo Gaming vs Invictus Gaming (BO3) - LPL Group Ascen' mkt=0.65 est=0.64 conf=0.60 edge=-2.2% fee=$0.03 => skip $0.00
-2026-05-01 11:28:24,467 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 11:28:24,467 | INFO | [2084160] 'LoL: Hanwha Life Esports vs T1 - Game 2 Winner' mkt=0.67 est=0.66 conf=0.60 edge=-2.3% fee=$0.03 => skip $0.00
-2026-05-01 11:28:24,754 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 11:28:24,755 | INFO | [2124740] 'SPY (SPY) Up or Down on May 1?' mkt=0.69 est=0.70 conf=0.60 edge=-1.0% fee=$0.02 => skip $0.00
-2026-05-01 11:28:24,815 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-01 11:28:24,815 | INFO | Rate limited, waiting 10s...
-2026-05-01 11:28:34,899 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-01 11:28:34,900 | INFO | Rate limited, waiting 20s...
-2026-05-01 11:28:54,977 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-01 11:28:54,977 | WARNING | estimate_probability failed for 2068932: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99688, Requested 460. Please try again in 2m7.872s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-2026-05-01 11:28:55,033 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-01 11:28:55,034 | INFO | Rate limited, waiting 10s...
-2026-05-01 11:29:05,107 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-01 11:29:05,108 | INFO | Rate limited, waiting 20s...
-2026-05-01 11:29:27,151 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-01 11:29:27,152 | WARNING | estimate_probability failed for 2084158: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99650, Requested 598. Please try again in 3m34.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-2026-05-01 11:29:27,152 | INFO | Scan complete. Placed 0 trades.
