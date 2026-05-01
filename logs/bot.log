@@ -3141,17 +3141,13 @@
 2026-05-01 00:42:20,828 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-05-01 00:42:20,829 | WARNING | estimate_probability failed for 2040041: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99635, Requested 863. Please try again in 7m10.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-05-01 00:42:20,829 | INFO | Scan complete. Placed 0 trades.
-2026-05-01 04:47:17,037 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-01 04:47:17,129 | INFO | Fetched 150 active markets
-2026-05-01 04:47:17,130 | INFO | 5 candidates after filters
-2026-05-01 04:47:17,667 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 04:47:17,673 | INFO | [2084135] 'LoL: DN SOOPers vs HANJIN BRION (BO3) - LCK Rounds 1-2' mkt=0.47 est=0.47 conf=0.60 edge=-2.7% fee=$0.03 => skip $0.00
-2026-05-01 04:47:17,880 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 04:47:17,881 | INFO | [2040036] 'Will Elon Musk post 180-199 tweets from April 24 to May 1, 2' mkt=0.71 est=0.72 conf=0.60 edge=-0.5% fee=$0.01 => skip $0.00
-2026-05-01 04:47:18,129 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 04:47:18,130 | INFO | [2124740] 'SPY (SPY) Up or Down on May 1?' mkt=0.72 est=0.72 conf=0.60 edge=-1.4% fee=$0.01 => skip $0.00
-2026-05-01 04:47:18,353 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 04:47:18,354 | INFO | [2006664] 'NBA Playoffs: Who Will Win Series? - Lakers vs. Rockets ' mkt=0.73 est=0.73 conf=0.60 edge=-1.0% fee=$0.01 => skip $0.00
-2026-05-01 04:47:18,538 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 04:47:18,539 | INFO | [2040041] 'Will Elon Musk post 200-219 tweets from April 24 to May 1, 2' mkt=0.24 est=0.25 conf=0.60 edge=-2.8% fee=$0.04 => skip $0.00
-2026-05-01 04:47:18,539 | INFO | Scan complete. Placed 0 trades.
+2026-05-01 06:04:06,352 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-01 06:04:06,477 | INFO | Fetched 150 active markets
+2026-05-01 06:04:06,478 | INFO | 3 candidates after filters
+2026-05-01 06:04:07,490 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 06:04:07,497 | INFO | [2084135] 'LoL: DN SOOPers vs HANJIN BRION (BO3) - LCK Rounds 1-2' mkt=0.46 est=0.46 conf=0.60 edge=-2.2% fee=$0.03 => skip $0.00
+2026-05-01 06:04:07,929 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 06:04:07,930 | INFO | [2124740] 'SPY (SPY) Up or Down on May 1?' mkt=0.71 est=0.71 conf=0.60 edge=-1.4% fee=$0.01 => skip $0.00
+2026-05-01 06:04:08,532 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 06:04:08,533 | INFO | [2040036] 'Will Elon Musk post 180-199 tweets from April 24 to May 1, 2' mkt=0.84 est=0.83 conf=0.60 edge=-3.2% fee=$0.04 => skip $0.00
+2026-05-01 06:04:08,533 | INFO | Scan complete. Placed 0 trades.
