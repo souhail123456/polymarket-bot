@@ -3141,17 +3141,21 @@
 2026-05-01 00:42:20,828 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-05-01 00:42:20,829 | WARNING | estimate_probability failed for 2040041: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99635, Requested 863. Please try again in 7m10.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-05-01 00:42:20,829 | INFO | Scan complete. Placed 0 trades.
-2026-05-01 10:02:44,210 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-01 10:02:44,318 | INFO | Fetched 150 active markets
-2026-05-01 10:02:44,318 | INFO | 5 candidates after filters
-2026-05-01 10:02:44,878 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 10:02:44,884 | INFO | [2084158] 'LoL: Hanwha Life Esports vs T1 (BO3) - LCK Rounds 1-2' mkt=0.58 est=0.58 conf=0.60 edge=-2.1% fee=$0.02 => skip $0.00
-2026-05-01 10:02:45,124 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 10:02:45,125 | INFO | [2125938] 'La Bisbal: Alina Charaeva vs Daria Kasatkina' mkt=0.58 est=0.58 conf=0.60 edge=-2.1% fee=$0.02 => skip $0.00
-2026-05-01 10:02:45,496 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 10:02:45,497 | INFO | [2124740] 'SPY (SPY) Up or Down on May 1?' mkt=0.69 est=0.68 conf=0.60 edge=-2.4% fee=$0.03 => skip $0.00
-2026-05-01 10:02:45,673 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 10:02:45,674 | INFO | [2084287] "LoL: Top Esports vs Anyone's Legend (BO3) - LPL Group Ascend" mkt=0.21 est=0.22 conf=0.60 edge=-3.4% fee=$0.04 => skip $0.00
-2026-05-01 10:02:46,019 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-01 10:02:46,020 | INFO | [2068932] 'Will the price of Bitcoin be above $78,000 on May 1?' mkt=0.15 est=0.16 conf=0.60 edge=-3.7% fee=$0.04 => skip $0.00
-2026-05-01 10:02:46,020 | INFO | Scan complete. Placed 0 trades.
+2026-05-01 10:55:52,050 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-01 10:55:52,143 | INFO | Fetched 150 active markets
+2026-05-01 10:55:52,144 | INFO | 7 candidates after filters
+2026-05-01 10:55:52,549 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:55:52,556 | INFO | [2084158] 'LoL: Hanwha Life Esports vs T1 (BO3) - LCK Rounds 1-2' mkt=0.61 est=0.60 conf=0.60 edge=-2.1% fee=$0.03 => skip $0.00
+2026-05-01 10:55:52,766 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:55:52,767 | INFO | [2081224] 'Valorant: Gen.G Esports vs Team Secret (BO3) - VCT Pacific G' mkt=0.62 est=0.60 conf=0.70 edge=-0.6% fee=$0.03 => skip $0.00
+2026-05-01 10:55:53,058 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:55:53,059 | INFO | [2125937] 'Aix en Provence: Zizou Bergs vs Rinky Hijikata' mkt=0.66 est=0.66 conf=0.70 edge=-1.7% fee=$0.02 => skip $0.00
+2026-05-01 10:55:53,343 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:55:53,344 | INFO | [2124740] 'SPY (SPY) Up or Down on May 1?' mkt=0.69 est=0.68 conf=0.60 edge=-2.4% fee=$0.03 => skip $0.00
+2026-05-01 10:55:53,632 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:55:53,633 | INFO | [2084159] 'LoL: Hanwha Life Esports vs T1 - Game 1 Winner' mkt=0.71 est=0.71 conf=0.60 edge=-1.4% fee=$0.01 => skip $0.00
+2026-05-01 10:55:53,922 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:55:53,923 | INFO | [2040041] 'Will Elon Musk post 200-219 tweets from April 24 to May 1, 2' mkt=0.16 est=0.17 conf=0.60 edge=-3.2% fee=$0.04 => skip $0.00
+2026-05-01 10:55:54,226 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-01 10:55:54,227 | INFO | [2040036] 'Will Elon Musk post 180-199 tweets from April 24 to May 1, 2' mkt=0.84 est=0.83 conf=0.60 edge=-3.1% fee=$0.04 => skip $0.00
+2026-05-01 10:55:54,227 | INFO | Scan complete. Placed 0 trades.
