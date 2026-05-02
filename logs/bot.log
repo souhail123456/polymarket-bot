@@ -4629,3 +4629,107 @@
 2026-05-02 08:35:50,916 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-05-02 08:35:50,916 | WARNING | estimate_probability failed for 2133291: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99565, Requested 860. Please try again in 6m7.2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-05-02 08:35:50,916 | INFO | Scan complete. Placed 0 trades.
+2026-05-02 09:51:04,507 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-02 09:51:04,688 | INFO | Fetched 150 active markets
+2026-05-02 09:51:04,688 | INFO | 9 candidates after filters
+2026-05-02 09:51:05,206 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 09:51:05,212 | INFO | [1950655] 'UFC Fight Night: Carlos Prates vs. Jack Della Maddalena (Wel' mkt=0.51 est=0.51 conf=0.60 edge=-2.5% fee=$0.02 => skip $0.00
+2026-05-02 09:51:05,239 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:51:05,240 | INFO | Rate limited, waiting 10s...
+2026-05-02 09:51:15,273 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:51:15,273 | INFO | Rate limited, waiting 20s...
+2026-05-02 09:51:35,306 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:51:35,307 | WARNING | estimate_probability failed for 2128221: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99272, Requested 940. Please try again in 3m3.168s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 09:51:35,334 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:51:35,334 | INFO | Rate limited, waiting 10s...
+2026-05-02 09:51:45,373 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:51:45,374 | INFO | Rate limited, waiting 20s...
+2026-05-02 09:52:05,410 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:52:05,411 | WARNING | estimate_probability failed for 2084356: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99237, Requested 929. Please try again in 2m23.424s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 09:52:05,435 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:52:05,435 | INFO | Retrying request to /chat/completions in 14.000000 seconds
+2026-05-02 09:52:19,654 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 09:52:19,655 | INFO | [1950774] 'UFC Fight Night: Tim Elliott vs. Steve Erceg (Flyweight, Mai' mkt=0.38 est=0.38 conf=0.60 edge=-3.1% fee=$0.03 => skip $0.00
+2026-05-02 09:52:19,683 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:52:19,683 | INFO | Rate limited, waiting 10s...
+2026-05-02 09:52:29,722 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:52:29,722 | INFO | Rate limited, waiting 20s...
+2026-05-02 09:52:49,758 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:52:49,759 | WARNING | estimate_probability failed for 2084181: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99966, Requested 587. Please try again in 7m57.792s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 09:52:49,784 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:52:49,785 | INFO | Rate limited, waiting 10s...
+2026-05-02 09:52:59,821 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:52:59,821 | INFO | Rate limited, waiting 20s...
+2026-05-02 09:53:19,862 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:53:19,862 | WARNING | estimate_probability failed for 2084204: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99931, Requested 604. Please try again in 7m42.239999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 09:53:19,888 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:53:19,888 | INFO | Rate limited, waiting 10s...
+2026-05-02 09:53:29,926 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:53:29,926 | INFO | Rate limited, waiting 20s...
+2026-05-02 09:53:49,961 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:53:49,962 | WARNING | estimate_probability failed for 1950826: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99896, Requested 439. Please try again in 4m49.44s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 09:53:49,986 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:53:49,986 | INFO | Rate limited, waiting 10s...
+2026-05-02 09:54:00,020 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:54:00,021 | INFO | Rate limited, waiting 20s...
+2026-05-02 09:54:20,055 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:54:20,055 | WARNING | estimate_probability failed for 2135727: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99861, Requested 588. Please try again in 6m27.936s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 09:54:20,079 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:54:20,079 | INFO | Rate limited, waiting 10s...
+2026-05-02 09:54:30,114 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:54:30,115 | INFO | Rate limited, waiting 20s...
+2026-05-02 09:54:50,149 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 09:54:50,150 | WARNING | estimate_probability failed for 2078310: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99826, Requested 456. Please try again in 4m3.648s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 09:54:50,150 | INFO | Scan complete. Placed 0 trades.
+2026-05-02 10:20:18,262 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-02 10:20:18,370 | INFO | Fetched 150 active markets
+2026-05-02 10:20:18,371 | INFO | 10 candidates after filters
+2026-05-02 10:20:18,888 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 10:20:18,895 | INFO | [1950801] 'UFC Fight Night: Shamil Gaziev vs. Brando Pericic (Heavyweig' mkt=0.51 est=0.51 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-02 10:20:19,201 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 10:20:19,202 | INFO | [1950655] 'UFC Fight Night: Carlos Prates vs. Jack Della Maddalena (Wel' mkt=0.52 est=0.52 conf=0.60 edge=-2.4% fee=$0.02 => skip $0.00
+2026-05-02 10:20:19,246 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:20:19,246 | INFO | Rate limited, waiting 10s...
+2026-05-02 10:20:29,292 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:20:29,292 | INFO | Rate limited, waiting 20s...
+2026-05-02 10:20:49,365 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:20:49,366 | WARNING | estimate_probability failed for 2084356: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99710, Requested 929. Please try again in 9m12.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 10:20:49,403 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:20:49,404 | INFO | Rate limited, waiting 10s...
+2026-05-02 10:20:59,458 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:20:59,458 | INFO | Rate limited, waiting 20s...
+2026-05-02 10:21:19,504 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:21:19,504 | WARNING | estimate_probability failed for 1950774: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99675, Requested 432. Please try again in 1m32.448s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 10:21:19,540 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:21:19,541 | INFO | Rate limited, waiting 10s...
+2026-05-02 10:21:29,586 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:21:29,587 | INFO | Rate limited, waiting 20s...
+2026-05-02 10:21:49,634 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:21:49,634 | WARNING | estimate_probability failed for 2128221: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99640, Requested 940. Please try again in 8m21.119999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 10:21:49,672 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:21:49,672 | INFO | Rate limited, waiting 10s...
+2026-05-02 10:21:59,720 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:21:59,720 | INFO | Rate limited, waiting 20s...
+2026-05-02 10:22:19,766 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:22:19,767 | WARNING | estimate_probability failed for 2084204: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99605, Requested 954. Please try again in 8m2.976s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 10:22:20,014 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 10:22:20,014 | INFO | [2091252] 'Raptors vs. Cavaliers' mkt=0.28 est=0.28 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
+2026-05-02 10:22:20,053 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:22:20,054 | INFO | Rate limited, waiting 10s...
+2026-05-02 10:22:30,100 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:22:30,100 | INFO | Rate limited, waiting 20s...
+2026-05-02 10:22:50,147 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:22:50,147 | WARNING | estimate_probability failed for 2135727: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99966, Requested 938. Please try again in 13m1.055999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 10:22:50,186 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:22:50,186 | INFO | Rate limited, waiting 10s...
+2026-05-02 10:23:00,235 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:23:00,235 | INFO | Rate limited, waiting 20s...
+2026-05-02 10:23:20,279 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:23:20,280 | WARNING | estimate_probability failed for 2078310: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99931, Requested 457. Please try again in 5m35.232s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 10:23:20,315 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:23:20,315 | INFO | Rate limited, waiting 10s...
+2026-05-02 10:23:30,362 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:23:30,363 | INFO | Rate limited, waiting 20s...
+2026-05-02 10:23:50,410 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 10:23:50,410 | WARNING | estimate_probability failed for 1950760: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99896, Requested 785. Please try again in 9m48.384s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 10:23:50,410 | INFO | Scan complete. Placed 0 trades.
