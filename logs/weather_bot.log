@@ -3771,43 +3771,42 @@
 2026-05-01 20:22:29,527 | INFO | [Shanghai] Will the highest temperature in Shanghai be 24°C o mkt=0.06 model=0.06 edge=-0.0% fee=$0.00 => skip $0.00
 2026-05-01 20:22:29,527 | INFO | [Shanghai] Will the highest temperature in Shanghai be 25°C o mkt=0.04 model=0.01 edge=+2.5% fee=$0.00 => skip $0.00
 2026-05-01 20:22:29,528 | INFO | Weather scan complete. Placed 1 trades.
-2026-05-01 23:46:59,715 | INFO | === Weather Scan | mode=paper | bankroll=$112.45 ===
-2026-05-01 23:46:59,799 | INFO | Resolved 2112536: NO -> LOSS pnl=$-5.00 balance=$107.45
-2026-05-01 23:47:00,591 | INFO | Resolved 2112266: NO -> WIN pnl=$2.63 balance=$110.09
-2026-05-01 23:47:01,260 | INFO | Resolved 2112534: NO -> WIN pnl=$0.99 balance=$111.08
-2026-05-01 23:47:05,472 | INFO | Found 341 weather sub-markets
-2026-05-01 23:47:06,844 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.07 model=0.03 edge=+2.9% fee=$0.00 => skip $0.00
-2026-05-01 23:47:06,844 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.33 model=0.29 edge=+2.2% fee=$0.00 => skip $0.00
-2026-05-01 23:47:06,844 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.41 model=0.53 edge=+8.9% fee=$0.10 => YES $3.40
-2026-05-01 23:47:06,845 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.14 model=0.11 edge=+2.2% fee=$0.00 => skip $0.00
-2026-05-01 23:47:06,845 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.04 model=0.02 edge=+2.0% fee=$0.00 => skip $0.00
-2026-05-01 23:47:08,218 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.04 model=0.12 edge=+3.7% fee=$0.00 => skip $0.00
-2026-05-01 23:47:08,218 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.13 model=0.25 edge=+8.1% fee=$0.10 => YES $2.41
-2026-05-01 23:47:08,218 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.29 model=0.36 edge=+3.5% fee=$0.00 => skip $0.00
-2026-05-01 23:47:08,219 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.13 model=0.04 edge=+8.3% fee=$0.03 => NO $5.00
-2026-05-01 23:47:09,575 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.04 model=0.02 edge=+2.0% fee=$0.00 => skip $0.00
-2026-05-01 23:47:10,945 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.12 model=0.30 edge=+13.5% fee=$0.14 => YES $3.28
-2026-05-01 23:47:10,946 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.27 model=0.34 edge=+4.3% fee=$0.00 => skip $0.00
-2026-05-01 23:47:26,980 | WARNING | Ensemble fetch failed for icon_seamless miami 2026-05-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
-2026-05-01 23:47:26,980 | INFO | [Miami] Will the highest temperature in Miami be between 7 mkt=0.08 model=0.00 edge=+7.3% fee=$0.00 => skip $0.00
-2026-05-01 23:47:42,122 | WARNING | Ensemble fetch failed for gfs_seamless la 2026-05-02: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
-2026-05-01 23:47:57,267 | WARNING | Ensemble fetch failed for ecmwf_ifs025 la 2026-05-02: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
-2026-05-01 23:48:12,410 | WARNING | Ensemble fetch failed for icon_seamless la 2026-05-02: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
-2026-05-01 23:48:27,551 | WARNING | Ensemble fetch failed for gfs_seamless la 2026-05-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
-2026-05-01 23:48:42,682 | WARNING | Ensemble fetch failed for ecmwf_ifs025 la 2026-05-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
-2026-05-01 23:48:43,133 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.05 model=0.00 edge=+4.7% fee=$0.00 => skip $0.00
-2026-05-01 23:48:44,495 | INFO | [Paris] Will the highest temperature in Paris be 23°C on M mkt=0.08 model=0.11 edge=-0.9% fee=$0.00 => skip $0.00
-2026-05-01 23:48:44,495 | INFO | [Paris] Will the highest temperature in Paris be 24°C on M mkt=0.26 model=0.57 edge=+28.2% fee=$0.26 => YES $6.90
-2026-05-01 23:48:44,495 | INFO | [Paris] Will the highest temperature in Paris be 27°C on M mkt=0.02 model=0.00 edge=+2.0% fee=$0.00 => skip $0.00
-2026-05-01 23:48:45,850 | INFO | [Paris] Will the highest temperature in Paris be 17°C on M mkt=0.06 model=0.11 edge=+0.1% fee=$0.00 => skip $0.00
-2026-05-01 23:48:45,850 | INFO | [Paris] Will the highest temperature in Paris be 18°C on M mkt=0.20 model=0.32 edge=+7.5% fee=$0.00 => skip $0.00
-2026-05-01 23:48:45,851 | INFO | [Paris] Will the highest temperature in Paris be 20°C on M mkt=0.23 model=0.20 edge=+0.9% fee=$0.00 => skip $0.00
-2026-05-01 23:48:45,851 | INFO | [Paris] Will the highest temperature in Paris be 22°C on M mkt=0.03 model=0.00 edge=+2.4% fee=$0.00 => skip $0.00
-2026-05-01 23:48:47,227 | INFO | [Seoul] Will the highest temperature in Seoul be 13°C on M mkt=0.06 model=0.21 edge=+10.8% fee=$0.12 => YES $2.65
-2026-05-01 23:48:47,228 | INFO | [Seoul] Will the highest temperature in Seoul be 14°C on M mkt=0.17 model=0.22 edge=+1.5% fee=$0.00 => skip $0.00
-2026-05-01 23:48:48,590 | INFO | [Shanghai] Will the highest temperature in Shanghai be 20°C o mkt=0.06 model=0.21 edge=+11.1% fee=$0.13 => YES $2.70
-2026-05-01 23:48:48,590 | INFO | [Shanghai] Will the highest temperature in Shanghai be 23°C o mkt=0.23 model=0.16 edge=+5.0% fee=$0.00 => skip $0.00
-2026-05-01 23:48:48,590 | INFO | [Shanghai] Will the highest temperature in Shanghai be 24°C o mkt=0.06 model=0.06 edge=-0.3% fee=$0.00 => skip $0.00
-2026-05-01 23:48:48,590 | INFO | [Shanghai] Will the highest temperature in Shanghai be 25°C o mkt=0.03 model=0.01 edge=+2.3% fee=$0.00 => skip $0.00
-2026-05-01 23:48:48,590 | INFO | [Shanghai] Will the highest temperature in Shanghai be 26°C o mkt=0.03 model=0.00 edge=+2.8% fee=$0.00 => skip $0.00
-2026-05-01 23:48:48,591 | INFO | Weather scan complete. Placed 1 trades.
+2026-05-02 00:32:48,020 | INFO | === Weather Scan | mode=paper | bankroll=$112.45 ===
+2026-05-02 00:32:48,203 | INFO | Resolved 2112536: NO -> LOSS pnl=$-5.00 balance=$107.45
+2026-05-02 00:32:48,793 | INFO | Resolved 2112201: NO -> LOSS pnl=$-5.00 balance=$102.45
+2026-05-02 00:32:49,453 | INFO | Resolved 2112202: NO -> WIN pnl=$0.59 balance=$103.04
+2026-05-02 00:32:50,169 | INFO | Resolved 2112266: NO -> WIN pnl=$2.63 balance=$105.67
+2026-05-02 00:32:51,045 | INFO | Resolved 2112534: NO -> WIN pnl=$0.99 balance=$106.66
+2026-05-02 00:32:55,582 | INFO | Found 330 weather sub-markets
+2026-05-02 00:32:57,628 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.08 model=0.03 edge=+4.3% fee=$0.00 => skip $0.00
+2026-05-02 00:32:57,628 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.35 model=0.29 edge=+5.0% fee=$0.00 => skip $0.00
+2026-05-02 00:32:57,629 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.41 model=0.53 edge=+9.3% fee=$0.10 => YES $3.51
+2026-05-02 00:32:57,629 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.13 model=0.11 edge=+1.3% fee=$0.00 => skip $0.00
+2026-05-02 00:32:57,629 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.03 model=0.02 edge=+1.4% fee=$0.00 => skip $0.00
+2026-05-02 00:32:59,593 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.03 model=0.12 edge=+4.2% fee=$0.00 => skip $0.00
+2026-05-02 00:32:59,593 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.14 model=0.25 edge=+6.6% fee=$0.00 => skip $0.00
+2026-05-02 00:32:59,593 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.33 model=0.36 edge=-0.3% fee=$0.00 => skip $0.00
+2026-05-02 00:32:59,594 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.12 model=0.04 edge=+7.3% fee=$0.00 => skip $0.00
+2026-05-02 00:32:59,594 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.04 model=0.02 edge=+1.8% fee=$0.00 => skip $0.00
+2026-05-02 00:33:01,545 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.13 model=0.30 edge=+13.0% fee=$0.15 => YES $3.36
+2026-05-02 00:33:01,545 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.26 model=0.34 edge=+4.7% fee=$0.00 => skip $0.00
+2026-05-02 00:33:03,504 | INFO | [Miami] Will the highest temperature in Miami be between 7 mkt=0.05 model=0.00 edge=+5.0% fee=$0.00 => skip $0.00
+2026-05-02 00:33:18,699 | WARNING | Ensemble fetch failed for gfs_seamless la 2026-05-02: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-02 00:33:33,886 | WARNING | Ensemble fetch failed for ecmwf_ifs025 la 2026-05-02: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-02 00:33:49,078 | WARNING | Ensemble fetch failed for icon_seamless la 2026-05-02: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-02 00:34:04,265 | WARNING | Ensemble fetch failed for gfs_seamless la 2026-05-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-02 00:34:19,454 | WARNING | Ensemble fetch failed for ecmwf_ifs025 la 2026-05-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-02 00:34:34,651 | WARNING | Ensemble fetch failed for icon_seamless la 2026-05-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-02 00:34:36,591 | INFO | [Paris] Will the highest temperature in Paris be 23°C on M mkt=0.05 model=0.11 edge=+1.5% fee=$0.00 => skip $0.00
+2026-05-02 00:34:36,592 | INFO | [Paris] Will the highest temperature in Paris be 24°C on M mkt=0.20 model=0.57 edge=+33.9% fee=$0.32 => YES $7.94
+2026-05-02 00:34:36,592 | INFO | [Paris] Will the highest temperature in Paris be 27°C on M mkt=0.03 model=0.00 edge=+2.8% fee=$0.00 => skip $0.00
+2026-05-02 00:34:38,552 | INFO | [Paris] Will the highest temperature in Paris be 17°C on M mkt=0.06 model=0.11 edge=-0.3% fee=$0.00 => skip $0.00
+2026-05-02 00:34:38,552 | INFO | [Paris] Will the highest temperature in Paris be 18°C on M mkt=0.20 model=0.32 edge=+7.5% fee=$0.00 => skip $0.00
+2026-05-02 00:34:38,552 | INFO | [Paris] Will the highest temperature in Paris be 20°C on M mkt=0.22 model=0.20 edge=+0.4% fee=$0.00 => skip $0.00
+2026-05-02 00:34:38,553 | INFO | [Paris] Will the highest temperature in Paris be 22°C on M mkt=0.05 model=0.00 edge=+4.6% fee=$0.00 => skip $0.00
+2026-05-02 00:34:40,522 | INFO | [Seoul] Will the highest temperature in Seoul be 13°C on M mkt=0.06 model=0.21 edge=+10.6% fee=$0.13 => YES $2.74
+2026-05-02 00:34:40,522 | INFO | [Seoul] Will the highest temperature in Seoul be 14°C on M mkt=0.20 model=0.22 edge=-1.4% fee=$0.00 => skip $0.00
+2026-05-02 00:34:55,717 | WARNING | Ensemble fetch failed for gfs_seamless shanghai 2026-05-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-02 00:35:10,909 | WARNING | Ensemble fetch failed for ecmwf_ifs025 shanghai 2026-05-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-02 00:35:26,106 | WARNING | Ensemble fetch failed for icon_seamless shanghai 2026-05-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-02 00:35:26,107 | INFO | Weather scan complete. Placed 0 trades.
