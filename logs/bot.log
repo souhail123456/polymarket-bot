@@ -4577,25 +4577,17 @@
 2026-05-02 01:38:32,862 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-05-02 01:38:32,862 | WARNING | estimate_probability failed for 2077453: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99749, Requested 806. Please try again in 7m59.52s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-05-02 01:38:32,862 | INFO | Scan complete. Placed 0 trades.
-2026-05-02 03:06:32,817 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-02 03:06:32,907 | INFO | Fetched 150 active markets
-2026-05-02 03:06:32,907 | INFO | 9 candidates after filters
-2026-05-02 03:06:33,410 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 03:06:33,416 | INFO | [1950655] 'UFC Fight Night: Carlos Prates vs. Jack Della Maddalena (Wel' mkt=0.51 est=0.51 conf=0.60 edge=-2.5% fee=$0.02 => skip $0.00
-2026-05-02 03:06:33,623 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 03:06:33,624 | INFO | [2077472] 'Atlanta Braves vs. Colorado Rockies' mkt=0.43 est=0.43 conf=0.60 edge=-2.8% fee=$0.03 => skip $0.00
-2026-05-02 03:06:33,877 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 03:06:33,878 | INFO | [1950837] 'UFC Fight Night: Wes Schultz vs. Ben Johnston (Middleweight,' mkt=0.41 est=0.41 conf=0.60 edge=-2.9% fee=$0.03 => skip $0.00
-2026-05-02 03:06:34,174 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 03:06:34,175 | INFO | [1950815] 'UFC Fight Night: Themba Gorimbo vs. Jonathan Micallef (Welte' mkt=0.33 est=0.33 conf=0.60 edge=-3.4% fee=$0.03 => skip $0.00
-2026-05-02 03:06:34,613 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 03:06:34,614 | INFO | [2077476] 'Cleveland Guardians vs. Athletics' mkt=0.30 est=0.30 conf=0.60 edge=-3.5% fee=$0.03 => skip $0.00
-2026-05-02 03:06:34,812 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 03:06:34,813 | INFO | [2077480] 'Kansas City Royals vs. Seattle Mariners' mkt=0.73 est=0.72 conf=0.60 edge=-2.7% fee=$0.04 => skip $0.00
-2026-05-02 03:06:35,097 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 03:06:35,098 | INFO | [2084181] 'LoL: Gen.G vs Dplus KIA (BO3) - LCK Rounds 1-2' mkt=0.77 est=0.78 conf=0.60 edge=+0.3% fee=$0.01 => skip $0.00
-2026-05-02 03:06:35,457 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 03:06:35,457 | INFO | [2078310] 'Will the price of Bitcoin be above $78,000 on May 2?' mkt=0.77 est=0.75 conf=0.60 edge=-2.3% fee=$0.04 => skip $0.00
-2026-05-02 03:06:35,883 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 03:06:35,884 | INFO | [2077474] 'New York Mets vs. Los Angeles Angels' mkt=0.20 est=0.20 conf=0.60 edge=-4.0% fee=$0.04 => skip $0.00
-2026-05-02 03:06:35,884 | INFO | Scan complete. Placed 0 trades.
+2026-05-02 04:33:36,061 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-02 04:33:36,187 | INFO | Fetched 150 active markets
+2026-05-02 04:33:36,187 | INFO | 5 candidates after filters
+2026-05-02 04:33:36,643 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 04:33:36,649 | INFO | [1950655] 'UFC Fight Night: Carlos Prates vs. Jack Della Maddalena (Wel' mkt=0.51 est=0.51 conf=0.60 edge=-2.5% fee=$0.02 => skip $0.00
+2026-05-02 04:33:36,870 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 04:33:36,871 | INFO | [1950837] 'UFC Fight Night: Wes Schultz vs. Ben Johnston (Middleweight,' mkt=0.42 est=0.42 conf=0.60 edge=-2.9% fee=$0.03 => skip $0.00
+2026-05-02 04:33:37,159 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 04:33:37,159 | INFO | [1950815] 'UFC Fight Night: Themba Gorimbo vs. Jonathan Micallef (Welte' mkt=0.33 est=0.33 conf=0.60 edge=-3.4% fee=$0.03 => skip $0.00
+2026-05-02 04:33:37,452 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 04:33:37,453 | INFO | [2078310] 'Will the price of Bitcoin be above $78,000 on May 2?' mkt=0.70 est=0.72 conf=0.60 edge=+0.0% fee=$0.01 => skip $0.00
+2026-05-02 04:33:37,710 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 04:33:37,710 | INFO | [2084181] 'LoL: Gen.G vs Dplus KIA (BO3) - LCK Rounds 1-2' mkt=0.77 est=0.76 conf=0.60 edge=-2.8% fee=$0.04 => skip $0.00
+2026-05-02 04:33:37,710 | INFO | Scan complete. Placed 0 trades.
