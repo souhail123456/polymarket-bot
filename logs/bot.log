@@ -4577,27 +4577,35 @@
 2026-05-02 01:38:32,862 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-05-02 01:38:32,862 | WARNING | estimate_probability failed for 2077453: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99749, Requested 806. Please try again in 7m59.52s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-05-02 01:38:32,862 | INFO | Scan complete. Placed 0 trades.
-2026-05-02 06:41:08,918 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-02 06:41:09,136 | INFO | Fetched 150 active markets
-2026-05-02 06:41:09,137 | INFO | 8 candidates after filters
-2026-05-02 06:41:09,723 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 06:41:09,729 | INFO | [1950655] 'UFC Fight Night: Carlos Prates vs. Jack Della Maddalena (Wel' mkt=0.52 est=0.52 conf=0.60 edge=-2.4% fee=$0.02 => skip $0.00
-2026-05-02 06:41:10,089 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 06:41:10,090 | INFO | [1950837] 'UFC Fight Night: Wes Schultz vs. Ben Johnston (Middleweight,' mkt=0.42 est=0.42 conf=0.60 edge=-2.9% fee=$0.03 => skip $0.00
-2026-05-02 06:41:10,476 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 06:41:10,477 | INFO | [1950774] 'UFC Fight Night: Tim Elliott vs. Steve Erceg (Flyweight, Mai' mkt=0.38 est=0.38 conf=0.60 edge=-2.6% fee=$0.03 => skip $0.00
-2026-05-02 06:41:10,860 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 06:41:10,861 | INFO | [2078310] 'Will the price of Bitcoin be above $78,000 on May 2?' mkt=0.67 est=0.67 conf=0.60 edge=-1.2% fee=$0.02 => skip $0.00
-2026-05-02 06:41:11,282 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 06:41:11,282 | INFO | [1950815] 'UFC Fight Night: Themba Gorimbo vs. Jonathan Micallef (Welte' mkt=0.33 est=0.33 conf=0.60 edge=-3.4% fee=$0.03 => skip $0.00
-2026-05-02 06:41:11,588 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 06:41:11,589 | INFO | [2131704] 'Huzhou: Veronika Erjavec vs Xiyu Wang' mkt=0.70 est=0.70 conf=0.60 edge=-2.8% fee=$0.04 => skip $0.00
-2026-05-02 06:41:12,182 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 06:41:12,183 | INFO | [2135727] 'Counter-Strike: Natus Vincere vs FaZe (BO3) - BLAST Rivals P' mkt=0.73 est=0.74 conf=0.60 edge=-0.8% fee=$0.01 => skip $0.00
-2026-05-02 06:41:12,270 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-02 06:41:12,270 | INFO | Rate limited, waiting 10s...
-2026-05-02 06:41:22,341 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-02 06:41:22,341 | INFO | Rate limited, waiting 20s...
-2026-05-02 06:41:42,405 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-02 06:41:42,406 | WARNING | estimate_probability failed for 2084181: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99632, Requested 937. Please try again in 8m11.616s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-2026-05-02 06:41:42,406 | INFO | Scan complete. Placed 0 trades.
+2026-05-02 07:33:49,100 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-02 07:33:49,326 | INFO | Fetched 150 active markets
+2026-05-02 07:33:49,326 | INFO | 8 candidates after filters
+2026-05-02 07:33:49,975 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 07:33:49,981 | INFO | [1950655] 'UFC Fight Night: Carlos Prates vs. Jack Della Maddalena (Wel' mkt=0.52 est=0.52 conf=0.60 edge=-2.4% fee=$0.02 => skip $0.00
+2026-05-02 07:33:50,255 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 07:33:50,256 | INFO | [2084185] 'Game Handicap: GEN (-1.5) vs Dplus KIA (+1.5)' mkt=0.46 est=0.45 conf=0.60 edge=-2.0% fee=$0.02 => skip $0.00
+2026-05-02 07:33:50,497 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 07:33:50,498 | INFO | [1950837] 'UFC Fight Night: Wes Schultz vs. Ben Johnston (Middleweight,' mkt=0.43 est=0.43 conf=0.60 edge=-2.8% fee=$0.03 => skip $0.00
+2026-05-02 07:33:50,911 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 07:33:50,912 | INFO | [1950774] 'UFC Fight Night: Tim Elliott vs. Steve Erceg (Flyweight, Mai' mkt=0.38 est=0.38 conf=0.60 edge=-2.6% fee=$0.03 => skip $0.00
+2026-05-02 07:33:51,160 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 07:33:51,161 | INFO | [1950815] 'UFC Fight Night: Themba Gorimbo vs. Jonathan Micallef (Welte' mkt=0.34 est=0.34 conf=0.60 edge=-3.3% fee=$0.03 => skip $0.00
+2026-05-02 07:33:51,241 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 07:33:51,241 | INFO | Rate limited, waiting 10s...
+2026-05-02 07:34:01,375 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 07:34:01,376 | INFO | Rate limited, waiting 20s...
+2026-05-02 07:34:21,495 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 07:34:21,496 | WARNING | estimate_probability failed for 2135727: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99911, Requested 594. Please try again in 7m16.32s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 07:34:21,577 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 07:34:21,578 | INFO | Rate limited, waiting 10s...
+2026-05-02 07:34:31,711 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 07:34:31,712 | INFO | Rate limited, waiting 20s...
+2026-05-02 07:34:51,833 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 07:34:51,834 | WARNING | estimate_probability failed for 2084181: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99876, Requested 594. Please try again in 6m46.08s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 07:34:51,912 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 07:34:51,913 | INFO | Rate limited, waiting 10s...
+2026-05-02 07:35:02,038 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 07:35:02,038 | INFO | Rate limited, waiting 20s...
+2026-05-02 07:35:22,168 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-05-02 07:35:22,169 | WARNING | estimate_probability failed for 2078310: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99841, Requested 460. Please try again in 4m20.064s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-05-02 07:35:22,169 | INFO | Scan complete. Placed 0 trades.
