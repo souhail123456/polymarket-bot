@@ -5477,27 +5477,3 @@
 2026-05-02 22:17:09,289 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2026-05-02 22:17:09,290 | WARNING | estimate_probability failed for 2091302: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq30sap4fmnvf9qadyp808h6` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99826, Requested 740. Please try again in 8m9.024s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 2026-05-02 22:17:09,290 | INFO | Scan complete. Placed 0 trades.
-2026-05-02 22:45:58,876 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-02 22:45:59,078 | INFO | Fetched 150 active markets
-2026-05-02 22:45:59,078 | INFO | 7 candidates after filters
-2026-05-02 22:45:59,676 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 22:45:59,682 | INFO | [2085846] 'San Francisco Giants vs. Tampa Bay Rays' mkt=0.48 est=0.48 conf=0.60 edge=-2.6% fee=$0.03 => skip $0.00
-2026-05-02 22:45:59,913 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 22:45:59,914 | INFO | [2107861] 'Will CF Cruz Azul win on 2026-05-02?' mkt=0.52 est=0.52 conf=0.60 edge=-1.9% fee=$0.02 => skip $0.00
-2026-05-02 22:45:59,976 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-02 22:45:59,976 | INFO | Rate limited, waiting 10s...
-2026-05-02 22:46:10,341 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 22:46:10,342 | INFO | [2133107] 'Spread: Spurs (-13.5)' mkt=0.52 est=0.52 conf=0.60 edge=-1.9% fee=$0.02 => skip $0.00
-2026-05-02 22:46:10,689 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 22:46:10,690 | INFO | [1879503] 'Will Vancouver Whitecaps FC win on 2026-05-02?' mkt=0.53 est=0.53 conf=0.60 edge=-2.4% fee=$0.02 => skip $0.00
-2026-05-02 22:46:11,174 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 22:46:11,175 | INFO | [2091039] 'Valorant: KRÜ Esports vs 100 Thieves (BO3) - VCT Americas St' mkt=0.59 est=0.58 conf=0.60 edge=-2.0% fee=$0.03 => skip $0.00
-2026-05-02 22:46:11,513 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 22:46:11,513 | INFO | [2091252] 'Raptors vs. Cavaliers' mkt=0.28 est=0.28 conf=0.60 edge=-3.6% fee=$0.04 => skip $0.00
-2026-05-02 22:46:11,573 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-02 22:46:11,574 | INFO | Rate limited, waiting 10s...
-2026-05-02 22:46:21,668 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-2026-05-02 22:46:21,669 | INFO | Rate limited, waiting 20s...
-2026-05-02 22:46:42,030 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-2026-05-02 22:46:42,031 | INFO | [2091302] 'Magic vs. Pistons' mkt=0.27 est=0.27 conf=0.60 edge=-3.7% fee=$0.04 => skip $0.00
-2026-05-02 22:46:42,031 | INFO | Scan complete. Placed 0 trades.
