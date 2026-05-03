@@ -1,9 +1,18 @@
 {
+<<<<<<< Updated upstream
   "ev": {
     "trades_open": 0,
     "trades_resolved": 1,
     "win_rate": 1.0,
     "summary": "0 open trades, 100% win rate",
     "updated_at": "2026-05-04T03:48:15.403608+08:00"
+=======
+  "weather": {
+    "trades_open": 60,
+    "trades_resolved": 179,
+    "win_rate": 0.63,
+    "summary": "60 open trades, 63% win rate",
+    "updated_at": "2026-05-04T03:50:44.484556+08:00"
+>>>>>>> Stashed changes
   }
 }
