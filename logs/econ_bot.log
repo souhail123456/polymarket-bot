@@ -17,3 +17,19 @@
 2026-05-03 12:12:55,343 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.08 model=0.01 edge=+6.8% => skip $0.00
 2026-05-03 12:12:55,344 | INFO | [1846487] type=payrolls | Will the US lose more than 50k jobs in April? | mkt=0.05 model=0.99 edge=+92.0% => YES $14.84
 2026-05-03 12:13:02,482 | INFO | Econ scan complete. Placed 5 trades.
+2026-05-03 18:14:53,367 | INFO | === Econ Scan | mode=paper | bankroll=$100.00 ===
+2026-05-03 18:14:54,027 | INFO | Fetching nowcast data sources...
+2026-05-03 18:14:55,295 | INFO | Cleveland Fed 1Y inflation expectation (FRED): 3.25872162
+2026-05-03 18:14:55,713 | INFO | GDPNow estimate: 3.5%
+2026-05-03 18:14:56,019 | INFO | Fed Funds actual rate (FRED): 3.64%
+2026-05-03 18:14:56,152 | INFO | Unemployment (FRED): 4.3% (prev: 4.4%)
+2026-05-03 18:14:56,266 | INFO | Nonfarm payrolls change (FRED): +178.0K
+2026-05-03 18:14:56,456 | INFO | Core PCE YoY (FRED): 3.20276%
+2026-05-03 18:14:56,457 | INFO | Data sources: CPI=ok | GDP=ok | FedWatch=ok | Unemployment=ok | Payrolls=ok | PCE=ok
+2026-05-03 18:14:59,273 | INFO | Found 164 unique econ markets
+2026-05-03 18:14:59,276 | INFO | [1132827] type=cpi | Will Argentina’s annual inflation in 2026 be at least 4 | mkt=0.09 model=0.01 edge=+8.0% => skip $0.00
+2026-05-03 18:14:59,276 | INFO | [1082177] type=cpi | Will Canada’s 2026 inflation be less than 1.0%? | mkt=0.04 model=0.01 edge=+3.0% => skip $0.00
+2026-05-03 18:14:59,277 | INFO | [1082182] type=cpi | Will Canada’s 2026 inflation be at least 4.0%? | mkt=0.06 model=0.01 edge=+4.5% => skip $0.00
+2026-05-03 18:14:59,277 | INFO | [1087310] type=unemployment | Will US unemployment reach at least 5.5% in 2026? | mkt=0.14 model=0.01 edge=+12.2% => NO $13.89
+2026-05-03 18:14:59,278 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.09 model=0.01 edge=+7.8% => skip $0.00
+2026-05-03 18:15:00,685 | INFO | Econ scan complete. Placed 1 trades.
