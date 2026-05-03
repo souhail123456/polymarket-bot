@@ -1,0 +1,9 @@
+{
+  "ev": {
+    "last_run": "2026-05-04T03:48:15.403943+08:00",
+    "trades_placed": 0,
+    "trades_skipped": 13,
+    "next_run": "every 30min",
+    "status": "ok"
+  }
+}
