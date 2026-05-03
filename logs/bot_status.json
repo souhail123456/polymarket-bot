@@ -1,15 +1,15 @@
 {
-<<<<<<< Updated upstream
-  "ev": {
-    "last_run": "2026-05-04T03:48:15.403943+08:00",
-    "trades_placed": 0,
-    "trades_skipped": 13,
-=======
   "weather": {
     "last_run": "2026-05-04T03:50:44.484795+08:00",
     "trades_placed": 0,
     "trades_skipped": 268,
->>>>>>> Stashed changes
+    "next_run": "every 30min",
+    "status": "ok"
+  },
+  "crypto": {
+    "last_run": "2026-05-04T03:53:03.467822+08:00",
+    "trades_placed": 0,
+    "trades_skipped": 0,
     "next_run": "every 30min",
     "status": "ok"
   }
