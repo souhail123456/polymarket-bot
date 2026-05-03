@@ -2,7 +2,7 @@ name: Polymarket Bot
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # every 30 minutes
+    - cron: '*/30 * * * *'  # every 30 min (24/7, Shanghai UTC+8)
   workflow_dispatch:          # manual trigger
 
 permissions:

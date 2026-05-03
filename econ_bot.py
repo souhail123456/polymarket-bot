@@ -35,6 +35,7 @@ import requests
 
 # ---------- Config ----------
 UTC = timezone.utc
+SHANGHAI_TZ = timezone(timedelta(hours=8))
 GAMMA_API = "https://gamma-api.polymarket.com"
 LOG_DIR = Path(os.environ.get("LOG_DIR", "./logs"))
 LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -1106,11 +1107,12 @@ def update_resolutions():
             f"{'WIN' if won else 'LOSS'} pnl=${pnl:.2f} balance=${balance:.2f}"
         )
         send_telegram(
-            f"{'WIN' if won else 'LOSS'} *Econ Trade Resolved*\n"
+            f"{'✅' if won else '❌'} *Econ Trade Resolved*\n"
             f"Market: {t['question'][:80]}\n"
             f"Side: {t['side']} -> *{'WIN' if won else 'LOSS'}*\n"
             f"P&L: ${pnl:+.2f}\n"
-            f"Balance: ${balance:.2f}"
+            f"Balance: ${balance:.2f}\n"
+            f"🕐 {datetime.now(SHANGHAI_TZ).strftime('%H:%M Shanghai')}"
         )
 
     if changed:
@@ -1269,8 +1271,8 @@ def run_scan(cfg: dict, mode: str, bankroll: float):
         bankroll -= c["size"]
 
         record = {
-            "timestamp": datetime.now(UTC).isoformat(),
-            "date": datetime.now(UTC).date().isoformat(),
+            "timestamp": datetime.now(SHANGHAI_TZ).isoformat(),
+            "date": datetime.now(SHANGHAI_TZ).date().isoformat(),
             "mode": mode,
             "strategy": "econ",
             "market_id": c["mid"],
@@ -1300,7 +1302,8 @@ def run_scan(cfg: dict, mode: str, bankroll: float):
             f"Side: *{c['side']}* @ {c['entry_price']:.2f}\n"
             f"Size: ${c['size']:.2f} | Edge: {c['edge']:+.1%}\n"
             f"Source: {c['data_src']}\n"
-            f"Balance: ${bankroll:.2f}"
+            f"Balance: ${bankroll:.2f}\n"
+            f"🕐 {datetime.now(SHANGHAI_TZ).strftime('%H:%M Shanghai')}"
         )
 
         time.sleep(1)
@@ -1313,7 +1316,7 @@ def run_scan(cfg: dict, mode: str, bankroll: float):
 # ==========================================================================
 
 def send_daily_summary():
-    today = datetime.now(UTC).date().isoformat()
+    today = datetime.now(SHANGHAI_TZ).date().isoformat()
     trades = load_trades()
     todays_trades = [t for t in trades if t.get("date") == today]
     all_resolved = [t for t in trades if t.get("resolved")]

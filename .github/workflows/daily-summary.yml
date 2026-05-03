@@ -2,7 +2,7 @@ name: Daily Summary
 
 on:
   schedule:
-    - cron: '0 23 * * *'  # 11 PM UTC every day
+    - cron: '0 23 * * *'  # 11 PM UTC (7 AM Shanghai)
   workflow_dispatch:        # manual trigger
 
 jobs:

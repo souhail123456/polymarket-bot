@@ -30,6 +30,7 @@ import requests
 
 # ---------- Config ----------
 UTC = timezone.utc
+SHANGHAI_TZ = timezone(timedelta(hours=8))
 GAMMA_API = "https://gamma-api.polymarket.com"
 COINGECKO_PRICE_API = "https://api.coingecko.com/api/v3/simple/price"
 COINGECKO_HISTORY_API = "https://api.coingecko.com/api/v3/coins/{coin_id}/market_chart"
@@ -458,7 +459,8 @@ def update_resolutions():
             f"Market: {t['question'][:80]}\n"
             f"Side: {t['side']} -> *{'WIN' if won else 'LOSS'}*\n"
             f"P&L: ${pnl:+.2f}\n"
-            f"Balance: ${balance:.2f}"
+            f"Balance: ${balance:.2f}\n"
+            f"🕐 {datetime.now(SHANGHAI_TZ).strftime('%H:%M Shanghai')}"
         )
 
     if changed:
@@ -616,8 +618,8 @@ def run_scan(cfg, mode, bankroll):
         asset_bets[asset_key] = asset_bets.get(asset_key, 0) + 1
 
         record = {
-            "timestamp": datetime.now(UTC).isoformat(),
-            "date": datetime.now(UTC).date().isoformat(),
+            "timestamp": datetime.now(SHANGHAI_TZ).isoformat(),
+            "date": datetime.now(SHANGHAI_TZ).date().isoformat(),
             "mode": mode,
             "strategy": "crypto_threshold",
             "market_id": c["mid"],
@@ -653,7 +655,8 @@ def run_scan(cfg, mode, bankroll):
             f"Model: {c['model_prob']:.0%} vs Market: {c['yes_price']:.0%}\n"
             f"Days to expiry: {c['days_ahead']:.1f} | Vol: {c['annual_vol']:.0%}\n"
             f"Size: ${c['size']:.2f} | Edge: {c['edge']:+.1%}\n"
-            f"Balance: ${bankroll:.2f}"
+            f"Balance: ${bankroll:.2f}\n"
+            f"🕐 {datetime.now(SHANGHAI_TZ).strftime('%H:%M Shanghai')}"
         )
 
         time.sleep(1)
@@ -663,7 +666,7 @@ def run_scan(cfg, mode, bankroll):
 
 # ---------- Daily summary ----------
 def send_daily_summary():
-    today = datetime.now(UTC).date().isoformat()
+    today = datetime.now(SHANGHAI_TZ).date().isoformat()
     trades = load_trades()
     todays_trades = [t for t in trades if t.get("date") == today]
     all_resolved = [t for t in trades if t.get("resolved")]

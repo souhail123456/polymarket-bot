@@ -2,7 +2,7 @@ name: Econ Bot
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # every 6 hours — econ data doesn't change fast
+    - cron: '0 */6 * * *'  # every 6h UTC (0/6/12/18 UTC = 8/14/20/2 Shanghai)
   workflow_dispatch:
 
 permissions:
