@@ -27,6 +27,7 @@ from pathlib import Path
 
 import requests
 from openai import OpenAI
+from llm_router import call_llm
 
 # ---------- Config ----------
 SHANGHAI_TZ = timezone(timedelta(hours=8))
@@ -219,29 +220,20 @@ def estimate_probability(client, market):
         regime=regime,
         regime_guidance=regime_guidance,
     )
-    for attempt in range(3):
-        try:
-            resp = client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
-                max_tokens=400,
-                messages=[{"role": "user", "content": prompt}],
-            )
-            text = resp.choices[0].message.content.strip()
-            if text.startswith("```"):
-                text = text.split("```", 2)[1]
-                if text.startswith("json"):
-                    text = text[4:]
-                text = text.strip()
-            data = json.loads(text)
-            return float(data["true_probability"]), float(data["confidence"]), data.get("reasoning", "")
-        except Exception as e:
-            if "429" in str(e) and attempt < 2:
-                wait = (attempt + 1) * 10
-                log.info(f"Rate limited, waiting {wait}s...")
-                time.sleep(wait)
-                continue
-            log.warning(f"estimate_probability failed for {market.get('_market_id')}: {e}")
-            return None, None, None
+    try:
+        text, provider, model = call_llm(prompt, max_tokens=400)
+        log.info(f"LLM response from {provider}/{model} for {market.get('_market_id', '')[:8]}")
+        text = text.strip()
+        if text.startswith("```"):
+            text = text.split("```", 2)[1]
+            if text.startswith("json"):
+                text = text[4:]
+            text = text.strip()
+        data = json.loads(text)
+        return float(data["true_probability"]), float(data["confidence"]), data.get("reasoning", "")
+    except Exception as e:
+        log.warning(f"estimate_probability failed for {market.get('_market_id')}: {e}")
+        return None, None, None
 
 
 # ---------- EV math ----------
@@ -579,11 +571,14 @@ def main():
         send_daily_summary()
         return
 
-    api_key = os.environ.get("GROQ_API_KEY")
-    if not api_key:
-        log.error("Set GROQ_API_KEY environment variable.")
+    # LLM calls go through llm_router.py (Groq -> Gemini -> Cerebras)
+    # At least one of GROQ_API_KEY, GEMINI_API_KEY, CEREBRAS_API_KEY must be set
+    if not any(os.environ.get(k) for k in ("GROQ_API_KEY", "GEMINI_API_KEY", "CEREBRAS_API_KEY")):
+        log.error("Set at least one LLM API key: GROQ_API_KEY, GEMINI_API_KEY, or CEREBRAS_API_KEY")
         return
 
+    # client kept for interface compatibility — actual calls go through call_llm()
+    api_key = os.environ.get("GROQ_API_KEY", "unused")
     client = OpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1")
     cfg = DEFAULT_CONFIG.copy()
     if args.max_position:
