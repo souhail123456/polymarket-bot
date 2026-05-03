@@ -36,16 +36,30 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 CONFIG = {
-    "min_edge": 0.08,             # 8% min edge for weather
+    "min_edge": 0.12,             # 12% min edge (was 8% — 8-12% bucket was -$23)
     "max_position_usd": 15.0,    # max cap (for 25%+ edge)
     "kelly_fraction": 0.15,       # 15% Kelly
     "taker_fee_rate": 0.05,
     "starting_bankroll": 100.0,
     "daily_loss_cap_usd": 20.0,
+    "max_model_prob": 0.15,       # skip NO bets when model says 15%+ (46% wr above this)
+    "min_no_entry": 0.50,         # NO entry price floor (0.30-0.50 was 22% wr)
+    "max_days_ahead": 1,          # only same-day and next-day (2d+ was 69% wr)
+    "max_bets_per_city_date": 2,  # limit correlated risk
+    "min_ensemble_members": 50,   # require 50+ members for confidence
 }
 
-# Scaled position sizing by edge — conservative until proven
-def max_size_for_edge(edge):
+# Scaled position sizing by edge — boost sweet spot (entry 0.50-0.70)
+def max_size_for_edge(edge, entry_price=0.0):
+    # Sweet spot: entry 0.50-0.70 has 76% wr and best P&L — size up
+    if 0.50 <= entry_price <= 0.70:
+        if edge >= 0.25:
+            return 12.0
+        elif edge >= 0.15:
+            return 10.0
+        else:
+            return 8.0
+    # Standard sizing outside sweet spot
     if edge >= 0.25:
         return 8.0
     elif edge >= 0.15:
@@ -304,7 +318,7 @@ def decide_trade(true_p, market_p, bankroll, cfg):
     edge = gross_edge - fee_per_dollar
     if edge < cfg["min_edge"]:
         return None, 0.0, edge, 0.0
-    cap = max_size_for_edge(edge)
+    cap = max_size_for_edge(edge, entry_price)
     size = kelly_size(true_p, market_p, side, bankroll, cfg["kelly_fraction"], cap)
     if size < 1.0:
         return None, 0.0, edge, 0.0
@@ -380,6 +394,10 @@ def run_scan(cfg, mode, bankroll):
     # Group markets by city + date for efficient ensemble fetching
     forecast_cache = {}
     trades_placed = 0
+    city_date_bets = {}  # track bets per city/date to limit correlated risk
+
+    # Collect all candidates first, then pick best per city/date
+    candidates = []
 
     for m in markets:
         mid = str(m.get("id", ""))
@@ -394,6 +412,15 @@ def run_scan(cfg, mode, bankroll):
         event_title = m.get("_event_title", "")
         date_str = parse_event_date(event_title)
         if not date_str:
+            continue
+
+        # Filter #3: only trade 0-1 days ahead (2d+ was 69% wr)
+        try:
+            days_ahead = (datetime.strptime(date_str, "%Y-%m-%d") -
+                          datetime.now(SHANGHAI_TZ).replace(tzinfo=None)).days
+            if days_ahead > cfg.get("max_days_ahead", 1):
+                continue
+        except Exception:
             continue
 
         question = m.get("question", "")
@@ -425,9 +452,18 @@ def run_scan(cfg, mode, bankroll):
         if not maxes:
             continue
 
+        # Filter #7: require minimum ensemble members
+        if len(maxes) < cfg.get("min_ensemble_members", 50):
+            log.info(f"[{city['name']}] Skip — only {len(maxes)} ensemble members")
+            continue
+
         low, high = bucket
         model_prob = ensemble_probability(maxes, low, high)
         if model_prob is None:
+            continue
+
+        # Filter #2: skip when model isn't confident enough for NO
+        if model_prob >= cfg.get("max_model_prob", 0.15):
             continue
 
         side, size, edge, fee_usd = decide_trade(model_prob, yes_price, bankroll, cfg)
@@ -445,6 +481,43 @@ def run_scan(cfg, mode, bankroll):
         if side == "YES":
             continue
 
+        entry_price = 1 - yes_price
+
+        # Filter #1: block cheap NO entries (0.30-0.50 was 22% wr)
+        if entry_price < cfg.get("min_no_entry", 0.50):
+            log.info(f"[{city['name']}] Skip — NO entry {entry_price:.2f} below 0.50")
+            continue
+
+        candidates.append({
+            "m": m, "mid": mid, "city_key": city_key, "city": city,
+            "date_str": date_str, "question": question, "bucket": bucket,
+            "yes_price": yes_price, "model_prob": model_prob, "maxes": maxes,
+            "side": side, "size": size, "edge": edge, "fee_usd": fee_usd,
+            "entry_price": entry_price,
+        })
+
+    # Sort by edge descending — pick best trades first
+    candidates.sort(key=lambda c: c["edge"], reverse=True)
+
+    for c in candidates:
+        # Filter #5: limit bets per city/date
+        cd_key = f"{c['city_key']}_{c['date_str']}"
+        if city_date_bets.get(cd_key, 0) >= cfg.get("max_bets_per_city_date", 2):
+            log.info(f"[{c['city']['name']}] Skip — already {cfg['max_bets_per_city_date']} bets for {c['date_str']}")
+            continue
+
+        mid = c["mid"]
+        city = c["city"]
+        question = c["question"]
+        low, high = c["bucket"]
+        size = c["size"]
+        edge = c["edge"]
+        fee_usd = c["fee_usd"]
+        entry_price = c["entry_price"]
+        model_prob = c["model_prob"]
+        yes_price = c["yes_price"]
+
+        city_date_bets[cd_key] = city_date_bets.get(cd_key, 0) + 1
         bankroll -= size  # deduct from bankroll
 
         record = {
@@ -455,13 +528,13 @@ def run_scan(cfg, mode, bankroll):
             "market_id": mid,
             "question": question[:200],
             "city": city["name"],
-            "event_date": date_str,
+            "event_date": c["date_str"],
             "bucket": f"{low}-{high}",
             "market_price": yes_price,
             "model_prob": round(model_prob, 4),
-            "ensemble_members": len(maxes),
-            "side": side,
-            "entry_price": yes_price if side == "YES" else 1 - yes_price,
+            "ensemble_members": len(c["maxes"]),
+            "side": c["side"],
+            "entry_price": entry_price,
             "size_usd": round(size, 2),
             "edge": round(edge, 4),
             "fee_usd": round(fee_usd, 4),
@@ -474,9 +547,9 @@ def run_scan(cfg, mode, bankroll):
 
         send_telegram(
             f"🌡️ *Weather Trade*\n"
-            f"City: {city['name']} ({date_str})\n"
+            f"City: {city['name']} ({c['date_str']})\n"
             f"Bucket: {question[:60]}\n"
-            f"Side: *{side}* @ {record['entry_price']:.2f}\n"
+            f"Side: *{c['side']}* @ {record['entry_price']:.2f}\n"
             f"Model: {model_prob:.0%} vs Market: {yes_price:.0%}\n"
             f"Size: ${size:.2f} | Edge: {edge:+.1%}\n"
             f"Balance: ${bankroll:.2f}"
