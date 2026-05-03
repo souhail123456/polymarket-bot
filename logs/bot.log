@@ -5692,3 +5692,63 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-03 11:45:56,914 | INFO | Scan complete. Placed 0 trades.
+2026-05-03 15:47:02,212 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-03 15:47:02,370 | INFO | Fetched 150 active markets
+2026-05-03 15:47:02,371 | INFO | 8 candidates after filters
+2026-05-03 15:47:02,463 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+2026-05-03 15:47:02,593 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-03 15:47:02,640 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:02,640 | WARNING | estimate_probability failed for 2133107: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:02,668 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+2026-05-03 15:47:02,768 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-03 15:47:02,802 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:02,802 | WARNING | estimate_probability failed for 2140682: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:02,828 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+2026-05-03 15:47:02,933 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-03 15:47:02,962 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:02,962 | WARNING | estimate_probability failed for 2073824: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:02,989 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,074 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-03 15:47:03,100 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,100 | WARNING | estimate_probability failed for 2073829: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,138 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,236 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-03 15:47:03,270 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,271 | WARNING | estimate_probability failed for 2143221: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,299 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,392 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-03 15:47:03,420 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,421 | WARNING | estimate_probability failed for 2094505: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,445 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,533 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-03 15:47:03,562 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,562 | WARNING | estimate_probability failed for 2090844: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,588 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,680 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-03 15:47:03,710 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,710 | WARNING | estimate_probability failed for 2073833: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
+2026-05-03 15:47:03,710 | INFO | Scan complete. Placed 0 trades.
