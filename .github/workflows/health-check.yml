@@ -1,0 +1,36 @@
+name: Health Check
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # every 4h (24/7, Shanghai UTC+8)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run health check
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python health_check.py
+
+      - name: Commit health status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f logs/health_status.json
+          git stash
+          git pull --rebase origin main
+          git stash pop || true
+          git add -f logs/health_status.json
+          git diff --cached --quiet || git commit -m "Update health status [polymarket-bot]"
+          git push origin main || (git pull --rebase origin main && git push origin main) || true
