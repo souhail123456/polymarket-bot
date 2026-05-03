@@ -1,0 +1,53 @@
+name: Econ Bot
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # every 6 hours — econ data doesn't change fast
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore trade logs
+        uses: actions/cache/restore@v4
+        with:
+          path: logs/
+          key: trade-logs-${{ github.run_id }}
+          restore-keys: trade-logs-
+
+      - name: Run econ bot
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python econ_bot.py --mode paper
+
+      - name: Save trade logs
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: logs/
+          key: trade-logs-${{ github.run_id }}
+
+      - name: Commit trade logs
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main || true
+          git add -f logs/
+          git diff --cached --quiet || git commit -m "Update trade logs [Econ bot]"
+          git push origin main || true
