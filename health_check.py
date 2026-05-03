@@ -49,7 +49,8 @@ def run_checks() -> dict:
     # Polymarket Gamma API — no auth
     services["polymarket_gamma"] = check_service(
         "polymarket_gamma", "GET",
-        "https://gamma-api.polymarket.com/markets?limit=1"
+        "https://gamma-api.polymarket.com/markets?limit=1",
+        headers={"User-Agent": "polymarket-bot/1.0"}
     )
 
     # CoinGecko — no auth
@@ -72,7 +73,7 @@ def run_checks() -> dict:
     groq_key = os.environ.get("GROQ_API_KEY", "")
     if groq_key:
         groq_body = json.dumps({
-            "model": "llama3-8b-8192",
+            "model": "llama-3.3-70b-versatile",
             "messages": [{"role": "user", "content": "hi"}],
             "max_tokens": 1
         }).encode()
