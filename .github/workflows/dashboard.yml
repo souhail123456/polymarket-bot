@@ -2,7 +2,7 @@ name: Update Dashboard
 
 on:
   workflow_run:
-    workflows: ["Weather Bot", "Polymarket Bot", "Daily Summary"]
+    workflows: ["Weather Bot", "Polymarket Bot", "Daily Summary", "Crypto Bot", "Econ Bot"]
     types: [completed]
   workflow_dispatch:
 

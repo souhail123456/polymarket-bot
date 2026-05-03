@@ -81,6 +81,30 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 
+# ---------- Shared context ----------
+SHARED_CONTEXT_FILE = LOG_DIR / "shared_context.json"
+
+
+def load_shared_context():
+    """Load cross-bot shared context."""
+    try:
+        if SHARED_CONTEXT_FILE.exists():
+            with open(SHARED_CONTEXT_FILE) as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return {}
+
+
+def save_shared_context(bot_name, data):
+    """Update this bot's section in shared context."""
+    ctx = load_shared_context()
+    data["updated_at"] = datetime.now(SHANGHAI_TZ).isoformat()
+    ctx[bot_name] = data
+    with open(SHARED_CONTEXT_FILE, "w") as f:
+        json.dump(ctx, f, indent=2)
+
+
 # ---------- Telegram ----------
 def send_telegram(msg: str):
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
@@ -1056,6 +1080,32 @@ def decide_trade(true_p: float, market_p: float,
 
 
 # ==========================================================================
+# SECTION 5b: Bot status
+# ==========================================================================
+
+BOT_STATUS_FILE = LOG_DIR / "bot_status.json"
+
+
+def update_bot_status(bot_name: str, trades_placed: int, trades_skipped: int, next_run: str):
+    try:
+        status = {}
+        if BOT_STATUS_FILE.exists():
+            with open(BOT_STATUS_FILE) as f:
+                status = json.load(f)
+        status[bot_name] = {
+            "last_run": datetime.now(SHANGHAI_TZ).isoformat(),
+            "trades_placed": trades_placed,
+            "trades_skipped": trades_skipped,
+            "next_run": next_run,
+            "status": "ok",
+        }
+        with open(BOT_STATUS_FILE, "w") as f:
+            json.dump(status, f, indent=2)
+    except Exception as e:
+        log.warning(f"update_bot_status failed: {e}")
+
+
+# ==========================================================================
 # SECTION 6: Resolution tracking
 # ==========================================================================
 
@@ -1125,6 +1175,13 @@ def update_resolutions():
 
 def run_scan(cfg: dict, mode: str, bankroll: float):
     log.info(f"=== Econ Scan | mode={mode} | bankroll=${bankroll:.2f} ===")
+
+    # Log shared context from other bots
+    shared = load_shared_context()
+    for bot_name, ctx in shared.items():
+        if bot_name != "econ":
+            log.info(f"[shared/{bot_name}] {ctx.get('summary', 'no summary')} (as of {ctx.get('updated_at', '?')})")
+
     update_resolutions()
 
     # -- Fetch all data sources once --
@@ -1144,6 +1201,36 @@ def run_scan(cfg: dict, mode: str, bankroll: float):
         f"Payrolls={'ok' if payroll_data else 'SKIP'} | "
         f"PCE={'ok' if pce_data else 'SKIP'}"
     )
+
+    # Save econ shared context with available data sources and values
+    econ_ctx: dict = {}
+    parts = []
+    if cpi_data:
+        econ_ctx["cpi_data_available"] = True
+        econ_ctx["cpi_nowcast"] = cpi_data.get("nowcast") or cpi_data.get("value")
+        parts.append(f"CPI ok")
+    if gdp_data:
+        econ_ctx["gdp_data_available"] = True
+        econ_ctx["gdp_nowcast"] = gdp_data.get("nowcast") or gdp_data.get("value")
+        parts.append(f"GDP ok")
+    if fedwatch_data:
+        econ_ctx["fed_data_available"] = True
+        econ_ctx["fed_cut_prob"] = fedwatch_data.get("cut") or fedwatch_data.get("prob_cut")
+        econ_ctx["fed_hold_prob"] = fedwatch_data.get("hold") or fedwatch_data.get("prob_hold")
+        econ_ctx["fed_hike_prob"] = fedwatch_data.get("hike") or fedwatch_data.get("prob_hike")
+        parts.append("FedWatch ok")
+    if unemp_data:
+        econ_ctx["unemp_data_available"] = True
+        econ_ctx["unemp_rate"] = unemp_data.get("value") or unemp_data.get("rate")
+        parts.append("Unemp ok")
+    if payroll_data:
+        econ_ctx["payroll_data_available"] = True
+        parts.append("Payrolls ok")
+    if pce_data:
+        econ_ctx["pce_data_available"] = True
+        parts.append("PCE ok")
+    econ_ctx["summary"] = ", ".join(parts) if parts else "no data fetched"
+    save_shared_context("econ", econ_ctx)
 
     # -- Fetch markets --
     markets = fetch_econ_markets()
@@ -1308,7 +1395,14 @@ def run_scan(cfg: dict, mode: str, bankroll: float):
 
         time.sleep(1)
 
+    trades_skipped = len(candidates) - trades_placed
     log.info(f"Econ scan complete. Placed {trades_placed} trades.")
+    update_bot_status("econ", trades_placed, trades_skipped, "every 6h")
+    send_telegram(
+        f"🔄 *Econ Bot Scan Complete*\n"
+        f"Placed: {trades_placed} | Skipped: {trades_skipped}\n"
+        f"🕐 {datetime.now(SHANGHAI_TZ).strftime('%H:%M')} Shanghai | Next: 6h"
+    )
 
 
 # ==========================================================================

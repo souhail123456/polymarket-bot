@@ -71,6 +71,30 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 
+# ---------- Shared context ----------
+SHARED_CONTEXT_FILE = LOG_DIR / "shared_context.json"
+
+
+def load_shared_context():
+    """Load cross-bot shared context."""
+    try:
+        if SHARED_CONTEXT_FILE.exists():
+            with open(SHARED_CONTEXT_FILE) as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return {}
+
+
+def save_shared_context(bot_name, data):
+    """Update this bot's section in shared context."""
+    ctx = load_shared_context()
+    data["updated_at"] = datetime.now(SHANGHAI_TZ).isoformat()
+    ctx[bot_name] = data
+    with open(SHARED_CONTEXT_FILE, "w") as f:
+        json.dump(ctx, f, indent=2)
+
+
 # ---------- Telegram notifications ----------
 def send_telegram(msg):
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
@@ -467,9 +491,38 @@ def submit_live_order(market, side, size_usd, price):
     )
 
 
+# ---------- Bot status ----------
+BOT_STATUS_FILE = LOG_DIR / "bot_status.json"
+
+
+def update_bot_status(bot_name, trades_placed, trades_skipped, next_run):
+    try:
+        status = {}
+        if BOT_STATUS_FILE.exists():
+            with open(BOT_STATUS_FILE) as f:
+                status = json.load(f)
+        status[bot_name] = {
+            "last_run": datetime.now(SHANGHAI_TZ).isoformat(),
+            "trades_placed": trades_placed,
+            "trades_skipped": trades_skipped,
+            "next_run": next_run,
+            "status": "ok",
+        }
+        with open(BOT_STATUS_FILE, "w") as f:
+            json.dump(status, f, indent=2)
+    except Exception as e:
+        log.warning(f"update_bot_status failed: {e}")
+
+
 # ---------- Main scan ----------
 def run_scan(client, cfg, mode, bankroll):
     log.info(f"=== Scan | mode={mode} | bankroll=${bankroll:.2f} ===")
+
+    # Log shared context from other bots
+    shared = load_shared_context()
+    for bot_name, ctx in shared.items():
+        if bot_name != "ev":
+            log.info(f"[shared/{bot_name}] {ctx.get('summary', 'no summary')} (as of {ctx.get('updated_at', '?')})")
 
     # Update resolutions first
     update_resolutions()
@@ -548,7 +601,28 @@ def run_scan(client, cfg, mode, bankroll):
         # Small delay to avoid hammering APIs
         time.sleep(2)
 
+    trades_skipped = len(candidates) - trades_placed
+
+    # Save shared context
+    all_trades = load_trades()
+    all_resolved = [t for t in all_trades if t.get("resolved")]
+    open_trades = [t for t in all_trades if not t.get("resolved")]
+    wins = sum(1 for t in all_resolved if t.get("won"))
+    win_rate = round(wins / len(all_resolved), 2) if all_resolved else 0.0
+    save_shared_context("ev", {
+        "trades_open": len(open_trades),
+        "trades_resolved": len(all_resolved),
+        "win_rate": win_rate,
+        "summary": f"{len(open_trades)} open trades, {win_rate:.0%} win rate",
+    })
+
     log.info(f"Scan complete. Placed {trades_placed} trades.")
+    update_bot_status("ev", trades_placed, trades_skipped, "every 30min")
+    send_telegram(
+        f"🔄 *EV Bot Scan Complete*\n"
+        f"Placed: {trades_placed} | Skipped: {trades_skipped}\n"
+        f"🕐 {datetime.now(SHANGHAI_TZ).strftime('%H:%M')} Shanghai | Next: 30min"
+    )
 
 
 # ---------- Entry point ----------
