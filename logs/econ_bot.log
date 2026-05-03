@@ -1,0 +1,19 @@
+2026-05-03 12:12:48,135 | INFO | === Econ Scan | mode=paper | bankroll=$100.00 ===
+2026-05-03 12:12:48,135 | INFO | Fetching nowcast data sources...
+2026-05-03 12:12:48,944 | INFO | Cleveland Fed 1Y inflation expectation (FRED): 3.25872162
+2026-05-03 12:12:49,347 | INFO | GDPNow estimate: 3.5%
+2026-05-03 12:12:49,884 | INFO | Fed Funds actual rate (FRED): 3.64%
+2026-05-03 12:12:50,061 | INFO | Unemployment (FRED): 4.3% (prev: 4.4%)
+2026-05-03 12:12:50,336 | INFO | Nonfarm payrolls change (FRED): +178.0K
+2026-05-03 12:12:50,666 | INFO | Core PCE YoY (FRED): 3.20276%
+2026-05-03 12:12:50,667 | INFO | Data sources: CPI=ok | GDP=ok | FedWatch=ok | Unemployment=ok | Payrolls=ok | PCE=ok
+2026-05-03 12:12:55,338 | INFO | Found 165 unique econ markets
+2026-05-03 12:12:55,341 | INFO | [1132827] type=cpi | Will Argentina’s annual inflation in 2026 be at least 4 | mkt=0.09 model=0.01 edge=+7.9% => skip $0.00
+2026-05-03 12:12:55,342 | INFO | [1132820] type=cpi | Will Argentina’s annual inflation be less than 20%? | mkt=0.16 model=0.99 edge=+81.6% => YES $14.82
+2026-05-03 12:12:55,342 | INFO | [1132798] type=cpi | Will China's annual inflation in 2026 be at least 2.5%? | mkt=0.07 model=0.99 edge=+90.4% => YES $14.84
+2026-05-03 12:12:55,343 | INFO | [1087309] type=unemployment | Will US unemployment reach at least 5.0% in 2026? | mkt=0.44 model=0.01 edge=+42.1% => NO $14.66
+2026-05-03 12:12:55,343 | INFO | [1087310] type=unemployment | Will US unemployment reach at least 5.5% in 2026? | mkt=0.04 model=0.01 edge=+3.2% => skip $0.00
+2026-05-03 12:12:55,343 | INFO | [1087311] type=unemployment | Will US unemployment reach at least 6.0% in 2026? | mkt=0.16 model=0.01 edge=+14.7% => NO $14.06
+2026-05-03 12:12:55,343 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.08 model=0.01 edge=+6.8% => skip $0.00
+2026-05-03 12:12:55,344 | INFO | [1846487] type=payrolls | Will the US lose more than 50k jobs in April? | mkt=0.05 model=0.99 edge=+92.0% => YES $14.84
+2026-05-03 12:13:02,482 | INFO | Econ scan complete. Placed 5 trades.
