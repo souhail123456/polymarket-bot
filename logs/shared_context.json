@@ -15,5 +15,12 @@
     "win_rate": 0.0,
     "summary": "BTC $78,984, ETH $2,336, 0 open, 0% wr",
     "updated_at": "2026-05-04T07:21:21.861137+08:00"
+  },
+  "ev": {
+    "trades_open": 0,
+    "trades_resolved": 1,
+    "win_rate": 1.0,
+    "summary": "0 open trades, 100% win rate",
+    "updated_at": "2026-05-04T07:46:38.442882+08:00"
   }
 }
