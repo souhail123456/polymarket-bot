@@ -1,0 +1,6 @@
+2026-05-03 09:36:04,969 | INFO | === Crypto Scan | mode=paper | bankroll=$100.00 ===
+2026-05-03 09:36:05,092 | INFO | Prices — BTC: $78,445  ETH: $2,312
+2026-05-03 09:36:05,157 | INFO | bitcoin 30d annualised vol: 36.4%
+2026-05-03 09:36:06,223 | INFO | ethereum 30d annualised vol: 50.8%
+2026-05-03 09:36:10,877 | INFO | Fetched 50 raw crypto markets from Polymarket
+2026-05-03 09:36:10,879 | INFO | Crypto scan complete. Placed 0 trades.
