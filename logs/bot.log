@@ -5692,6 +5692,7 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-03 11:45:56,914 | INFO | Scan complete. Placed 0 trades.
+<<<<<<< Updated upstream
 2026-05-03 21:16:44,572 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
 2026-05-03 21:16:44,572 | INFO | [shared/weather] 60 open trades, 63% win rate (as of 2026-05-04T04:48:37.785518+08:00)
 2026-05-03 21:16:44,572 | INFO | [shared/crypto] BTC $78,728, ETH $2,333, 0 open, 0% wr (as of 2026-05-04T04:18:43.228410+08:00)
@@ -5761,3 +5762,5 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-03 21:16:46,488 | INFO | Scan complete. Placed 0 trades.
+=======
+>>>>>>> Stashed changes
