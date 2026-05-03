@@ -184,17 +184,40 @@ Think through:
 
 CRITICAL: If you do not have real informational edge, your estimate should be CLOSE to the market price. Being "confident the market is wrong" without specific evidence is how money gets lost. Most markets are approximately efficient.
 
+MARKET REGIME: {regime}
+{regime_guidance}
+
 Output ONLY this JSON, no other text:
 {{"true_probability": <0-1>, "confidence": <0-1>, "reasoning": "<one sentence>"}}"""
 
 
+def _load_regime():
+    """Load market regime from trading-admin shared context."""
+    try:
+        with open("/tmp/shared_global_state.json") as f:
+            state = json.load(f)
+        regime = state.get("regime", "UNKNOWN")
+        guidance = {
+            "CRISIS": "CAUTION: Market is in CRISIS mode (high VIX). Require higher confidence threshold — only trade if edge > 15%. Prefer YES on safe-haven/hedging markets.",
+            "VOLATILE": "Market is VOLATILE. Widen your confidence threshold — only trade if edge > 10%.",
+            "RANGING": "",
+            "TRENDING": "",
+        }.get(regime, "")
+        return regime, guidance
+    except Exception:
+        return "UNKNOWN", ""
+
+
 def estimate_probability(client, market):
+    regime, regime_guidance = _load_regime()
     prompt = PROMPT.format(
         question=(market.get("question") or "")[:500],
         description=(market.get("description") or "")[:1200],
         yes_price=market["_yes_price"],
         hours_left=market["_hours_left"],
         resolution=(market.get("resolutionSource") or "See description")[:300],
+        regime=regime,
+        regime_guidance=regime_guidance,
     )
     for attempt in range(3):
         try:

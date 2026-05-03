@@ -21,6 +21,18 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Load shared context from trading-admin
+        env:
+          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+        run: |
+          if [ -n "$GH_TOKEN" ]; then
+            gh api repos/souhail123456/trading-admin/contents/shared/global_state.json --jq '.content' | base64 -d > /tmp/shared_global_state.json 2>/dev/null || echo '{}' > /tmp/shared_global_state.json
+            echo "Shared context loaded"
+          else
+            echo '{}' > /tmp/shared_global_state.json
+            echo "No BOT_GITHUB_TOKEN — using empty shared context"
+          fi
+
       - name: Restore trade logs
         uses: actions/cache/restore@v4
         with:
