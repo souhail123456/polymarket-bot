@@ -4835,3 +4835,10 @@
 2026-05-03 07:21:36,340 | INFO | [Shanghai] Will the highest temperature in Shanghai be 23°C o mkt=0.12 model=0.35 edge=+18.8% fee=$0.14 => YES $3.21
 2026-05-03 07:21:36,340 | INFO | [Shanghai] Will the highest temperature in Shanghai be 27°C o mkt=0.09 model=0.12 edge=-1.5% fee=$0.00 => skip $0.00
 2026-05-03 07:21:36,341 | INFO | Weather scan complete. Placed 5 trades.
+2026-05-03 16:20:28,231 | WARNING | Failed to fetch weather markets for NYC: HTTPSConnectionPool(host='gamma-api.polymarket.com', port=443): Read timed out. (read timeout=15)
+2026-05-03 16:20:44,214 | WARNING | Failed to fetch weather markets for Chicago: HTTPSConnectionPool(host='gamma-api.polymarket.com', port=443): Read timed out. (read timeout=15)
+2026-05-03 16:21:00,033 | WARNING | Failed to fetch weather markets for Miami: HTTPSConnectionPool(host='gamma-api.polymarket.com', port=443): Read timed out. (read timeout=15)
+2026-05-03 16:21:15,949 | WARNING | Failed to fetch weather markets for Los Angeles: HTTPSConnectionPool(host='gamma-api.polymarket.com', port=443): Read timed out. (read timeout=15)
+2026-05-03 16:21:22,051 | INFO | Found 198 weather sub-markets
+2026-05-03 16:21:50,814 | WARNING | Ensemble fetch failed for ecmwf_ifs025 paris 2026-05-04: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-03 16:22:15,844 | WARNING | Ensemble fetch failed for ecmwf_ifs025 shanghai 2026-05-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
