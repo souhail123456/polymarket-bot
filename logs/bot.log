@@ -5755,3 +5755,115 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-04 00:37:56,783 | INFO | Scan complete. Placed 0 trades.
+2026-05-04 09:47:47,731 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-04 09:47:47,732 | INFO | [shared/weather] 48 open trades, 64% win rate (as of 2026-05-04T16:53:09.307125+08:00)
+2026-05-04 09:47:47,732 | INFO | [shared/crypto] BTC $79,695, ETH $2,360, 0 open, 0% wr (as of 2026-05-04T17:02:00.057528+08:00)
+2026-05-04 09:47:47,732 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-04T14:56:34.864353+08:00)
+2026-05-04 09:47:47,896 | INFO | Fetched 150 active markets
+2026-05-04 09:47:47,897 | INFO | 34 candidates after filters
+2026-05-04 09:47:48,362 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:47:48,362 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2073829
+2026-05-04 09:47:48,363 | INFO | [2073829] 'Will Elon Musk post 160-179 tweets from April 28 to May 5, 2' mkt=0.48 est=0.28 conf=0.80 edge=+17.6% fee=$0.24 => NO $10.00
+2026-05-04 09:47:51,225 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:47:51,225 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2139027
+2026-05-04 09:47:51,225 | INFO | [2139027] 'Game Handicap: KT (-1.5) vs BNK FEARX (+1.5)' mkt=0.43 est=0.65 conf=0.80 edge=+18.7% fee=$0.25 => YES $8.87
+2026-05-04 09:47:53,995 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:47:53,995 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2109449
+2026-05-04 09:47:53,995 | INFO | [2109449] 'US x Iran diplomatic meeting by May 31, 2026?' mkt=0.41 est=0.20 conf=0.80 edge=+19.4% fee=$0.21 => NO $10.00
+2026-05-04 09:47:56,922 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:47:56,922 | INFO | LLM response from groq/llama-3.3-70b-versatile for 1962237
+2026-05-04 09:47:56,923 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.40 est=0.15 conf=0.80 edge=+22.5% fee=$0.20 => NO $10.00
+2026-05-04 09:47:59,698 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:47:59,698 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2074236
+2026-05-04 09:47:59,698 | INFO | [2074236] 'Will WTI Crude Oil (WTI) hit (HIGH) $120 in May?' mkt=0.40 est=0.25 conf=0.70 edge=+12.5% fee=$0.12 => NO $5.91
+2026-05-04 09:48:02,583 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:02,583 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2073824
+2026-05-04 09:48:02,583 | INFO | [2073824] 'Will Elon Musk post 140-159 tweets from April 28 to May 5, 2' mkt=0.38 est=0.28 conf=0.70 edge=+8.1% fee=$0.02 => skip $0.00
+2026-05-04 09:48:02,870 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:02,871 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2097944
+2026-05-04 09:48:02,871 | INFO | [2097944] 'Will the price of Bitcoin be above $80,000 on May 4?' mkt=0.38 est=0.20 conf=0.80 edge=+15.6% fee=$0.13 => NO $6.82
+2026-05-04 09:48:05,720 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:05,720 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2133405
+2026-05-04 09:48:05,721 | INFO | [2133405] 'Iran closes its airspace by May 31?' mkt=0.36 est=0.15 conf=0.80 edge=+19.7% fee=$0.14 => NO $7.61
+2026-05-04 09:48:08,522 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:08,522 | INFO | LLM response from groq/llama-3.3-70b-versatile for 1972137
+2026-05-04 09:48:08,522 | INFO | [1972137] 'Will Donald Trump announce that the United States blockade o' mkt=0.35 est=0.15 conf=0.80 edge=+18.2% fee=$0.11 => NO $6.29
+2026-05-04 09:48:11,254 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:11,254 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2074237
+2026-05-04 09:48:11,254 | INFO | [2074237] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in May?' mkt=0.69 est=0.35 conf=0.80 edge=+30.1% fee=$0.16 => NO $4.62
+2026-05-04 09:48:14,199 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:14,199 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2139020
+2026-05-04 09:48:14,199 | INFO | [2139020] 'LoL: KT Rolster vs BNK FEARX (BO3) - Esports World Cup Korea' mkt=0.70 est=0.58 conf=0.70 edge=+9.0% fee=$0.04 => skip $0.00
+2026-05-04 09:48:14,528 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:14,528 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2152454
+2026-05-04 09:48:14,528 | INFO | [2152454] "Internazionali BNL d'Italia, Qualification: Pedro Martinez v" mkt=0.27 est=0.55 conf=0.80 edge=+24.8% fee=$0.12 => YES $3.21
+2026-05-04 09:48:17,361 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:17,361 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2061884
+2026-05-04 09:48:17,361 | INFO | [2061884] 'Will Paris Saint-Germain FC win on 2026-05-06?' mkt=0.26 est=0.42 conf=0.80 edge=+12.8% fee=$0.06 => YES $1.66
+2026-05-04 09:48:20,118 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:20,118 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2132775
+2026-05-04 09:48:20,118 | INFO | [2132775] 'Will Bitcoin reach $90,000 in May?' mkt=0.24 est=0.05 conf=0.80 edge=+18.3% fee=$0.07 => NO $5.63
+2026-05-04 09:48:22,878 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:22,879 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2074235
+2026-05-04 09:48:22,879 | INFO | [2074235] 'Will WTI Crude Oil (WTI) hit (HIGH) $130 in May?' mkt=0.23 est=0.05 conf=0.80 edge=+16.4% fee=$0.05 => NO $4.40
+2026-05-04 09:48:25,608 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:25,608 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2099880
+2026-05-04 09:48:25,608 | INFO | [2099880] 'Jerome Powell out as Fed Chair by May 15, 2026?' mkt=0.21 est=0.05 conf=0.80 edge=+15.4% fee=$0.04 => NO $3.50
+2026-05-04 09:48:28,386 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:28,387 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2119227
+2026-05-04 09:48:28,387 | INFO | [2119227] 'Will Donald Trump announce that the United States blockade o' mkt=0.20 est=0.05 conf=0.80 edge=+14.5% fee=$0.03 => NO $2.79
+2026-05-04 09:48:31,243 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:31,243 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2047424
+2026-05-04 09:48:31,243 | INFO | [2047424] 'US x Iran diplomatic meeting by May 15, 2026?' mkt=0.20 est=0.05 conf=0.80 edge=+14.5% fee=$0.02 => NO $2.26
+2026-05-04 09:48:33,967 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:33,967 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2150921
+2026-05-04 09:48:33,967 | INFO | [2150921] "Internazionali BNL d'Italia, Qualification: Leolia Jeanjean " mkt=0.81 est=0.58 conf=0.70 edge=+19.0% fee=$0.04 => skip $0.00
+2026-05-04 09:48:34,436 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:34,436 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2139069
+2026-05-04 09:48:34,436 | INFO | [2139069] 'LoL: T1 vs HANJIN BRION (BO3) - Esports World Cup Korea Qual' mkt=0.83 est=0.72 conf=0.80 edge=+7.3% fee=$0.04 => skip $0.00
+2026-05-04 09:48:34,900 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:34,900 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2097821
+2026-05-04 09:48:34,900 | INFO | [2097821] 'Will Donald Trump announce that the United States blockade o' mkt=0.14 est=0.05 conf=0.80 edge=+7.8% fee=$0.01 => skip $0.00
+2026-05-04 09:48:35,354 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:35,354 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2073833
+2026-05-04 09:48:35,354 | INFO | [2073833] 'Will Elon Musk post 180-199 tweets from April 28 to May 5, 2' mkt=0.13 est=0.25 conf=0.80 edge=+8.0% fee=$0.04 => skip $0.00
+2026-05-04 09:48:35,925 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:35,925 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2125906
+2026-05-04 09:48:35,925 | INFO | [2125906] 'Will Elon Musk post 40-64 tweets from May 2 to May 4, 2026?' mkt=0.88 est=0.65 conf=0.80 edge=+18.1% fee=$0.04 => skip $0.00
+2026-05-04 09:48:36,346 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:36,346 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2125909
+2026-05-04 09:48:36,346 | INFO | [2125909] 'Will Elon Musk post 65-89 tweets from May 2 to May 4, 2026?' mkt=0.12 est=0.25 conf=0.80 edge=+8.5% fee=$0.04 => skip $0.00
+2026-05-04 09:48:36,669 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:36,669 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2074234
+2026-05-04 09:48:36,669 | INFO | [2074234] 'Will WTI Crude Oil (WTI) hit (HIGH) $140 in May?' mkt=0.12 est=0.03 conf=0.80 edge=+8.0% fee=$0.01 => skip $0.00
+2026-05-04 09:48:37,137 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:37,137 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2133404
+2026-05-04 09:48:37,137 | INFO | [2133404] 'Iran closes its airspace by May 8?' mkt=0.12 est=0.05 conf=0.80 edge=+5.9% fee=$0.01 => skip $0.00
+2026-05-04 09:48:37,495 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:37,496 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2139307
+2026-05-04 09:48:37,496 | INFO | [2139307] 'Lakers vs. Thunder' mkt=0.12 est=0.45 conf=0.80 edge=+29.1% fee=$0.04 => skip $0.00
+2026-05-04 09:48:37,779 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:37,779 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2132780
+2026-05-04 09:48:37,780 | INFO | [2132780] 'Will Bitcoin dip to $65,000 in May?' mkt=0.10 est=0.03 conf=0.80 edge=+7.0% fee=$0.01 => skip $0.00
+2026-05-04 09:48:38,125 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:38,126 | INFO | LLM response from groq/llama-3.3-70b-versatile for 1808970
+2026-05-04 09:48:38,126 | INFO | [1808970] 'US obtains Iranian enriched uranium by May 31?' mkt=0.10 est=0.02 conf=0.80 edge=+7.0% fee=$0.00 => skip $0.00
+2026-05-04 09:48:38,544 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:38,544 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2140897
+2026-05-04 09:48:38,544 | INFO | [2140897] 'Bitcoin Up or Down on May 4?' mkt=0.92 est=0.50 conf=0.80 edge=+36.9% fee=$0.05 => NO $1.10
+2026-05-04 09:48:41,248 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 09:48:41,248 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2054133
+2026-05-04 09:48:41,248 | INFO | [2054133] 'Strait of Hormuz traffic returns to normal by May 15?' mkt=0.07 est=0.40 conf=0.80 edge=+28.4% fee=$0.05 => skip $0.00
+2026-05-04 09:48:41,314 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 09:48:41,776 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 09:48:41,776 | INFO | LLM response from groq/llama-3.1-8b-instant for 2074233
+2026-05-04 09:48:41,776 | INFO | [2074233] 'Will WTI Crude Oil (WTI) hit (HIGH) $150 in May?' mkt=0.07 est=0.42 conf=0.85 edge=+30.8% fee=$0.05 => skip $0.00
+2026-05-04 09:48:41,848 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 09:48:42,207 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 09:48:42,207 | INFO | LLM response from groq/llama-3.1-8b-instant for 2119226
+2026-05-04 09:48:42,207 | INFO | [2119226] 'Will Donald Trump announce that the United States blockade o' mkt=0.06 est=0.45 conf=0.80 edge=+34.5% fee=$0.05 => skip $0.00
+2026-05-04 09:48:42,321 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 09:48:42,667 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 09:48:42,668 | INFO | LLM response from groq/llama-3.1-8b-instant for 1795527
+2026-05-04 09:48:42,668 | INFO | [1795527] 'Russia x Ukraine ceasefire by May 31, 2026?' mkt=0.05 est=0.45 conf=0.80 edge=+34.9% fee=$0.05 => skip $0.00
+2026-05-04 09:48:42,668 | INFO | Scan complete. Placed 17 trades.
