@@ -296,6 +296,7 @@ def _load_regime():
 
 
 def estimate_probability(market):
+    """Estimate probability for a single market (fallback if batch fails)."""
     regime, regime_guidance = _load_regime()
     category = classify_market_category(market.get("question", ""), market.get("description", ""))
     live_context = fetch_live_context(category, market.get("question", ""))
@@ -323,6 +324,77 @@ def estimate_probability(market):
     except Exception as e:
         log.warning(f"estimate_probability failed for {market.get('_market_id')}: {e}")
         return None, None, None
+
+
+def estimate_probability_batch(markets):
+    """Evaluate multiple markets in one LLM call. Falls back to individual calls on failure."""
+    if not markets:
+        return {}
+
+    regime, regime_guidance = _load_regime()
+
+    # Build one prompt with all markets
+    market_lines = []
+    for i, m in enumerate(markets):
+        category = classify_market_category(m.get("question", ""), m.get("description", ""))
+        live_ctx = fetch_live_context(category, m.get("question", ""))
+        market_lines.append(
+            f"MARKET {i+1} (id={m['_market_id'][:12]}):\n"
+            f"  Question: {(m.get('question') or '')[:300]}\n"
+            f"  Description: {(m.get('description') or '')[:400]}\n"
+            f"  Market price (YES): {m['_yes_price']:.1%}\n"
+            f"  Hours to resolve: {m['_hours_left']:.1f}\n"
+            f"  Resolution: {(m.get('resolutionSource') or 'See description')[:200]}\n"
+            f"  {live_ctx}"
+        )
+
+    batch_prompt = f"""You are an aggressive prediction market trader. Evaluate ALL markets below and estimate TRUE probability each resolves YES.
+
+REGIME: {regime}
+{regime_guidance}
+
+{"---".join(market_lines)}
+
+CRITICAL RULES:
+- If a market involves a PRICE (crypto, oil, stocks), you MUST use live prices if provided. If none, confidence below 0.5.
+- If a SPORTS match with no stats, confidence below 0.5.
+- Reasoning MUST cite specific evidence. "Recency bias" alone is NOT valid.
+- Confidence MUST vary per market.
+
+Output ONLY a JSON array, one object per market, in order. No other text:
+[{{"market_id": "<id>", "true_probability": <0-1>, "confidence": <0-1>, "reasoning": "<one sentence>"}}]"""
+
+    try:
+        text, provider, model = call_llm(batch_prompt, max_tokens=200 * len(markets), temperature=0.3)
+        log.info(f"Batch LLM response from {provider}/{model} for {len(markets)} markets")
+        text = text.strip()
+        if text.startswith("```"):
+            text = text.split("```", 2)[1]
+            if text.startswith("json"):
+                text = text[4:]
+            text = text.strip()
+        results = json.loads(text)
+        if not isinstance(results, list) or len(results) != len(markets):
+            raise ValueError(f"Expected {len(markets)} results, got {len(results) if isinstance(results, list) else 'non-list'}")
+
+        # Map results back to market IDs
+        output = {}
+        for i, m in enumerate(markets):
+            r = results[i]
+            output[m["_market_id"]] = (
+                float(r["true_probability"]),
+                float(r["confidence"]),
+                r.get("reasoning", ""),
+            )
+        log.info(f"Batch evaluation succeeded: {len(output)} markets in 1 LLM call")
+        return output
+    except Exception as e:
+        log.warning(f"Batch evaluation failed ({e}), falling back to individual calls")
+        output = {}
+        for m in markets:
+            result = estimate_probability(m)
+            output[m["_market_id"]] = result
+        return output
 
 
 # ---------- EV math ----------
@@ -638,6 +710,21 @@ def run_scan(cfg, mode, bankroll):
     eval_cache = load_eval_cache()
     cache_hits = 0
     trades_placed = 0
+
+    # Split candidates into cached (skip) and needs_eval (batch LLM)
+    needs_eval = []
+    for m in candidates:
+        market_id = m["_market_id"]
+        market_p = m["_yes_price"]
+        if not should_reevaluate(market_id, market_p, eval_cache):
+            log.info(f"[{market_id[:8]}] Cache hit — price {market_p:.2f} unchanged, skipping LLM")
+            cache_hits += 1
+        else:
+            needs_eval.append(m)
+
+    # Batch evaluate all non-cached markets in one LLM call
+    batch_results = estimate_probability_batch(needs_eval) if needs_eval else {}
+
     for m in candidates:
         if bankroll < 2.0:
             log.info(f"Bankroll ${bankroll:.2f} too low — stopping scan")
@@ -645,19 +732,15 @@ def run_scan(cfg, mode, bankroll):
         market_id = m["_market_id"]
         market_p = m["_yes_price"]
 
-        # Skip LLM call if price hasn't moved since last evaluation
-        if not should_reevaluate(market_id, market_p, eval_cache):
-            cached = eval_cache[market_id]
-            log.info(f"[{market_id[:8]}] Cache hit — price {market_p:.2f} unchanged, skipping LLM")
-            cache_hits += 1
-            continue
-
-        true_p, conf, reason = estimate_probability(m)
-        if true_p is None:
-            continue
-
-        # Cache this evaluation
-        eval_cache[market_id] = {"price": market_p, "true_p": true_p, "conf": conf}
+        # Get result from batch or skip if cached
+        if market_id in batch_results:
+            true_p, conf, reason = batch_results[market_id]
+            if true_p is None:
+                continue
+            # Cache this evaluation
+            eval_cache[market_id] = {"price": market_p, "true_p": true_p, "conf": conf}
+        else:
+            continue  # cached — already counted above
 
         side, size, edge, fee_usd = decide_trade(true_p, market_p, conf, bankroll, cfg)
 
