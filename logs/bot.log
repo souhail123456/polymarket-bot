@@ -5755,6 +5755,7 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-04 00:37:56,783 | INFO | Scan complete. Placed 0 trades.
+<<<<<<< Updated upstream
 2026-05-04 21:49:45,311 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
 2026-05-04 21:49:45,312 | INFO | [shared/weather] 58 open trades, 65% win rate (as of 2026-05-05T05:31:13.095292+08:00)
 2026-05-04 21:49:45,312 | INFO | [shared/crypto] BTC $79,940, ETH $2,350, 0 open, 0% wr (as of 2026-05-05T04:53:55.912155+08:00)
@@ -5781,3 +5782,5 @@ cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-04 21:49:46,762 | INFO | [2073829] 'Will Elon Musk post 160-179 tweets from April 28 to May 5, 2' mkt=0.42 est=0.42 conf=0.90 edge=-2.9% fee=$0.03 => skip $0.00
 2026-05-04 21:49:46,762 | INFO | [2152537] 'Cavaliers vs. Pistons' mkt=0.41 est=0.41 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-04 21:49:46,763 | INFO | Scan complete. Placed 0 trades. Cache hits: 6
+=======
+>>>>>>> Stashed changes
