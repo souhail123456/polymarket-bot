@@ -50,3 +50,20 @@
 2026-05-04 00:20:38,971 | INFO | [1082182] type=cpi | Will Canada’s 2026 inflation be at least 4.0%? | mkt=0.10 model=0.01 edge=+8.9% => skip $0.00
 2026-05-04 00:20:38,972 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.09 model=0.01 edge=+7.8% => skip $0.00
 2026-05-04 00:20:38,973 | INFO | Econ scan complete. Placed 0 trades.
+2026-05-04 06:56:30,343 | INFO | === Econ Scan | mode=paper | bankroll=$100.00 ===
+2026-05-04 06:56:30,343 | INFO | [shared/weather] 56 open trades, 64% win rate (as of 2026-05-04T14:06:14.140630+08:00)
+2026-05-04 06:56:30,344 | INFO | [shared/crypto] BTC $79,965, ETH $2,374, 0 open, 0% wr (as of 2026-05-04T14:06:39.044821+08:00)
+2026-05-04 06:56:30,344 | INFO | [shared/ev] 0 open trades, 100% win rate (as of 2026-05-04T08:37:56.783305+08:00)
+2026-05-04 06:56:31,332 | INFO | Fetching nowcast data sources...
+2026-05-04 06:56:32,670 | INFO | Cleveland Fed 1Y inflation expectation (FRED): 3.25872162
+2026-05-04 06:56:33,504 | INFO | GDPNow estimate: 3.5%
+2026-05-04 06:56:34,105 | INFO | Fed Funds actual rate (FRED): 3.64%
+2026-05-04 06:56:34,374 | INFO | Unemployment (FRED): 4.3% (prev: 4.4%)
+2026-05-04 06:56:34,660 | INFO | Nonfarm payrolls change (FRED): +178.0K
+2026-05-04 06:56:34,863 | INFO | Core PCE YoY (FRED): 3.20276%
+2026-05-04 06:56:34,863 | INFO | Data sources: CPI=ok | GDP=ok | FedWatch=ok | Unemployment=ok | Payrolls=ok | PCE=ok
+2026-05-04 06:56:38,652 | INFO | Found 170 unique econ markets
+2026-05-04 06:56:38,655 | INFO | [1082177] type=cpi | Will Canada’s 2026 inflation be less than 1.0%? | mkt=0.10 model=0.01 edge=+8.6% => skip $0.00
+2026-05-04 06:56:38,655 | INFO | [1082182] type=cpi | Will Canada’s 2026 inflation be at least 4.0%? | mkt=0.29 model=0.01 edge=+27.9% => NO $14.49
+2026-05-04 06:56:38,657 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.09 model=0.01 edge=+7.8% => skip $0.00
+2026-05-04 06:56:40,089 | INFO | Econ scan complete. Placed 1 trades.
