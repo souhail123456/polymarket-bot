@@ -54,7 +54,7 @@ DEFAULT_CONFIG = {
     "min_hours_to_resolve": 2,
     "price_floor": 0.05,         # was 0.15 — allow cheap YES bets (LLM can spot longshot value)
     "price_ceiling": 0.95,       # was 0.85 — allow high-confidence NO bets
-    "max_markets_per_scan": 40,  # was 25 — evaluate more, LLM decides what's worth it
+    "max_markets_per_scan": 15,  # cap per scan to avoid draining bankroll
     # Starting paper bankroll
     "starting_bankroll": 100.0,
 }
@@ -540,6 +540,9 @@ def run_scan(cfg, mode, bankroll):
 
     trades_placed = 0
     for m in candidates:
+        if bankroll < 2.0:
+            log.info(f"Bankroll ${bankroll:.2f} too low — stopping scan")
+            break
         true_p, conf, reason = estimate_probability(m)
         if true_p is None:
             continue
