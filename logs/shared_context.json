@@ -31,5 +31,12 @@
     "pce_data_available": true,
     "summary": "CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok",
     "updated_at": "2026-05-04T08:20:35.388464+08:00"
+  },
+  "ev": {
+    "trades_open": 0,
+    "trades_resolved": 1,
+    "win_rate": 1.0,
+    "summary": "0 open trades, 100% win rate",
+    "updated_at": "2026-05-04T08:37:56.783305+08:00"
   }
 }

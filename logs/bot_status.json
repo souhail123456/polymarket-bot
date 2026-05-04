@@ -19,5 +19,12 @@
     "trades_skipped": 0,
     "next_run": "every 6h",
     "status": "ok"
+  },
+  "ev": {
+    "last_run": "2026-05-04T08:37:56.783733+08:00",
+    "trades_placed": 0,
+    "trades_skipped": 8,
+    "next_run": "every 30min",
+    "status": "ok"
   }
 }
