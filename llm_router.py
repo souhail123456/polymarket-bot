@@ -66,6 +66,7 @@ def _call_gemini_format(url, api_key, model, prompt, max_tokens, temperature):
             "maxOutputTokens": max_tokens,
             "temperature": temperature,
         },
+        "tools": [{"google_search": {}}],
     }).encode()
     req = urllib.request.Request(full_url, data=payload, headers={
         "Content-Type": "application/json",
