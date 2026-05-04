@@ -5755,3 +5755,66 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-04 00:37:56,783 | INFO | Scan complete. Placed 0 trades.
+2026-05-04 18:34:31,202 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-04 18:34:31,202 | INFO | [shared/weather] 52 open trades, 64% win rate (as of 2026-05-05T01:37:22.524967+08:00)
+2026-05-04 18:34:31,202 | INFO | [shared/crypto] BTC $80,325, ETH $2,369, 0 open, 0% wr (as of 2026-05-05T02:02:51.422820+08:00)
+2026-05-04 18:34:31,202 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T02:28:55.472855+08:00)
+2026-05-04 18:34:31,408 | INFO | Fetched 150 active markets
+2026-05-04 18:34:31,409 | INFO | 15 candidates after filters
+2026-05-04 18:34:31,883 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 18:34:31,883 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2150697
+2026-05-04 18:34:31,883 | INFO | [2150697] '76ers vs. Knicks: O/U 213.5' mkt=0.48 est=0.55 conf=0.80 edge=+3.9% fee=$0.03 => skip $0.00
+2026-05-04 18:34:32,315 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 18:34:32,315 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2073824
+2026-05-04 18:34:32,315 | INFO | [2073824] 'Will Elon Musk post 140-159 tweets from April 28 to May 5, 2' mkt=0.46 est=0.32 conf=0.80 edge=+11.3% fee=$0.18 => NO $7.70
+2026-05-04 18:34:35,261 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 18:34:35,261 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2105228
+2026-05-04 18:34:35,261 | INFO | [2105228] 'Boston Red Sox vs. Detroit Tigers' mkt=0.46 est=0.58 conf=0.70 edge=+9.8% fee=$0.03 => skip $0.00
+2026-05-04 18:34:35,723 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 18:34:35,723 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2074236
+2026-05-04 18:34:35,724 | INFO | [2074236] 'Will WTI Crude Oil (WTI) hit (HIGH) $120 in May?' mkt=0.46 est=0.25 conf=0.80 edge=+18.2% fee=$0.23 => NO $10.00
+2026-05-04 18:34:38,486 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:34:38,912 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:34:38,912 | INFO | LLM response from groq/llama-3.1-8b-instant for 2105255
+2026-05-04 18:34:38,912 | INFO | [2105255] 'San Diego Padres vs. San Francisco Giants' mkt=0.56 est=0.62 conf=0.85 edge=+4.3% fee=$0.02 => skip $0.00
+2026-05-04 18:34:39,018 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:34:39,737 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:34:39,737 | INFO | LLM response from groq/llama-3.1-8b-instant for 2107043
+2026-05-04 18:34:39,737 | INFO | [2107043] 'Will the price of Bitcoin be above $80,000 on May 5?' mkt=0.56 est=0.32 conf=0.80 edge=+20.7% fee=$0.25 => NO $9.06
+2026-05-04 18:34:42,502 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:34:42,966 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:34:42,967 | INFO | LLM response from groq/llama-3.1-8b-instant for 2132776
+2026-05-04 18:34:42,967 | INFO | [2132776] 'Will Bitcoin reach $85,000 in May?' mkt=0.56 est=0.15 conf=0.80 edge=+38.7% fee=$0.28 => NO $10.00
+2026-05-04 18:34:45,595 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:34:45,913 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:34:45,913 | INFO | LLM response from groq/llama-3.1-8b-instant for 2105252
+2026-05-04 18:34:45,913 | INFO | [2105252] 'Atlanta Braves vs. Seattle Mariners' mkt=0.43 est=0.55 conf=0.80 edge=+8.7% fee=$0.03 => skip $0.00
+2026-05-04 18:34:46,004 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:34:46,418 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:34:46,418 | INFO | LLM response from groq/llama-3.1-8b-instant for 2152537
+2026-05-04 18:34:46,418 | INFO | [2152537] 'Cavaliers vs. Pistons' mkt=0.41 est=0.55 conf=0.90 edge=+10.6% fee=$0.11 => YES $3.84
+2026-05-04 18:34:49,054 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:34:49,518 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:34:49,518 | INFO | LLM response from groq/llama-3.1-8b-instant for 2054135
+2026-05-04 18:34:49,518 | INFO | [2054135] 'Will Arsenal FC win on 2026-05-05?' mkt=0.60 est=0.45 conf=0.80 edge=+12.5% fee=$0.12 => NO $4.01
+2026-05-04 18:34:52,308 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:34:52,772 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:34:52,772 | INFO | LLM response from groq/llama-3.1-8b-instant for 2133405
+2026-05-04 18:34:52,772 | INFO | [2133405] 'Iran closes its airspace by May 31?' mkt=0.61 est=0.15 conf=0.80 edge=+43.0% fee=$0.30 => NO $10.00
+2026-05-04 18:34:55,375 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:34:56,262 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:34:56,262 | INFO | LLM response from groq/llama-3.1-8b-instant for 2095161
+2026-05-04 18:34:56,262 | INFO | [2095161] 'Game Handicap: MKOI (-1.5) vs Shifters (+1.5)' mkt=0.65 est=0.35 conf=0.80 edge=+26.3% fee=$0.18 => NO $5.56
+2026-05-04 18:34:58,861 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:34:59,773 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:34:59,774 | INFO | LLM response from groq/llama-3.1-8b-instant for 2133404
+2026-05-04 18:34:59,774 | INFO | [2133404] 'Iran closes its airspace by May 8?' mkt=0.34 est=0.75 conf=0.90 edge=+38.2% fee=$0.22 => YES $6.72
+2026-05-04 18:35:02,354 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:35:02,674 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:35:02,674 | INFO | LLM response from groq/llama-3.1-8b-instant for 1962237
+2026-05-04 18:35:02,675 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.34 est=0.75 conf=0.90 edge=+38.2% fee=$0.19 => YES $5.67
+2026-05-04 18:35:05,279 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 18:35:05,717 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 18:35:05,718 | INFO | LLM response from groq/llama-3.1-8b-instant for 2105235
+2026-05-04 18:35:05,718 | INFO | [2105235] 'Baltimore Orioles vs. New York Yankees' mkt=0.34 est=0.42 conf=0.85 edge=+5.2% fee=$0.03 => skip $0.00
+2026-05-04 18:35:05,718 | INFO | Scan complete. Placed 10 trades.
