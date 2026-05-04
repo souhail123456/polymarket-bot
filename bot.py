@@ -26,7 +26,6 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 import requests
-from openai import OpenAI
 from llm_router import call_llm
 
 # ---------- Config ----------
@@ -41,21 +40,21 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 DEFAULT_CONFIG = {
     # Trade decision thresholds
-    "min_edge": 0.10,            # min EV per $1 staked (matches backtest)
-    "min_confidence": 0.55,      # Claude's self-reported confidence
+    "min_edge": 0.10,            # min EV per $1 staked
+    "min_confidence": 0.55,      # LLM self-reported confidence
     # Sizing
-    "max_position_usd": 5.0,     # cap per trade — keep small for paper
-    "daily_loss_cap_usd": 20.0,
+    "max_position_usd": 10.0,    # was $5 — size up, LLM edge pays when it hits
+    "daily_loss_cap_usd": 25.0,
     "kelly_fraction": 0.25,      # quarter-Kelly
-    "taker_fee_rate": 0.05,      # conservative default (5%); actual varies by category
-    # Market filters — tuned for FAST RESOLUTION so we hit 30 trades quickly
+    "taker_fee_rate": 0.05,
+    # Market filters — opened up to catch more opportunities
     "min_liquidity_usd": 500.0,
-    "max_liquidity_usd": 500000.0, # skip mega-markets (>$500K liq)
-    "max_hours_to_resolve": 168, # up to 7 days out
+    "max_liquidity_usd": 500000.0,
+    "max_hours_to_resolve": 720, # was 168 (7d) — now 30 days. 92/150 markets were filtered out
     "min_hours_to_resolve": 2,
-    "price_floor": 0.15,         # matches backtest
-    "price_ceiling": 0.85,       # matches backtest
-    "max_markets_per_scan": 25,
+    "price_floor": 0.05,         # was 0.15 — allow cheap YES bets (LLM can spot longshot value)
+    "price_ceiling": 0.95,       # was 0.85 — allow high-confidence NO bets
+    "max_markets_per_scan": 40,  # was 25 — evaluate more, LLM decides what's worth it
     # Starting paper bankroll
     "starting_bankroll": 100.0,
 }
@@ -191,7 +190,7 @@ def filter_markets(markets, cfg, already_traded_ids):
 
 
 # ---------- Claude probability estimation ----------
-PROMPT = """You are a calibrated prediction market analyst. Your job: estimate the TRUE probability this market resolves YES.
+PROMPT = """You are an aggressive prediction market trader. Your job: estimate the TRUE probability this market resolves YES, then explain why the crowd is wrong.
 
 MARKET: {question}
 
@@ -203,11 +202,12 @@ RESOLUTION SOURCE: {resolution}
 
 Think through:
 1. What exactly must happen for YES?
-2. Base rate for this type of event?
-3. Any concrete evidence you have right now?
-4. Is the crowd likely biased here (recency, narrative, longshot bias)?
+2. Base rate for this type of event? Historical frequency?
+3. What concrete evidence do you have NOW that the crowd is missing?
+4. Common crowd biases: recency bias, narrative bias, longshot overpricing, favorite-longshot bias, anchoring to round numbers.
+5. Time decay: if resolution is soon and nothing has changed, current state likely persists.
 
-CRITICAL: If you do not have real informational edge, your estimate should be CLOSE to the market price. Being "confident the market is wrong" without specific evidence is how money gets lost. Most markets are approximately efficient.
+YOUR EDGE: You have broad knowledge of base rates, historical patterns, and cognitive biases. The crowd often overprices dramatic outcomes and underprices boring ones. If you see a clear mispricing, be bold — that's where money is made.
 
 MARKET REGIME: {regime}
 {regime_guidance}
@@ -233,7 +233,7 @@ def _load_regime():
         return "UNKNOWN", ""
 
 
-def estimate_probability(client, market):
+def estimate_probability(market):
     regime, regime_guidance = _load_regime()
     prompt = PROMPT.format(
         question=(market.get("question") or "")[:500],
@@ -515,7 +515,7 @@ def update_bot_status(bot_name, trades_placed, trades_skipped, next_run):
 
 
 # ---------- Main scan ----------
-def run_scan(client, cfg, mode, bankroll):
+def run_scan(cfg, mode, bankroll):
     log.info(f"=== Scan | mode={mode} | bankroll=${bankroll:.2f} ===")
 
     # Log shared context from other bots
@@ -540,7 +540,7 @@ def run_scan(client, cfg, mode, bankroll):
 
     trades_placed = 0
     for m in candidates:
-        true_p, conf, reason = estimate_probability(client, m)
+        true_p, conf, reason = estimate_probability(m)
         if true_p is None:
             continue
         market_p = m["_yes_price"]
@@ -651,9 +651,6 @@ def main():
         log.error("Set at least one LLM API key: GROQ_API_KEY, GEMINI_API_KEY, or CEREBRAS_API_KEY")
         return
 
-    # client kept for interface compatibility — actual calls go through call_llm()
-    api_key = os.environ.get("GROQ_API_KEY", "unused")
-    client = OpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1")
     cfg = DEFAULT_CONFIG.copy()
     if args.max_position:
         cfg["max_position_usd"] = args.max_position
@@ -666,13 +663,13 @@ def main():
     if args.loop:
         while True:
             try:
-                run_scan(client, cfg, args.mode, bankroll)
+                run_scan(cfg, args.mode, bankroll)
             except Exception as e:
                 log.exception(f"Scan error: {e}")
             log.info("Sleeping 30 min...")
             time.sleep(30 * 60)
     else:
-        run_scan(client, cfg, args.mode, bankroll)
+        run_scan(cfg, args.mode, bankroll)
 
 
 if __name__ == "__main__":
