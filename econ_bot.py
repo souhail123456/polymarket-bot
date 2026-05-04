@@ -704,13 +704,30 @@ def fetch_core_pce() -> dict | None:
 # SECTION 3: Market type classifier and question parser
 # ==========================================================================
 
+def _is_us_market(question: str) -> bool:
+    """Check if market is about US economy. Skip foreign markets we have no data for."""
+    q = question.lower()
+    foreign = ["china", "chinese", "india", "indian", "argentina", "canada", "canadian",
+               "uk ", "britain", "europe", "euro zone", "eurozone", "japan", "mexico",
+               "brazil", "australia", "germany", "france", "turkey", "russia"]
+    if any(f in q for f in foreign):
+        return False
+    # Explicitly US or no country mentioned (assume US for Fed/CPI/etc)
+    return True
+
+
 def classify_market(market: dict) -> str | None:
     """
     Classify a market question into one of our supported types.
 
     Returns one of: "cpi", "fed_rate", "unemployment", "gdp", "payrolls" or None
+    Only classifies US markets — we have no data for foreign economies.
     """
     q = (market.get("question", "") + " " + market.get("description", "")).lower()
+
+    # Skip non-US markets — our data is all US
+    if not _is_us_market(q):
+        return None
 
     # CPI / inflation
     cpi_terms = ["cpi", "consumer price index", "inflation rate", "core cpi", "cpi yoy"]
@@ -845,10 +862,10 @@ def model_prob_cpi(threshold: dict, cpi_data: dict) -> float | None:
     if nowcast is None:
         return None
 
-    # Standard deviation of Cleveland Fed 1-month CPI nowcast errors
-    # Based on published accuracy: ~0.15% YoY RMSE at 1-month horizon
-    # Use a wider sigma if we're using actual data not a nowcast
-    sigma = 0.25 if cpi_data.get("is_actual_not_nowcast") else 0.15
+    # Standard deviation of CPI forecast errors
+    # Widened from 0.15 — model was hitting 99%/1% too often and being wrong
+    # Real-world CPI surprises are bigger than Cleveland Fed's in-sample RMSE
+    sigma = 0.40 if cpi_data.get("is_actual_not_nowcast") else 0.30
 
     direction = threshold.get("direction")
     target = threshold.get("value")
@@ -883,7 +900,7 @@ def model_prob_pce(threshold: dict, pce_data: dict) -> float | None:
     if nowcast is None:
         return None
 
-    sigma = 0.20   # PCE slightly smoother than CPI
+    sigma = 0.30   # PCE — widened to avoid overconfidence
     direction = threshold.get("direction")
     target = threshold.get("value")
     if target is None:
@@ -935,7 +952,7 @@ def model_prob_unemployment(threshold: dict, unemp_data: dict) -> float | None:
         return None
 
     # Unemployment month-to-month std dev historically ~0.1-0.15%
-    sigma = 0.15
+    sigma = 0.25
     # Simple trend adjustment: if rate has been rising/falling, shift center
     trend = current + (current - prev) * 0.3 if prev else current
 
@@ -968,7 +985,7 @@ def model_prob_gdp(threshold: dict, gdp_data: dict) -> float | None:
 
     # GDPNow RMSE is ~1.0pp on final GDP at start of quarter,
     # narrows to ~0.5pp near end of quarter
-    sigma = 0.7 if gdp_data.get("is_actual_not_nowcast") else 1.0
+    sigma = 1.2 if gdp_data.get("is_actual_not_nowcast") else 1.5
 
     direction = threshold.get("direction")
     target = threshold.get("value")
@@ -998,7 +1015,7 @@ def model_prob_payrolls(threshold: dict, payroll_data: dict) -> float | None:
     if latest is None:
         return None
 
-    sigma = 80.0  # historical payroll surprise std dev ~80K
+    sigma = 120.0  # widened — payroll revisions are huge, 80K was too tight
     trend = latest + (latest - prev) * 0.2 if prev else latest
 
     direction = threshold.get("direction")
@@ -1319,8 +1336,9 @@ def run_scan(cfg: dict, mode: str, bankroll: float):
             log.debug(f"[{mid[:8]}] model_p=None for type={mtype} threshold={threshold}")
             continue
 
-        # Clamp model probability to avoid overconfidence
-        model_p = max(0.01, min(0.99, model_p))
+        # Clamp model probability — never be more than 90% confident
+        # Economic data has fat tails, surprises happen
+        model_p = max(0.10, min(0.90, model_p))
 
         side, size, edge, fee_usd = decide_trade(model_p, yes_price, bankroll, cfg)
 
