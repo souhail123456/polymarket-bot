@@ -22,6 +22,7 @@ import json
 import time
 import argparse
 import logging
+import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -189,6 +190,60 @@ def filter_markets(markets, cfg, already_traded_ids):
     return kept[: cfg["max_markets_per_scan"]]
 
 
+# ---------- Market category & live context ----------
+def classify_market_category(question: str, description: str = "") -> str:
+    """Classify market into category for context enrichment."""
+    text = (question + " " + description).lower()
+
+    if any(w in text for w in ["bitcoin", "btc", "ethereum", "eth", "crypto", "solana", "dogecoin"]):
+        return "crypto"
+    if any(w in text for w in ["oil", "wti", "brent", "gold", "silver", "commodity", "natural gas"]):
+        return "commodity"
+    if any(w in text for w in ["nba", "nfl", "mlb", "nhl", "premier league", "la liga", "serie a",
+                                "bundesliga", "champions league", "world cup", "tennis", "boxing",
+                                "ufc", "mma", "handicap", "vs.", "match", "game ", " win ",
+                                "cavaliers", "lakers", "celtics", "yankees", "dodgers",
+                                "arsenal", "manchester", "barcelona", "real madrid"]):
+        return "sports"
+    if any(w in text for w in ["stock", "s&p", "nasdaq", "dow jones", "spy", "qqq", "share price"]):
+        return "stocks"
+    return "general"  # politics, geopolitics, celebrity, etc.
+
+
+def fetch_live_context(category: str, question: str) -> str:
+    """Fetch live data relevant to the market category."""
+    if category == "crypto":
+        return _fetch_crypto_prices()
+    if category == "commodity":
+        return _fetch_commodity_context(question)
+    if category == "sports":
+        return "NOTE: You have NO live sports data. Be honest about uncertainty. If you cannot determine a clear edge from public knowledge alone, set confidence below 0.5."
+    return ""
+
+
+def _fetch_crypto_prices() -> str:
+    """Fetch BTC/ETH prices from CoinGecko free API."""
+    try:
+        url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd&include_24hr_change=true"
+        req = urllib.request.Request(url)
+        req.add_header("User-Agent", "polymarket-bot/1.0")
+        resp = urllib.request.urlopen(req, timeout=10)
+        data = json.loads(resp.read())
+        lines = ["LIVE CRYPTO PRICES (use these for your estimate):"]
+        for coin, info in data.items():
+            price = info.get("usd", "?")
+            change = info.get("usd_24h_change", 0)
+            lines.append(f"  {coin.upper()}: ${price:,.2f} (24h: {change:+.1f}%)")
+        return "\n".join(lines)
+    except Exception as e:
+        return f"WARNING: Could not fetch live crypto prices ({e}). Be very cautious with probability estimates."
+
+
+def _fetch_commodity_context(question: str) -> str:
+    """Return a warning about commodity prices — no free reliable API for WTI etc."""
+    return "NOTE: You have NO live commodity price data. For price-threshold markets (e.g., 'Will oil hit $X'), be very conservative. If the threshold seems extreme (e.g., oil >$120, gold >$3000), the base rate for such spikes is very low."
+
+
 # ---------- Claude probability estimation ----------
 PROMPT = """You are an aggressive prediction market trader. Your job: estimate the TRUE probability this market resolves YES, then explain why the crowd is wrong.
 
@@ -199,6 +254,7 @@ DESCRIPTION: {description}
 CURRENT MARKET PRICE (crowd's implied probability of YES): {yes_price:.1%}
 HOURS UNTIL RESOLUTION: {hours_left:.1f}
 RESOLUTION SOURCE: {resolution}
+{live_context}
 
 Think through:
 1. What exactly must happen for YES?
@@ -212,8 +268,14 @@ YOUR EDGE: You have broad knowledge of base rates, historical patterns, and cogn
 MARKET REGIME: {regime}
 {regime_guidance}
 
+CRITICAL RULES:
+- If this market involves a PRICE (crypto, oil, stocks), you MUST check the live prices above. If no live price is available, set confidence below 0.5.
+- If this is a SPORTS match, you have NO live stats. Only bet if you have strong public knowledge of a massive skill gap. Otherwise set confidence below 0.5.
+- Your reasoning MUST cite specific evidence (numbers, dates, facts). "Recency bias" alone is NOT valid reasoning.
+- Confidence MUST vary per trade. Using 0.80 for everything means you're not calibrating.
+
 Output ONLY this JSON, no other text:
-{{"true_probability": <0-1>, "confidence": <0-1>, "reasoning": "<one sentence>"}}"""
+{{"true_probability": <0-1>, "confidence": <0-1 — MUST vary: use 0.5-0.6 for low info, 0.7-0.8 for moderate, 0.9+ only with strong data>, "reasoning": "<one sentence with SPECIFIC evidence, not generic bias names>"}}"""
 
 
 def _load_regime():
@@ -235,6 +297,8 @@ def _load_regime():
 
 def estimate_probability(market):
     regime, regime_guidance = _load_regime()
+    category = classify_market_category(market.get("question", ""), market.get("description", ""))
+    live_context = fetch_live_context(category, market.get("question", ""))
     prompt = PROMPT.format(
         question=(market.get("question") or "")[:500],
         description=(market.get("description") or "")[:1200],
@@ -243,6 +307,7 @@ def estimate_probability(market):
         resolution=(market.get("resolutionSource") or "See description")[:300],
         regime=regime,
         regime_guidance=regime_guidance,
+        live_context=live_context,
     )
     try:
         text, provider, model = call_llm(prompt, max_tokens=400)
@@ -566,6 +631,7 @@ def run_scan(cfg, mode, bankroll):
             "mode": mode,
             "market_id": m["_market_id"],
             "question": m["question"][:200],
+            "category": classify_market_category(m.get("question", ""), m.get("description", "")),
             "hours_to_resolve": round(m["_hours_left"], 2),
             "market_price": market_p,
             "estimated_prob": true_p,
