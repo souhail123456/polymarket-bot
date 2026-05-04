@@ -7,14 +7,14 @@
     "updated_at": "2026-05-05T05:55:57.538923+08:00"
   },
   "crypto": {
-    "btc_price": 79940,
-    "eth_price": 2350.18,
-    "btc_30d_vol": 0.3659,
-    "eth_30d_vol": 0.5085,
+    "btc_price": 80286,
+    "eth_price": 2361.88,
+    "btc_30d_vol": 0.368,
+    "eth_30d_vol": 0.5097,
     "trades_open": 0,
     "win_rate": 0.0,
-    "summary": "BTC $79,940, ETH $2,350, 0 open, 0% wr",
-    "updated_at": "2026-05-05T04:53:55.912155+08:00"
+    "summary": "BTC $80,286, ETH $2,362, 0 open, 0% wr",
+    "updated_at": "2026-05-05T05:56:39.593294+08:00"
   },
   "econ": {
     "cpi_data_available": true,
@@ -37,10 +37,6 @@
     "trades_resolved": 1,
     "win_rate": 1.0,
     "summary": "0 open trades, 100% win rate",
-<<<<<<< Updated upstream
-    "updated_at": "2026-05-05T05:49:46.762886+08:00"
-=======
     "updated_at": "2026-05-04T08:37:56.783305+08:00"
->>>>>>> Stashed changes
   }
 }

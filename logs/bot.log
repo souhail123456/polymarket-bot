@@ -5755,32 +5755,3 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-04 00:37:56,783 | INFO | Scan complete. Placed 0 trades.
-<<<<<<< Updated upstream
-2026-05-04 21:49:45,311 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-04 21:49:45,312 | INFO | [shared/weather] 58 open trades, 65% win rate (as of 2026-05-05T05:31:13.095292+08:00)
-2026-05-04 21:49:45,312 | INFO | [shared/crypto] BTC $79,940, ETH $2,350, 0 open, 0% wr (as of 2026-05-05T04:53:55.912155+08:00)
-2026-05-04 21:49:45,312 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T02:28:55.472855+08:00)
-2026-05-04 21:49:45,488 | INFO | Fetched 150 active markets
-2026-05-04 21:49:45,489 | INFO | 15 candidates after filters
-2026-05-04 21:49:45,489 | INFO | [2150697] Cache hit — price 0.49 unchanged, skipping LLM
-2026-05-04 21:49:45,489 | INFO | [2159096] Cache hit — price 0.52 unchanged, skipping LLM
-2026-05-04 21:49:45,489 | INFO | [2105230] Cache hit — price 0.48 unchanged, skipping LLM
-2026-05-04 21:49:45,489 | INFO | [2105228] Cache hit — price 0.53 unchanged, skipping LLM
-2026-05-04 21:49:45,489 | INFO | [2074236] Cache hit — price 0.46 unchanged, skipping LLM
-2026-05-04 21:49:45,489 | INFO | [2105232] Cache hit — price 0.46 unchanged, skipping LLM
-2026-05-04 21:49:45,904 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-04 21:49:46,761 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-04 21:49:46,761 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 9 markets
-2026-05-04 21:49:46,761 | INFO | Batch evaluation succeeded: 9 markets in 1 LLM call
-2026-05-04 21:49:46,762 | INFO | [2073824] 'Will Elon Musk post 140-159 tweets from April 28 to May 5, 2' mkt=0.47 est=0.47 conf=0.90 edge=-1.9% fee=$0.02 => skip $0.00
-2026-05-04 21:49:46,762 | INFO | [2133405] 'Iran closes its airspace by May 31?' mkt=0.54 est=0.54 conf=0.80 edge=-2.3% fee=$0.02 => skip $0.00
-2026-05-04 21:49:46,762 | INFO | [2105243] 'Milwaukee Brewers vs. St. Louis Cardinals' mkt=0.55 est=0.55 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-04 21:49:46,762 | INFO | [2105252] 'Atlanta Braves vs. Seattle Mariners' mkt=0.45 est=0.45 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-04 21:49:46,762 | INFO | [2105255] 'San Diego Padres vs. San Francisco Giants' mkt=0.56 est=0.56 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-04 21:49:46,762 | INFO | [2132776] 'Will Bitcoin reach $85,000 in May?' mkt=0.56 est=0.56 conf=0.70 edge=-2.2% fee=$0.02 => skip $0.00
-2026-05-04 21:49:46,762 | INFO | [2107043] 'Will the price of Bitcoin be above $80,000 on May 5?' mkt=0.56 est=0.56 conf=0.70 edge=-2.2% fee=$0.02 => skip $0.00
-2026-05-04 21:49:46,762 | INFO | [2073829] 'Will Elon Musk post 160-179 tweets from April 28 to May 5, 2' mkt=0.42 est=0.42 conf=0.90 edge=-2.9% fee=$0.03 => skip $0.00
-2026-05-04 21:49:46,762 | INFO | [2152537] 'Cavaliers vs. Pistons' mkt=0.41 est=0.41 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-04 21:49:46,763 | INFO | Scan complete. Placed 0 trades. Cache hits: 6
-=======
->>>>>>> Stashed changes
