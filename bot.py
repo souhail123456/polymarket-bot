@@ -375,6 +375,38 @@ def decide_trade(true_p, market_p, confidence, bankroll, cfg):
     return side, size, edge, fee_usd
 
 
+# ---------- LLM cache — skip markets whose price hasn't moved ----------
+EVAL_CACHE_FILE = LOG_DIR / "eval_cache.json"
+CACHE_PRICE_THRESHOLD = 0.03  # re-evaluate only if price moved > 3%
+
+
+def load_eval_cache():
+    if not EVAL_CACHE_FILE.exists():
+        return {}
+    try:
+        with open(EVAL_CACHE_FILE) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def save_eval_cache(cache):
+    with open(EVAL_CACHE_FILE, "w") as f:
+        json.dump(cache, f)
+
+
+def should_reevaluate(market_id, current_price, cache):
+    """Return True if we should call LLM, False if cached result is still valid."""
+    if market_id not in cache:
+        return True
+    cached = cache[market_id]
+    old_price = cached.get("price", 0)
+    if abs(current_price - old_price) >= CACHE_PRICE_THRESHOLD:
+        return True
+    # Cache is fresh (price barely moved) — skip LLM call
+    return False
+
+
 # ---------- Trade log ----------
 TRADES_FILE = LOG_DIR / "trades.jsonl"
 
@@ -603,15 +635,30 @@ def run_scan(cfg, mode, bankroll):
     candidates = filter_markets(markets, cfg, traded_ids)
     log.info(f"{len(candidates)} candidates after filters")
 
+    eval_cache = load_eval_cache()
+    cache_hits = 0
     trades_placed = 0
     for m in candidates:
         if bankroll < 2.0:
             log.info(f"Bankroll ${bankroll:.2f} too low — stopping scan")
             break
+        market_id = m["_market_id"]
+        market_p = m["_yes_price"]
+
+        # Skip LLM call if price hasn't moved since last evaluation
+        if not should_reevaluate(market_id, market_p, eval_cache):
+            cached = eval_cache[market_id]
+            log.info(f"[{market_id[:8]}] Cache hit — price {market_p:.2f} unchanged, skipping LLM")
+            cache_hits += 1
+            continue
+
         true_p, conf, reason = estimate_probability(m)
         if true_p is None:
             continue
-        market_p = m["_yes_price"]
+
+        # Cache this evaluation
+        eval_cache[market_id] = {"price": market_p, "true_p": true_p, "conf": conf}
+
         side, size, edge, fee_usd = decide_trade(true_p, market_p, conf, bankroll, cfg)
 
         log.info(
@@ -685,11 +732,12 @@ def run_scan(cfg, mode, bankroll):
         "summary": f"{len(open_trades)} open trades, {win_rate:.0%} win rate",
     })
 
-    log.info(f"Scan complete. Placed {trades_placed} trades.")
+    save_eval_cache(eval_cache)
+    log.info(f"Scan complete. Placed {trades_placed} trades. Cache hits: {cache_hits}")
     update_bot_status("ev", trades_placed, trades_skipped, "every 30min")
     send_telegram(
         f"🔄 *EV Bot Scan Complete*\n"
-        f"Placed: {trades_placed} | Skipped: {trades_skipped}\n"
+        f"Placed: {trades_placed} | Skipped: {trades_skipped} | Cached: {cache_hits}\n"
         f"🕐 {datetime.now(SHANGHAI_TZ).strftime('%H:%M')} Shanghai | Next: 30min"
     )
 
