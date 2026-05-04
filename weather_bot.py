@@ -36,36 +36,40 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 CONFIG = {
-    "min_edge": 0.12,             # 12% min edge (was 8% — 8-12% bucket was -$23)
-    "max_position_usd": 15.0,    # max cap (for 25%+ edge)
-    "kelly_fraction": 0.15,       # 15% Kelly
+    "min_edge": 0.10,             # 10% min edge — open it up
+    "max_position_usd": 15.0,
+    "kelly_fraction": 0.15,
     "taker_fee_rate": 0.05,
     "starting_bankroll": 100.0,
     "daily_loss_cap_usd": 20.0,
-    "max_model_prob": 0.15,       # skip NO bets when model says 15%+ (46% wr above this)
-    "min_no_entry": 0.50,         # NO entry price floor (0.30-0.50 was 22% wr)
-    "max_days_ahead": 1,          # only same-day and next-day (2d+ was 69% wr)
-    "max_bets_per_city_date": 2,  # limit correlated risk
-    "min_ensemble_members": 50,   # require 50+ members for confidence
+    "max_days_ahead": 1,          # same-day and next-day
+    "max_bets_per_city_date": 3,  # was 2, allow more per city
+    "min_ensemble_members": 50,
+    "model_prob_floor": 0.05,     # never trust 0% — floor at 5%
+    "min_yes_entry": 0.15,        # block cheap YES longshots under $0.15
 }
 
-# Scaled position sizing by edge — boost sweet spot (entry 0.50-0.70)
-def max_size_for_edge(edge, entry_price=0.0):
-    # Sweet spot: entry 0.50-0.70 has 76% wr and best P&L — size up
-    if 0.50 <= entry_price <= 0.70:
-        if edge >= 0.25:
-            return 12.0
-        elif edge >= 0.15:
-            return 10.0
-        else:
-            return 8.0
-    # Standard sizing outside sweet spot
+# City-specific caps — problem cities get smaller size, good cities get more
+CITY_MAX_SIZE = {
+    "Miami": 3.0,       # 50% WR, -$40 — model can't handle tropical storms
+    "Shanghai": 4.0,    # 67% WR but P&L negative — limit damage
+    "Paris": 15.0,      # best performer +$30
+    "Chicago": 12.0,    # solid +$6
+    "Denver": 12.0,     # solid +$5
+    "NYC": 10.0,        # decent +$10
+    "Seoul": 8.0,       # 72% WR but small P&L
+    "Los Angeles": 8.0, # 68% WR, barely positive
+}
+
+# Position sizing by edge, capped per city
+def max_size_for_edge(edge, city_name=""):
+    city_cap = CITY_MAX_SIZE.get(city_name, 8.0)
     if edge >= 0.25:
-        return 8.0
+        return min(city_cap, 15.0)
     elif edge >= 0.15:
-        return 6.0
+        return min(city_cap, 10.0)
     else:
-        return 5.0
+        return min(city_cap, 6.0)
 
 # Cities Polymarket tracks, with coordinates and units
 CITIES = {
@@ -333,7 +337,7 @@ def kelly_size(true_p, market_p, side, bankroll, fraction, cap):
     return min(bet, cap)
 
 
-def decide_trade(true_p, market_p, bankroll, cfg):
+def decide_trade(true_p, market_p, bankroll, cfg, city_name=""):
     ev_yes = expected_value(true_p, market_p, "YES")
     ev_no = expected_value(true_p, market_p, "NO")
     side, gross_edge = ("YES", ev_yes) if ev_yes >= ev_no else ("NO", ev_no)
@@ -342,7 +346,7 @@ def decide_trade(true_p, market_p, bankroll, cfg):
     edge = gross_edge - fee_per_dollar
     if edge < cfg["min_edge"]:
         return None, 0.0, edge, 0.0
-    cap = max_size_for_edge(edge, entry_price)
+    cap = max_size_for_edge(edge, city_name)
     size = kelly_size(true_p, market_p, side, bankroll, cfg["kelly_fraction"], cap)
     if size < 1.0:
         return None, 0.0, edge, 0.0
@@ -516,11 +520,11 @@ def run_scan(cfg, mode, bankroll):
         if model_prob is None:
             continue
 
-        # Filter #2: skip when model isn't confident enough for NO
-        if model_prob >= cfg.get("max_model_prob", 0.15):
-            continue
+        # Floor model_prob — never trust 0%, ensemble can be wrong
+        prob_floor = cfg.get("model_prob_floor", 0.05)
+        model_prob = max(model_prob, prob_floor)
 
-        side, size, edge, fee_usd = decide_trade(model_prob, yes_price, bankroll, cfg)
+        side, size, edge, fee_usd = decide_trade(model_prob, yes_price, bankroll, cfg, city["name"])
 
         log.info(
             f"[{city['name']}] {question[:50]} "
@@ -531,15 +535,11 @@ def run_scan(cfg, mode, bankroll):
         if side is None:
             continue
 
-        # Only take NO bets — ensemble models are better at ruling out temps
-        if side == "YES":
-            continue
+        entry_price = yes_price if side == "YES" else 1 - yes_price
 
-        entry_price = 1 - yes_price
-
-        # Filter #1: block cheap NO entries (0.30-0.50 was 22% wr)
-        if entry_price < cfg.get("min_no_entry", 0.50):
-            log.info(f"[{city['name']}] Skip — NO entry {entry_price:.2f} below 0.50")
+        # Block cheap YES longshots (entry < $0.15 was 0% win rate)
+        if side == "YES" and entry_price < cfg.get("min_yes_entry", 0.15):
+            log.info(f"[{city['name']}] Skip — YES entry {entry_price:.2f} too cheap (longshot)")
             continue
 
         candidates.append({
