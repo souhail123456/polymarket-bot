@@ -69,22 +69,16 @@ def run_checks() -> dict:
     else:
         services["fred"] = {"status": "error", "latency_ms": 0, "error": "FRED_API_KEY not set"}
 
-    # Groq API
+    # Groq API — lightweight models endpoint, no LLM tokens used
     groq_key = os.environ.get("GROQ_API_KEY", "")
     if groq_key:
-        groq_body = json.dumps({
-            "model": "llama-3.3-70b-versatile",
-            "messages": [{"role": "user", "content": "hi"}],
-            "max_tokens": 1
-        }).encode()
         services["groq"] = check_service(
-            "groq", "POST",
-            "https://api.groq.com/openai/v1/chat/completions",
+            "groq", "GET",
+            "https://api.groq.com/openai/v1/models",
             headers={
                 "Authorization": f"Bearer {groq_key}",
-                "Content-Type": "application/json",
-            },
-            body=groq_body
+                "User-Agent": "polymarket-bot/1.0",
+            }
         )
     else:
         services["groq"] = {"status": "error", "latency_ms": 0, "error": "GROQ_API_KEY not set"}
@@ -105,7 +99,10 @@ def run_checks() -> dict:
         services["cerebras"] = check_service(
             "cerebras", "GET",
             "https://api.cerebras.ai/v1/models",
-            headers={"Authorization": f"Bearer {cerebras_key}"}
+            headers={
+                "Authorization": f"Bearer {cerebras_key}",
+                "User-Agent": "polymarket-bot/1.0",
+            }
         )
     else:
         services["cerebras"] = {"status": "error", "latency_ms": 0, "error": "CEREBRAS_API_KEY not set"}

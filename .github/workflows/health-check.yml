@@ -2,7 +2,7 @@ name: Health Check
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # every 4h (24/7, Shanghai UTC+8)
+    - cron: '0 23 * * 0'  # Sunday 11 PM UTC (Monday 7 AM Shanghai)
   workflow_dispatch:
 
 permissions:
