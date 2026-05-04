@@ -5755,3 +5755,95 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-04 00:37:56,783 | INFO | Scan complete. Placed 0 trades.
+2026-05-04 20:31:08,928 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-04 20:31:08,928 | INFO | [shared/weather] 53 open trades, 65% win rate (as of 2026-05-05T03:41:18.721640+08:00)
+2026-05-04 20:31:08,928 | INFO | [shared/crypto] BTC $79,979, ETH $2,354, 0 open, 0% wr (as of 2026-05-05T04:03:36.913093+08:00)
+2026-05-04 20:31:08,928 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T02:28:55.472855+08:00)
+2026-05-04 20:31:09,176 | INFO | Fetched 150 active markets
+2026-05-04 20:31:09,177 | INFO | 15 candidates after filters
+2026-05-04 20:31:09,679 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 20:31:09,679 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2105230
+2026-05-04 20:31:09,679 | INFO | [2105230] 'Philadelphia Phillies vs. Miami Marlins' mkt=0.49 est=0.55 conf=0.70 edge=+3.0% fee=$0.03 => skip $0.00
+2026-05-04 20:31:10,329 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 20:31:10,329 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2150697
+2026-05-04 20:31:10,329 | INFO | [2150697] '76ers vs. Knicks: O/U 213.5' mkt=0.48 est=0.42 conf=0.80 edge=+4.1% fee=$0.02 => skip $0.00
+2026-05-04 20:31:10,868 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 20:31:10,868 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2105228
+2026-05-04 20:31:10,868 | INFO | [2105228] 'Boston Red Sox vs. Detroit Tigers' mkt=0.53 est=0.58 conf=0.70 edge=+3.1% fee=$0.02 => skip $0.00
+2026-05-04 20:31:11,252 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 20:31:11,252 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2107043
+2026-05-04 20:31:11,252 | INFO | [2107043] 'Will the price of Bitcoin be above $80,000 on May 5?' mkt=0.47 est=0.25 conf=0.80 edge=+20.1% fee=$0.24 => NO $10.00
+2026-05-04 20:31:13,939 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:14,469 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 20:31:14,469 | INFO | LLM response from groq/llama-3.1-8b-instant for 2074236
+2026-05-04 20:31:14,469 | INFO | [2074236] 'Will WTI Crude Oil (WTI) hit (HIGH) $120 in May?' mkt=0.46 est=0.12 conf=0.85 edge=+31.2% fee=$0.23 => NO $10.00
+2026-05-04 20:31:17,381 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-04 20:31:17,382 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2132776
+2026-05-04 20:31:17,382 | INFO | [2132776] 'Will Bitcoin reach $85,000 in May?' mkt=0.55 est=0.20 conf=0.80 edge=+31.8% fee=$0.27 => NO $10.00
+2026-05-04 20:31:19,955 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:20,281 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 20:31:20,281 | INFO | LLM response from groq/llama-3.1-8b-instant for 2073824
+2026-05-04 20:31:20,281 | INFO | [2073824] 'Will Elon Musk post 140-159 tweets from April 28 to May 5, 2' mkt=0.55 est=0.75 conf=0.90 edge=+18.2% fee=$0.19 => YES $8.24
+2026-05-04 20:31:22,861 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:23,315 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 20:31:23,315 | INFO | LLM response from groq/llama-3.1-8b-instant for 2133405
+2026-05-04 20:31:23,316 | INFO | [2133405] 'Iran closes its airspace by May 31?' mkt=0.55 est=0.20 conf=0.80 edge=+32.3% fee=$0.28 => NO $10.00
+2026-05-04 20:31:25,908 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:25,993 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:26,175 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:26,309 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:26,309 | WARNING | estimate_probability failed for 2105255: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:26,395 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:26,484 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:26,625 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:26,748 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:26,749 | WARNING | estimate_probability failed for 2105252: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:26,832 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:27,226 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-04 20:31:27,226 | INFO | LLM response from groq/llama-3.1-8b-instant for 2152537
+2026-05-04 20:31:27,226 | INFO | [2152537] 'Cavaliers vs. Pistons' mkt=0.41 est=0.55 conf=0.80 edge=+10.6% fee=$0.09 => YES $3.17
+2026-05-04 20:31:29,874 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:29,954 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:30,091 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:30,198 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:30,198 | WARNING | estimate_probability failed for 2073829: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:30,312 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:30,400 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:30,528 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:30,642 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:30,643 | WARNING | estimate_probability failed for 2105246: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:30,728 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:30,808 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:30,932 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:31,936 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:31,936 | WARNING | estimate_probability failed for 2105235: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:32,018 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:32,096 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:32,226 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-04 20:31:32,346 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:32,346 | WARNING | estimate_probability failed for 1962237: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-04 20:31:32,347 | INFO | Scan complete. Placed 6 trades.
