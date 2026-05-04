@@ -33,3 +33,20 @@
 2026-05-03 18:14:59,277 | INFO | [1087310] type=unemployment | Will US unemployment reach at least 5.5% in 2026? | mkt=0.14 model=0.01 edge=+12.2% => NO $13.89
 2026-05-03 18:14:59,278 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.09 model=0.01 edge=+7.8% => skip $0.00
 2026-05-03 18:15:00,685 | INFO | Econ scan complete. Placed 1 trades.
+2026-05-04 00:20:31,060 | INFO | === Econ Scan | mode=paper | bankroll=$100.00 ===
+2026-05-04 00:20:31,060 | INFO | [shared/weather] 57 open trades, 64% win rate (as of 2026-05-04T07:50:20.443253+08:00)
+2026-05-04 00:20:31,060 | INFO | [shared/crypto] BTC $78,984, ETH $2,336, 0 open, 0% wr (as of 2026-05-04T07:21:21.861137+08:00)
+2026-05-04 00:20:31,954 | INFO | Fetching nowcast data sources...
+2026-05-04 00:20:33,420 | INFO | Cleveland Fed 1Y inflation expectation (FRED): 3.25872162
+2026-05-04 00:20:34,317 | INFO | GDPNow estimate: 3.5%
+2026-05-04 00:20:34,672 | INFO | Fed Funds actual rate (FRED): 3.64%
+2026-05-04 00:20:34,874 | INFO | Unemployment (FRED): 4.3% (prev: 4.4%)
+2026-05-04 00:20:35,089 | INFO | Nonfarm payrolls change (FRED): +178.0K
+2026-05-04 00:20:35,387 | INFO | Core PCE YoY (FRED): 3.20276%
+2026-05-04 00:20:35,388 | INFO | Data sources: CPI=ok | GDP=ok | FedWatch=ok | Unemployment=ok | Payrolls=ok | PCE=ok
+2026-05-04 00:20:38,967 | INFO | Found 168 unique econ markets
+2026-05-04 00:20:38,970 | INFO | [1132827] type=cpi | Will Argentina’s annual inflation in 2026 be at least 4 | mkt=0.09 model=0.01 edge=+7.4% => skip $0.00
+2026-05-04 00:20:38,970 | INFO | [1082177] type=cpi | Will Canada’s 2026 inflation be less than 1.0%? | mkt=0.06 model=0.01 edge=+4.4% => skip $0.00
+2026-05-04 00:20:38,971 | INFO | [1082182] type=cpi | Will Canada’s 2026 inflation be at least 4.0%? | mkt=0.10 model=0.01 edge=+8.9% => skip $0.00
+2026-05-04 00:20:38,972 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.09 model=0.01 edge=+7.8% => skip $0.00
+2026-05-04 00:20:38,973 | INFO | Econ scan complete. Placed 0 trades.
