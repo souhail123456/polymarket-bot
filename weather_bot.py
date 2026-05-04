@@ -239,8 +239,15 @@ def parse_event_date(event_title):
 
 
 # ---------- Fetch ensemble forecast ----------
-ENSEMBLE_MODELS = ["gfs_seamless", "ecmwf_ifs025", "icon_seamless"]
-# GFS: 31 members, ECMWF: 51 members, ICON: 40 members = ~122 total
+ENSEMBLE_MODELS = [
+    "gfs_seamless",    # GFS: 31 members — US NOAA physics model
+    "ecmwf_ifs025",    # ECMWF IFS: 51 members — European physics model (gold standard)
+    "icon_seamless",   # ICON: 40 members — German DWD physics model
+    "gem_global",      # GEM: 21 members — Canadian physics model
+    "ecmwf_aifs025",   # ECMWF AIFS: 51 members — ML-enhanced model (different methodology)
+]
+# Total: ~194 members from 5 models (3 physics + 1 hybrid + 1 ML)
+# More members = tighter probability distribution = better YES/NO decisions
 
 
 def fetch_ensemble_forecast(city_key, date_str):
@@ -537,10 +544,18 @@ def run_scan(cfg, mode, bankroll):
 
         entry_price = yes_price if side == "YES" else 1 - yes_price
 
-        # Block cheap YES longshots (entry < $0.15 was 0% win rate)
-        if side == "YES" and entry_price < cfg.get("min_yes_entry", 0.15):
-            log.info(f"[{city['name']}] Skip — YES entry {entry_price:.2f} too cheap (longshot)")
-            continue
+        # YES trade filters — learned from 35 resolved YES trades
+        if side == "YES":
+            # Cheap longshots under $0.15 were 0/22 — dead money
+            if entry_price < cfg.get("min_yes_entry", 0.15):
+                log.info(f"[{city['name']}] Skip YES — entry ${entry_price:.2f} too cheap")
+                continue
+            # Exact 1-degree buckets are harder to hit — need stronger model signal
+            bkt_low, bkt_high = bucket
+            is_narrow = (bkt_low is not None and bkt_high is not None and bkt_high - bkt_low <= 1)
+            if is_narrow and model_prob < 0.35:
+                log.info(f"[{city['name']}] Skip YES — narrow bucket needs model >= 35%, got {model_prob:.0%}")
+                continue
 
         candidates.append({
             "m": m, "mid": mid, "city_key": city_key, "city": city,
