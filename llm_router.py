@@ -77,6 +77,7 @@ def _call_gemini_format(url, api_key, model, prompt, max_tokens, temperature):
         "generationConfig": {
             "maxOutputTokens": max_tokens,
             "temperature": temperature,
+            "responseMimeType": "application/json",
         },
         "tools": [{"google_search": {}}],
     }).encode()
@@ -84,7 +85,7 @@ def _call_gemini_format(url, api_key, model, prompt, max_tokens, temperature):
         "Content-Type": "application/json",
         "User-Agent": "polymarket-bot/1.0",
     })
-    resp = urllib.request.urlopen(req, timeout=30)
+    resp = urllib.request.urlopen(req, timeout=60)
     data = json.loads(resp.read())
     parts = data["candidates"][0]["content"]["parts"]
     text_parts = [p["text"] for p in parts if "text" in p]
