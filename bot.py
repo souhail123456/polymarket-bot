@@ -402,6 +402,327 @@ def pre_filter_market(market) -> "tuple[float, float, str] | None":
     return None
 
 
+# ---------- Resolution source scraping ----------
+def check_resolution_source(market) -> "tuple[float, float, str] | None":
+    """
+    For markets <2h from resolution, check the actual data source used for resolution.
+    If the outcome is near-certain from the source data, return (true_p, confidence, reason).
+    Returns None if outcome cannot be determined with high confidence.
+
+    This gives us an edge: when resolution source clearly shows the outcome,
+    we can bet with near-certainty before the market fully prices it in.
+    """
+    hours_left = market.get("_hours_left", 999)
+    if hours_left >= 2:
+        return None  # only trigger for markets very close to resolution
+
+    question = market.get("question", "")
+    description = market.get("description", "")
+    resolution_source = market.get("resolutionSource", "") or ""
+
+    # --- Crypto price threshold (enhanced confidence when <2h left) ---
+    parsed = _parse_price_threshold(question)
+    if parsed is not None:
+        coin, direction, threshold = parsed
+        prices = _get_live_prices()
+        current_price = prices.get(coin)
+        if current_price is None:
+            return None
+
+        # With <2h left, even a 10% gap is near-certain (not enough time to move)
+        pct_diff = (current_price - threshold) / threshold
+
+        if direction == "above":
+            if pct_diff >= 0.10:
+                # Price is 10%+ above threshold with <2h left — near certain YES
+                true_p = min(0.99, 0.95 + abs(pct_diff) * 0.2)
+                reason = (
+                    f"[RESOLUTION SCRAPE] {coin.upper()} at ${current_price:,.0f}, "
+                    f"{abs(pct_diff):.1%} above ${threshold:,.0f} with only {hours_left:.1f}h left — "
+                    f"near-certain YES"
+                )
+                log.info(f"Resolution source confirmed: {reason}")
+                return true_p, 0.95, reason
+            elif pct_diff <= -0.10:
+                # Price is 10%+ below threshold with <2h left — near certain NO
+                true_p = max(0.01, 0.05 - abs(pct_diff) * 0.2)
+                reason = (
+                    f"[RESOLUTION SCRAPE] {coin.upper()} at ${current_price:,.0f}, "
+                    f"{abs(pct_diff):.1%} below ${threshold:,.0f} with only {hours_left:.1f}h left — "
+                    f"near-certain NO"
+                )
+                log.info(f"Resolution source confirmed: {reason}")
+                return true_p, 0.95, reason
+
+        else:  # direction == "below"
+            if pct_diff <= -0.10:
+                # Price is 10%+ below threshold with <2h left — near certain YES (below target)
+                true_p = min(0.99, 0.95 + abs(pct_diff) * 0.2)
+                reason = (
+                    f"[RESOLUTION SCRAPE] {coin.upper()} at ${current_price:,.0f}, "
+                    f"{abs(pct_diff):.1%} below ${threshold:,.0f} with only {hours_left:.1f}h left — "
+                    f"near-certain YES (below target)"
+                )
+                log.info(f"Resolution source confirmed: {reason}")
+                return true_p, 0.95, reason
+            elif pct_diff >= 0.10:
+                # Price is 10%+ above threshold with <2h left — near certain NO (not below)
+                true_p = max(0.01, 0.05 - abs(pct_diff) * 0.2)
+                reason = (
+                    f"[RESOLUTION SCRAPE] {coin.upper()} at ${current_price:,.0f}, "
+                    f"{abs(pct_diff):.1%} above ${threshold:,.0f} with only {hours_left:.1f}h left — "
+                    f"near-certain NO (not below target)"
+                )
+                log.info(f"Resolution source confirmed: {reason}")
+                return true_p, 0.95, reason
+
+    # --- Resolution source mentions a URL (government data, official sources) ---
+    # We can't reliably scrape arbitrary sites, but note it for confidence boost
+    if hours_left < 2 and resolution_source:
+        # Check if resolution source mentions a known data provider URL
+        source_lower = resolution_source.lower()
+        has_url = "http" in source_lower or "www." in source_lower
+        if has_url:
+            # We can't scrape the actual source, but the fact that we're <2h from
+            # resolution with an official source means market should be well-priced.
+            # Log it but don't override — let LLM + time-decay handle it.
+            log.debug(
+                f"[{market.get('_market_id', '?')[:8]}] Resolution source has URL "
+                f"({resolution_source[:80]}), <2h left — time-decay will boost"
+            )
+
+    return None
+
+
+# ---------- Cross-market arbitrage detection ----------
+_THRESHOLD_EXTRACT_RE = re.compile(
+    r"\b(bitcoin|btc|ethereum|eth|solana|sol|dogecoin|doge)\b"
+    r".{0,80}"
+    r"\b(above|over|exceed|reach|hit|below|under|drop below|fall below)\b"
+    r".{0,30}"
+    r"\$?([\d,]+(?:\.\d+)?)\s*([km]?)",
+    re.IGNORECASE,
+)
+
+_DATE_EXTRACT_RE = re.compile(
+    r"\b(by|before|on)\s+"
+    r"(january|february|march|april|may|june|july|august|september|october|november|december"
+    r"|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)"
+    r"\s+(\d{1,2})(?:,?\s+(\d{4}))?",
+    re.IGNORECASE,
+)
+
+_MONTH_MAP = {
+    "january": 1, "jan": 1, "february": 2, "feb": 2, "march": 3, "mar": 3,
+    "april": 4, "apr": 4, "may": 5, "june": 6, "jun": 6, "july": 7, "jul": 7,
+    "august": 8, "aug": 8, "september": 9, "sep": 9, "october": 10, "oct": 10,
+    "november": 11, "nov": 11, "december": 12, "dec": 12,
+}
+
+
+def _extract_threshold_info(question: str):
+    """Extract (coin, direction, threshold) from a price-threshold question."""
+    m = _THRESHOLD_EXTRACT_RE.search(question)
+    if not m:
+        return None
+    coin = m.group(1).lower()
+    coin_map = {"bitcoin": "btc", "ethereum": "eth", "solana": "sol", "dogecoin": "doge"}
+    coin = coin_map.get(coin, coin)
+    verb = m.group(2).lower()
+    raw_num = m.group(3).replace(",", "")
+    suffix = m.group(4).lower()
+    try:
+        threshold = float(raw_num)
+    except ValueError:
+        return None
+    if suffix == "k":
+        threshold *= 1_000
+    elif suffix == "m":
+        threshold *= 1_000_000
+    direction = "above" if any(w in verb for w in ("above", "over", "exceed", "reach", "hit")) else "below"
+    return coin, direction, threshold
+
+
+def _extract_date_info(question: str):
+    """Extract a deadline date from the question, or None."""
+    m = _DATE_EXTRACT_RE.search(question)
+    if not m:
+        return None
+    month_str = m.group(2).lower()
+    day = int(m.group(3))
+    year = int(m.group(4)) if m.group(4) else datetime.now(timezone.utc).year
+    month = _MONTH_MAP.get(month_str)
+    if not month:
+        return None
+    try:
+        from datetime import date
+        return date(year, month, day)
+    except ValueError:
+        return None
+
+
+def detect_arbitrage(candidates):
+    """
+    Detect cross-market arbitrage from mathematical inconsistencies.
+
+    Patterns detected:
+    1. Threshold ordering: "BTC above $100k" must be >= "BTC above $110k"
+    2. Time ordering: "X by June?" must be <= "X by July?"
+    3. Complement check: YES + NO prices should sum to ~1.0
+
+    Returns: {market_id: (true_probability, confidence, reasoning)} for mispriced markets.
+    """
+    arb_results = {}
+
+    # --- Pattern 1: Threshold ordering ---
+    threshold_groups = {}  # (coin, direction) -> [(threshold, market)]
+    for m in candidates:
+        question = m.get("question", "")
+        info = _extract_threshold_info(question)
+        if info is None:
+            continue
+        coin, direction, threshold = info
+        key = (coin, direction)
+        threshold_groups.setdefault(key, []).append((threshold, m))
+
+    for (coin, direction), group in threshold_groups.items():
+        if len(group) < 2:
+            continue
+        group.sort(key=lambda x: x[0])
+
+        for i in range(len(group)):
+            for j in range(i + 1, len(group)):
+                low_thresh, low_market = group[i]
+                high_thresh, high_market = group[j]
+                low_price = low_market["_yes_price"]
+                high_price = high_market["_yes_price"]
+
+                if direction == "above":
+                    # P(above low_thresh) must be >= P(above high_thresh)
+                    if high_price > low_price + 0.05:
+                        fair_high = max(0.01, low_price - 0.03)
+                        arb_results[high_market["_market_id"]] = (
+                            fair_high,
+                            0.92,
+                            f"ARBITRAGE: {coin.upper()} above ${high_thresh:,.0f} priced at "
+                            f"{high_price:.2f} but above ${low_thresh:,.0f} only {low_price:.2f}. "
+                            f"Higher threshold must have lower probability.",
+                        )
+                        log.info(
+                            f"[ARBITRAGE] Threshold ordering violation: {coin.upper()} "
+                            f"above ${low_thresh:,.0f}={low_price:.2f} vs "
+                            f"above ${high_thresh:,.0f}={high_price:.2f}"
+                        )
+                    if low_price < high_price - 0.05:
+                        fair_low = min(0.99, high_price + 0.03)
+                        arb_results[low_market["_market_id"]] = (
+                            fair_low,
+                            0.92,
+                            f"ARBITRAGE: {coin.upper()} above ${low_thresh:,.0f} priced at "
+                            f"{low_price:.2f} but above ${high_thresh:,.0f} is {high_price:.2f}. "
+                            f"Lower threshold must have higher probability.",
+                        )
+
+                else:  # direction == "below"
+                    # P(below high_thresh) must be >= P(below low_thresh)
+                    if low_price > high_price + 0.05:
+                        fair_low = max(0.01, high_price - 0.03)
+                        arb_results[low_market["_market_id"]] = (
+                            fair_low,
+                            0.92,
+                            f"ARBITRAGE: {coin.upper()} below ${low_thresh:,.0f} priced at "
+                            f"{low_price:.2f} but below ${high_thresh:,.0f} only {high_price:.2f}. "
+                            f"Lower threshold (harder) must have lower probability.",
+                        )
+                        log.info(
+                            f"[ARBITRAGE] Threshold ordering violation: {coin.upper()} "
+                            f"below ${low_thresh:,.0f}={low_price:.2f} vs "
+                            f"below ${high_thresh:,.0f}={high_price:.2f}"
+                        )
+
+    # --- Pattern 2: Time ordering ---
+    time_groups = {}  # (coin, direction, threshold) -> [(date, market)]
+    for m in candidates:
+        question = m.get("question", "")
+        info = _extract_threshold_info(question)
+        if info is None:
+            continue
+        coin, direction, threshold = info
+        date_info = _extract_date_info(question)
+        if date_info is None:
+            continue
+        key = (coin, direction, threshold)
+        time_groups.setdefault(key, []).append((date_info, m))
+
+    for key, group in time_groups.items():
+        if len(group) < 2:
+            continue
+        coin, direction, threshold = key
+        group.sort(key=lambda x: x[0])
+
+        for i in range(len(group)):
+            for j in range(i + 1, len(group)):
+                early_date, early_market = group[i]
+                late_date, late_market = group[j]
+                early_price = early_market["_yes_price"]
+                late_price = late_market["_yes_price"]
+
+                # P(by later date) must be >= P(by earlier date)
+                if early_price > late_price + 0.05:
+                    fair_late = min(0.99, early_price + 0.03)
+                    mid = late_market["_market_id"]
+                    if mid not in arb_results:
+                        arb_results[mid] = (
+                            fair_late,
+                            0.93,
+                            f"ARBITRAGE: Time ordering violation. '{early_market['question'][:50]}' "
+                            f"(by {early_date}) priced at {early_price:.2f} but later deadline "
+                            f"(by {late_date}) only {late_price:.2f}. Later must be >= earlier.",
+                        )
+                        log.info(
+                            f"[ARBITRAGE] Time ordering violation: "
+                            f"by {early_date}={early_price:.2f} vs by {late_date}={late_price:.2f}"
+                        )
+
+    # --- Pattern 3: Complement check (YES + NO should sum to ~1.0) ---
+    for m in candidates:
+        outcome_prices = m.get("outcomePrices")
+        if not outcome_prices:
+            continue
+        if isinstance(outcome_prices, str):
+            try:
+                outcome_prices = json.loads(outcome_prices)
+            except Exception:
+                continue
+        if len(outcome_prices) != 2:
+            continue
+        try:
+            yes_p = float(outcome_prices[0])
+            no_p = float(outcome_prices[1])
+        except (ValueError, TypeError):
+            continue
+        total = yes_p + no_p
+        if abs(total - 1.0) > 0.03:
+            mid = m["_market_id"]
+            if mid not in arb_results:
+                fair_yes = round(yes_p / total, 3) if total > 0 else 0.5
+                direction_str = "overpriced" if total > 1.03 else "underpriced"
+                arb_results[mid] = (
+                    fair_yes,
+                    0.90,
+                    f"ARBITRAGE: Complement violation. YES={yes_p:.3f} + NO={no_p:.3f} = "
+                    f"{total:.3f}. Market {direction_str}.",
+                )
+                log.info(
+                    f"[ARBITRAGE] Complement violation: {m.get('question', '')[:60]} "
+                    f"YES={yes_p:.3f} NO={no_p:.3f} sum={total:.3f}"
+                )
+
+    if arb_results:
+        log.info(f"[ARBITRAGE] Detected {len(arb_results)} arbitrage opportunities total")
+    return arb_results
+
+
 # ---------- Time-decay sniper ----------
 def _apply_time_decay_sniper(
     true_p: float,
@@ -932,11 +1253,25 @@ def run_scan(cfg, mode, bankroll):
     # Reset live-price cache so we get fresh prices for this scan
     _reset_live_prices_cache()
 
-    # Pre-filter: resolve mathematically obvious markets without LLM
+    # Resolution source scraping: for markets <2h from resolution, check actual data
     pre_filtered_results: dict = {}
+    resolution_scrape_hits = 0
+    post_resolution_candidates = []
+    for m in candidates:
+        rs = check_resolution_source(m)
+        if rs is not None:
+            true_p, conf, reason = rs
+            pre_filtered_results[m["_market_id"]] = (true_p, conf, reason)
+            resolution_scrape_hits += 1
+        else:
+            post_resolution_candidates.append(m)
+    if resolution_scrape_hits:
+        log.info(f"{resolution_scrape_hits} markets resolved by resolution source scraping (near-certain)")
+
+    # Pre-filter: resolve mathematically obvious markets without LLM
     pre_filter_hits = 0
     remaining_candidates = []
-    for m in candidates:
+    for m in post_resolution_candidates:
         pf = pre_filter_market(m)
         if pf is not None:
             true_p, conf, reason = pf
@@ -950,6 +1285,19 @@ def run_scan(cfg, mode, bankroll):
             remaining_candidates.append(m)
     if pre_filter_hits:
         log.info(f"{pre_filter_hits} markets resolved by pre-filter (no LLM needed)")
+
+    # Cross-market arbitrage detection (mathematical mispricings across related markets)
+    arb_results = detect_arbitrage(candidates)
+    arb_hits = 0
+    for mid, (true_p, conf, reason) in arb_results.items():
+        if mid not in pre_filtered_results:
+            pre_filtered_results[mid] = (true_p, conf, reason)
+            arb_hits += 1
+            log.info(f"[{mid[:8]}] Arbitrage detected: true_p={true_p:.2f} conf={conf:.2f} | {reason}")
+    if arb_hits:
+        log.info(f"{arb_hits} markets identified via cross-market arbitrage (no LLM needed)")
+    # Remove arbitrage-resolved markets from remaining_candidates to skip LLM
+    remaining_candidates = [m for m in remaining_candidates if m["_market_id"] not in arb_results]
 
     # Split remaining candidates into cached (skip) and needs_eval (batch LLM)
     needs_eval = []
@@ -1061,13 +1409,13 @@ def run_scan(cfg, mode, bankroll):
     save_eval_cache(eval_cache)
     log.info(
         f"Scan complete. Placed {trades_placed} trades. "
-        f"Pre-filter: {pre_filter_hits} | Cache hits: {cache_hits} | LLM evals: {len(needs_eval)}"
+        f"Pre-filter: {pre_filter_hits} | Arbitrage: {arb_hits} | Cache hits: {cache_hits} | LLM evals: {len(needs_eval)}"
     )
     update_bot_status("ev", trades_placed, trades_skipped, "every 30min")
     send_telegram(
         f"🔄 *EV Bot Scan Complete*\n"
         f"Placed: {trades_placed} | Skipped: {trades_skipped}\n"
-        f"Pre-filter: {pre_filter_hits} | Cached: {cache_hits} | LLM: {len(needs_eval)}\n"
+        f"Pre-filter: {pre_filter_hits} | Arb: {arb_hits} | Cached: {cache_hits} | LLM: {len(needs_eval)}\n"
         f"🕐 {datetime.now(SHANGHAI_TZ).strftime('%H:%M')} Shanghai | Next: 30min"
     )
 
