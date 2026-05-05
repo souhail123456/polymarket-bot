@@ -6274,3 +6274,42 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 12:40:21,230 | INFO | [2061884] 'Will Paris Saint-Germain FC win on 2026-05-06?' mkt=0.24 est=0.38 conf=0.75 edge=+9.7% fee=$0.04 => skip $0.00
 2026-05-05 12:40:21,230 | INFO | [2107049] 'Will the price of Bitcoin be above $82,000 on May 5?' mkt=0.19 est=0.99 conf=0.97 edge=+75.8% fee=$0.40 => YES $10.00
 2026-05-05 12:40:23,609 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 6 | LLM evals: 8
+2026-05-05 13:37:35,353 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 13:37:35,353 | INFO | [shared/weather] 68 open trades, 66% win rate (as of 2026-05-05T21:01:20.306749+08:00)
+2026-05-05 13:37:35,353 | INFO | [shared/crypto] BTC $81,245, ETH $2,388, 0 open, 0% wr (as of 2026-05-05T20:36:01.637597+08:00)
+2026-05-05 13:37:35,353 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T20:20:48.803368+08:00)
+2026-05-05 13:37:36,904 | INFO | Fetched 150 active markets
+2026-05-05 13:37:36,905 | INFO | 15 candidates after filters
+2026-05-05 13:37:36,905 | INFO | [2155861] Cache hit — price 0.51 unchanged, skipping LLM
+2026-05-05 13:37:36,905 | INFO | [2054196] Cache hit — price 0.52 unchanged, skipping LLM
+2026-05-05 13:37:36,905 | INFO | [2054191] Cache hit — price 0.38 unchanged, skipping LLM
+2026-05-05 13:37:36,905 | INFO | [566188] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-05 13:37:36,905 | INFO | [566187] Cache hit — price 0.80 unchanged, skipping LLM
+2026-05-05 13:37:36,905 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-05 13:37:36,905 | INFO | [2119227] Cache hit — price 0.14 unchanged, skipping LLM
+2026-05-05 13:37:36,906 | INFO | [2047424] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-05 13:37:36,906 | INFO | [2074234] Cache hit — price 0.11 unchanged, skipping LLM
+2026-05-05 13:37:54,003 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-05 13:37:54,003 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 6 markets
+2026-05-05 13:37:54,003 | WARNING | Batch evaluation failed (Expecting property name enclosed in double quotes: line 5 column 23 (char 83)), falling back to individual calls
+2026-05-05 13:37:54,789 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 13:37:54,790 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2155938
+2026-05-05 13:37:55,221 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 13:37:55,221 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2141144
+2026-05-05 13:37:55,780 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 13:37:55,780 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2155853
+2026-05-05 13:37:56,521 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 13:37:56,521 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2074237
+2026-05-05 13:37:56,587 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 13:37:56,865 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 13:37:56,865 | INFO | LLM response from groq/llama-3.1-8b-instant for 2133404
+2026-05-05 13:37:56,932 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 13:37:57,258 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 13:37:57,258 | INFO | LLM response from groq/llama-3.1-8b-instant for 1708132
+2026-05-05 13:37:57,258 | INFO | [2155938] "Internazionali BNL d'Italia, Qualification: Noemi Basiletti " mkt=0.47 est=0.42 conf=0.55 edge=+2.2% fee=$0.02 => skip $0.00
+2026-05-05 13:37:57,258 | INFO | [2141144] 'Indian Premier League: Delhi Capitals vs Chennai Super Kings' mkt=0.54 est=0.50 conf=0.55 edge=+0.8% fee=$0.03 => skip $0.00
+2026-05-05 13:37:57,258 | INFO | [2155853] "Internazionali BNL d'Italia, Qualification: Hugo Dellien vs " mkt=0.43 est=0.55 conf=0.58 edge=+8.7% fee=$0.03 => skip $0.00
+2026-05-05 13:37:57,258 | INFO | [2074237] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in May?' mkt=0.77 est=0.42 conf=0.73 edge=+30.7% fee=$0.38 => NO $10.00
+2026-05-05 13:37:59,589 | INFO | [2133404] 'Iran closes its airspace by May 8?' mkt=0.14 est=0.55 conf=0.85 edge=+37.2% fee=$0.43 => YES $10.00
+2026-05-05 13:38:01,927 | INFO | [1708132] 'Iran leadership change by May 31?' mkt=0.10 est=0.45 conf=0.85 edge=+31.0% fee=$0.37 => YES $8.17
+2026-05-05 13:38:04,348 | INFO | Scan complete. Placed 3 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 9 | LLM evals: 6
