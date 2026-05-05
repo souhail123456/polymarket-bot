@@ -6274,3 +6274,62 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 12:40:21,230 | INFO | [2061884] 'Will Paris Saint-Germain FC win on 2026-05-06?' mkt=0.24 est=0.38 conf=0.75 edge=+9.7% fee=$0.04 => skip $0.00
 2026-05-05 12:40:21,230 | INFO | [2107049] 'Will the price of Bitcoin be above $82,000 on May 5?' mkt=0.19 est=0.99 conf=0.97 edge=+75.8% fee=$0.40 => YES $10.00
 2026-05-05 12:40:23,609 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 6 | LLM evals: 8
+2026-05-05 16:35:07,390 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 16:35:07,390 | INFO | [shared/weather] 70 open trades, 66% win rate (as of 2026-05-05T23:40:42.972287+08:00)
+2026-05-05 16:35:07,390 | INFO | [shared/crypto] BTC $81,601, ETH $2,385, 0 open, 0% wr (as of 2026-05-05T23:43:49.077845+08:00)
+2026-05-05 16:35:07,390 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T20:20:48.803368+08:00)
+2026-05-05 16:35:12,010 | INFO | Resolved 2159023: YES -> LOSS pnl=$-9.81 balance=$93.45
+2026-05-05 16:35:12,728 | INFO | Resolved 2155859: NO -> WIN pnl=$13.52 balance=$106.98
+2026-05-05 16:35:13,341 | INFO | Resolved 2155891: NO -> LOSS pnl=$-5.98 balance=$101.00
+2026-05-05 16:35:14,407 | INFO | Fetched 150 active markets
+2026-05-05 16:35:14,408 | INFO | 15 candidates after filters
+2026-05-05 16:35:14,409 | INFO | [2054196] Cache hit — price 0.52 unchanged, skipping LLM
+2026-05-05 16:35:14,409 | INFO | [2054191] Cache hit — price 0.35 unchanged, skipping LLM
+2026-05-05 16:35:14,409 | INFO | [1962237] Cache hit — price 0.34 unchanged, skipping LLM
+2026-05-05 16:35:14,409 | INFO | [566188] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-05 16:35:14,409 | INFO | [566187] Cache hit — price 0.80 unchanged, skipping LLM
+2026-05-05 16:35:24,578 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-05 16:35:24,579 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 10 markets
+2026-05-05 16:35:24,579 | WARNING | Batch evaluation failed (Unterminated string starting at: line 6 column 18 (char 103)), falling back to individual calls
+2026-05-05 16:35:25,094 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 16:35:25,095 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2163044
+2026-05-05 16:35:25,693 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 16:35:25,694 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2115558
+2026-05-05 16:35:26,527 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 16:35:26,527 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2132778
+2026-05-05 16:35:27,119 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 16:35:27,119 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2160103
+2026-05-05 16:35:27,256 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 16:35:27,596 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 16:35:27,596 | INFO | LLM response from groq/llama-3.1-8b-instant for 566140
+2026-05-05 16:35:27,691 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 16:35:28,049 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 16:35:28,049 | INFO | LLM response from groq/llama-3.1-8b-instant for 2141144
+2026-05-05 16:35:28,135 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 16:35:28,455 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 16:35:28,455 | INFO | LLM response from groq/llama-3.1-8b-instant for 1509728
+2026-05-05 16:35:28,538 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 16:35:29,604 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 16:35:29,604 | INFO | LLM response from groq/llama-3.1-8b-instant for 1509739
+2026-05-05 16:35:29,793 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 16:35:30,324 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 16:35:30,325 | INFO | LLM response from groq/llama-3.1-8b-instant for 2131710
+2026-05-05 16:35:30,438 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 16:35:30,520 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-05 16:35:30,680 | WARNING | LLM call failed cerebras/llama3.1-70b: HTTP Error 404: Not Found
+2026-05-05 16:35:30,915 | WARNING | LLM call failed openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-05 16:35:30,916 | WARNING | estimate_probability failed for 2155848: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+cerebras/llama3.1-70b: HTTP Error 404: Not Found
+openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-05 16:35:30,916 | INFO | [2163044] 'Lakers vs. Thunder: O/U 214.5' mkt=0.48 est=0.52 conf=0.58 edge=+0.9% fee=$0.03 => skip $0.00
+2026-05-05 16:35:30,916 | INFO | [2115558] 'San Diego Padres vs. San Francisco Giants' mkt=0.46 est=0.50 conf=0.55 edge=+1.8% fee=$0.03 => skip $0.00
+2026-05-05 16:35:30,916 | INFO | [2132778] 'Will Bitcoin dip to $75,000 in May?' mkt=0.46 est=0.25 conf=0.72 edge=+18.2% fee=$0.23 => NO $10.00
+2026-05-05 16:35:33,446 | INFO | [2160103] "Internazionali BNL d'Italia, Qualification: Mayar Sherif vs " mkt=0.40 est=0.55 conf=0.58 edge=+12.5% fee=$0.18 => YES $5.97
+2026-05-05 16:35:35,940 | INFO | [566140] 'Will Arsenal win the 2025–26 Champions League?' mkt=0.33 est=0.45 conf=0.85 edge=+9.1% fee=$0.03 => skip $0.00
+2026-05-05 16:35:35,941 | INFO | [2141144] 'Indian Premier League: Delhi Capitals vs Chennai Super Kings' mkt=0.30 est=0.55 conf=0.75 edge=+21.0% fee=$0.27 => YES $7.69
+2026-05-05 16:35:38,420 | INFO | [1509728] 'Will Arsenal reach the UEFA Champions League final?' mkt=0.71 est=0.55 conf=0.75 edge=+12.9% fee=$0.16 => NO $4.59
+2026-05-05 16:35:40,936 | INFO | [1509739] 'Will Atlético Madrid reach the UEFA Champions League final?' mkt=0.28 est=0.55 conf=0.75 edge=+22.9% fee=$0.25 => YES $6.95
+2026-05-05 16:35:43,462 | INFO | [2131710] 'Timberwolves vs. Spurs' mkt=0.23 est=0.35 conf=0.75 edge=+7.7% fee=$0.04 => skip $0.00
+2026-05-05 16:35:43,464 | INFO | Scan complete. Placed 5 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 5 | LLM evals: 10
