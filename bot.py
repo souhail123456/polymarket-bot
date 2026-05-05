@@ -244,6 +244,207 @@ def _fetch_commodity_context(question: str) -> str:
     return "NOTE: You have NO live commodity price data. For price-threshold markets (e.g., 'Will oil hit $X'), be very conservative. If the threshold seems extreme (e.g., oil >$120, gold >$3000), the base rate for such spikes is very low."
 
 
+# ---------- Pre-filter: math-obvious markets ----------
+# Cached live prices so we only fetch once per scan
+_LIVE_PRICES_CACHE: dict = {}
+
+def _get_live_prices() -> dict:
+    """Return {coin: price_usd} dict — cached within a scan run."""
+    global _LIVE_PRICES_CACHE
+    if _LIVE_PRICES_CACHE:
+        return _LIVE_PRICES_CACHE
+    try:
+        url = (
+            "https://api.coingecko.com/api/v3/simple/price"
+            "?ids=bitcoin,ethereum,solana,dogecoin&vs_currencies=usd"
+        )
+        req = urllib.request.Request(url)
+        req.add_header("User-Agent", "polymarket-bot/1.0")
+        resp = urllib.request.urlopen(req, timeout=10)
+        data = json.loads(resp.read())
+        # Normalise to flat {ticker: price} map
+        mapping = {
+            "bitcoin": data.get("bitcoin", {}).get("usd"),
+            "btc":     data.get("bitcoin", {}).get("usd"),
+            "ethereum": data.get("ethereum", {}).get("usd"),
+            "eth":     data.get("ethereum", {}).get("usd"),
+            "solana":  data.get("solana",   {}).get("usd"),
+            "sol":     data.get("solana",   {}).get("usd"),
+            "dogecoin": data.get("dogecoin", {}).get("usd"),
+            "doge":    data.get("dogecoin",  {}).get("usd"),
+        }
+        _LIVE_PRICES_CACHE = {k: v for k, v in mapping.items() if v is not None}
+        return _LIVE_PRICES_CACHE
+    except Exception as e:
+        log.debug(f"_get_live_prices failed: {e}")
+        return {}
+
+
+def _reset_live_prices_cache():
+    """Call once per scan so prices are re-fetched fresh next scan."""
+    global _LIVE_PRICES_CACHE
+    _LIVE_PRICES_CACHE = {}
+
+
+import re
+
+# Patterns: "Will BTC be above $50,000" / "below $50k" / "exceed $50,000" / "reach $50k"
+_PRICE_THRESHOLD_RE = re.compile(
+    r"\b(bitcoin|btc|ethereum|eth|solana|sol|dogecoin|doge)\b"
+    r".{0,80}"
+    r"\b(above|over|exceed|reach|hit|below|under|drop below|fall below)\b"
+    r".{0,30}"
+    r"\$?([\d,]+(?:\.\d+)?)\s*([km]?)",
+    re.IGNORECASE,
+)
+
+
+def _parse_price_threshold(question: str):
+    """
+    Try to extract (coin, direction, threshold_usd) from question.
+    direction is 'above' or 'below'.
+    Returns None if no clear threshold found.
+    """
+    m = _PRICE_THRESHOLD_RE.search(question)
+    if not m:
+        return None
+    coin = m.group(1).lower()
+    verb = m.group(2).lower()
+    raw_num = m.group(3).replace(",", "")
+    suffix = m.group(4).lower()
+
+    try:
+        threshold = float(raw_num)
+    except ValueError:
+        return None
+
+    if suffix == "k":
+        threshold *= 1_000
+    elif suffix == "m":
+        threshold *= 1_000_000
+
+    direction = "above" if any(w in verb for w in ("above", "over", "exceed", "reach", "hit")) else "below"
+    return coin, direction, threshold
+
+
+def pre_filter_market(market) -> "tuple[float, float, str] | None":
+    """
+    Fast math-based pre-filter. No LLM needed.
+
+    Returns (true_probability, confidence, reasoning) when the outcome is
+    mathematically obvious, or None when LLM evaluation is required.
+
+    Currently handles:
+    - Crypto price threshold markets (BTC/ETH/SOL/DOGE above/below $X)
+    - Markets whose resolution date has already passed
+    """
+    question = market.get("question", "")
+    hours_left = market.get("_hours_left", 999)
+
+    # --- Guard: resolution already passed ---
+    # (filter_markets already enforces min_hours_to_resolve > 0, but belt-and-suspenders)
+    if hours_left <= 0:
+        return 0.5, 0.5, "Resolution date already passed — outcome ambiguous"
+
+    # --- Crypto price threshold ---
+    parsed = _parse_price_threshold(question)
+    if parsed is None:
+        return None  # not a price-threshold market — let LLM handle it
+
+    coin, direction, threshold = parsed
+    prices = _get_live_prices()
+    current_price = prices.get(coin)
+    if current_price is None:
+        return None  # can't determine live price — fall back to LLM
+
+    ratio = current_price / threshold  # >1 means current > threshold
+
+    if direction == "above":
+        pct_above = (current_price - threshold) / threshold  # positive = current above threshold
+        if pct_above >= 0.20:
+            # Current price is ≥20% above threshold — very likely YES even with time left
+            conf = min(0.97, 0.80 + pct_above * 0.5)
+            return (
+                min(0.99, 0.92 + pct_above * 0.3),
+                round(conf, 2),
+                f"{coin.upper()} is ${current_price:,.0f}, {pct_above:.0%} above threshold ${threshold:,.0f} — very likely YES",
+            )
+        if pct_above <= -0.20:
+            # Current price is ≥20% below threshold — very likely NO
+            pct_below = abs(pct_above)
+            conf = min(0.97, 0.80 + pct_below * 0.5)
+            return (
+                max(0.01, 0.08 - pct_below * 0.3),
+                round(conf, 2),
+                f"{coin.upper()} is ${current_price:,.0f}, {pct_below:.0%} below threshold ${threshold:,.0f} — very likely NO",
+            )
+    else:  # direction == "below"
+        pct_below = (threshold - current_price) / threshold  # positive = current below threshold
+        if pct_below >= 0.20:
+            # Current price is ≥20% below threshold — very likely YES (below target)
+            conf = min(0.97, 0.80 + pct_below * 0.5)
+            return (
+                min(0.99, 0.92 + pct_below * 0.3),
+                round(conf, 2),
+                f"{coin.upper()} is ${current_price:,.0f}, {pct_below:.0%} below threshold ${threshold:,.0f} — very likely YES (below target)",
+            )
+        if pct_below <= -0.20:
+            # Current price is ≥20% above threshold — very likely NO (not below target)
+            pct_above = abs(pct_below)
+            conf = min(0.97, 0.80 + pct_above * 0.5)
+            return (
+                max(0.01, 0.08 - pct_above * 0.3),
+                round(conf, 2),
+                f"{coin.upper()} is ${current_price:,.0f}, {pct_above:.0%} above threshold ${threshold:,.0f} — very likely NO (not below target)",
+            )
+
+    # Price is within 20% of threshold — not obvious, send to LLM
+    return None
+
+
+# ---------- Time-decay sniper ----------
+def _apply_time_decay_sniper(
+    true_p: float,
+    conf: float,
+    reason: str,
+    market_p: float,
+    hours_left: float,
+) -> "tuple[float, float, str]":
+    """
+    Near-expiry booster: when a market has <6 hours left and the crowd price is
+    extreme (>0.85 YES or <0.15 YES), unlikely reversals become even less likely.
+
+    Rule: nudge true_p 10% closer to market_p and floor confidence at 0.70.
+    This captures the time-decay edge — status-quo persistence accelerates as
+    resolution approaches.
+
+    Example: market_p=0.90, LLM true_p=0.80 → boosted true_p=0.81 (10% of gap closed)
+    """
+    if hours_left >= 6:
+        return true_p, conf, reason
+    if not (market_p > 0.85 or market_p < 0.15):
+        return true_p, conf, reason
+
+    original_true_p = true_p
+    # Close 10% of the gap between LLM estimate and market price
+    true_p = true_p + 0.10 * (market_p - true_p)
+    true_p = round(max(0.01, min(0.99, true_p)), 4)
+    conf = round(max(0.70, conf), 2)
+
+    direction = "YES" if market_p > 0.85 else "NO"
+    boost_note = (
+        f" [time-decay sniper: {hours_left:.1f}h left, mkt={market_p:.2f} strongly implies"
+        f" {direction}; true_p nudged {original_true_p:.2f}→{true_p:.2f}, conf floored at {conf:.2f}]"
+    )
+    reason = (reason or "").rstrip(".") + boost_note
+
+    log.debug(
+        f"Time-decay sniper applied: hours_left={hours_left:.1f} market_p={market_p:.2f} "
+        f"true_p {original_true_p:.2f}→{true_p:.2f} conf→{conf:.2f}"
+    )
+    return true_p, conf, reason
+
+
 # ---------- Claude probability estimation ----------
 PROMPT = """You are an aggressive prediction market trader. Your job: estimate the TRUE probability this market resolves YES, then explain why the crowd is wrong.
 
@@ -320,7 +521,15 @@ def estimate_probability(market):
                 text = text[4:]
             text = text.strip()
         data = json.loads(text)
-        return float(data["true_probability"]), float(data["confidence"]), data.get("reasoning", "")
+        true_p = float(data["true_probability"])
+        conf = float(data["confidence"])
+        reason = data.get("reasoning", "")
+        true_p, conf, reason = _apply_time_decay_sniper(
+            true_p, conf, reason,
+            market_p=market["_yes_price"],
+            hours_left=market["_hours_left"],
+        )
+        return true_p, conf, reason
     except Exception as e:
         log.warning(f"estimate_probability failed for {market.get('_market_id')}: {e}")
         return None, None, None
@@ -380,15 +589,21 @@ Output ONLY a JSON array, one object per market, in order. No other text:
         if not isinstance(results, list) or len(results) != len(markets):
             raise ValueError(f"Expected {len(markets)} results, got {len(results) if isinstance(results, list) else 'non-list'}")
 
-        # Map results back to market IDs
+        # Map results back to market IDs, then apply time-decay sniper
         output = {}
         for i, m in enumerate(markets):
             r = results[i]
-            output[m["_market_id"]] = (
-                float(r["true_probability"]),
-                float(r["confidence"]),
-                r.get("reasoning", ""),
+            true_p = float(r["true_probability"])
+            conf = float(r["confidence"])
+            reason = r.get("reasoning", "")
+
+            true_p, conf, reason = _apply_time_decay_sniper(
+                true_p, conf, reason,
+                market_p=m["_yes_price"],
+                hours_left=m["_hours_left"],
             )
+
+            output[m["_market_id"]] = (true_p, conf, reason)
         log.info(f"Batch evaluation succeeded: {len(output)} markets in 1 LLM call")
         return output
     except Exception as e:
@@ -714,9 +929,31 @@ def run_scan(cfg, mode, bankroll):
     cache_hits = 0
     trades_placed = 0
 
-    # Split candidates into cached (skip) and needs_eval (batch LLM)
-    needs_eval = []
+    # Reset live-price cache so we get fresh prices for this scan
+    _reset_live_prices_cache()
+
+    # Pre-filter: resolve mathematically obvious markets without LLM
+    pre_filtered_results: dict = {}
+    pre_filter_hits = 0
+    remaining_candidates = []
     for m in candidates:
+        pf = pre_filter_market(m)
+        if pf is not None:
+            true_p, conf, reason = pf
+            pre_filtered_results[m["_market_id"]] = (true_p, conf, reason)
+            pre_filter_hits += 1
+            log.info(
+                f"[{m['_market_id'][:8]}] Pre-filter hit: {m['question'][:60]!r} "
+                f"=> true_p={true_p:.2f} conf={conf:.2f} | {reason}"
+            )
+        else:
+            remaining_candidates.append(m)
+    if pre_filter_hits:
+        log.info(f"{pre_filter_hits} markets resolved by pre-filter (no LLM needed)")
+
+    # Split remaining candidates into cached (skip) and needs_eval (batch LLM)
+    needs_eval = []
+    for m in remaining_candidates:
         market_id = m["_market_id"]
         market_p = m["_yes_price"]
         if not should_reevaluate(market_id, market_p, eval_cache):
@@ -728,6 +965,9 @@ def run_scan(cfg, mode, bankroll):
     # Batch evaluate all non-cached markets in one LLM call
     batch_results = estimate_probability_batch(needs_eval) if needs_eval else {}
 
+    # Merge pre-filter and batch results
+    all_results = {**pre_filtered_results, **batch_results}
+
     for m in candidates:
         if bankroll < 2.0:
             log.info(f"Bankroll ${bankroll:.2f} too low — stopping scan")
@@ -735,12 +975,12 @@ def run_scan(cfg, mode, bankroll):
         market_id = m["_market_id"]
         market_p = m["_yes_price"]
 
-        # Get result from batch or skip if cached
-        if market_id in batch_results:
-            true_p, conf, reason = batch_results[market_id]
+        # Get result from pre-filter / batch, or skip if cached
+        if market_id in all_results:
+            true_p, conf, reason = all_results[market_id]
             if true_p is None:
                 continue
-            # Cache this evaluation
+            # Cache this evaluation (pre-filter results also cached to avoid re-checking)
             eval_cache[market_id] = {"price": market_p, "true_p": true_p, "conf": conf}
         else:
             continue  # cached — already counted above
@@ -819,11 +1059,15 @@ def run_scan(cfg, mode, bankroll):
     })
 
     save_eval_cache(eval_cache)
-    log.info(f"Scan complete. Placed {trades_placed} trades. Cache hits: {cache_hits}")
+    log.info(
+        f"Scan complete. Placed {trades_placed} trades. "
+        f"Pre-filter: {pre_filter_hits} | Cache hits: {cache_hits} | LLM evals: {len(needs_eval)}"
+    )
     update_bot_status("ev", trades_placed, trades_skipped, "every 30min")
     send_telegram(
         f"🔄 *EV Bot Scan Complete*\n"
-        f"Placed: {trades_placed} | Skipped: {trades_skipped} | Cached: {cache_hits}\n"
+        f"Placed: {trades_placed} | Skipped: {trades_skipped}\n"
+        f"Pre-filter: {pre_filter_hits} | Cached: {cache_hits} | LLM: {len(needs_eval)}\n"
         f"🕐 {datetime.now(SHANGHAI_TZ).strftime('%H:%M')} Shanghai | Next: 30min"
     )
 

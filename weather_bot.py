@@ -46,7 +46,7 @@ CONFIG = {
     "max_bets_per_city_date": 3,  # was 2, allow more per city
     "min_ensemble_members": 50,
     "model_prob_floor": 0.05,     # never trust 0% — floor at 5%
-    "min_yes_entry": 0.15,        # block cheap YES longshots under $0.15
+    "min_yes_entry": 0.03,        # allow cheap YES when edge is strong (EV > price)
 }
 
 # City-specific caps — problem cities get smaller size, good cities get more
@@ -75,10 +75,10 @@ def max_size_for_edge(edge, city_name=""):
 CITIES = {
     "nyc":     {"lat": 40.78, "lon": -73.88, "unit": "fahrenheit", "name": "NYC"},
     "chicago": {"lat": 41.97, "lon": -87.91, "unit": "fahrenheit", "name": "Chicago"},
-    "miami":   {"lat": 25.79, "lon": -80.29, "unit": "fahrenheit", "name": "Miami"},
+    # "miami":   {"lat": 25.79, "lon": -80.29, "unit": "fahrenheit", "name": "Miami"},  # removed — 52% WR, unprofitable
     "la":      {"lat": 33.94, "lon": -118.41, "unit": "fahrenheit", "name": "Los Angeles"},
     "denver":  {"lat": 39.72, "lon": -104.75, "unit": "fahrenheit", "name": "Denver"},
-    "paris":   {"lat": 48.97, "lon": 2.44,   "unit": "celsius",    "name": "Paris"},
+    # "paris":   {"lat": 48.97, "lon": 2.44,   "unit": "celsius",    "name": "Paris"},  # removed — 55% WR, unprofitable
     "seoul":   {"lat": 37.46, "lon": 126.44, "unit": "celsius",    "name": "Seoul"},
     "shanghai":{"lat": 31.14, "lon": 121.81, "unit": "celsius",    "name": "Shanghai"},
 }
@@ -546,9 +546,13 @@ def run_scan(cfg, mode, bankroll):
 
         # YES trade filters — learned from 35 resolved YES trades
         if side == "YES":
-            # Cheap longshots under $0.15 were 0/22 — dead money
-            if entry_price < cfg.get("min_yes_entry", 0.15):
-                log.info(f"[{city['name']}] Skip YES — entry ${entry_price:.2f} too cheap")
+            # Skip cheap longshots unless edge is large enough to justify the risk.
+            # Historical 0/22 was mostly low-edge (<10%) cheap entries — high-edge cheap
+            # entries are +EV: a $0.03 entry with 25% true prob pays 33x and is fine.
+            min_entry = cfg.get("min_yes_entry", 0.03)
+            high_edge_bypass = edge >= 0.15   # >15% edge overrides the price floor
+            if entry_price < min_entry and not high_edge_bypass:
+                log.info(f"[{city['name']}] Skip YES — entry ${entry_price:.2f} too cheap (edge {edge:+.1%} < 15%)")
                 continue
             # Exact 1-degree buckets are harder to hit — need stronger model signal
             bkt_low, bkt_high = bucket
