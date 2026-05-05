@@ -5755,3 +5755,28 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-04 00:37:56,783 | INFO | Scan complete. Placed 0 trades.
+2026-05-05 04:33:38,747 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 04:33:38,747 | INFO | [shared/weather] 57 open trades, 65% win rate (as of 2026-05-05T11:09:55.058143+08:00)
+2026-05-05 04:33:38,747 | INFO | [shared/crypto] BTC $80,590, ETH $2,370, 0 open, 0% wr (as of 2026-05-05T11:14:19.039550+08:00)
+2026-05-05 04:33:38,747 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T08:21:43.453852+08:00)
+2026-05-05 04:33:38,989 | INFO | Fetched 150 active markets
+2026-05-05 04:33:38,989 | INFO | 15 candidates after filters
+2026-05-05 04:33:38,990 | INFO | [2074236] Cache hit — price 0.43 unchanged, skipping LLM
+2026-05-05 04:33:42,238 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 04:33:42,238 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 14 markets
+2026-05-05 04:33:42,238 | INFO | Batch evaluation succeeded: 14 markets in 1 LLM call
+2026-05-05 04:33:42,238 | INFO | [2133405] 'Iran closes its airspace by May 31?' mkt=0.52 est=0.40 conf=0.60 edge=+8.9% fee=$0.03 => skip $0.00
+2026-05-05 04:33:42,238 | INFO | [2152537] 'Cavaliers vs. Pistons' mkt=0.41 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 04:33:42,238 | INFO | [2132638] 'Will WTI Crude Oil (WTI) hit (HIGH) $115 in May?' mkt=0.59 est=0.55 conf=0.70 edge=+1.5% fee=$0.03 => skip $0.00
+2026-05-05 04:33:42,238 | INFO | [2073824] 'Will Elon Musk post 140-159 tweets from April 28 to May 5, 2' mkt=0.60 est=0.60 conf=0.80 edge=-1.7% fee=$0.02 => skip $0.00
+2026-05-05 04:33:42,238 | INFO | [2132776] 'Will Bitcoin reach $85,000 in May?' mkt=0.61 est=0.58 conf=0.70 edge=+0.4% fee=$0.03 => skip $0.00
+2026-05-05 04:33:42,239 | INFO | [2073829] 'Will Elon Musk post 160-179 tweets from April 28 to May 5, 2' mkt=0.37 est=0.35 conf=0.60 edge=+0.6% fee=$0.02 => skip $0.00
+2026-05-05 04:33:42,239 | INFO | [2142000] 'LoL: KT Rolster vs BNK FEARX (BO3) - LCK Rounds 1-2' mkt=0.67 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 04:33:42,239 | INFO | [2109449] 'US x Iran diplomatic meeting by May 31, 2026?' mkt=0.30 est=0.30 conf=0.60 edge=-1.0% fee=$0.02 => skip $0.00
+2026-05-05 04:33:42,239 | INFO | [2074235] 'Will WTI Crude Oil (WTI) hit (HIGH) $130 in May?' mkt=0.28 est=0.25 conf=0.70 edge=+2.1% fee=$0.01 => skip $0.00
+2026-05-05 04:33:42,239 | INFO | [1972137] 'Will Donald Trump announce that the United States blockade o' mkt=0.28 est=0.25 conf=0.60 edge=+1.1% fee=$0.01 => skip $0.00
+2026-05-05 04:33:42,239 | INFO | [2132775] 'Will Bitcoin reach $90,000 in May?' mkt=0.26 est=0.20 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 04:33:42,239 | INFO | [2148678] 'Bitcoin Up or Down on May 5?' mkt=0.76 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 04:33:42,239 | INFO | [2107043] 'Will the price of Bitcoin be above $80,000 on May 5?' mkt=0.77 est=0.80 conf=0.90 edge=+2.3% fee=$0.01 => skip $0.00
+2026-05-05 04:33:42,239 | INFO | [2132779] 'Will Bitcoin dip to $70,000 in May?' mkt=0.23 est=0.20 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 04:33:42,239 | INFO | Scan complete. Placed 0 trades. Cache hits: 1
