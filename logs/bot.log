@@ -6011,3 +6011,29 @@ openrouter/google/gemini-2.0-flash-exp:free: HTTP Error 404: Not Found
 2026-05-05 06:23:52,883 | INFO | [2074235] 'Will WTI Crude Oil (WTI) hit (HIGH) $130 in May?' mkt=0.28 est=0.15 conf=0.75 edge=+11.1% fee=$0.14 => NO $10.00
 2026-05-05 06:23:55,216 | INFO | [2132775] 'Will Bitcoin reach $90,000 in May?' mkt=0.27 est=0.45 conf=0.85 edge=+14.8% fee=$0.19 => YES $5.24
 2026-05-05 06:23:57,541 | INFO | Scan complete. Placed 3 trades. Cache hits: 2
+2026-05-05 06:27:49,333 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 06:27:49,334 | INFO | [shared/weather] 64 open trades, 65% win rate (as of 2026-05-05T14:02:47.164471+08:00)
+2026-05-05 06:27:49,334 | INFO | [shared/crypto] BTC $80,590, ETH $2,370, 0 open, 0% wr (as of 2026-05-05T11:14:19.039550+08:00)
+2026-05-05 06:27:49,334 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T08:21:43.453852+08:00)
+2026-05-05 06:27:50,833 | INFO | Fetched 150 active markets
+2026-05-05 06:27:50,834 | INFO | 15 candidates after filters
+2026-05-05 06:27:50,834 | INFO | [2054196] Cache hit — price 0.52 unchanged, skipping LLM
+2026-05-05 06:27:50,834 | INFO | [2142000] Cache hit — price 0.67 unchanged, skipping LLM
+2026-05-05 06:27:51,427 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 06:27:53,310 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 06:27:53,310 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 13 markets
+2026-05-05 06:27:53,310 | INFO | Batch evaluation succeeded: 13 markets in 1 LLM call
+2026-05-05 06:27:53,310 | INFO | [1972137] 'Will Donald Trump announce that the United States blockade o' mkt=0.27 est=0.01 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 06:27:53,310 | INFO | [2138976] 'LoL: Dplus KIA vs Nongshim Red Force (BO3) - Esports World C' mkt=0.73 est=0.73 conf=0.80 edge=-1.3% fee=$0.01 => skip $0.00
+2026-05-05 06:27:53,310 | INFO | [2107043] 'Will the price of Bitcoin be above $80,000 on May 5?' mkt=0.76 est=0.76 conf=0.90 edge=-1.2% fee=$0.01 => skip $0.00
+2026-05-05 06:27:53,310 | INFO | [2148678] 'Bitcoin Up or Down on May 5?' mkt=0.77 est=0.77 conf=0.90 edge=-1.2% fee=$0.01 => skip $0.00
+2026-05-05 06:27:53,310 | INFO | [2132779] 'Will Bitcoin dip to $70,000 in May?' mkt=0.21 est=0.21 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 06:27:53,311 | INFO | [2074237] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in May?' mkt=0.80 est=0.80 conf=0.90 edge=-1.0% fee=$0.01 => skip $0.00
+2026-05-05 06:27:53,311 | INFO | [566188] 'Will Manchester City win the 2025–26 English Premier League?' mkt=0.20 est=0.20 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 06:27:53,311 | INFO | [566187] 'Will Arsenal win the 2025–26 English Premier League?' mkt=0.80 est=0.80 conf=0.90 edge=-1.0% fee=$0.01 => skip $0.00
+2026-05-05 06:27:53,311 | INFO | [2017273] 'UFC 328: Sean Strickland vs. Khamzat Chimaev (Middleweight, ' mkt=0.17 est=0.17 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 06:27:53,311 | INFO | [2107049] 'Will the price of Bitcoin be above $82,000 on May 5?' mkt=0.15 est=0.15 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 06:27:53,311 | INFO | [2119227] 'Will Donald Trump announce that the United States blockade o' mkt=0.14 est=0.14 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 06:27:53,311 | INFO | [2074234] 'Will WTI Crude Oil (WTI) hit (HIGH) $140 in May?' mkt=0.13 est=0.13 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 06:27:53,311 | INFO | [2047424] 'US x Iran diplomatic meeting by May 15, 2026?' mkt=0.12 est=0.12 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 06:27:53,312 | INFO | Scan complete. Placed 0 trades. Cache hits: 2
