@@ -6037,3 +6037,28 @@ openrouter/google/gemini-2.0-flash-exp:free: HTTP Error 404: Not Found
 2026-05-05 06:27:53,311 | INFO | [2074234] 'Will WTI Crude Oil (WTI) hit (HIGH) $140 in May?' mkt=0.13 est=0.13 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 06:27:53,311 | INFO | [2047424] 'US x Iran diplomatic meeting by May 15, 2026?' mkt=0.12 est=0.12 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 06:27:53,312 | INFO | Scan complete. Placed 0 trades. Cache hits: 2
+2026-05-05 06:48:22,151 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 06:48:22,151 | INFO | [shared/weather] 64 open trades, 65% win rate (as of 2026-05-05T14:02:47.164471+08:00)
+2026-05-05 06:48:22,151 | INFO | [shared/crypto] BTC $80,590, ETH $2,370, 0 open, 0% wr (as of 2026-05-05T11:14:19.039550+08:00)
+2026-05-05 06:48:22,151 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T14:41:30.665307+08:00)
+2026-05-05 06:48:22,925 | INFO | Fetched 150 active markets
+2026-05-05 06:48:22,926 | INFO | 15 candidates after filters
+2026-05-05 06:48:22,926 | INFO | [2054196] Cache hit — price 0.52 unchanged, skipping LLM
+2026-05-05 06:48:22,926 | INFO | [2142000] Cache hit — price 0.67 unchanged, skipping LLM
+2026-05-05 06:48:22,926 | INFO | [1972137] Cache hit — price 0.27 unchanged, skipping LLM
+2026-05-05 06:48:22,926 | INFO | [2138976] Cache hit — price 0.73 unchanged, skipping LLM
+2026-05-05 06:48:22,926 | INFO | [2148678] Cache hit — price 0.76 unchanged, skipping LLM
+2026-05-05 06:48:22,926 | INFO | [2107043] Cache hit — price 0.77 unchanged, skipping LLM
+2026-05-05 06:48:22,926 | INFO | [2074237] Cache hit — price 0.79 unchanged, skipping LLM
+2026-05-05 06:48:22,926 | INFO | [2132779] Cache hit — price 0.21 unchanged, skipping LLM
+2026-05-05 06:48:22,927 | INFO | [566188] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-05 06:48:22,927 | INFO | [566187] Cache hit — price 0.80 unchanged, skipping LLM
+2026-05-05 06:48:22,927 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-05 06:48:22,927 | INFO | [2119227] Cache hit — price 0.14 unchanged, skipping LLM
+2026-05-05 06:48:22,927 | INFO | [2107049] Cache hit — price 0.13 unchanged, skipping LLM
+2026-05-05 06:48:22,927 | INFO | [2074234] Cache hit — price 0.13 unchanged, skipping LLM
+2026-05-05 06:48:23,450 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 06:48:23,450 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 1 markets
+2026-05-05 06:48:23,450 | INFO | Batch evaluation succeeded: 1 markets in 1 LLM call
+2026-05-05 06:48:23,451 | INFO | [2147169] 'Jiujiang: Mananchaya Sawangkaew vs Heather Watson' mkt=0.28 est=0.28 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 06:48:23,452 | INFO | Scan complete. Placed 0 trades. Cache hits: 14
