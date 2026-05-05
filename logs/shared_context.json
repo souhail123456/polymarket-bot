@@ -4,7 +4,7 @@
     "trades_resolved": 236,
     "win_rate": 0.67,
     "summary": "63 open trades, 67% win rate",
-    "updated_at": "2026-05-06T05:28:09.426088+08:00"
+    "updated_at": "2026-05-06T04:51:42.875289+08:00"
   },
   "crypto": {
     "btc_price": 81582,
@@ -33,18 +33,10 @@
     "updated_at": "2026-05-06T02:26:26.916492+08:00"
   },
   "ev": {
-<<<<<<< Updated upstream
     "trades_open": 8,
     "trades_resolved": 9,
     "win_rate": 0.22,
     "summary": "8 open trades, 22% win rate",
-    "updated_at": "2026-05-06T05:23:38.221821+08:00"
-=======
-    "trades_open": 16,
-    "trades_resolved": 1,
-    "win_rate": 1.0,
-    "summary": "16 open trades, 100% win rate",
-    "updated_at": "2026-05-05T20:40:23.609053+08:00"
->>>>>>> Stashed changes
+    "updated_at": "2026-05-06T05:49:01.916364+08:00"
   }
 }
