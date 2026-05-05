@@ -6037,28 +6037,44 @@ openrouter/google/gemini-2.0-flash-exp:free: HTTP Error 404: Not Found
 2026-05-05 06:27:53,311 | INFO | [2074234] 'Will WTI Crude Oil (WTI) hit (HIGH) $140 in May?' mkt=0.13 est=0.13 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 06:27:53,311 | INFO | [2047424] 'US x Iran diplomatic meeting by May 15, 2026?' mkt=0.12 est=0.12 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 06:27:53,312 | INFO | Scan complete. Placed 0 trades. Cache hits: 2
-2026-05-05 07:40:33,535 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-05 07:40:33,535 | INFO | [shared/weather] 65 open trades, 65% win rate (as of 2026-05-05T14:54:30.646220+08:00)
-2026-05-05 07:40:33,535 | INFO | [shared/crypto] BTC $80,915, ETH $2,377, 0 open, 0% wr (as of 2026-05-05T15:00:27.845027+08:00)
-2026-05-05 07:40:33,535 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T14:41:30.665307+08:00)
-2026-05-05 07:40:34,326 | INFO | Fetched 150 active markets
-2026-05-05 07:40:34,327 | INFO | 15 candidates after filters
-2026-05-05 07:40:34,327 | INFO | [2054196] Cache hit — price 0.52 unchanged, skipping LLM
-2026-05-05 07:40:34,327 | INFO | [2142000] Cache hit — price 0.67 unchanged, skipping LLM
-2026-05-05 07:40:34,327 | INFO | [2138976] Cache hit — price 0.73 unchanged, skipping LLM
-2026-05-05 07:40:34,327 | INFO | [1972137] Cache hit — price 0.25 unchanged, skipping LLM
-2026-05-05 07:40:34,327 | INFO | [2074237] Cache hit — price 0.79 unchanged, skipping LLM
-2026-05-05 07:40:34,327 | INFO | [2132779] Cache hit — price 0.21 unchanged, skipping LLM
-2026-05-05 07:40:34,327 | INFO | [566188] Cache hit — price 0.20 unchanged, skipping LLM
-2026-05-05 07:40:34,327 | INFO | [566187] Cache hit — price 0.80 unchanged, skipping LLM
-2026-05-05 07:40:34,327 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
-2026-05-05 07:40:35,820 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-05 07:40:35,820 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 6 markets
-2026-05-05 07:40:35,820 | INFO | Batch evaluation succeeded: 6 markets in 1 LLM call
-2026-05-05 07:40:35,820 | INFO | [2160258] 'Counter-Strike: MOUZ NXT vs Bebop (BO3) - CCT Europe Series ' mkt=0.45 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 07:40:35,820 | INFO | [2061882] 'Will FC Bayern München win on 2026-05-06?' mkt=0.56 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 07:40:35,820 | INFO | [2107049] 'Will the price of Bitcoin be above $82,000 on May 5?' mkt=0.19 est=0.55 conf=0.60 edge=+31.9% fee=$0.40 => YES $10.00
-2026-05-05 07:40:38,197 | INFO | [2147174] 'Jiujiang: Viktoria Morvayova vs Yexin Ma' mkt=0.83 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 07:40:38,197 | INFO | [2107043] 'Will the price of Bitcoin be above $80,000 on May 5?' mkt=0.83 est=0.90 conf=0.80 edge=+5.7% fee=$0.01 => skip $0.00
-2026-05-05 07:40:38,197 | INFO | [2148678] 'Bitcoin Up or Down on May 5?' mkt=0.84 est=0.55 conf=0.60 edge=+25.3% fee=$0.34 => NO $8.14
-2026-05-05 07:40:40,565 | INFO | Scan complete. Placed 2 trades. Cache hits: 9
+2026-05-05 07:52:53,406 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 07:52:53,406 | INFO | [shared/weather] 64 open trades, 65% win rate (as of 2026-05-05T15:48:33.693071+08:00)
+2026-05-05 07:52:53,407 | INFO | [shared/crypto] BTC $80,915, ETH $2,377, 0 open, 0% wr (as of 2026-05-05T15:00:27.845027+08:00)
+2026-05-05 07:52:53,407 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T14:41:30.665307+08:00)
+2026-05-05 07:52:54,131 | INFO | Fetched 150 active markets
+2026-05-05 07:52:54,132 | INFO | 15 candidates after filters
+2026-05-05 07:52:54,132 | INFO | [2054196] Cache hit — price 0.52 unchanged, skipping LLM
+2026-05-05 07:52:54,133 | INFO | [2142000] Cache hit — price 0.67 unchanged, skipping LLM
+2026-05-05 07:52:54,133 | INFO | [2138976] Cache hit — price 0.73 unchanged, skipping LLM
+2026-05-05 07:52:54,133 | INFO | [1972137] Cache hit — price 0.25 unchanged, skipping LLM
+2026-05-05 07:52:54,133 | INFO | [2074237] Cache hit — price 0.79 unchanged, skipping LLM
+2026-05-05 07:52:54,133 | INFO | [2132779] Cache hit — price 0.21 unchanged, skipping LLM
+2026-05-05 07:52:54,133 | INFO | [566188] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-05 07:52:54,133 | INFO | [566187] Cache hit — price 0.80 unchanged, skipping LLM
+2026-05-05 07:52:54,133 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-05 07:52:54,133 | INFO | [2107049] Cache hit — price 0.15 unchanged, skipping LLM
+2026-05-05 07:53:12,685 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-05 07:53:12,685 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 5 markets
+2026-05-05 07:53:12,685 | WARNING | Batch evaluation failed (Expecting value: line 1 column 1 (char 0)), falling back to individual calls
+2026-05-05 07:53:15,600 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
+2026-05-05 07:53:16,053 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 07:53:16,053 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2160258
+2026-05-05 07:53:18,729 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
+2026-05-05 07:53:19,373 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 07:53:19,374 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2061882
+2026-05-05 07:53:22,172 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
+2026-05-05 07:53:22,208 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 07:53:22,473 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 07:53:22,473 | INFO | LLM response from groq/llama-3.1-8b-instant for 2147174
+2026-05-05 07:53:24,525 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
+2026-05-05 07:53:24,561 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 07:53:24,819 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 07:53:24,819 | INFO | LLM response from groq/llama-3.1-8b-instant for 2107043
+2026-05-05 07:53:27,303 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-05 07:53:27,303 | INFO | LLM response from gemini/gemini-2.5-flash for 2148678
+2026-05-05 07:53:27,303 | WARNING | estimate_probability failed for 2148678: Expecting ',' delimiter: line 2 column 26 (char 27)
+2026-05-05 07:53:27,303 | INFO | [2160258] 'Counter-Strike: MOUZ NXT vs Bebop (BO3) - CCT Europe Series ' mkt=0.47 est=0.55 conf=0.58 edge=+5.8% fee=$0.03 => skip $0.00
+2026-05-05 07:53:27,303 | INFO | [2061882] 'Will FC Bayern München win on 2026-05-06?' mkt=0.56 est=0.55 conf=0.58 edge=-1.3% fee=$0.03 => skip $0.00
+2026-05-05 07:53:27,303 | INFO | [2147174] 'Jiujiang: Viktoria Morvayova vs Yexin Ma' mkt=0.59 est=0.55 conf=0.75 edge=+1.0% fee=$0.03 => skip $0.00
+2026-05-05 07:53:27,304 | INFO | [2107043] 'Will the price of Bitcoin be above $80,000 on May 5?' mkt=0.81 est=0.45 conf=0.85 edge=+31.5% fee=$0.40 => NO $10.00
+2026-05-05 07:53:29,757 | INFO | Scan complete. Placed 1 trades. Cache hits: 10
