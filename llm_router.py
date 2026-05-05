@@ -42,8 +42,8 @@ PROVIDERS = [
         "name": "openrouter",
         "env_key": "OPEN_ROUTER",
         "url": "https://openrouter.ai/api/v1/chat/completions",
-        "model": "google/gemini-2.0-flash-exp:free",
-        "fallback_model": "deepseek/deepseek-r1-0528:free",
+        "model": "meta-llama/llama-4-maverick:free",
+        "fallback_model": "google/gemini-2.0-flash-exp:free",
         "format": "openai",
     },
 ]
@@ -56,11 +56,14 @@ def _call_openai_format(url, api_key, model, prompt, max_tokens, temperature):
         "max_tokens": max_tokens,
         "temperature": temperature,
     }).encode()
-    req = urllib.request.Request(url, data=payload, headers={
+    headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
         "User-Agent": "polymarket-bot/1.0",
-    })
+    }
+    if "openrouter.ai" in url:
+        headers["HTTP-Referer"] = "https://github.com/polymarket-bot"
+    req = urllib.request.Request(url, data=payload, headers=headers)
     resp = urllib.request.urlopen(req, timeout=30)
     data = json.loads(resp.read())
     return data["choices"][0]["message"]["content"]
