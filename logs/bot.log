@@ -5755,28 +5755,119 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-04 00:37:56,783 | INFO | Scan complete. Placed 0 trades.
-2026-05-05 04:33:38,747 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-05 04:33:38,747 | INFO | [shared/weather] 57 open trades, 65% win rate (as of 2026-05-05T11:09:55.058143+08:00)
-2026-05-05 04:33:38,747 | INFO | [shared/crypto] BTC $80,590, ETH $2,370, 0 open, 0% wr (as of 2026-05-05T11:14:19.039550+08:00)
-2026-05-05 04:33:38,747 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T08:21:43.453852+08:00)
-2026-05-05 04:33:38,989 | INFO | Fetched 150 active markets
-2026-05-05 04:33:38,989 | INFO | 15 candidates after filters
-2026-05-05 04:33:38,990 | INFO | [2074236] Cache hit — price 0.43 unchanged, skipping LLM
-2026-05-05 04:33:42,238 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-05 04:33:42,238 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 14 markets
-2026-05-05 04:33:42,238 | INFO | Batch evaluation succeeded: 14 markets in 1 LLM call
-2026-05-05 04:33:42,238 | INFO | [2133405] 'Iran closes its airspace by May 31?' mkt=0.52 est=0.40 conf=0.60 edge=+8.9% fee=$0.03 => skip $0.00
-2026-05-05 04:33:42,238 | INFO | [2152537] 'Cavaliers vs. Pistons' mkt=0.41 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 04:33:42,238 | INFO | [2132638] 'Will WTI Crude Oil (WTI) hit (HIGH) $115 in May?' mkt=0.59 est=0.55 conf=0.70 edge=+1.5% fee=$0.03 => skip $0.00
-2026-05-05 04:33:42,238 | INFO | [2073824] 'Will Elon Musk post 140-159 tweets from April 28 to May 5, 2' mkt=0.60 est=0.60 conf=0.80 edge=-1.7% fee=$0.02 => skip $0.00
-2026-05-05 04:33:42,238 | INFO | [2132776] 'Will Bitcoin reach $85,000 in May?' mkt=0.61 est=0.58 conf=0.70 edge=+0.4% fee=$0.03 => skip $0.00
-2026-05-05 04:33:42,239 | INFO | [2073829] 'Will Elon Musk post 160-179 tweets from April 28 to May 5, 2' mkt=0.37 est=0.35 conf=0.60 edge=+0.6% fee=$0.02 => skip $0.00
-2026-05-05 04:33:42,239 | INFO | [2142000] 'LoL: KT Rolster vs BNK FEARX (BO3) - LCK Rounds 1-2' mkt=0.67 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 04:33:42,239 | INFO | [2109449] 'US x Iran diplomatic meeting by May 31, 2026?' mkt=0.30 est=0.30 conf=0.60 edge=-1.0% fee=$0.02 => skip $0.00
-2026-05-05 04:33:42,239 | INFO | [2074235] 'Will WTI Crude Oil (WTI) hit (HIGH) $130 in May?' mkt=0.28 est=0.25 conf=0.70 edge=+2.1% fee=$0.01 => skip $0.00
-2026-05-05 04:33:42,239 | INFO | [1972137] 'Will Donald Trump announce that the United States blockade o' mkt=0.28 est=0.25 conf=0.60 edge=+1.1% fee=$0.01 => skip $0.00
-2026-05-05 04:33:42,239 | INFO | [2132775] 'Will Bitcoin reach $90,000 in May?' mkt=0.26 est=0.20 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 04:33:42,239 | INFO | [2148678] 'Bitcoin Up or Down on May 5?' mkt=0.76 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 04:33:42,239 | INFO | [2107043] 'Will the price of Bitcoin be above $80,000 on May 5?' mkt=0.77 est=0.80 conf=0.90 edge=+2.3% fee=$0.01 => skip $0.00
-2026-05-05 04:33:42,239 | INFO | [2132779] 'Will Bitcoin dip to $70,000 in May?' mkt=0.23 est=0.20 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 04:33:42,239 | INFO | Scan complete. Placed 0 trades. Cache hits: 1
+2026-05-05 05:50:20,039 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 05:50:20,039 | INFO | [shared/weather] 58 open trades, 65% win rate (as of 2026-05-05T12:39:53.494015+08:00)
+2026-05-05 05:50:20,040 | INFO | [shared/crypto] BTC $80,590, ETH $2,370, 0 open, 0% wr (as of 2026-05-05T11:14:19.039550+08:00)
+2026-05-05 05:50:20,040 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T08:21:43.453852+08:00)
+2026-05-05 05:50:20,427 | INFO | Fetched 150 active markets
+2026-05-05 05:50:20,428 | INFO | 15 candidates after filters
+2026-05-05 05:50:20,991 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:21,099 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 413: Payload Too Large
+2026-05-05 05:50:21,270 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:21,587 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-05 05:50:21,800 | WARNING | LLM call failed openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:21,800 | WARNING | Batch evaluation failed (All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 413: Payload Too Large
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found), falling back to individual calls
+2026-05-05 05:50:22,360 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 05:50:22,360 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2133405
+2026-05-05 05:50:22,926 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 05:50:22,927 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2054196
+2026-05-05 05:50:23,486 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 05:50:23,486 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2074236
+2026-05-05 05:50:24,119 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 05:50:24,119 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2132638
+2026-05-05 05:50:24,257 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:24,662 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 05:50:24,662 | INFO | LLM response from groq/llama-3.1-8b-instant for 2132776
+2026-05-05 05:50:24,751 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:25,112 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 05:50:25,112 | INFO | LLM response from groq/llama-3.1-8b-instant for 2073824
+2026-05-05 05:50:25,215 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:25,535 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 05:50:25,535 | INFO | LLM response from groq/llama-3.1-8b-instant for 2142000
+2026-05-05 05:50:25,636 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:26,265 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 05:50:26,265 | INFO | LLM response from groq/llama-3.1-8b-instant for 2073829
+2026-05-05 05:50:26,365 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:27,334 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 05:50:27,334 | INFO | LLM response from groq/llama-3.1-8b-instant for 2099880
+2026-05-05 05:50:27,423 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:27,519 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:27,655 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:27,778 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-05 05:50:28,079 | WARNING | LLM call failed openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:28,079 | WARNING | estimate_probability failed for 2109449: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:28,214 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:28,302 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:28,437 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:28,549 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-05 05:50:28,604 | WARNING | LLM call failed openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:28,604 | WARNING | estimate_probability failed for 2074235: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:28,744 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:28,829 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:28,957 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:29,077 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-05 05:50:29,153 | WARNING | LLM call failed openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:29,153 | WARNING | estimate_probability failed for 2132775: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:29,296 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:29,380 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:29,501 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:29,631 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-05 05:50:29,708 | WARNING | LLM call failed openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:29,708 | WARNING | estimate_probability failed for 1972137: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:29,798 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:29,897 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:30,028 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:30,152 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-05 05:50:30,222 | WARNING | LLM call failed openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:30,222 | WARNING | estimate_probability failed for 2138976: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:30,355 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:30,447 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:30,584 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-05 05:50:30,695 | WARNING | LLM call failed cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+2026-05-05 05:50:30,770 | WARNING | LLM call failed openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:30,771 | WARNING | estimate_probability failed for 2148678: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+cerebras/llama-3.3-70b: HTTP Error 404: Not Found
+openrouter/deepseek/deepseek-r1:free: HTTP Error 404: Not Found
+2026-05-05 05:50:30,771 | INFO | [2133405] 'Iran closes its airspace by May 31?' mkt=0.51 est=0.20 conf=0.75 edge=+28.0% fee=$0.25 => NO $10.00
+2026-05-05 05:50:33,365 | INFO | [2054196] 'Arsenal FC vs. Club Atlético de Madrid: O/U 2.5' mkt=0.52 est=0.58 conf=0.72 edge=+4.1% fee=$0.02 => skip $0.00
+2026-05-05 05:50:33,366 | INFO | [2074236] 'Will WTI Crude Oil (WTI) hit (HIGH) $120 in May?' mkt=0.42 est=0.28 conf=0.75 edge=+12.4% fee=$0.17 => NO $7.95
+2026-05-05 05:50:35,891 | INFO | [2132638] 'Will WTI Crude Oil (WTI) hit (HIGH) $115 in May?' mkt=0.60 est=0.35 conf=0.75 edge=+22.5% fee=$0.27 => NO $8.99
+2026-05-05 05:50:38,453 | INFO | [2132776] 'Will Bitcoin reach $85,000 in May?' mkt=0.64 est=0.22 conf=0.85 edge=+38.3% fee=$0.32 => NO $10.00
+2026-05-05 05:50:41,022 | INFO | [2073824] 'Will Elon Musk post 140-159 tweets from April 28 to May 5, 2' mkt=0.66 est=0.43 conf=0.85 edge=+19.7% fee=$0.19 => NO $5.78
+2026-05-05 05:50:43,521 | INFO | [2142000] 'LoL: KT Rolster vs BNK FEARX (BO3) - LCK Rounds 1-2' mkt=0.67 est=0.55 conf=0.75 edge=+8.2% fee=$0.03 => skip $0.00
+2026-05-05 05:50:43,522 | INFO | [2073829] 'Will Elon Musk post 160-179 tweets from April 28 to May 5, 2' mkt=0.31 est=0.55 conf=0.85 edge=+20.6% fee=$0.18 => YES $5.26
+2026-05-05 05:50:46,053 | INFO | [2099880] 'Jerome Powell out as Fed Chair by May 15, 2026?' mkt=0.31 est=0.45 conf=0.85 edge=+10.5% fee=$0.10 => YES $2.80
+2026-05-05 05:50:48,557 | INFO | Scan complete. Placed 7 trades. Cache hits: 0
