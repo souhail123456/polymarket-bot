@@ -6193,3 +6193,30 @@ openrouter/google/gemini-2.0-flash-exp:free: HTTP Error 404: Not Found
 2026-05-05 08:12:45,040 | INFO | [2160258] 'Counter-Strike: MOUZ NXT vs Bebop (BO3) - CCT Europe Series ' mkt=0.39 est=0.50 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 08:12:45,040 | INFO | [2155093] 'Game Handicap: HLE (-1.5) vs DN SOOPers (+1.5)' mkt=0.76 est=0.65 conf=0.55 edge=+7.2% fee=$0.04 => skip $0.00
 2026-05-05 08:12:45,041 | INFO | Scan complete. Placed 0 trades. Cache hits: 12
+2026-05-05 08:21:12,479 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 08:21:12,479 | INFO | [shared/weather] 64 open trades, 65% win rate (as of 2026-05-05T15:48:33.693071+08:00)
+2026-05-05 08:21:12,479 | INFO | [shared/crypto] BTC $80,849, ETH $2,382, 0 open, 0% wr (as of 2026-05-05T16:18:32.719380+08:00)
+2026-05-05 08:21:12,479 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T14:41:30.665307+08:00)
+2026-05-05 08:21:13,266 | INFO | Fetched 150 active markets
+2026-05-05 08:21:13,267 | INFO | 15 candidates after filters
+2026-05-05 08:21:13,267 | INFO | [2054196] Cache hit — price 0.52 unchanged, skipping LLM
+2026-05-05 08:21:13,267 | INFO | [2061882] Cache hit — price 0.56 unchanged, skipping LLM
+2026-05-05 08:21:13,267 | INFO | [2142000] Cache hit — price 0.67 unchanged, skipping LLM
+2026-05-05 08:21:13,267 | INFO | [2138976] Cache hit — price 0.73 unchanged, skipping LLM
+2026-05-05 08:21:13,267 | INFO | [1972137] Cache hit — price 0.25 unchanged, skipping LLM
+2026-05-05 08:21:13,267 | INFO | [2074237] Cache hit — price 0.79 unchanged, skipping LLM
+2026-05-05 08:21:13,267 | INFO | [2132779] Cache hit — price 0.21 unchanged, skipping LLM
+2026-05-05 08:21:13,268 | INFO | [566188] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-05 08:21:13,268 | INFO | [566187] Cache hit — price 0.80 unchanged, skipping LLM
+2026-05-05 08:21:13,268 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-05 08:21:27,684 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
+2026-05-05 08:21:27,734 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 08:21:28,289 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 08:21:28,289 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 5 markets
+2026-05-05 08:21:28,289 | INFO | Batch evaluation succeeded: 5 markets in 1 LLM call
+2026-05-05 08:21:28,289 | INFO | [2155861] "Internazionali BNL d'Italia, Qualification: Pablo Carreno Bu" mkt=0.51 est=0.50 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 08:21:28,289 | INFO | [2160258] 'Counter-Strike: MOUZ NXT vs Bebop (BO3) - CCT Europe Series ' mkt=0.42 est=0.42 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 08:21:28,289 | INFO | [2147174] 'Jiujiang: Viktoria Morvayova vs Yexin Ma' mkt=0.36 est=0.36 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 08:21:28,289 | INFO | [2155093] 'Game Handicap: HLE (-1.5) vs DN SOOPers (+1.5)' mkt=0.71 est=0.71 conf=0.90 edge=-1.5% fee=$0.01 => skip $0.00
+2026-05-05 08:21:28,289 | INFO | [2133404] 'Iran closes its airspace by May 8?' mkt=0.21 est=0.21 conf=0.80 edge=-3.9% fee=$0.04 => skip $0.00
+2026-05-05 08:21:28,290 | INFO | Scan complete. Placed 0 trades. Cache hits: 10
