@@ -93,15 +93,24 @@ def _call_gemini_format(url, api_key, model, prompt, max_tokens, temperature):
     return "\n".join(text_parts)
 
 
-def call_llm(prompt, max_tokens=400, temperature=0.3):
+def call_llm(prompt, max_tokens=400, temperature=0.3, prefer=None, skip=None):
     """
     Call LLM with automatic fallback chain.
+    prefer: provider name to try first (e.g. "gemini")
+    skip: provider name(s) to skip (e.g. "gemini" or ["gemini"])
     Returns: (response_text, provider_name, model_name)
     Raises: RuntimeError if ALL providers fail.
     """
     errors = []
+    skip_set = set([skip] if isinstance(skip, str) else (skip or []))
 
-    for provider in PROVIDERS:
+    providers = list(PROVIDERS)
+    if prefer:
+        providers.sort(key=lambda p: 0 if p["name"] == prefer else 1)
+
+    for provider in providers:
+        if provider["name"] in skip_set:
+            continue
         api_key = os.environ.get(provider["env_key"])
         if not api_key:
             continue

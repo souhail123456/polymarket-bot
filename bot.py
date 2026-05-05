@@ -311,7 +311,7 @@ def estimate_probability(market):
         live_context=live_context,
     )
     try:
-        text, provider, model = call_llm(prompt, max_tokens=400)
+        text, provider, model = call_llm(prompt, max_tokens=400, skip="gemini")
         log.info(f"LLM response from {provider}/{model} for {market.get('_market_id', '')[:8]}")
         text = text.strip()
         if text.startswith("```"):
@@ -365,7 +365,7 @@ Output ONLY a JSON array, one object per market, in order. No other text:
 [{{"market_id": "<id>", "true_probability": <0-1>, "confidence": <0-1>, "reasoning": "<one sentence>"}}]"""
 
     try:
-        text, provider, model = call_llm(batch_prompt, max_tokens=200 * len(markets), temperature=0.3)
+        text, provider, model = call_llm(batch_prompt, max_tokens=200 * len(markets), temperature=0.3, prefer="gemini")
         log.info(f"Batch LLM response from {provider}/{model} for {len(markets)} markets")
         text = text.strip()
         if text.startswith("```"):
