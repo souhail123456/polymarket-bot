@@ -5755,29 +5755,3 @@ groq/llama-3.3-70b-versatile: HTTP Error 403: Forbidden
 gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
 cerebras/llama-3.3-70b: HTTP Error 403: Forbidden
 2026-05-04 00:37:56,783 | INFO | Scan complete. Placed 0 trades.
-2026-05-05 00:36:26,173 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-05 00:36:26,173 | INFO | [shared/weather] 59 open trades, 65% win rate (as of 2026-05-05T07:53:26.002927+08:00)
-2026-05-05 00:36:26,173 | INFO | [shared/crypto] BTC $79,902, ETH $2,350, 0 open, 0% wr (as of 2026-05-05T07:24:16.872616+08:00)
-2026-05-05 00:36:26,173 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T08:21:43.453852+08:00)
-2026-05-05 00:36:26,408 | INFO | Fetched 150 active markets
-2026-05-05 00:36:26,408 | INFO | 15 candidates after filters
-2026-05-05 00:36:26,409 | INFO | [2074236] Cache hit — price 0.46 unchanged, skipping LLM
-2026-05-05 00:36:26,987 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-05 00:36:28,437 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-05 00:36:28,437 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 14 markets
-2026-05-05 00:36:28,437 | INFO | Batch evaluation succeeded: 14 markets in 1 LLM call
-2026-05-05 00:36:28,437 | INFO | [2133405] 'Iran closes its airspace by May 31?' mkt=0.52 est=0.45 conf=0.80 edge=+3.9% fee=$0.03 => skip $0.00
-2026-05-05 00:36:28,437 | INFO | [2073829] 'Will Elon Musk post 160-179 tweets from April 28 to May 5, 2' mkt=0.46 est=0.52 conf=0.70 edge=+3.2% fee=$0.03 => skip $0.00
-2026-05-05 00:36:28,437 | INFO | [2073824] 'Will Elon Musk post 140-159 tweets from April 28 to May 5, 2' mkt=0.46 est=0.48 conf=0.70 edge=-0.6% fee=$0.03 => skip $0.00
-2026-05-05 00:36:28,437 | INFO | [2107043] 'Will the price of Bitcoin be above $80,000 on May 5?' mkt=0.46 est=0.45 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 00:36:28,437 | INFO | [2132776] 'Will Bitcoin reach $85,000 in May?' mkt=0.55 est=0.60 conf=0.80 edge=+3.2% fee=$0.02 => skip $0.00
-2026-05-05 00:36:28,437 | INFO | [2105243] 'Milwaukee Brewers vs. St. Louis Cardinals' mkt=0.45 est=0.47 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 00:36:28,438 | INFO | [2105252] 'Atlanta Braves vs. Seattle Mariners' mkt=0.45 est=0.47 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 00:36:28,438 | INFO | [2105255] 'San Diego Padres vs. San Francisco Giants' mkt=0.56 est=0.57 conf=0.70 edge=-0.2% fee=$0.02 => skip $0.00
-2026-05-05 00:36:28,438 | INFO | [2152537] 'Cavaliers vs. Pistons' mkt=0.41 est=0.47 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 00:36:28,438 | INFO | [2132638] 'Will WTI Crude Oil (WTI) hit (HIGH) $115 in May?' mkt=0.64 est=0.65 conf=0.90 edge=-0.8% fee=$0.02 => skip $0.00
-2026-05-05 00:36:28,438 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.34 est=0.35 conf=0.80 edge=-2.3% fee=$0.03 => skip $0.00
-2026-05-05 00:36:28,438 | INFO | [2105237] 'Cincinnati Reds vs. Chicago Cubs' mkt=0.34 est=0.38 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 00:36:28,438 | INFO | [2142000] 'LoL: KT Rolster vs BNK FEARX (BO3) - LCK Rounds 1-2' mkt=0.67 est=0.67 conf=0.90 edge=-1.7% fee=$0.02 => skip $0.00
-2026-05-05 00:36:28,438 | INFO | [2109449] 'US x Iran diplomatic meeting by May 31, 2026?' mkt=0.32 est=0.33 conf=0.80 edge=-2.4% fee=$0.03 => skip $0.00
-2026-05-05 00:36:28,439 | INFO | Scan complete. Placed 0 trades. Cache hits: 1
