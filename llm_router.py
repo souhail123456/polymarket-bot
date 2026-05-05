@@ -17,19 +17,20 @@ log = logging.getLogger(__name__)
 
 PROVIDERS = [
     {
+        "name": "gemini",
+        "env_key": "GEMINI_API_KEY",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}",
+        "model": "gemini-2.5-flash",
+        "fallback_model": "gemini-2.0-flash",
+        "format": "gemini",
+    },
+    {
         "name": "groq",
         "env_key": "GROQ_API_KEY",
         "url": "https://api.groq.com/openai/v1/chat/completions",
         "model": "llama-3.3-70b-versatile",
         "fallback_model": "llama-3.1-8b-instant",
         "format": "openai",
-    },
-    {
-        "name": "gemini",
-        "env_key": "GEMINI_API_KEY",
-        "url": "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}",
-        "model": "gemini-2.0-flash",
-        "format": "gemini",
     },
     {
         "name": "cerebras",
