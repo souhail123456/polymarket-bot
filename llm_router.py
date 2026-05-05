@@ -86,7 +86,11 @@ def _call_gemini_format(url, api_key, model, prompt, max_tokens, temperature):
     })
     resp = urllib.request.urlopen(req, timeout=30)
     data = json.loads(resp.read())
-    return data["candidates"][0]["content"]["parts"][0]["text"]
+    parts = data["candidates"][0]["content"]["parts"]
+    text_parts = [p["text"] for p in parts if "text" in p]
+    if not text_parts:
+        raise ValueError("Gemini returned no text parts")
+    return "\n".join(text_parts)
 
 
 def call_llm(prompt, max_tokens=400, temperature=0.3):
