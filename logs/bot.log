@@ -6220,3 +6220,29 @@ openrouter/google/gemini-2.0-flash-exp:free: HTTP Error 404: Not Found
 2026-05-05 08:21:28,289 | INFO | [2155093] 'Game Handicap: HLE (-1.5) vs DN SOOPers (+1.5)' mkt=0.71 est=0.71 conf=0.90 edge=-1.5% fee=$0.01 => skip $0.00
 2026-05-05 08:21:28,289 | INFO | [2133404] 'Iran closes its airspace by May 8?' mkt=0.21 est=0.21 conf=0.80 edge=-3.9% fee=$0.04 => skip $0.00
 2026-05-05 08:21:28,290 | INFO | Scan complete. Placed 0 trades. Cache hits: 10
+2026-05-05 10:35:16,623 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 10:35:16,623 | INFO | [shared/weather] 65 open trades, 66% win rate (as of 2026-05-05T17:44:22.491577+08:00)
+2026-05-05 10:35:16,623 | INFO | [shared/crypto] BTC $80,684, ETH $2,371, 0 open, 0% wr (as of 2026-05-05T18:12:44.367796+08:00)
+2026-05-05 10:35:16,623 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T14:41:30.665307+08:00)
+2026-05-05 10:35:17,959 | INFO | Fetched 150 active markets
+2026-05-05 10:35:17,959 | INFO | 15 candidates after filters
+2026-05-05 10:35:17,960 | INFO | [2155861] Cache hit — price 0.51 unchanged, skipping LLM
+2026-05-05 10:35:17,960 | INFO | [2054196] Cache hit — price 0.52 unchanged, skipping LLM
+2026-05-05 10:35:17,960 | INFO | [2061882] Cache hit — price 0.57 unchanged, skipping LLM
+2026-05-05 10:35:17,960 | INFO | [2142000] Cache hit — price 0.67 unchanged, skipping LLM
+2026-05-05 10:35:17,960 | INFO | [2138976] Cache hit — price 0.71 unchanged, skipping LLM
+2026-05-05 10:35:17,960 | INFO | [1972137] Cache hit — price 0.26 unchanged, skipping LLM
+2026-05-05 10:35:17,960 | INFO | [2132779] Cache hit — price 0.23 unchanged, skipping LLM
+2026-05-05 10:35:17,960 | INFO | [2074237] Cache hit — price 0.79 unchanged, skipping LLM
+2026-05-05 10:35:21,397 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
+2026-05-05 10:35:22,863 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-05 10:35:22,863 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 7 markets
+2026-05-05 10:35:22,863 | INFO | Batch evaluation succeeded: 7 markets in 1 LLM call
+2026-05-05 10:35:22,863 | INFO | [2160258] 'Counter-Strike: MOUZ NXT vs Bebop (BO3) - CCT Europe Series ' mkt=0.51 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 10:35:22,863 | INFO | [2138985] 'Game Handicap: DK (-1.5) vs Nongshim Red Force (+1.5)' mkt=0.47 est=0.45 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 10:35:22,863 | INFO | [2155850] "Internazionali BNL d'Italia, Qualification: Francisco Comesa" mkt=0.60 est=0.60 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 10:35:22,863 | INFO | [2138978] 'LoL: Dplus KIA vs Nongshim Red Force - Game 1 Winner' mkt=0.61 est=0.60 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 10:35:22,863 | INFO | [2054191] 'Spread: Arsenal FC (-1.5)' mkt=0.38 est=0.35 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 10:35:22,863 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.34 est=0.30 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 10:35:22,863 | INFO | [2155825] "Internazionali BNL d'Italia, Qualification: Daniel Merida Ag" mkt=0.27 est=0.25 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 10:35:22,864 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 8 | LLM evals: 7
