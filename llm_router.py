@@ -35,15 +35,15 @@ PROVIDERS = [
         "name": "cerebras",
         "env_key": "CEREBRAS_API_KEY",
         "url": "https://api.cerebras.ai/v1/chat/completions",
-        "model": "llama-3.3-70b",
+        "model": "llama3.1-70b",
         "format": "openai",
     },
     {
         "name": "openrouter",
         "env_key": "OPEN_ROUTER",
         "url": "https://openrouter.ai/api/v1/chat/completions",
-        "model": "deepseek/deepseek-r1:free",
-        "fallback_model": "openrouter/free",
+        "model": "google/gemini-2.0-flash-exp:free",
+        "fallback_model": "deepseek/deepseek-r1-0528:free",
         "format": "openai",
     },
 ]
