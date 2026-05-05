@@ -6274,34 +6274,3 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 12:40:21,230 | INFO | [2061884] 'Will Paris Saint-Germain FC win on 2026-05-06?' mkt=0.24 est=0.38 conf=0.75 edge=+9.7% fee=$0.04 => skip $0.00
 2026-05-05 12:40:21,230 | INFO | [2107049] 'Will the price of Bitcoin be above $82,000 on May 5?' mkt=0.19 est=0.99 conf=0.97 edge=+75.8% fee=$0.40 => YES $10.00
 2026-05-05 12:40:23,609 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 6 | LLM evals: 8
-2026-05-05 19:33:44,811 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-05 19:33:44,811 | INFO | [shared/weather] 65 open trades, 67% win rate (as of 2026-05-06T02:36:04.088225+08:00)
-2026-05-05 19:33:44,811 | INFO | [shared/crypto] BTC $81,472, ETH $2,371, 0 open, 0% wr (as of 2026-05-06T02:40:17.175597+08:00)
-2026-05-05 19:33:44,811 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-06T02:26:26.916492+08:00)
-2026-05-05 19:33:45,444 | INFO | Resolved 2107043: NO -> LOSS pnl=$-10.00 balance=$93.26
-2026-05-05 19:33:46,020 | INFO | Resolved 2148678: NO -> LOSS pnl=$-10.00 balance=$83.26
-2026-05-05 19:33:46,551 | INFO | Resolved 2159023: YES -> LOSS pnl=$-9.81 balance=$73.45
-2026-05-05 19:33:46,960 | INFO | Resolved 2155859: NO -> WIN pnl=$13.52 balance=$86.98
-2026-05-05 19:33:47,494 | INFO | Resolved 2155891: NO -> LOSS pnl=$-5.98 balance=$81.00
-2026-05-05 19:33:47,929 | INFO | Resolved 2107049: YES -> LOSS pnl=$-10.00 balance=$71.00
-2026-05-05 19:33:48,494 | INFO | Fetched 150 active markets
-2026-05-05 19:33:48,495 | INFO | 15 candidates after filters
-2026-05-05 19:33:48,495 | INFO | [1962237] Cache hit — price 0.36 unchanged, skipping LLM
-2026-05-05 19:33:48,495 | INFO | [566188] Cache hit — price 0.20 unchanged, skipping LLM
-2026-05-05 19:33:48,495 | INFO | [566187] Cache hit — price 0.80 unchanged, skipping LLM
-2026-05-05 19:33:48,495 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
-2026-05-05 19:34:05,818 | INFO | LLM call OK: gemini/gemini-2.5-flash
-2026-05-05 19:34:05,818 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 11 markets
-2026-05-05 19:34:05,818 | INFO | Batch evaluation succeeded: 11 markets in 1 LLM call
-2026-05-05 19:34:05,818 | INFO | [2163044] 'Lakers vs. Thunder: O/U 214.5' mkt=0.48 est=0.48 conf=0.45 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 19:34:05,819 | INFO | [2115558] 'San Diego Padres vs. San Francisco Giants' mkt=0.46 est=0.46 conf=0.45 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 19:34:05,819 | INFO | [2115487] 'Toronto Blue Jays vs. Tampa Bay Rays' mkt=0.43 est=0.43 conf=0.45 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 19:34:05,819 | INFO | [2132778] 'Will Bitcoin dip to $75,000 in May?' mkt=0.43 est=0.55 conf=0.60 edge=+8.7% fee=$0.03 => skip $0.00
-2026-05-05 19:34:05,819 | INFO | [2139142] 'LoL: BIG vs Unicorns Of Love Sexy Edition (BO3) - Prime Leag' mkt=0.57 est=0.57 conf=0.45 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 19:34:05,819 | INFO | [1509739] 'Will Atlético Madrid reach the UEFA Champions League final?' mkt=0.33 est=0.33 conf=0.45 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 19:34:05,819 | INFO | [566140] 'Will Arsenal win the 2025–26 Champions League?' mkt=0.32 est=0.32 conf=0.45 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 19:34:05,819 | INFO | [1509728] 'Will Arsenal reach the UEFA Champions League final?' mkt=0.69 est=0.69 conf=0.45 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 19:34:05,819 | INFO | [2144579] 'Santos: Miguel Tobon vs Eduardo Ribeiro' mkt=0.69 est=0.69 conf=0.45 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 19:34:05,819 | INFO | [2131710] 'Timberwolves vs. Spurs' mkt=0.23 est=0.23 conf=0.45 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 19:34:05,819 | INFO | [2133404] 'Iran closes its airspace by May 8?' mkt=0.15 est=0.38 conf=0.80 edge=+18.3% fee=$0.29 => YES $6.87
-2026-05-05 19:34:08,200 | INFO | Scan complete. Placed 1 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 4 | LLM evals: 11
