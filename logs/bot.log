@@ -6134,3 +6134,30 @@ openrouter/google/gemini-2.0-flash-exp:free: HTTP Error 404: Not Found
 2026-05-05 07:58:24,192 | INFO | [2160258] 'Counter-Strike: MOUZ NXT vs Bebop (BO3) - CCT Europe Series ' mkt=0.34 est=0.40 conf=0.60 edge=+2.7% fee=$0.03 => skip $0.00
 2026-05-05 07:58:24,192 | INFO | [2147174] 'Jiujiang: Viktoria Morvayova vs Yexin Ma' mkt=0.66 est=0.67 conf=0.80 edge=-0.7% fee=$0.02 => skip $0.00
 2026-05-05 07:58:24,193 | INFO | Scan complete. Placed 0 trades. Cache hits: 13
+2026-05-05 08:00:35,167 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 08:00:35,167 | INFO | [shared/weather] 64 open trades, 65% win rate (as of 2026-05-05T15:48:33.693071+08:00)
+2026-05-05 08:00:35,167 | INFO | [shared/crypto] BTC $80,915, ETH $2,377, 0 open, 0% wr (as of 2026-05-05T15:00:27.845027+08:00)
+2026-05-05 08:00:35,167 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T14:41:30.665307+08:00)
+2026-05-05 08:00:36,039 | INFO | Fetched 150 active markets
+2026-05-05 08:00:36,040 | INFO | 15 candidates after filters
+2026-05-05 08:00:36,040 | INFO | [2054196] Cache hit — price 0.52 unchanged, skipping LLM
+2026-05-05 08:00:36,040 | INFO | [2061882] Cache hit — price 0.56 unchanged, skipping LLM
+2026-05-05 08:00:36,040 | INFO | [2142000] Cache hit — price 0.67 unchanged, skipping LLM
+2026-05-05 08:00:36,040 | INFO | [2160258] Cache hit — price 0.32 unchanged, skipping LLM
+2026-05-05 08:00:36,041 | INFO | [2138976] Cache hit — price 0.73 unchanged, skipping LLM
+2026-05-05 08:00:36,041 | INFO | [1972137] Cache hit — price 0.25 unchanged, skipping LLM
+2026-05-05 08:00:36,041 | INFO | [2074237] Cache hit — price 0.79 unchanged, skipping LLM
+2026-05-05 08:00:36,041 | INFO | [2132779] Cache hit — price 0.21 unchanged, skipping LLM
+2026-05-05 08:00:36,041 | INFO | [566188] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-05 08:00:36,041 | INFO | [566187] Cache hit — price 0.80 unchanged, skipping LLM
+2026-05-05 08:00:36,041 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-05 08:00:36,041 | INFO | [2119227] Cache hit — price 0.14 unchanged, skipping LLM
+2026-05-05 08:00:36,041 | INFO | [2107049] Cache hit — price 0.13 unchanged, skipping LLM
+2026-05-05 08:00:39,795 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
+2026-05-05 08:00:39,858 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 08:00:40,347 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 08:00:40,347 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 2 markets
+2026-05-05 08:00:40,347 | INFO | Batch evaluation succeeded: 2 markets in 1 LLM call
+2026-05-05 08:00:40,347 | INFO | [2147174] 'Jiujiang: Viktoria Morvayova vs Yexin Ma' mkt=0.82 est=0.85 conf=0.80 edge=+1.6% fee=$0.01 => skip $0.00
+2026-05-05 08:00:40,347 | INFO | [2140935] 'Wuxi: Alex Bolt vs Fajing Sun' mkt=0.14 est=0.14 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 08:00:40,348 | INFO | Scan complete. Placed 0 trades. Cache hits: 13
