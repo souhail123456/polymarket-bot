@@ -6274,35 +6274,3 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 12:40:21,230 | INFO | [2061884] 'Will Paris Saint-Germain FC win on 2026-05-06?' mkt=0.24 est=0.38 conf=0.75 edge=+9.7% fee=$0.04 => skip $0.00
 2026-05-05 12:40:21,230 | INFO | [2107049] 'Will the price of Bitcoin be above $82,000 on May 5?' mkt=0.19 est=0.99 conf=0.97 edge=+75.8% fee=$0.40 => YES $10.00
 2026-05-05 12:40:23,609 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 6 | LLM evals: 8
-2026-05-05 17:34:39,636 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
-2026-05-05 17:34:39,636 | INFO | [shared/weather] 71 open trades, 66% win rate (as of 2026-05-06T00:38:42.733483+08:00)
-2026-05-05 17:34:39,636 | INFO | [shared/crypto] BTC $81,102, ETH $2,365, 0 open, 0% wr (as of 2026-05-06T00:40:51.994678+08:00)
-2026-05-05 17:34:39,636 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-05T20:20:48.803368+08:00)
-2026-05-05 17:34:40,507 | INFO | Resolved 2148678: NO -> LOSS pnl=$-10.00 balance=$93.26
-2026-05-05 17:34:41,309 | INFO | Resolved 2159023: YES -> LOSS pnl=$-9.81 balance=$83.45
-2026-05-05 17:34:41,891 | INFO | Resolved 2155859: NO -> WIN pnl=$13.52 balance=$96.98
-2026-05-05 17:34:42,605 | INFO | Resolved 2155891: NO -> LOSS pnl=$-5.98 balance=$91.00
-2026-05-05 17:34:43,310 | INFO | Fetched 150 active markets
-2026-05-05 17:34:43,311 | INFO | 15 candidates after filters
-2026-05-05 17:34:43,311 | INFO | [1962237] Cache hit — price 0.36 unchanged, skipping LLM
-2026-05-05 17:34:43,311 | INFO | [566188] Cache hit — price 0.20 unchanged, skipping LLM
-2026-05-05 17:34:43,311 | INFO | [566187] Cache hit — price 0.80 unchanged, skipping LLM
-2026-05-05 17:34:56,044 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
-2026-05-05 17:34:56,185 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
-2026-05-05 17:34:56,256 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-05 17:34:57,551 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-05 17:34:57,551 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 12 markets
-2026-05-05 17:34:57,551 | INFO | Batch evaluation succeeded: 12 markets in 1 LLM call
-2026-05-05 17:34:57,551 | INFO | [2163044] 'Lakers vs. Thunder: O/U 214.5' mkt=0.48 est=0.50 conf=0.60 edge=-1.1% fee=$0.03 => skip $0.00
-2026-05-05 17:34:57,551 | INFO | [2160103] "Internazionali BNL d'Italia, Qualification: Mayar Sherif vs " mkt=0.46 est=0.46 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 17:34:57,551 | INFO | [2115558] 'San Diego Padres vs. San Francisco Giants' mkt=0.46 est=0.46 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 17:34:57,551 | INFO | [2153311] 'Spread: Pistons (-2.5)' mkt=0.55 est=0.55 conf=0.70 edge=-2.3% fee=$0.02 => skip $0.00
-2026-05-05 17:34:57,551 | INFO | [2155888] "Internazionali BNL d'Italia: Ann Li vs Shuai Zhang" mkt=0.61 est=0.61 conf=0.80 edge=-1.9% fee=$0.02 => skip $0.00
-2026-05-05 17:34:57,551 | INFO | [566140] 'Will Arsenal win the 2025–26 Champions League?' mkt=0.33 est=0.33 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 17:34:57,552 | INFO | [2144519] 'Francavilla: Justin Engel vs Nikolas Sanchez Izquierdo' mkt=0.70 est=0.70 conf=0.90 edge=-1.5% fee=$0.01 => skip $0.00
-2026-05-05 17:34:57,552 | INFO | [1509728] 'Will Arsenal reach the UEFA Champions League final?' mkt=0.71 est=0.71 conf=0.90 edge=-1.4% fee=$0.01 => skip $0.00
-2026-05-05 17:34:57,552 | INFO | [1509739] 'Will Atlético Madrid reach the UEFA Champions League final?' mkt=0.28 est=0.28 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 17:34:57,552 | INFO | [2155901] "Internazionali BNL d'Italia: Martina Trevisan vs Talia Gibso" mkt=0.27 est=0.27 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 17:34:57,552 | INFO | [2131710] 'Timberwolves vs. Spurs' mkt=0.23 est=0.23 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 17:34:57,552 | INFO | [2133404] 'Iran closes its airspace by May 8?' mkt=0.17 est=0.17 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-05 17:34:57,553 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 12
