@@ -373,6 +373,9 @@ Output ONLY a JSON array, one object per market, in order. No other text:
             if text.startswith("json"):
                 text = text[4:]
             text = text.strip()
+        # Extract JSON array if surrounded by other text
+        if "[" in text:
+            text = text[text.index("["):text.rindex("]") + 1]
         results = json.loads(text)
         if not isinstance(results, list) or len(results) != len(markets):
             raise ValueError(f"Expected {len(markets)} results, got {len(results) if isinstance(results, list) else 'non-list'}")

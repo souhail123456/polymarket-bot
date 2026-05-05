@@ -77,7 +77,6 @@ def _call_gemini_format(url, api_key, model, prompt, max_tokens, temperature):
         "generationConfig": {
             "maxOutputTokens": max_tokens,
             "temperature": temperature,
-            "responseMimeType": "application/json",
         },
         "tools": [{"google_search": {}}],
     }).encode()
