@@ -33,10 +33,10 @@
     "updated_at": "2026-05-05T14:41:30.665307+08:00"
   },
   "ev": {
-    "trades_open": 11,
+    "trades_open": 12,
     "trades_resolved": 1,
     "win_rate": 1.0,
-    "summary": "11 open trades, 100% win rate",
-    "updated_at": "2026-05-05T15:53:29.757133+08:00"
+    "summary": "12 open trades, 100% win rate",
+    "updated_at": "2026-05-05T15:55:44.096317+08:00"
   }
 }
