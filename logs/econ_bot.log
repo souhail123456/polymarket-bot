@@ -112,3 +112,18 @@
 2026-05-05 00:21:46,762 | INFO | Found 165 unique econ markets
 2026-05-05 00:21:46,767 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.10 model=0.10 edge=-1.3% => skip $0.00
 2026-05-05 00:21:46,768 | INFO | Econ scan complete. Placed 0 trades.
+2026-05-05 06:41:26,007 | INFO | === Econ Scan | mode=paper | bankroll=$100.00 ===
+2026-05-05 06:41:26,007 | INFO | [shared/weather] 64 open trades, 65% win rate (as of 2026-05-05T14:02:47.164471+08:00)
+2026-05-05 06:41:26,007 | INFO | [shared/crypto] BTC $80,590, ETH $2,370, 0 open, 0% wr (as of 2026-05-05T11:14:19.039550+08:00)
+2026-05-05 06:41:26,007 | INFO | [shared/ev] 10 open trades, 100% win rate (as of 2026-05-05T14:27:53.311781+08:00)
+2026-05-05 06:41:27,489 | INFO | Fetching nowcast data sources...
+2026-05-05 06:41:28,815 | INFO | Cleveland Fed 1Y inflation expectation (FRED): 3.25872162
+2026-05-05 06:41:29,368 | INFO | GDPNow estimate: 3.5%
+2026-05-05 06:41:30,051 | INFO | Fed Funds actual rate (FRED): 3.64%
+2026-05-05 06:41:30,212 | INFO | Unemployment (FRED): 4.3% (prev: 4.4%)
+2026-05-05 06:41:30,440 | INFO | Nonfarm payrolls change (FRED): +178.0K
+2026-05-05 06:41:30,663 | INFO | Core PCE YoY (FRED): 3.20276%
+2026-05-05 06:41:30,665 | INFO | Data sources: CPI=ok | GDP=ok | FedWatch=ok | Unemployment=ok | Payrolls=ok | PCE=ok
+2026-05-05 06:41:35,339 | INFO | Found 165 unique econ markets
+2026-05-05 06:41:35,344 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.10 model=0.10 edge=-1.3% => skip $0.00
+2026-05-05 06:41:35,345 | INFO | Econ scan complete. Placed 0 trades.
