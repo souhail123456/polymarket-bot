@@ -142,8 +142,8 @@ def call_llm(prompt, max_tokens=400, temperature=0.3, prefer=None, skip=None):
                 errors.append(f"{provider['name']}/{model}: {error_msg}")
                 log.warning(f"LLM call failed {provider['name']}/{model}: {error_msg}")
 
-                # Rate limited -> try fallback model, then next provider
-                if "429" in error_msg or "rate" in error_msg.lower():
+                # Retryable -> try fallback model, then next provider
+                if "429" in error_msg or "rate" in error_msg.lower() or "parts" in error_msg or "no text" in error_msg.lower():
                     continue
                 # Other error -> skip to next provider
                 else:
