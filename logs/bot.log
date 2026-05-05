@@ -6335,41 +6335,31 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 22:21:37,739 | INFO | [2115526] 'Los Angeles Dodgers vs. Houston Astros' mkt=0.66 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,739 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.26 est=0.25 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
-2026-05-05 22:48:22,085 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
-2026-05-05 22:48:22,085 | INFO | [shared/weather] 63 open trades, 67% win rate (as of 2026-05-06T06:27:52.345565+08:00)
-2026-05-05 22:48:22,085 | INFO | [shared/crypto] BTC $81,457, ETH $2,376, 0 open, 0% wr (as of 2026-05-06T05:54:48.498332+08:00)
-2026-05-05 22:48:22,086 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-06T02:26:26.916492+08:00)
-2026-05-05 22:48:22,835 | INFO | Fetched 150 active markets
-2026-05-05 22:48:22,835 | INFO | 15 candidates after filters
-2026-05-05 22:48:22,836 | INFO | [2155872] Cache hit — price 0.51 unchanged, skipping LLM
-2026-05-05 22:48:22,836 | INFO | [2115538] Cache hit — price 0.48 unchanged, skipping LLM
-2026-05-05 22:48:22,836 | INFO | [2115503] Cache hit — price 0.46 unchanged, skipping LLM
-2026-05-05 22:48:22,836 | INFO | [2115558] Cache hit — price 0.45 unchanged, skipping LLM
-2026-05-05 22:48:22,836 | INFO | [2115551] Cache hit — price 0.45 unchanged, skipping LLM
-2026-05-05 22:48:22,836 | INFO | [2115483] Cache hit — price 0.43 unchanged, skipping LLM
-2026-05-05 22:48:22,836 | INFO | [566140] Cache hit — price 0.41 unchanged, skipping LLM
-2026-05-05 22:48:22,836 | INFO | [2115526] Cache hit — price 0.66 unchanged, skipping LLM
-2026-05-05 22:48:22,836 | INFO | [1962237] Cache hit — price 0.34 unchanged, skipping LLM
-2026-05-05 22:48:22,836 | INFO | [2166353] Cache hit — price 0.27 unchanged, skipping LLM
-2026-05-05 22:48:28,457 | INFO | LLM call OK: gemini/gemini-2.5-flash
-2026-05-05 22:48:28,457 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 5 markets
-2026-05-05 22:48:28,457 | WARNING | Batch evaluation failed (Unterminated string starting at: line 5 column 5 (char 67)), falling back to individual calls
-2026-05-05 22:48:29,022 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-05 22:48:29,022 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2115495
-2026-05-05 22:48:29,511 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-05 22:48:29,511 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2115487
-2026-05-05 22:48:29,579 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-05 22:48:29,928 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-05 22:48:29,928 | INFO | LLM response from groq/llama-3.1-8b-instant for 2115543
-2026-05-05 22:48:29,994 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-05 22:48:30,388 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-05 22:48:30,388 | INFO | LLM response from groq/llama-3.1-8b-instant for 2115480
-2026-05-05 22:48:30,462 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-05 22:48:30,786 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-05 22:48:30,786 | INFO | LLM response from groq/llama-3.1-8b-instant for 2115485
-2026-05-05 22:48:30,786 | INFO | [2115495] 'Minnesota Twins vs. Washington Nationals' mkt=0.50 est=0.50 conf=0.55 edge=-2.5% fee=$0.03 => skip $0.00
-2026-05-05 22:48:30,786 | INFO | [2115487] 'Toronto Blue Jays vs. Tampa Bay Rays' mkt=0.55 est=0.52 conf=0.55 edge=-0.2% fee=$0.03 => skip $0.00
-2026-05-05 22:48:30,786 | INFO | [2115543] 'Pittsburgh Pirates vs. Arizona Diamondbacks' mkt=0.45 est=0.55 conf=0.75 edge=+7.7% fee=$0.03 => skip $0.00
-2026-05-05 22:48:30,786 | INFO | [2115480] 'Boston Red Sox vs. Detroit Tigers' mkt=0.39 est=0.55 conf=0.75 edge=+13.4% fee=$0.12 => YES $4.02
-2026-05-05 22:48:33,120 | INFO | [2115485] 'Athletics vs. Philadelphia Phillies' mkt=0.30 est=0.42 conf=0.75 edge=+8.0% fee=$0.03 => skip $0.00
-2026-05-05 22:48:33,121 | INFO | Scan complete. Placed 1 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
+2026-05-05 23:19:51,144 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
+2026-05-05 23:19:51,144 | INFO | [shared/weather] 63 open trades, 67% win rate (as of 2026-05-06T06:52:45.415967+08:00)
+2026-05-05 23:19:51,144 | INFO | [shared/crypto] BTC $81,457, ETH $2,376, 0 open, 0% wr (as of 2026-05-06T05:54:48.498332+08:00)
+2026-05-05 23:19:51,144 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-06T02:26:26.916492+08:00)
+2026-05-05 23:19:51,702 | INFO | Fetched 150 active markets
+2026-05-05 23:19:51,703 | INFO | 15 candidates after filters
+2026-05-05 23:19:51,703 | INFO | [2115538] Cache hit — price 0.48 unchanged, skipping LLM
+2026-05-05 23:19:51,703 | INFO | [2115558] Cache hit — price 0.45 unchanged, skipping LLM
+2026-05-05 23:19:51,703 | INFO | [2115551] Cache hit — price 0.45 unchanged, skipping LLM
+2026-05-05 23:19:51,703 | INFO | [566140] Cache hit — price 0.41 unchanged, skipping LLM
+2026-05-05 23:19:51,703 | INFO | [2115485] Cache hit — price 0.34 unchanged, skipping LLM
+2026-05-05 23:19:51,703 | INFO | [2115526] Cache hit — price 0.66 unchanged, skipping LLM
+2026-05-05 23:19:51,703 | INFO | [2166353] Cache hit — price 0.24 unchanged, skipping LLM
+2026-05-05 23:19:52,085 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 429: Too Many Requests
+2026-05-05 23:19:52,228 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-05 23:19:52,290 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 23:19:53,468 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 23:19:53,468 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 8 markets
+2026-05-05 23:19:53,468 | INFO | Batch evaluation succeeded: 8 markets in 1 LLM call
+2026-05-05 23:19:53,468 | INFO | [2115480] 'Boston Red Sox vs. Detroit Tigers' mkt=0.48 est=0.50 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 23:19:53,468 | INFO | [2115495] 'Minnesota Twins vs. Washington Nationals' mkt=0.54 est=0.53 conf=0.45 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 23:19:53,468 | INFO | [2115543] 'Pittsburgh Pirates vs. Arizona Diamondbacks' mkt=0.45 est=0.46 conf=0.35 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 23:19:53,468 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.43 est=0.43 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 23:19:53,468 | INFO | [2115503] 'Texas Rangers vs. New York Yankees' mkt=0.59 est=0.59 conf=0.55 edge=-2.0% fee=$0.02 => skip $0.00
+2026-05-05 23:19:53,468 | INFO | [2115483] 'Baltimore Orioles vs. Miami Marlins' mkt=0.67 est=0.67 conf=0.65 edge=-1.7% fee=$0.02 => skip $0.00
+2026-05-05 23:19:53,468 | INFO | [566142] 'Will Bayern Munich win the 2025–26 Champions League?' mkt=0.30 est=0.30 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 23:19:53,468 | INFO | [2115487] 'Toronto Blue Jays vs. Tampa Bay Rays' mkt=0.70 est=0.70 conf=0.70 edge=-1.5% fee=$0.01 => skip $0.00
+2026-05-05 23:19:53,469 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 7 | LLM evals: 8
