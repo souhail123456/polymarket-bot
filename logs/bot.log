@@ -6274,3 +6274,38 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 12:40:21,230 | INFO | [2061884] 'Will Paris Saint-Germain FC win on 2026-05-06?' mkt=0.24 est=0.38 conf=0.75 edge=+9.7% fee=$0.04 => skip $0.00
 2026-05-05 12:40:21,230 | INFO | [2107049] 'Will the price of Bitcoin be above $82,000 on May 5?' mkt=0.19 est=0.99 conf=0.97 edge=+75.8% fee=$0.40 => YES $10.00
 2026-05-05 12:40:23,609 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 6 | LLM evals: 8
+2026-05-05 20:50:21,438 | INFO | === Scan | mode=paper | bankroll=$103.26 ===
+2026-05-05 20:50:21,438 | INFO | [shared/weather] 63 open trades, 67% win rate (as of 2026-05-06T04:28:16.449739+08:00)
+2026-05-05 20:50:21,438 | INFO | [shared/crypto] BTC $81,553, ETH $2,381, 0 open, 0% wr (as of 2026-05-06T04:31:37.116431+08:00)
+2026-05-05 20:50:21,438 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-06T02:26:26.916492+08:00)
+2026-05-05 20:50:21,735 | INFO | Resolved 2073824: NO -> LOSS pnl=$-5.78 balance=$97.48
+2026-05-05 20:50:22,135 | INFO | Resolved 2073829: YES -> LOSS pnl=$-5.26 balance=$92.22
+2026-05-05 20:50:22,709 | INFO | Resolved 2107043: NO -> LOSS pnl=$-10.00 balance=$82.22
+2026-05-05 20:50:23,144 | INFO | Resolved 2148678: NO -> LOSS pnl=$-10.00 balance=$72.22
+2026-05-05 20:50:23,609 | INFO | Resolved 2159023: YES -> LOSS pnl=$-9.81 balance=$62.41
+2026-05-05 20:50:24,024 | INFO | Resolved 2155859: NO -> WIN pnl=$13.52 balance=$75.94
+2026-05-05 20:50:24,380 | INFO | Resolved 2155891: NO -> LOSS pnl=$-5.98 balance=$69.96
+2026-05-05 20:50:24,896 | INFO | Resolved 2107049: YES -> LOSS pnl=$-10.00 balance=$59.96
+2026-05-05 20:50:25,382 | INFO | Fetched 150 active markets
+2026-05-05 20:50:25,383 | INFO | 15 candidates after filters
+2026-05-05 20:50:25,383 | INFO | [1962237] Cache hit — price 0.35 unchanged, skipping LLM
+2026-05-05 20:50:25,383 | INFO | [566188] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-05 20:50:25,384 | INFO | [566187] Cache hit — price 0.80 unchanged, skipping LLM
+2026-05-05 20:50:25,384 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-05 20:50:26,491 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
+2026-05-05 20:50:26,568 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-05 20:50:27,713 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-05 20:50:27,713 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 11 markets
+2026-05-05 20:50:27,713 | INFO | Batch evaluation succeeded: 11 markets in 1 LLM call
+2026-05-05 20:50:27,713 | INFO | [2163044] 'Lakers vs. Thunder: O/U 214.5' mkt=0.47 est=0.55 conf=0.80 edge=+4.9% fee=$0.03 => skip $0.00
+2026-05-05 20:50:27,713 | INFO | [2115558] 'San Diego Padres vs. San Francisco Giants' mkt=0.46 est=0.46 conf=0.60 edge=-2.2% fee=$0.03 => skip $0.00
+2026-05-05 20:50:27,713 | INFO | [2115503] 'Texas Rangers vs. New York Yankees' mkt=0.46 est=0.46 conf=0.60 edge=-2.2% fee=$0.03 => skip $0.00
+2026-05-05 20:50:27,713 | INFO | [2115487] 'Toronto Blue Jays vs. Tampa Bay Rays' mkt=0.43 est=0.43 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 20:50:27,713 | INFO | [2115480] 'Boston Red Sox vs. Detroit Tigers' mkt=0.41 est=0.42 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 20:50:27,713 | INFO | [566140] 'Will Arsenal win the 2025–26 Champions League?' mkt=0.38 est=0.38 conf=0.70 edge=-3.1% fee=$0.03 => skip $0.00
+2026-05-05 20:50:27,714 | INFO | [2115485] 'Athletics vs. Philadelphia Phillies' mkt=0.35 est=0.36 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 20:50:27,714 | INFO | [2131710] 'Timberwolves vs. Spurs' mkt=0.23 est=0.23 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-05 20:50:27,714 | INFO | [2133404] 'Iran closes its airspace by May 8?' mkt=0.15 est=0.15 conf=0.90 edge=-4.2% fee=$0.04 => skip $0.00
+2026-05-05 20:50:27,714 | INFO | [2140899] 'Will Elon Musk post <40 tweets from May 4 to May 6, 2026?' mkt=0.14 est=0.14 conf=0.80 edge=-0.5% fee=$0.01 => skip $0.00
+2026-05-05 20:50:27,714 | INFO | [2074234] 'Will WTI Crude Oil (WTI) hit (HIGH) $140 in May?' mkt=0.09 est=0.09 conf=0.60 edge=-4.4% fee=$0.05 => skip $0.00
+2026-05-05 20:50:27,715 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 4 | LLM evals: 11
