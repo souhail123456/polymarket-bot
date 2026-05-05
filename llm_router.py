@@ -38,6 +38,14 @@ PROVIDERS = [
         "model": "llama-3.3-70b",
         "format": "openai",
     },
+    {
+        "name": "openrouter",
+        "env_key": "OPEN_ROUTER",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "model": "deepseek/deepseek-r1:free",
+        "fallback_model": "openrouter/free",
+        "format": "openai",
+    },
 ]
 
 
