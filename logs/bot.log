@@ -6335,3 +6335,32 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 22:21:37,739 | INFO | [2115526] 'Los Angeles Dodgers vs. Houston Astros' mkt=0.66 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,739 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.26 est=0.25 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
+2026-05-06 13:05:48,347 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
+2026-05-06 13:05:48,347 | INFO | [shared/weather] 48 open trades, 67% win rate (as of 2026-05-06T20:11:27.972741+08:00)
+2026-05-06 13:05:48,347 | INFO | [shared/crypto] BTC $81,400, ETH $2,369, 0 open, 0% wr (as of 2026-05-06T11:16:06.003765+08:00)
+2026-05-06 13:05:48,347 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-06T20:32:27.051977+08:00)
+2026-05-06 13:05:48,919 | INFO | Fetched 150 active markets
+2026-05-06 13:05:48,920 | INFO | 15 candidates after filters
+2026-05-06 13:05:49,031 | INFO | [2116634] Pre-filter hit: 'Will the price of Bitcoin be above $82,000 on May 6?' => true_p=0.99 conf=0.97 | BITCOIN is $82,175, 1369483% above threshold $6 — very likely YES
+2026-05-06 13:05:49,031 | INFO | 1 markets resolved by pre-filter (no LLM needed)
+2026-05-06 13:05:49,032 | INFO | [566140] Cache hit — price 0.41 unchanged, skipping LLM
+2026-05-06 13:06:30,025 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
+2026-05-06 13:06:30,177 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-06 13:06:32,451 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-06 13:06:32,451 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 13 markets
+2026-05-06 13:06:32,451 | INFO | Batch evaluation succeeded: 13 markets in 1 LLM call
+2026-05-06 13:06:32,451 | INFO | [1972137] 'Will Donald Trump announce that the United States blockade o' mkt=0.48 est=0.45 conf=0.60 edge=+0.6% fee=$0.02 => skip $0.00
+2026-05-06 13:06:32,451 | INFO | [2162816] 'Spread: Spurs (-9.5)' mkt=0.53 est=0.40 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 13:06:32,451 | INFO | [2074237] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in May?' mkt=0.47 est=0.42 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 13:06:32,451 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.47 est=0.35 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 13:06:32,451 | INFO | [2061947] 'FC Bayern München vs. Paris Saint-Germain FC: O/U 4.5' mkt=0.42 est=0.38 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 13:06:32,451 | INFO | [2155999] "Internazionali BNL d'Italia: Hubert Hurkacz vs Yannick Hanfm" mkt=0.58 est=0.55 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 13:06:32,452 | INFO | [2140899] 'Will Elon Musk post <40 tweets from May 4 to May 6, 2026?' mkt=0.61 est=0.60 conf=0.70 edge=-2.4% fee=$0.03 => skip $0.00
+2026-05-06 13:06:32,452 | INFO | [2116634] 'Will the price of Bitcoin be above $82,000 on May 6?' mkt=0.61 est=0.99 conf=0.97 edge=+36.3% fee=$0.20 => YES $10.00
+2026-05-06 13:06:35,086 | INFO | [2119227] 'Will Donald Trump announce that the United States blockade o' mkt=0.38 est=0.30 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 13:06:35,086 | INFO | [2155961] "Internazionali BNL d'Italia: Camilo Ugo Carabelli vs Alexand" mkt=0.65 est=0.62 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 13:06:35,086 | INFO | [2109450] 'US x Iran diplomatic meeting by June 30, 2026?' mkt=0.68 est=0.65 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 13:06:35,087 | INFO | [1809560] 'Strait of Hormuz traffic returns to normal by end of May?' mkt=0.30 est=0.25 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 13:06:35,087 | INFO | [2097821] 'Will Donald Trump announce that the United States blockade o' mkt=0.29 est=0.20 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 13:06:35,087 | INFO | [2101893] 'Will Elon Musk post 140-159 tweets from May 1 to May 8, 2026' mkt=0.26 est=0.22 conf=0.60 edge=+3.0% fee=$0.01 => skip $0.00
+2026-05-06 13:06:35,088 | INFO | Scan complete. Placed 1 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 13
