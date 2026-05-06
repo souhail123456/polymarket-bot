@@ -6335,6 +6335,7 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 22:21:37,739 | INFO | [2115526] 'Los Angeles Dodgers vs. Houston Astros' mkt=0.66 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,739 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.26 est=0.25 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
+<<<<<<< Updated upstream
 2026-05-06 18:01:16,954 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
 2026-05-06 18:01:16,955 | INFO | [shared/weather] 47 open trades, 67% win rate (as of 2026-05-07T01:06:08.262739+08:00)
 2026-05-06 18:01:16,955 | INFO | [shared/crypto] BTC $81,666, ETH $2,364, 0 open, 0% wr (as of 2026-05-06T23:21:45.630998+08:00)
@@ -6445,3 +6446,5 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-06 18:01:40,253 | INFO | [2155895] "Internazionali BNL d'Italia: Katie Boulter vs Eva Lys" mkt=0.45 est=0.55 conf=0.58 edge=+7.7% fee=$0.03 => skip $0.00
 2026-05-06 18:01:40,253 | INFO | [2168948] "Internazionali BNL d'Italia: Dalma Galfi vs Anastasia Potapo" mkt=0.38 est=0.45 conf=0.75 edge=+4.4% fee=$0.03 => skip $0.00
 2026-05-06 18:01:40,255 | INFO | Scan complete. Placed 1 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
+=======
+>>>>>>> Stashed changes
