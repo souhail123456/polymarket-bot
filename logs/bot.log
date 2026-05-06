@@ -6335,6 +6335,7 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 22:21:37,739 | INFO | [2115526] 'Los Angeles Dodgers vs. Houston Astros' mkt=0.66 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,739 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.26 est=0.25 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
+<<<<<<< Updated upstream
 2026-05-06 23:19:21,965 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
 2026-05-06 23:19:21,965 | INFO | [shared/weather] 40 open trades, 66% win rate (as of 2026-05-07T06:50:13.286757+08:00)
 2026-05-06 23:19:21,965 | INFO | [shared/crypto] BTC $81,303, ETH $2,348, 0 open, 0% wr (as of 2026-05-07T06:22:43.907252+08:00)
@@ -6449,3 +6450,5 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-06 23:19:56,737 | INFO | [2125002] 'Texas Rangers vs. New York Yankees' mkt=0.47 est=0.55 conf=0.85 edge=+5.8% fee=$0.03 => skip $0.00
 2026-05-06 23:19:56,738 | INFO | [2162816] 'Spread: Spurs (-9.5)' mkt=0.54 est=0.42 conf=0.75 edge=+8.8% fee=$0.03 => skip $0.00
 2026-05-06 23:19:56,739 | INFO | Scan complete. Placed 2 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 0 | LLM evals: 15
+=======
+>>>>>>> Stashed changes
