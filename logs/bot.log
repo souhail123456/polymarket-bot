@@ -6335,3 +6335,49 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 22:21:37,739 | INFO | [2115526] 'Los Angeles Dodgers vs. Houston Astros' mkt=0.66 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,739 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.26 est=0.25 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
+2026-05-06 00:35:39,891 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
+2026-05-06 00:35:39,891 | INFO | [shared/weather] 63 open trades, 67% win rate (as of 2026-05-06T07:51:00.455656+08:00)
+2026-05-06 00:35:39,891 | INFO | [shared/crypto] BTC $81,095, ETH $2,366, 0 open, 0% wr (as of 2026-05-06T07:23:47.060724+08:00)
+2026-05-06 00:35:39,891 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-06T08:21:24.936790+08:00)
+2026-05-06 00:35:40,584 | INFO | Fetched 150 active markets
+2026-05-06 00:35:40,585 | INFO | 15 candidates after filters
+2026-05-06 00:35:40,586 | INFO | [2115538] Cache hit — price 0.48 unchanged, skipping LLM
+2026-05-06 00:35:40,586 | INFO | [2115551] Cache hit — price 0.45 unchanged, skipping LLM
+2026-05-06 00:35:40,586 | INFO | [2115503] Cache hit — price 0.43 unchanged, skipping LLM
+2026-05-06 00:35:40,586 | INFO | [2115558] Cache hit — price 0.43 unchanged, skipping LLM
+2026-05-06 00:35:40,586 | INFO | [566140] Cache hit — price 0.41 unchanged, skipping LLM
+2026-05-06 00:35:40,586 | INFO | [2115526] Cache hit — price 0.67 unchanged, skipping LLM
+2026-05-06 00:35:40,586 | INFO | [2131710] Cache hit — price 0.23 unchanged, skipping LLM
+2026-05-06 00:36:00,193 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-06 00:36:00,193 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 8 markets
+2026-05-06 00:36:00,193 | WARNING | Batch evaluation failed (Expecting value: line 1 column 1 (char 0)), falling back to individual calls
+2026-05-06 00:36:00,803 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-06 00:36:00,803 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2115508
+2026-05-06 00:36:01,435 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-06 00:36:01,435 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2115543
+2026-05-06 00:36:01,921 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-06 00:36:01,922 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2115517
+2026-05-06 00:36:02,001 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 00:36:02,414 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 00:36:02,414 | INFO | LLM response from groq/llama-3.1-8b-instant for 1962237
+2026-05-06 00:36:02,574 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 00:36:02,928 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 00:36:02,928 | INFO | LLM response from groq/llama-3.1-8b-instant for 566142
+2026-05-06 00:36:03,037 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 00:36:03,744 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 00:36:03,745 | INFO | LLM response from groq/llama-3.1-8b-instant for 1972137
+2026-05-06 00:36:03,828 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 00:36:04,129 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 00:36:04,129 | INFO | LLM response from groq/llama-3.1-8b-instant for 2115487
+2026-05-06 00:36:04,204 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 00:36:04,536 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 00:36:04,537 | INFO | LLM response from groq/llama-3.1-8b-instant for 2140899
+2026-05-06 00:36:04,537 | INFO | [2115508] 'Cincinnati Reds vs. Chicago Cubs' mkt=0.55 est=0.52 conf=0.55 edge=-0.2% fee=$0.03 => skip $0.00
+2026-05-06 00:36:04,537 | INFO | [2115543] 'Pittsburgh Pirates vs. Arizona Diamondbacks' mkt=0.45 est=0.45 conf=0.55 edge=-2.3% fee=$0.03 => skip $0.00
+2026-05-06 00:36:04,537 | INFO | [2115517] 'Cleveland Guardians vs. Kansas City Royals' mkt=0.59 est=0.55 conf=0.58 edge=+1.5% fee=$0.03 => skip $0.00
+2026-05-06 00:36:04,537 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.39 est=0.12 conf=0.85 edge=+24.6% fee=$0.19 => NO $10.00
+2026-05-06 00:36:06,916 | INFO | [566142] 'Will Bayern Munich win the 2025–26 Champions League?' mkt=0.32 est=0.45 conf=0.85 edge=+10.1% fee=$0.08 => YES $2.46
+2026-05-06 00:36:09,233 | INFO | [1972137] 'Will Donald Trump announce that the United States blockade o' mkt=0.32 est=0.12 conf=0.85 edge=+17.9% fee=$0.12 => NO $7.35
+2026-05-06 00:36:11,558 | INFO | [2115487] 'Toronto Blue Jays vs. Tampa Bay Rays' mkt=0.72 est=0.55 conf=0.70 edge=+13.9% fee=$0.09 => NO $2.42
+2026-05-06 00:36:13,876 | INFO | [2140899] 'Will Elon Musk post <40 tweets from May 4 to May 6, 2026?' mkt=0.23 est=0.55 conf=0.85 edge=+28.4% fee=$0.15 => YES $3.94
+2026-05-06 00:36:16,192 | INFO | Scan complete. Placed 5 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 7 | LLM evals: 8
