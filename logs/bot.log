@@ -6335,6 +6335,7 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 22:21:37,739 | INFO | [2115526] 'Los Angeles Dodgers vs. Houston Astros' mkt=0.66 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,739 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.26 est=0.25 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
+<<<<<<< Updated upstream
 2026-05-06 12:08:58,196 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
 2026-05-06 12:08:58,197 | INFO | [shared/weather] 50 open trades, 67% win rate (as of 2026-05-06T19:18:09.854328+08:00)
 2026-05-06 12:08:58,197 | INFO | [shared/crypto] BTC $81,400, ETH $2,369, 0 open, 0% wr (as of 2026-05-06T11:16:06.003765+08:00)
@@ -6360,3 +6361,5 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-06 12:09:27,629 | INFO | [2047424] 'US x Iran diplomatic meeting by May 15, 2026?' mkt=0.32 est=0.25 conf=0.60 edge=+5.4% fee=$0.02 => skip $0.00
 2026-05-06 12:09:27,629 | INFO | [2101893] 'Will Elon Musk post 140-159 tweets from May 1 to May 8, 2026' mkt=0.26 est=0.20 conf=0.70 edge=+4.7% fee=$0.01 => skip $0.00
 2026-05-06 12:09:27,630 | INFO | Scan complete. Placed 3 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
+=======
+>>>>>>> Stashed changes
