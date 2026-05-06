@@ -21,9 +21,9 @@
     "status": "ok"
   },
   "ev": {
-    "last_run": "2026-05-06T06:21:37.741132+08:00",
-    "trades_placed": 0,
-    "trades_skipped": 15,
+    "last_run": "2026-05-06T12:42:03.093323+08:00",
+    "trades_placed": 9,
+    "trades_skipped": 6,
     "next_run": "every 30min",
     "status": "ok"
   }

@@ -6335,3 +6335,53 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 22:21:37,739 | INFO | [2115526] 'Los Angeles Dodgers vs. Houston Astros' mkt=0.66 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,739 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.26 est=0.25 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
+2026-05-06 04:41:26,266 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
+2026-05-06 04:41:26,266 | INFO | [shared/weather] 60 open trades, 67% win rate (as of 2026-05-06T11:09:22.922945+08:00)
+2026-05-06 04:41:26,266 | INFO | [shared/crypto] BTC $81,400, ETH $2,369, 0 open, 0% wr (as of 2026-05-06T11:16:06.003765+08:00)
+2026-05-06 04:41:26,266 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-06T08:21:24.936790+08:00)
+2026-05-06 04:41:26,904 | INFO | Fetched 150 active markets
+2026-05-06 04:41:26,905 | INFO | 15 candidates after filters
+2026-05-06 04:41:26,905 | INFO | [2155872] Cache hit — price 0.51 unchanged, skipping LLM
+2026-05-06 04:41:26,906 | INFO | [566140] Cache hit — price 0.41 unchanged, skipping LLM
+2026-05-06 04:41:26,906 | INFO | [2132779] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-06 04:41:26,906 | INFO | [2017273] Cache hit — price 0.18 unchanged, skipping LLM
+2026-05-06 04:41:26,906 | INFO | [2119227] Cache hit — price 0.16 unchanged, skipping LLM
+2026-05-06 04:41:36,430 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-06 04:41:36,430 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 10 markets
+2026-05-06 04:41:36,431 | WARNING | Batch evaluation failed (Unterminated string starting at: line 6 column 18 (char 104)), falling back to individual calls
+2026-05-06 04:41:37,070 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-06 04:41:37,070 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2155795
+2026-05-06 04:41:37,476 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-06 04:41:37,476 | INFO | LLM response from groq/llama-3.3-70b-versatile for 1962237
+2026-05-06 04:41:38,178 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-06 04:41:38,178 | INFO | LLM response from groq/llama-3.3-70b-versatile for 1972137
+2026-05-06 04:41:38,651 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-06 04:41:38,651 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2140899
+2026-05-06 04:41:39,058 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-06 04:41:39,058 | INFO | LLM response from groq/llama-3.3-70b-versatile for 566142
+2026-05-06 04:41:39,124 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 04:41:39,399 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 04:41:39,399 | INFO | LLM response from groq/llama-3.1-8b-instant for 789540
+2026-05-06 04:41:39,458 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 04:41:39,945 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 04:41:39,945 | INFO | LLM response from groq/llama-3.1-8b-instant for 2101893
+2026-05-06 04:41:40,007 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 04:41:40,311 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 04:41:40,312 | INFO | LLM response from groq/llama-3.1-8b-instant for 2047424
+2026-05-06 04:41:40,372 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 04:41:41,122 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 04:41:41,123 | INFO | LLM response from groq/llama-3.1-8b-instant for 2166353
+2026-05-06 04:41:41,213 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 04:41:42,074 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 04:41:42,075 | INFO | LLM response from groq/llama-3.1-8b-instant for 2097821
+2026-05-06 04:41:42,075 | INFO | [2155795] 'Bitcoin Up or Down on May 6?' mkt=0.46 est=0.52 conf=0.73 edge=+3.8% fee=$0.03 => skip $0.00
+2026-05-06 04:41:42,075 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.39 est=0.15 conf=0.75 edge=+21.6% fee=$0.18 => NO $9.15
+2026-05-06 04:41:44,439 | INFO | [1972137] 'Will Donald Trump announce that the United States blockade o' mkt=0.39 est=0.15 conf=0.75 edge=+21.6% fee=$0.15 => NO $7.75
+2026-05-06 04:41:46,758 | INFO | [2140899] 'Will Elon Musk post <40 tweets from May 4 to May 6, 2026?' mkt=0.35 est=0.63 conf=0.78 edge=+25.1% fee=$0.15 => YES $4.67
+2026-05-06 04:41:49,090 | INFO | [566142] 'Will Bayern Munich win the 2025–26 Champions League?' mkt=0.32 est=0.18 conf=0.75 edge=+11.9% fee=$0.06 => NO $4.11
+2026-05-06 04:41:51,415 | INFO | [789540] 'Will Thomas Massie be the Republican nominee for KY-04?' mkt=0.78 est=0.25 conf=0.85 edge=+48.6% fee=$0.22 => NO $5.80
+2026-05-06 04:41:53,732 | INFO | [2101893] 'Will Elon Musk post 140-159 tweets from May 1 to May 8, 2026' mkt=0.22 est=0.65 conf=0.80 edge=+39.3% fee=$0.15 => YES $3.93
+2026-05-06 04:41:56,064 | INFO | [2047424] 'US x Iran diplomatic meeting by May 15, 2026?' mkt=0.21 est=0.45 conf=0.85 edge=+20.1% fee=$0.07 => YES $1.86
+2026-05-06 04:41:58,397 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.15 est=0.45 conf=0.85 edge=+25.3% fee=$0.08 => YES $1.98
+2026-05-06 04:42:00,723 | INFO | [2097821] 'Will Donald Trump announce that the United States blockade o' mkt=0.10 est=0.85 conf=0.92 edge=+71.0% fee=$0.20 => YES $4.32
+2026-05-06 04:42:03,093 | INFO | Scan complete. Placed 9 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 5 | LLM evals: 10
