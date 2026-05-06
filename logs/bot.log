@@ -6335,32 +6335,30 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 22:21:37,739 | INFO | [2115526] 'Los Angeles Dodgers vs. Houston Astros' mkt=0.66 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,739 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.26 est=0.25 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
-<<<<<<< Updated upstream
-2026-05-06 09:18:05,182 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
-2026-05-06 09:18:05,182 | INFO | [shared/weather] 54 open trades, 67% win rate (as of 2026-05-06T16:21:42.712984+08:00)
-2026-05-06 09:18:05,182 | INFO | [shared/crypto] BTC $81,400, ETH $2,369, 0 open, 0% wr (as of 2026-05-06T11:16:06.003765+08:00)
-2026-05-06 09:18:05,182 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-06T14:50:35.505257+08:00)
-2026-05-06 09:18:05,775 | INFO | Fetched 150 active markets
-2026-05-06 09:18:05,776 | INFO | 15 candidates after filters
-2026-05-06 09:18:05,776 | INFO | [566140] Cache hit — price 0.41 unchanged, skipping LLM
-2026-05-06 09:18:09,500 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
-2026-05-06 09:18:12,380 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-06 09:18:12,380 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 14 markets
-2026-05-06 09:18:12,380 | INFO | Batch evaluation succeeded: 14 markets in 1 LLM call
-2026-05-06 09:18:12,380 | INFO | [2140900] 'Will Elon Musk post 40-64 tweets from May 4 to May 6, 2026?' mkt=0.51 est=0.55 conf=0.70 edge=+2.0% fee=$0.02 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [2140899] 'Will Elon Musk post <40 tweets from May 4 to May 6, 2026?' mkt=0.49 est=0.45 conf=0.70 edge=+1.9% fee=$0.02 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [2074237] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in May?' mkt=0.47 est=0.40 conf=0.60 edge=+4.2% fee=$0.02 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [2119227] 'Will Donald Trump announce that the United States blockade o' mkt=0.56 est=0.50 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.57 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [2155915] 'Wuxi: Mark Lajal vs Mikhail Kukushkin' mkt=0.57 est=0.50 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [2061947] 'FC Bayern München vs. Paris Saint-Germain FC: O/U 4.5' mkt=0.42 est=0.40 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [2141855] 'Game Handicap: GEN (-1.5) vs Nongshim Red Force (+1.5)' mkt=0.61 est=0.60 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [2164375] 'Jiujiang: En-Shuo Liang vs Taylah Preston' mkt=0.36 est=0.40 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [2097821] 'Will Donald Trump announce that the United States blockade o' mkt=0.35 est=0.30 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [1972137] 'Will Donald Trump announce that the United States blockade o' mkt=0.66 est=0.60 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,380 | INFO | [2155795] 'Bitcoin Up or Down on May 6?' mkt=0.68 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,381 | INFO | [566142] 'Will Bayern Munich win the 2025–26 Champions League?' mkt=0.32 est=0.30 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,381 | INFO | [1809560] 'Strait of Hormuz traffic returns to normal by end of May?' mkt=0.30 est=0.30 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-06 09:18:12,382 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
-=======
->>>>>>> Stashed changes
+2026-05-06 10:17:11,777 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
+2026-05-06 10:17:11,777 | INFO | [shared/weather] 55 open trades, 67% win rate (as of 2026-05-06T17:22:49.237492+08:00)
+2026-05-06 10:17:11,777 | INFO | [shared/crypto] BTC $81,400, ETH $2,369, 0 open, 0% wr (as of 2026-05-06T11:16:06.003765+08:00)
+2026-05-06 10:17:11,777 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-06T14:50:35.505257+08:00)
+2026-05-06 10:17:12,350 | INFO | Fetched 150 active markets
+2026-05-06 10:17:12,350 | INFO | 15 candidates after filters
+2026-05-06 10:17:12,351 | INFO | [566140] Cache hit — price 0.41 unchanged, skipping LLM
+2026-05-06 10:17:15,040 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
+2026-05-06 10:17:15,164 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-06 10:17:16,807 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-06 10:17:16,807 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 14 markets
+2026-05-06 10:17:16,807 | INFO | Batch evaluation succeeded: 14 markets in 1 LLM call
+2026-05-06 10:17:16,807 | INFO | [2155920] "Internazionali BNL d'Italia: Alexandra Eala vs Magdalena Fre" mkt=0.50 est=0.50 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,807 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.51 est=0.51 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,807 | INFO | [2121025] 'LoL: Team WE vs Invictus Gaming (BO3) - LPL Group Ascend' mkt=0.49 est=0.49 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,807 | INFO | [2119227] 'Will Donald Trump announce that the United States blockade o' mkt=0.48 est=0.48 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,808 | INFO | [2121058] 'LoL: Top Esports vs JD Gaming (BO3) - LPL Group Ascend' mkt=0.47 est=0.47 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,808 | INFO | [2164710] 'Dota 2: Yellow Submarine vs 1win (BO3) - 1win Essence Group ' mkt=0.53 est=0.53 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,808 | INFO | [2140899] 'Will Elon Musk post <40 tweets from May 4 to May 6, 2026?' mkt=0.56 est=0.56 conf=0.60 edge=-2.2% fee=$0.02 => skip $0.00
+2026-05-06 10:17:16,808 | INFO | [2061947] 'FC Bayern München vs. Paris Saint-Germain FC: O/U 4.5' mkt=0.42 est=0.42 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,808 | INFO | [1972137] 'Will Donald Trump announce that the United States blockade o' mkt=0.58 est=0.58 conf=0.60 edge=-2.1% fee=$0.02 => skip $0.00
+2026-05-06 10:17:16,808 | INFO | [2074237] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in May?' mkt=0.38 est=0.38 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,808 | INFO | [2097821] 'Will Donald Trump announce that the United States blockade o' mkt=0.34 est=0.34 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,808 | INFO | [2047424] 'US x Iran diplomatic meeting by May 15, 2026?' mkt=0.33 est=0.33 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,808 | INFO | [2141888] 'Game Handicap: HLE (-1.5) vs DN SOOPers (+1.5)' mkt=0.69 est=0.69 conf=0.70 edge=-1.6% fee=$0.02 => skip $0.00
+2026-05-06 10:17:16,808 | INFO | [1809560] 'Strait of Hormuz traffic returns to normal by end of May?' mkt=0.28 est=0.28 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 10:17:16,810 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
