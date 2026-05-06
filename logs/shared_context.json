@@ -1,12 +1,13 @@
 {
   "weather": {
-    "trades_open": 48,
-    "trades_resolved": 256,
-    "win_rate": 0.66,
-    "summary": "48 open trades, 66% win rate",
-    "updated_at": "2026-05-07T00:14:00.232329+08:00"
+    "trades_open": 47,
+    "trades_resolved": 257,
+    "win_rate": 0.67,
+    "summary": "47 open trades, 67% win rate",
+    "updated_at": "2026-05-07T01:06:08.262739+08:00"
   },
   "crypto": {
+<<<<<<< Updated upstream
     "btc_price": 81555,
     "eth_price": 2357.69,
     "btc_30d_vol": 0.3594,
@@ -15,6 +16,16 @@
     "win_rate": 0.0,
     "summary": "BTC $81,555, ETH $2,358, 0 open, 0% wr",
     "updated_at": "2026-05-07T01:04:16.619927+08:00"
+=======
+    "btc_price": 81666,
+    "eth_price": 2363.95,
+    "btc_30d_vol": 0.3596,
+    "eth_30d_vol": 0.5045,
+    "trades_open": 0,
+    "win_rate": 0.0,
+    "summary": "BTC $81,666, ETH $2,364, 0 open, 0% wr",
+    "updated_at": "2026-05-06T23:21:45.630998+08:00"
+>>>>>>> Stashed changes
   },
   "econ": {
     "cpi_data_available": true,
@@ -36,7 +47,12 @@
     "trades_open": 12,
     "trades_resolved": 9,
     "win_rate": 0.22,
+<<<<<<< Updated upstream
     "summary": "12 open trades, 22% win rate",
     "updated_at": "2026-05-07T01:03:08.165690+08:00"
+=======
+    "summary": "8 open trades, 22% win rate",
+    "updated_at": "2026-05-06T06:21:37.740246+08:00"
+>>>>>>> Stashed changes
   }
 }
