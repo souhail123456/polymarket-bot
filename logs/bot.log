@@ -6335,6 +6335,7 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 22:21:37,739 | INFO | [2115526] 'Los Angeles Dodgers vs. Houston Astros' mkt=0.66 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,739 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.26 est=0.25 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
+<<<<<<< Updated upstream
 2026-05-06 11:13:36,896 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
 2026-05-06 11:13:36,897 | INFO | [shared/weather] 53 open trades, 67% win rate (as of 2026-05-06T18:20:49.278514+08:00)
 2026-05-06 11:13:36,897 | INFO | [shared/crypto] BTC $81,400, ETH $2,369, 0 open, 0% wr (as of 2026-05-06T11:16:06.003765+08:00)
@@ -6361,3 +6362,5 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-06 11:13:44,892 | INFO | [1919425] 'US x Iran permanent peace deal by May 31, 2026?' mkt=0.35 est=0.25 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-06 11:13:44,892 | INFO | [2074237] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in May?' mkt=0.33 est=0.30 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-06 11:13:44,894 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
+=======
+>>>>>>> Stashed changes
