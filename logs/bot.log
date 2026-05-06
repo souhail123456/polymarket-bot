@@ -6335,3 +6335,29 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-05 22:21:37,739 | INFO | [2115526] 'Los Angeles Dodgers vs. Houston Astros' mkt=0.66 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,739 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.26 est=0.25 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-05 22:21:37,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
+2026-05-06 20:55:58,284 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
+2026-05-06 20:55:58,285 | INFO | [shared/weather] 41 open trades, 66% win rate (as of 2026-05-07T04:06:02.310158+08:00)
+2026-05-06 20:55:58,285 | INFO | [shared/crypto] BTC $81,558, ETH $2,353, 0 open, 0% wr (as of 2026-05-07T04:06:34.577488+08:00)
+2026-05-06 20:55:58,285 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T02:29:36.789259+08:00)
+2026-05-06 20:55:58,884 | INFO | Fetched 150 active markets
+2026-05-06 20:55:58,885 | INFO | 15 candidates after filters
+2026-05-06 20:55:58,885 | INFO | [566140] Cache hit — price 0.42 unchanged, skipping LLM
+2026-05-06 20:56:01,338 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
+2026-05-06 20:56:04,198 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-06 20:56:04,198 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 14 markets
+2026-05-06 20:56:04,199 | INFO | Batch evaluation succeeded: 14 markets in 1 LLM call
+2026-05-06 20:56:04,199 | INFO | [1972137] 'Will Donald Trump announce that the United States blockade o' mkt=0.49 est=0.45 conf=0.60 edge=+2.0% fee=$0.02 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [2124972] 'San Diego Padres vs. San Francisco Giants' mkt=0.52 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [2175003] 'Spread: Spurs (-10.5)' mkt=0.48 est=0.48 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [2162816] 'Spread: Spurs (-9.5)' mkt=0.53 est=0.52 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [2161300] '76ers vs. Knicks: O/U 214.5' mkt=0.47 est=0.46 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [1962237] 'US x Iran permanent peace deal by June 30, 2026?' mkt=0.45 est=0.42 conf=0.60 edge=+0.3% fee=$0.02 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [2162411] '76ers vs. Knicks: O/U 215.5' mkt=0.45 est=0.44 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [566136] 'Will PSG win the 2025–26 Champions League?' mkt=0.57 est=0.55 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [2119227] 'Will Donald Trump announce that the United States blockade o' mkt=0.42 est=0.40 conf=0.60 edge=+0.4% fee=$0.02 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [2074237] 'Will WTI Crude Oil (WTI) hit (HIGH) $110 in May?' mkt=0.41 est=0.40 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [2161321] 'Spread: Knicks (-6.5)' mkt=0.65 est=0.60 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [1809560] 'Strait of Hormuz traffic returns to normal by end of May?' mkt=0.30 est=0.30 conf=0.60 edge=-1.0% fee=$0.02 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [2124991] 'Atlanta Braves vs. Seattle Mariners' mkt=0.29 est=0.30 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-06 20:56:04,199 | INFO | [2109450] 'US x Iran diplomatic meeting by June 30, 2026?' mkt=0.71 est=0.70 conf=0.60 edge=-2.5% fee=$0.04 => skip $0.00
+2026-05-06 20:56:04,201 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
