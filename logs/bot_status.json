@@ -7,7 +7,7 @@
     "status": "ok"
   },
   "crypto": {
-    "last_run": "2026-05-07T06:50:00.260526+08:00",
+    "last_run": "2026-05-07T06:22:43.907639+08:00",
     "trades_placed": 0,
     "trades_skipped": 0,
     "next_run": "every 30min",
@@ -21,9 +21,9 @@
     "status": "ok"
   },
   "ev": {
-    "last_run": "2026-05-07T06:48:38.118735+08:00",
-    "trades_placed": 4,
-    "trades_skipped": 11,
+    "last_run": "2026-05-07T07:19:56.739383+08:00",
+    "trades_placed": 2,
+    "trades_skipped": 13,
     "next_run": "every 30min",
     "status": "ok"
   }
