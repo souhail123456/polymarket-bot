@@ -6500,3 +6500,31 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 03:08:54,667 | INFO | [2168964] "Internazionali BNL d'Italia: Marton Fucsovics vs Dino Prizmi" mkt=0.12 est=0.60 conf=0.55 edge=+43.1% fee=$0.29 => YES $6.65
 2026-05-07 03:08:57,150 | INFO | [842019] 'Will Greece win Eurovision 2026?' mkt=0.12 est=0.06 conf=0.73 edge=+4.9% fee=$0.01 => skip $0.00
 2026-05-07 03:08:57,152 | INFO | Scan complete. Placed 4 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
+2026-05-07 04:42:20,432 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
+2026-05-07 04:42:20,432 | INFO | [shared/weather] 37 open trades, 66% win rate (as of 2026-05-07T09:36:41.745938+08:00)
+2026-05-07 04:42:20,432 | INFO | [shared/crypto] BTC $81,019, ETH $2,320, 0 open, 0% wr (as of 2026-05-07T11:16:37.435115+08:00)
+2026-05-07 04:42:20,432 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T08:21:14.635298+08:00)
+2026-05-07 04:42:22,549 | INFO | Resolved 2125009: NO -> LOSS pnl=$-3.15 balance=$56.81
+2026-05-07 04:42:23,459 | INFO | Fetched 150 active markets
+2026-05-07 04:42:23,460 | INFO | 15 candidates after filters
+2026-05-07 04:42:23,460 | INFO | [2141907] Cache hit — price 0.54 unchanged, skipping LLM
+2026-05-07 04:42:23,460 | INFO | [1809560] Cache hit — price 0.29 unchanged, skipping LLM
+2026-05-07 04:42:23,460 | INFO | [2097821] Cache hit — price 0.27 unchanged, skipping LLM
+2026-05-07 04:42:23,460 | INFO | [2109450] Cache hit — price 0.73 unchanged, skipping LLM
+2026-05-07 04:42:23,460 | INFO | [2047424] Cache hit — price 0.23 unchanged, skipping LLM
+2026-05-07 04:42:23,460 | INFO | [2156002] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-07 04:42:23,461 | INFO | [2168958] Cache hit — price 0.82 unchanged, skipping LLM
+2026-05-07 04:42:23,461 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 04:42:23,461 | INFO | [2170230] Cache hit — price 0.15 unchanged, skipping LLM
+2026-05-07 04:42:23,461 | INFO | [2126542] Cache hit — price 0.14 unchanged, skipping LLM
+2026-05-07 04:42:23,461 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 04:42:37,660 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
+2026-05-07 04:42:37,879 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-07 04:42:38,954 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 04:42:38,954 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 4 markets
+2026-05-07 04:42:38,954 | INFO | Batch evaluation succeeded: 4 markets in 1 LLM call
+2026-05-07 04:42:38,954 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.12 est=0.05 conf=0.60 edge=+5.9% fee=$0.01 => skip $0.00
+2026-05-07 04:42:38,955 | INFO | [2168955] "Internazionali BNL d'Italia: Yulia Starodubtseva vs Simona W" mkt=0.09 est=0.40 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 04:42:38,955 | INFO | [1808970] 'US obtains Iranian enriched uranium by May 31?' mkt=0.07 est=0.10 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 04:42:38,955 | INFO | [2132780] 'Will Bitcoin dip to $65,000 in May?' mkt=0.07 est=0.15 conf=0.70 edge=+2.9% fee=$0.05 => skip $0.00
+2026-05-07 04:42:38,956 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 4
