@@ -6728,3 +6728,41 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 12:09:25,260 | INFO | [2119226] 'Will Donald Trump announce that the United States blockade o' mkt=0.07 est=0.07 conf=0.15 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 12:09:25,260 | INFO | [2132780] 'Will Bitcoin dip to $65,000 in May?' mkt=0.07 est=0.07 conf=0.15 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 12:09:25,262 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 7 | LLM evals: 8
+2026-05-07 13:06:59,380 | INFO | === Scan | mode=paper | bankroll=$52.61 ===
+2026-05-07 13:06:59,380 | INFO | [shared/weather] 17 open trades, 65% win rate (as of 2026-05-07T21:06:49.132444+08:00)
+2026-05-07 13:06:59,380 | INFO | [shared/crypto] BTC $80,963, ETH $2,333, 0 open, 0% wr (as of 2026-05-07T20:11:20.027548+08:00)
+2026-05-07 13:06:59,380 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T20:32:24.163490+08:00)
+2026-05-07 13:07:01,254 | INFO | Fetched 150 active markets
+2026-05-07 13:07:01,255 | INFO | 15 candidates after filters
+2026-05-07 13:07:01,256 | INFO | [2137011] Cache hit — price 0.62 unchanged, skipping LLM
+2026-05-07 13:07:01,256 | INFO | [2101900] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-07 13:07:01,256 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 13:07:01,256 | INFO | [2132779] Cache hit — price 0.15 unchanged, skipping LLM
+2026-05-07 13:07:01,256 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 13:07:01,256 | INFO | [2128535] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 13:07:01,256 | INFO | [2166353] Cache hit — price 0.10 unchanged, skipping LLM
+2026-05-07 13:07:01,256 | INFO | [2119226] Cache hit — price 0.09 unchanged, skipping LLM
+2026-05-07 13:07:01,256 | INFO | [1808970] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-07 13:07:28,023 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-07 13:07:28,023 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 6 markets
+2026-05-07 13:07:28,023 | WARNING | Batch evaluation failed (Expecting value: line 1 column 1 (char 0)), falling back to individual calls
+2026-05-07 13:07:28,321 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 13:07:28,321 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2155929
+2026-05-07 13:07:28,940 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 13:07:28,941 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2121104
+2026-05-07 13:07:29,437 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 13:07:29,437 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2177664
+2026-05-07 13:07:30,006 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 13:07:30,006 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2175577
+2026-05-07 13:07:30,373 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 13:07:30,373 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2070374
+2026-05-07 13:07:30,423 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 13:07:30,824 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 13:07:30,825 | INFO | LLM response from groq/llama-3.1-8b-instant for 2121105
+2026-05-07 13:07:30,825 | INFO | [2155929] "Internazionali BNL d'Italia: Roman Andres Burruchaga vs Matt" mkt=0.47 est=0.55 conf=0.58 edge=+5.4% fee=$0.03 => skip $0.00
+2026-05-07 13:07:30,825 | INFO | [2121104] "LoL: Ninjas in Pyjamas vs Anyone's Legend (BO3) - LPL Group " mkt=0.45 est=0.55 conf=0.58 edge=+7.3% fee=$0.03 => skip $0.00
+2026-05-07 13:07:30,825 | INFO | [2177664] 'Dota 2: 1win vs Team Nemesis - Game 1 Winner' mkt=0.45 est=0.55 conf=0.58 edge=+7.7% fee=$0.03 => skip $0.00
+2026-05-07 13:07:30,825 | INFO | [2175577] "Internazionali BNL d'Italia: Jasmine Paolini vs Leolia Jeanj" mkt=0.78 est=0.60 conf=0.55 edge=+13.6% fee=$0.12 => NO $2.97
+2026-05-07 13:07:33,308 | INFO | [2070374] 'Will Nottingham Forest FC win on 2026-05-07?' mkt=0.20 est=0.25 conf=0.55 edge=+0.5% fee=$0.04 => skip $0.00
+2026-05-07 13:07:33,309 | INFO | [2121105] "LoL: Ninjas in Pyjamas vs Anyone's Legend - Game 1 Winner" mkt=0.81 est=0.55 conf=0.70 edge=+22.4% fee=$0.16 => NO $4.03
+2026-05-07 13:07:35,779 | INFO | Scan complete. Placed 2 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 9 | LLM evals: 6
