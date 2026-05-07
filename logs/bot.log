@@ -6500,3 +6500,40 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 03:08:54,667 | INFO | [2168964] "Internazionali BNL d'Italia: Marton Fucsovics vs Dino Prizmi" mkt=0.12 est=0.60 conf=0.55 edge=+43.1% fee=$0.29 => YES $6.65
 2026-05-07 03:08:57,150 | INFO | [842019] 'Will Greece win Eurovision 2026?' mkt=0.12 est=0.06 conf=0.73 edge=+4.9% fee=$0.01 => skip $0.00
 2026-05-07 03:08:57,152 | INFO | Scan complete. Placed 4 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
+2026-05-07 06:03:15,948 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
+2026-05-07 06:03:15,948 | INFO | [shared/weather] 35 open trades, 66% win rate (as of 2026-05-07T12:43:28.644419+08:00)
+2026-05-07 06:03:15,948 | INFO | [shared/crypto] BTC $80,855, ETH $2,323, 0 open, 0% wr (as of 2026-05-07T12:44:19.002123+08:00)
+2026-05-07 06:03:15,948 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T08:21:14.635298+08:00)
+2026-05-07 06:03:16,766 | INFO | Resolved 2124965: NO -> LOSS pnl=$-4.20 balance=$55.76
+2026-05-07 06:03:17,194 | INFO | Resolved 2125009: NO -> LOSS pnl=$-3.15 balance=$52.61
+2026-05-07 06:03:17,753 | INFO | Fetched 150 active markets
+2026-05-07 06:03:17,754 | INFO | 15 candidates after filters
+2026-05-07 06:03:17,754 | INFO | [2141907] Cache hit — price 0.54 unchanged, skipping LLM
+2026-05-07 06:03:17,754 | INFO | [2109450] Cache hit — price 0.73 unchanged, skipping LLM
+2026-05-07 06:03:17,754 | INFO | [2097821] Cache hit — price 0.25 unchanged, skipping LLM
+2026-05-07 06:03:17,754 | INFO | [2047424] Cache hit — price 0.23 unchanged, skipping LLM
+2026-05-07 06:03:17,754 | INFO | [2156002] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-07 06:03:17,754 | INFO | [2168958] Cache hit — price 0.82 unchanged, skipping LLM
+2026-05-07 06:03:17,754 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 06:03:17,754 | INFO | [2170230] Cache hit — price 0.15 unchanged, skipping LLM
+2026-05-07 06:03:17,754 | INFO | [2126542] Cache hit — price 0.14 unchanged, skipping LLM
+2026-05-07 06:03:17,755 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 06:03:28,045 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-07 06:03:28,045 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 5 markets
+2026-05-07 06:03:28,045 | WARNING | Batch evaluation failed (Expecting value: line 1 column 1 (char 0)), falling back to individual calls
+2026-05-07 06:03:28,643 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 06:03:28,643 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2168953
+2026-05-07 06:03:29,255 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 06:03:29,255 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2141931
+2026-05-07 06:03:29,866 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 06:03:29,866 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2166353
+2026-05-07 06:03:30,529 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 06:03:30,529 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2168955
+2026-05-07 06:03:31,091 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 06:03:31,091 | INFO | LLM response from groq/llama-3.3-70b-versatile for 1808970
+2026-05-07 06:03:31,091 | INFO | [2168953] "Internazionali BNL d'Italia: Noemi Basiletti vs Ajla Tomljan" mkt=0.49 est=0.55 conf=0.58 edge=+3.0% fee=$0.03 => skip $0.00
+2026-05-07 06:03:31,091 | INFO | [2141931] 'LoL: HANJIN BRION vs BNK FEARX (BO3) - LCK Rounds 1-2' mkt=0.35 est=0.42 conf=0.55 edge=+3.3% fee=$0.03 => skip $0.00
+2026-05-07 06:03:31,091 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.12 est=0.04 conf=0.75 edge=+6.9% fee=$0.01 => skip $0.00
+2026-05-07 06:03:31,091 | INFO | [2168955] "Internazionali BNL d'Italia: Yulia Starodubtseva vs Simona W" mkt=0.09 est=0.20 conf=0.55 edge=+6.9% fee=$0.05 => skip $0.00
+2026-05-07 06:03:31,091 | INFO | [1808970] 'US obtains Iranian enriched uranium by May 31?' mkt=0.07 est=0.02 conf=0.75 edge=+5.1% fee=$0.00 => skip $0.00
+2026-05-07 06:03:31,093 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
