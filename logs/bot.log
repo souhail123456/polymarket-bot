@@ -6437,3 +6437,31 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 00:38:06,871 | INFO | [2155637] 'NHL Playoffs: Who Will Win Series? - Sabres vs. Canadiens ' mkt=0.67 est=0.40 conf=0.70 edge=+23.2% fee=$0.10 => NO $3.10
 2026-05-07 00:38:09,205 | INFO | [2101893] 'Will Elon Musk post 140-159 tweets from May 1 to May 8, 2026' mkt=0.31 est=0.65 conf=0.85 edge=+30.2% fee=$0.12 => YES $3.43
 2026-05-07 00:38:11,536 | INFO | Scan complete. Placed 6 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 0 | LLM evals: 15
+2026-05-07 01:37:12,009 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
+2026-05-07 01:37:12,009 | INFO | [shared/weather] 37 open trades, 66% win rate (as of 2026-05-07T09:36:41.745938+08:00)
+2026-05-07 01:37:12,009 | INFO | [shared/crypto] BTC $81,051, ETH $2,333, 0 open, 0% wr (as of 2026-05-07T08:57:01.231599+08:00)
+2026-05-07 01:37:12,009 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T08:21:14.635298+08:00)
+2026-05-07 01:37:12,953 | INFO | Fetched 150 active markets
+2026-05-07 01:37:12,954 | INFO | 15 candidates after filters
+2026-05-07 01:37:12,954 | INFO | [2125009] Cache hit — price 0.54 unchanged, skipping LLM
+2026-05-07 01:37:12,954 | INFO | [2141907] Cache hit — price 0.54 unchanged, skipping LLM
+2026-05-07 01:37:12,954 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 01:37:13,456 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 429: Too Many Requests
+2026-05-07 01:37:13,579 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-07 01:37:13,799 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 01:37:15,098 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 01:37:15,098 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 12 markets
+2026-05-07 01:37:15,098 | INFO | Batch evaluation succeeded: 12 markets in 1 LLM call
+2026-05-07 01:37:15,099 | INFO | [2124965] 'New York Mets vs. Colorado Rockies' mkt=0.62 est=0.45 conf=0.80 edge=+14.4% fee=$0.13 => NO $4.20
+2026-05-07 01:37:17,477 | INFO | [2166361] 'Bitcoin Up or Down on May 7?' mkt=0.33 est=0.32 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 01:37:17,477 | INFO | [1809560] 'Strait of Hormuz traffic returns to normal by end of May?' mkt=0.29 est=0.35 conf=0.70 edge=+2.0% fee=$0.04 => skip $0.00
+2026-05-07 01:37:17,477 | INFO | [2125007] 'Cleveland Guardians vs. Kansas City Royals' mkt=0.72 est=0.70 conf=0.90 edge=-1.1% fee=$0.04 => skip $0.00
+2026-05-07 01:37:17,477 | INFO | [2109450] 'US x Iran diplomatic meeting by June 30, 2026?' mkt=0.72 est=0.70 conf=0.90 edge=-1.1% fee=$0.04 => skip $0.00
+2026-05-07 01:37:17,478 | INFO | [2097821] 'Will Donald Trump announce that the United States blockade o' mkt=0.26 est=0.25 conf=0.60 edge=-0.8% fee=$0.01 => skip $0.00
+2026-05-07 01:37:17,478 | INFO | [2047424] 'US x Iran diplomatic meeting by May 15, 2026?' mkt=0.23 est=0.22 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 01:37:17,478 | INFO | [2156002] "Internazionali BNL d'Italia: Federico Cina vs Alexander Bloc" mkt=0.20 est=0.20 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 01:37:17,478 | INFO | [2168958] "Internazionali BNL d'Italia: Jacob Fearnley vs Giovanni Mpet" mkt=0.83 est=0.83 conf=0.95 edge=-0.9% fee=$0.01 => skip $0.00
+2026-05-07 01:37:17,478 | INFO | [2170230] 'US x Iran peace deal before Trump visits China?' mkt=0.15 est=0.15 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 01:37:17,478 | INFO | [2126542] 'Iran agrees to surrender enriched uranium stockpile by May 3' mkt=0.14 est=0.14 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 01:37:17,478 | INFO | [2139310] 'Lakers vs. Thunder' mkt=0.12 est=0.12 conf=0.70 edge=-0.2% fee=$0.01 => skip $0.00
+2026-05-07 01:37:17,479 | INFO | Scan complete. Placed 1 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 12
