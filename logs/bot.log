@@ -6700,3 +6700,31 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 11:15:20,988 | INFO | [2156002] "Internazionali BNL d'Italia: Federico Cina vs Alexander Bloc" mkt=0.12 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 11:15:20,988 | INFO | [2125965] 'Will the price of Bitcoin be above $82,000 on May 7?' mkt=0.10 est=0.99 conf=0.97 edge=+85.0% fee=$0.45 => YES $10.00
 2026-05-07 11:15:23,548 | INFO | Scan complete. Placed 1 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 7 | LLM evals: 7
+2026-05-07 12:09:14,151 | INFO | === Scan | mode=paper | bankroll=$52.61 ===
+2026-05-07 12:09:14,151 | INFO | [shared/weather] 17 open trades, 65% win rate (as of 2026-05-07T20:09:01.169059+08:00)
+2026-05-07 12:09:14,151 | INFO | [shared/crypto] BTC $80,922, ETH $2,329, 0 open, 0% wr (as of 2026-05-07T19:16:50.196009+08:00)
+2026-05-07 12:09:14,151 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T14:54:57.235083+08:00)
+2026-05-07 12:09:15,939 | INFO | Fetched 150 active markets
+2026-05-07 12:09:15,940 | INFO | 15 candidates after filters
+2026-05-07 12:09:15,941 | INFO | [2137011] Cache hit — price 0.62 unchanged, skipping LLM
+2026-05-07 12:09:15,941 | INFO | [2155929] Cache hit — price 0.69 unchanged, skipping LLM
+2026-05-07 12:09:15,941 | INFO | [2101900] Cache hit — price 0.18 unchanged, skipping LLM
+2026-05-07 12:09:15,941 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 12:09:15,941 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 12:09:15,941 | INFO | [2166353] Cache hit — price 0.10 unchanged, skipping LLM
+2026-05-07 12:09:15,941 | INFO | [1808970] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-07 12:09:24,034 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
+2026-05-07 12:09:24,157 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-07 12:09:24,233 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 12:09:25,259 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 12:09:25,259 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 8 markets
+2026-05-07 12:09:25,259 | INFO | Batch evaluation succeeded: 8 markets in 1 LLM call
+2026-05-07 12:09:25,259 | INFO | [2156002] "Internazionali BNL d'Italia: Federico Cina vs Alexander Bloc" mkt=0.43 est=0.45 conf=0.70 edge=-1.3% fee=$0.03 => skip $0.00
+2026-05-07 12:09:25,260 | INFO | [2168958] "Internazionali BNL d'Italia: Jacob Fearnley vs Giovanni Mpet" mkt=0.43 est=0.45 conf=0.70 edge=-1.3% fee=$0.03 => skip $0.00
+2026-05-07 12:09:25,260 | INFO | [2149579] 'Valorant: DRX vs FULL SENSE (BO3) - VCT Pacific Playoffs' mkt=0.23 est=0.23 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 12:09:25,260 | INFO | [2175577] "Internazionali BNL d'Italia: Jasmine Paolini vs Leolia Jeanj" mkt=0.84 est=0.85 conf=0.90 edge=-0.3% fee=$0.01 => skip $0.00
+2026-05-07 12:09:25,260 | INFO | [2155932] "Internazionali BNL d'Italia: Marcos Giron vs Marin Cilic" mkt=0.14 est=0.15 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 12:09:25,260 | INFO | [2128535] 'Epstein suicide note released by May 8?' mkt=0.09 est=0.09 conf=0.19 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 12:09:25,260 | INFO | [2119226] 'Will Donald Trump announce that the United States blockade o' mkt=0.07 est=0.07 conf=0.15 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 12:09:25,260 | INFO | [2132780] 'Will Bitcoin dip to $65,000 in May?' mkt=0.07 est=0.07 conf=0.15 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 12:09:25,262 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 7 | LLM evals: 8
