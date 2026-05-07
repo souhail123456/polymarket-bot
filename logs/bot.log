@@ -6901,3 +6901,85 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 16:14:08,394 | INFO | [2168977] "Internazionali BNL d'Italia: Cristian Garin vs Juan Manuel C" mkt=0.91 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 16:14:08,394 | INFO | [2126515] 'Israel x Iran permanent peace deal by May 31, 2026?' mkt=0.06 est=0.06 conf=0.80 edge=-4.6% fee=$0.05 => skip $0.00
 2026-05-07 16:14:08,395 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
+2026-05-07 23:20:07,939 | INFO | === Scan | mode=paper | bankroll=$41.48 ===
+2026-05-07 23:20:07,939 | INFO | [shared/weather] 34 open trades, 65% win rate (as of 2026-05-08T06:51:46.216897+08:00)
+2026-05-07 23:20:07,939 | INFO | [shared/crypto] BTC $79,890, ETH $2,286, 0 open, 0% wr (as of 2026-05-08T06:55:00.656769+08:00)
+2026-05-07 23:20:07,939 | INFO | [shared/econ] CPI ok, GDP ok (as of 2026-05-08T02:30:59.009910+08:00)
+2026-05-07 23:20:08,874 | INFO | Resolved 2166361: YES -> LOSS pnl=$-5.42 balance=$36.06
+2026-05-07 23:20:09,872 | INFO | Resolved 2125964: YES -> LOSS pnl=$-10.00 balance=$26.06
+2026-05-07 23:20:10,563 | INFO | Resolved 2121081: NO -> LOSS pnl=$-4.23 balance=$21.83
+2026-05-07 23:20:11,281 | INFO | Resolved 2125965: YES -> LOSS pnl=$-10.00 balance=$11.83
+2026-05-07 23:20:12,004 | INFO | Resolved 2175577: NO -> LOSS pnl=$-2.97 balance=$8.86
+2026-05-07 23:20:12,716 | INFO | Resolved 2121105: NO -> LOSS pnl=$-4.03 balance=$4.83
+2026-05-07 23:20:13,523 | INFO | Resolved 2168979: YES -> LOSS pnl=$-4.77 balance=$0.06
+2026-05-07 23:20:14,421 | INFO | Resolved 2132495: YES -> LOSS pnl=$-2.80 balance=$-2.74
+2026-05-07 23:20:15,209 | INFO | Resolved 2155942: YES -> LOSS pnl=$-3.02 balance=$-5.76
+2026-05-07 23:20:15,956 | INFO | Resolved 2175571: NO -> WIN pnl=$9.61 balance=$3.85
+2026-05-07 23:20:16,554 | INFO | Fetched 150 active markets
+2026-05-07 23:20:16,555 | INFO | 15 candidates after filters
+2026-05-07 23:20:16,655 | INFO | [2133309] Pre-filter hit: 'Will the price of Bitcoin be above $78,000 on May 8?' => true_p=0.99 conf=0.97 | BITCOIN is $79,894, 998575% above threshold $8 — very likely YES
+2026-05-07 23:20:16,655 | INFO | 1 markets resolved by pre-filter (no LLM needed)
+2026-05-07 23:20:16,655 | INFO | [2132779] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 23:20:16,656 | INFO | [2128535] Cache hit — price 0.10 unchanged, skipping LLM
+2026-05-07 23:20:16,656 | INFO | [2132780] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-07 23:20:35,367 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-07 23:20:35,367 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 11 markets
+2026-05-07 23:20:35,367 | WARNING | Batch evaluation failed (Expecting value: line 1 column 1 (char 0)), falling back to individual calls
+2026-05-07 23:20:35,882 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 23:20:35,882 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2144505
+2026-05-07 23:20:36,290 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 23:20:36,290 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2170823
+2026-05-07 23:20:36,344 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:36,731 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 23:20:36,731 | INFO | LLM response from groq/llama-3.1-8b-instant for 2132518
+2026-05-07 23:20:37,108 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 23:20:37,108 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2181920
+2026-05-07 23:20:37,157 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:37,527 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 23:20:37,527 | INFO | LLM response from groq/llama-3.1-8b-instant for 2132520
+2026-05-07 23:20:37,573 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:37,908 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 23:20:37,909 | INFO | LLM response from groq/llama-3.1-8b-instant for 2137011
+2026-05-07 23:20:37,954 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:38,302 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 23:20:38,302 | INFO | LLM response from groq/llama-3.1-8b-instant for 2132513
+2026-05-07 23:20:38,350 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:38,659 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 23:20:38,659 | INFO | LLM response from groq/llama-3.1-8b-instant for 2166353
+2026-05-07 23:20:38,709 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:38,755 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:38,859 | WARNING | LLM call failed cerebras/llama3.1-70b: HTTP Error 404: Not Found
+2026-05-07 23:20:38,999 | WARNING | LLM call failed openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-07 23:20:39,000 | WARNING | estimate_probability failed for 2182250: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+cerebras/llama3.1-70b: HTTP Error 404: Not Found
+openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-07 23:20:39,049 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:39,103 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:39,187 | WARNING | LLM call failed cerebras/llama3.1-70b: HTTP Error 404: Not Found
+2026-05-07 23:20:39,232 | WARNING | LLM call failed openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-07 23:20:39,232 | WARNING | estimate_probability failed for 2132516: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+cerebras/llama3.1-70b: HTTP Error 404: Not Found
+openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-07 23:20:39,294 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:39,340 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-07 23:20:39,436 | WARNING | LLM call failed cerebras/llama3.1-70b: HTTP Error 404: Not Found
+2026-05-07 23:20:39,454 | WARNING | LLM call failed openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-07 23:20:39,454 | WARNING | estimate_probability failed for 2074241: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+cerebras/llama3.1-70b: HTTP Error 404: Not Found
+openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-07 23:20:39,454 | INFO | [2144505] 'Knicks vs. 76ers' mkt=0.49 est=0.50 conf=0.55 edge=-2.0% fee=$0.03 => skip $0.00
+2026-05-07 23:20:39,455 | INFO | [2170823] 'Spread: Thunder (-15.5)' mkt=0.48 est=0.35 conf=0.55 edge=+11.1% fee=$0.07 => NO $2.89
+2026-05-07 23:20:41,969 | INFO | [2132518] 'Tampa Bay Rays vs. Boston Red Sox' mkt=0.48 est=0.55 conf=0.75 edge=+3.9% fee=$0.03 => skip $0.00
+2026-05-07 23:20:41,970 | INFO | [2181920] 'Spread: Thunder (-14.5)' mkt=0.53 est=0.35 conf=0.55 edge=+14.9% fee=$0.08 => NO $3.22
+2026-05-07 23:20:44,476 | INFO | [2132520] 'St. Louis Cardinals vs. San Diego Padres' mkt=0.41 est=0.52 conf=0.70 edge=+8.5% fee=$0.03 => skip $0.00
+2026-05-07 23:20:44,477 | INFO | [2137011] 'Spurs vs. Timberwolves' mkt=0.67 est=0.55 conf=0.70 edge=+8.2% fee=$0.03 => skip $0.00
+2026-05-07 23:20:44,477 | INFO | [2132513] 'Baltimore Orioles vs. Miami Marlins' mkt=0.32 est=0.55 conf=0.75 edge=+20.1% fee=$0.10 => YES $3.03
+2026-05-07 23:20:46,983 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.17 est=0.35 conf=0.85 edge=+14.3% fee=$0.07 => YES $1.79
+2026-05-07 23:20:49,520 | INFO | [2133309] 'Will the price of Bitcoin be above $78,000 on May 8?' mkt=0.93 est=0.99 conf=0.97 edge=+5.5% fee=$0.00 => skip $0.00
+2026-05-07 23:20:49,523 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 11
