@@ -6766,3 +6766,46 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 13:07:33,308 | INFO | [2070374] 'Will Nottingham Forest FC win on 2026-05-07?' mkt=0.20 est=0.25 conf=0.55 edge=+0.5% fee=$0.04 => skip $0.00
 2026-05-07 13:07:33,309 | INFO | [2121105] "LoL: Ninjas in Pyjamas vs Anyone's Legend - Game 1 Winner" mkt=0.81 est=0.55 conf=0.70 edge=+22.4% fee=$0.16 => NO $4.03
 2026-05-07 13:07:35,779 | INFO | Scan complete. Placed 2 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 9 | LLM evals: 6
+2026-05-07 14:17:09,499 | INFO | === Scan | mode=paper | bankroll=$52.61 ===
+2026-05-07 14:17:09,499 | INFO | [shared/weather] 17 open trades, 65% win rate (as of 2026-05-07T21:06:49.132444+08:00)
+2026-05-07 14:17:09,499 | INFO | [shared/crypto] BTC $81,029, ETH $2,327, 0 open, 0% wr (as of 2026-05-07T21:09:19.328353+08:00)
+2026-05-07 14:17:09,499 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T20:32:24.163490+08:00)
+2026-05-07 14:17:10,518 | INFO | Resolved 2168964: YES -> LOSS pnl=$-6.65 balance=$45.96
+2026-05-07 14:17:11,585 | INFO | Fetched 150 active markets
+2026-05-07 14:17:11,587 | INFO | 15 candidates after filters
+2026-05-07 14:17:11,587 | INFO | [2137011] Cache hit — price 0.62 unchanged, skipping LLM
+2026-05-07 14:17:11,587 | INFO | [2070374] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-07 14:17:11,587 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 14:17:11,587 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 14:17:11,587 | INFO | [2128535] Cache hit — price 0.11 unchanged, skipping LLM
+2026-05-07 14:17:11,587 | INFO | [2166353] Cache hit — price 0.10 unchanged, skipping LLM
+2026-05-07 14:17:11,587 | INFO | [2119226] Cache hit — price 0.08 unchanged, skipping LLM
+2026-05-07 14:17:11,588 | INFO | [1808970] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-07 14:17:11,588 | INFO | [2132780] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-07 14:17:14,819 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
+2026-05-07 14:17:15,838 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 14:17:15,838 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 6 markets
+2026-05-07 14:17:15,838 | WARNING | Batch evaluation failed (Expecting ',' delimiter: line 7 column 227 (char 1333)), falling back to individual calls
+2026-05-07 14:17:16,559 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 14:17:16,559 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2160065
+2026-05-07 14:17:16,987 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 14:17:16,987 | INFO | LLM response from groq/llama-3.3-70b-versatile for 1999716
+2026-05-07 14:17:17,069 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 14:17:17,495 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 14:17:17,495 | INFO | LLM response from groq/llama-3.1-8b-instant for 2168979
+2026-05-07 14:17:17,556 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 14:17:17,892 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 14:17:17,892 | INFO | LLM response from groq/llama-3.1-8b-instant for 2170230
+2026-05-07 14:17:17,940 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 14:17:18,278 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 14:17:18,278 | INFO | LLM response from groq/llama-3.1-8b-instant for 2101900
+2026-05-07 14:17:18,332 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 14:17:18,647 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 14:17:18,647 | INFO | LLM response from groq/llama-3.1-8b-instant for 2054133
+2026-05-07 14:17:18,648 | INFO | [2160065] 'Indian Premier League: Lucknow Super Giants vs Royal Challen' mkt=0.35 est=0.45 conf=0.55 edge=+6.3% fee=$0.03 => skip $0.00
+2026-05-07 14:17:18,648 | INFO | [1999716] 'Will NVIDIA be the largest company in the world by market ca' mkt=0.78 est=0.02 conf=0.85 edge=+72.2% fee=$0.39 => NO $10.00
+2026-05-07 14:17:20,976 | INFO | [2168979] "Internazionali BNL d'Italia: Ethan Quinn vs Pablo Llamas Rui" mkt=0.18 est=0.55 conf=0.85 edge=+32.4% fee=$0.19 => YES $4.77
+2026-05-07 14:17:23,292 | INFO | [2170230] 'US x Iran peace deal before Trump visits China?' mkt=0.18 est=0.42 conf=0.85 edge=+19.4% fee=$0.11 => YES $2.73
+2026-05-07 14:17:25,677 | INFO | [2101900] 'Will Elon Musk post 180-199 tweets from May 1 to May 8, 2026' mkt=0.17 est=0.55 conf=0.85 edge=+34.3% fee=$0.17 => YES $4.05
+2026-05-07 14:17:28,021 | INFO | [2054133] 'Strait of Hormuz traffic returns to normal by May 15?' mkt=0.07 est=0.65 conf=0.85 edge=+53.4% fee=$0.23 => YES $4.84
+2026-05-07 14:17:30,363 | INFO | Scan complete. Placed 5 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 9 | LLM evals: 6
