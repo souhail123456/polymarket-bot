@@ -6875,3 +6875,29 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 15:21:19,901 | INFO | [2155942] "Internazionali BNL d'Italia: Stefanos Tsitsipas vs Tomas Mac" mkt=0.38 est=0.55 conf=0.75 edge=+14.4% fee=$0.09 => YES $3.02
 2026-05-07 15:21:22,369 | INFO | [2175571] "Internazionali BNL d'Italia: Katerina Siniakova vs Anna Kali" mkt=0.77 est=0.55 conf=0.70 edge=+18.1% fee=$0.11 => NO $2.87
 2026-05-07 15:21:24,811 | INFO | Scan complete. Placed 3 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 7 | LLM evals: 8
+2026-05-07 16:13:50,119 | INFO | === Scan | mode=paper | bankroll=$41.48 ===
+2026-05-07 16:13:50,119 | INFO | [shared/weather] 16 open trades, 65% win rate (as of 2026-05-08T00:13:26.893398+08:00)
+2026-05-07 16:13:50,119 | INFO | [shared/crypto] BTC $79,987, ETH $2,295, 0 open, 0% wr (as of 2026-05-07T23:22:12.484089+08:00)
+2026-05-07 16:13:50,119 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T20:32:24.163490+08:00)
+2026-05-07 16:14:02,852 | INFO | Fetched 150 active markets
+2026-05-07 16:14:02,853 | INFO | 15 candidates after filters
+2026-05-07 16:14:02,853 | INFO | [2170666] Cache hit — price 0.51 unchanged, skipping LLM
+2026-05-07 16:14:02,853 | INFO | [2137011] Cache hit — price 0.65 unchanged, skipping LLM
+2026-05-07 16:14:02,853 | INFO | [2070374] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-07 16:14:02,854 | INFO | [2132779] Cache hit — price 0.15 unchanged, skipping LLM
+2026-05-07 16:14:02,854 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 16:14:02,854 | INFO | [2166353] Cache hit — price 0.10 unchanged, skipping LLM
+2026-05-07 16:14:02,854 | INFO | [2119226] Cache hit — price 0.08 unchanged, skipping LLM
+2026-05-07 16:14:02,854 | INFO | [1808970] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-07 16:14:02,854 | INFO | [2132780] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-07 16:14:02,854 | INFO | [2128535] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-07 16:14:06,994 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
+2026-05-07 16:14:08,393 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 16:14:08,393 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 5 markets
+2026-05-07 16:14:08,393 | INFO | Batch evaluation succeeded: 5 markets in 1 LLM call
+2026-05-07 16:14:08,393 | INFO | [2132501] 'Minnesota Twins vs. Washington Nationals' mkt=0.47 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 16:14:08,393 | INFO | [2160065] 'Indian Premier League: Lucknow Super Giants vs Royal Challen' mkt=0.59 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 16:14:08,394 | INFO | [2132509] 'Cincinnati Reds vs. Chicago Cubs' mkt=0.35 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 16:14:08,394 | INFO | [2168977] "Internazionali BNL d'Italia: Cristian Garin vs Juan Manuel C" mkt=0.91 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 16:14:08,394 | INFO | [2126515] 'Israel x Iran permanent peace deal by May 31, 2026?' mkt=0.06 est=0.06 conf=0.80 edge=-4.6% fee=$0.05 => skip $0.00
+2026-05-07 16:14:08,395 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
