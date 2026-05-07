@@ -6901,3 +6901,45 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 16:14:08,394 | INFO | [2168977] "Internazionali BNL d'Italia: Cristian Garin vs Juan Manuel C" mkt=0.91 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 16:14:08,394 | INFO | [2126515] 'Israel x Iran permanent peace deal by May 31, 2026?' mkt=0.06 est=0.06 conf=0.80 edge=-4.6% fee=$0.05 => skip $0.00
 2026-05-07 16:14:08,395 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
+2026-05-07 17:08:20,986 | INFO | === Scan | mode=paper | bankroll=$41.48 ===
+2026-05-07 17:08:20,987 | INFO | [shared/weather] 16 open trades, 65% win rate (as of 2026-05-08T00:13:26.893398+08:00)
+2026-05-07 17:08:20,987 | INFO | [shared/crypto] BTC $79,797, ETH $2,289, 0 open, 0% wr (as of 2026-05-08T00:15:45.831379+08:00)
+2026-05-07 17:08:20,987 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T20:32:24.163490+08:00)
+2026-05-07 17:08:26,222 | INFO | Resolved 2121105: NO -> LOSS pnl=$-4.03 balance=$37.45
+2026-05-07 17:08:27,650 | INFO | Fetched 150 active markets
+2026-05-07 17:08:27,651 | INFO | 15 candidates after filters
+2026-05-07 17:08:29,290 | INFO | [2133309] Pre-filter hit: 'Will the price of Bitcoin be above $78,000 on May 8?' => true_p=0.99 conf=0.97 | BITCOIN is $79,882, 998425% above threshold $8 — very likely YES
+2026-05-07 17:08:29,290 | INFO | 1 markets resolved by pre-filter (no LLM needed)
+2026-05-07 17:08:29,290 | INFO | [2170666] Cache hit — price 0.51 unchanged, skipping LLM
+2026-05-07 17:08:29,290 | INFO | [2132501] Cache hit — price 0.47 unchanged, skipping LLM
+2026-05-07 17:08:29,290 | INFO | [2160065] Cache hit — price 0.61 unchanged, skipping LLM
+2026-05-07 17:08:29,290 | INFO | [2132509] Cache hit — price 0.35 unchanged, skipping LLM
+2026-05-07 17:08:29,290 | INFO | [2137011] Cache hit — price 0.66 unchanged, skipping LLM
+2026-05-07 17:08:29,290 | INFO | [2132779] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 17:08:29,291 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 17:08:29,291 | INFO | [2166353] Cache hit — price 0.10 unchanged, skipping LLM
+2026-05-07 17:08:41,046 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-07 17:08:41,046 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 6 markets
+2026-05-07 17:08:41,046 | WARNING | Batch evaluation failed (Expecting property name enclosed in double quotes: line 5 column 23 (char 85)), falling back to individual calls
+2026-05-07 17:08:41,730 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 17:08:41,730 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2144505
+2026-05-07 17:08:42,300 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 17:08:42,300 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2132513
+2026-05-07 17:08:42,696 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 17:08:42,696 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2136777
+2026-05-07 17:08:43,305 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 17:08:43,305 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2177771
+2026-05-07 17:08:43,404 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 17:08:43,869 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 17:08:43,869 | INFO | LLM response from groq/llama-3.1-8b-instant for 2174139
+2026-05-07 17:08:43,953 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 17:08:44,350 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 17:08:44,350 | INFO | LLM response from groq/llama-3.1-8b-instant for 2155936
+2026-05-07 17:08:44,350 | INFO | [2144505] 'Knicks vs. 76ers' mkt=0.51 est=0.50 conf=0.55 edge=-2.0% fee=$0.03 => skip $0.00
+2026-05-07 17:08:44,350 | INFO | [2132513] 'Baltimore Orioles vs. Miami Marlins' mkt=0.46 est=0.55 conf=0.60 edge=+6.8% fee=$0.03 => skip $0.00
+2026-05-07 17:08:44,350 | INFO | [2136777] 'Valorant: Eternal Fire vs Team Heretics (BO3) - VCT EMEA Pla' mkt=0.62 est=0.55 conf=0.58 edge=+4.4% fee=$0.03 => skip $0.00
+2026-05-07 17:08:44,350 | INFO | [2177771] 'Dota 2: L1ga Team vs MOUZ - Game 1 Winner' mkt=0.82 est=0.60 conf=0.55 edge=+17.9% fee=$0.11 => NO $2.78
+2026-05-07 17:08:46,884 | INFO | [2174139] 'S&P 500 (SPX) Up or Down on May 7?' mkt=0.15 est=0.65 conf=0.85 edge=+45.3% fee=$0.24 => YES $5.67
+2026-05-07 17:08:49,359 | INFO | [2133309] 'Will the price of Bitcoin be above $78,000 on May 8?' mkt=0.88 est=0.99 conf=0.97 edge=+10.3% fee=$0.04 => YES $7.56
+2026-05-07 17:08:51,842 | INFO | [2155936] "Internazionali BNL d'Italia: Thiago Agustin Tirante vs Gianl" mkt=0.10 est=0.55 conf=0.70 edge=+41.0% fee=$0.14 => YES $3.20
+2026-05-07 17:08:54,355 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 8 | LLM evals: 6
