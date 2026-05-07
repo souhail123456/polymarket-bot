@@ -1,13 +1,13 @@
 {
   "weather": {
-    "last_run": "2026-05-07T15:28:39.635484+08:00",
+    "last_run": "2026-05-07T12:43:28.644817+08:00",
     "trades_placed": 0,
     "trades_skipped": 163,
     "next_run": "every 30min",
     "status": "ok"
   },
   "crypto": {
-    "last_run": "2026-05-07T14:06:28.646281+08:00",
+    "last_run": "2026-05-07T15:30:27.790849+08:00",
     "trades_placed": 0,
     "trades_skipped": 0,
     "next_run": "every 30min",
