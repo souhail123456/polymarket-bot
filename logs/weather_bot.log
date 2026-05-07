@@ -9377,3 +9377,16 @@
 2026-05-07 04:43:13,490 | WARNING | Ensemble fetch failed for gem_global shanghai 2026-05-07: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
 2026-05-07 04:43:28,638 | WARNING | Ensemble fetch failed for ecmwf_aifs025 shanghai 2026-05-07: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
 2026-05-07 04:43:28,644 | INFO | Weather scan complete. Placed 0 trades.
+2026-05-07 06:02:48,198 | INFO | === Weather Scan | mode=paper | bankroll=$71.01 ===
+2026-05-07 06:02:48,198 | INFO | [shared/crypto] BTC $80,855, ETH $2,323, 0 open, 0% wr (as of 2026-05-07T12:44:19.002123+08:00)
+2026-05-07 06:02:48,199 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T08:21:14.635298+08:00)
+2026-05-07 06:02:48,199 | INFO | [shared/ev] 19 open trades, 22% win rate (as of 2026-05-07T11:08:57.151403+08:00)
+2026-05-07 06:02:49,163 | INFO | Resolved 2161857: NO -> WIN pnl=$2.88 balance=$73.89
+2026-05-07 06:02:50,402 | INFO | Resolved 2162018: NO -> WIN pnl=$0.91 balance=$74.80
+2026-05-07 06:02:53,767 | INFO | Found 220 weather sub-markets
+2026-05-07 06:02:56,764 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.39 model=0.38 edge=-1.1% fee=$0.00 => skip $0.00
+2026-05-07 06:02:59,722 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.04 model=0.10 edge=+1.4% fee=$0.00 => skip $0.00
+2026-05-07 06:03:17,269 | WARNING | Ensemble fetch failed for ecmwf_aifs025 shanghai 2026-05-07: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-07 06:03:17,269 | INFO | [Shanghai] Will the highest temperature in Shanghai be 30°C o mkt=0.48 model=0.08 edge=+37.7% fee=$0.10 => NO $4.00
+2026-05-07 06:03:17,269 | INFO | [Shanghai] Will the highest temperature in Shanghai be 31°C o mkt=0.04 model=0.15 edge=+6.0% fee=$0.00 => skip $0.00
+2026-05-07 06:03:18,771 | INFO | Weather scan complete. Placed 1 trades.
