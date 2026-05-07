@@ -9377,3 +9377,28 @@
 2026-05-07 04:43:13,490 | WARNING | Ensemble fetch failed for gem_global shanghai 2026-05-07: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
 2026-05-07 04:43:28,638 | WARNING | Ensemble fetch failed for ecmwf_aifs025 shanghai 2026-05-07: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
 2026-05-07 04:43:28,644 | INFO | Weather scan complete. Placed 0 trades.
+2026-05-07 08:22:16,351 | INFO | === Weather Scan | mode=paper | bankroll=$71.01 ===
+2026-05-07 08:22:16,351 | INFO | [shared/crypto] BTC $81,582, ETH $2,340, 0 open, 0% wr (as of 2026-05-07T15:30:27.790515+08:00)
+2026-05-07 08:22:16,351 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T14:54:57.235083+08:00)
+2026-05-07 08:22:16,351 | INFO | [shared/ev] 22 open trades, 18% win rate (as of 2026-05-07T15:29:05.312268+08:00)
+2026-05-07 08:22:16,445 | INFO | Resolved 2157112: NO -> WIN pnl=$2.00 balance=$73.01
+2026-05-07 08:22:17,248 | INFO | Resolved 2156869: NO -> LOSS pnl=$-3.00 balance=$70.01
+2026-05-07 08:22:18,205 | INFO | Resolved 2156837: NO -> LOSS pnl=$-10.00 balance=$60.01
+2026-05-07 08:22:18,907 | INFO | Resolved 2156838: NO -> WIN pnl=$4.29 balance=$64.30
+2026-05-07 08:22:19,528 | INFO | Resolved 2161857: NO -> WIN pnl=$2.88 balance=$67.18
+2026-05-07 08:22:20,246 | INFO | Resolved 2162019: NO -> WIN pnl=$1.30 balance=$68.48
+2026-05-07 08:22:20,936 | INFO | Resolved 2156880: NO -> LOSS pnl=$-6.71 balance=$61.77
+2026-05-07 08:22:21,568 | INFO | Resolved 2162020: NO -> WIN pnl=$1.13 balance=$62.90
+2026-05-07 08:22:22,143 | INFO | Resolved 2157111: NO -> LOSS pnl=$-6.00 balance=$56.90
+2026-05-07 08:22:22,925 | INFO | Resolved 2156839: NO -> WIN pnl=$1.84 balance=$58.74
+2026-05-07 08:22:23,865 | INFO | Resolved 2162018: NO -> WIN pnl=$0.91 balance=$59.65
+2026-05-07 08:22:24,494 | INFO | Resolved 2162021: NO -> WIN pnl=$0.76 balance=$60.41
+2026-05-07 08:22:25,370 | INFO | Resolved 2156841: YES -> LOSS pnl=$-7.51 balance=$52.90
+2026-05-07 08:22:26,337 | INFO | Resolved 2156881: NO -> WIN pnl=$3.63 balance=$56.52
+2026-05-07 08:22:27,180 | INFO | Resolved 2156840: YES -> LOSS pnl=$-5.74 balance=$50.78
+2026-05-07 08:22:27,902 | INFO | Resolved 2157114: YES -> LOSS pnl=$-4.74 balance=$46.04
+2026-05-07 08:22:29,680 | INFO | Found 220 weather sub-markets
+2026-05-07 08:22:32,926 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.36 model=0.37 edge=-3.1% fee=$0.00 => skip $0.00
+2026-05-07 08:22:32,927 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.03 model=0.05 edge=-2.6% fee=$0.00 => skip $0.00
+2026-05-07 08:22:36,218 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.04 model=0.14 edge=+5.3% fee=$0.00 => skip $0.00
+2026-05-07 08:22:36,224 | INFO | Weather scan complete. Placed 0 trades.
