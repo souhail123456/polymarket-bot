@@ -9446,3 +9446,15 @@
 2026-05-07 13:06:47,143 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.04 model=0.14 edge=+6.1% fee=$0.00 => skip $0.00
 2026-05-07 13:06:49,127 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.03 model=0.06 edge=-1.3% fee=$0.00 => skip $0.00
 2026-05-07 13:06:49,132 | INFO | Weather scan complete. Placed 0 trades.
+2026-05-07 14:16:24,350 | INFO | === Weather Scan | mode=paper | bankroll=$41.59 ===
+2026-05-07 14:16:24,350 | INFO | [shared/crypto] BTC $81,029, ETH $2,327, 0 open, 0% wr (as of 2026-05-07T21:09:19.328353+08:00)
+2026-05-07 14:16:24,350 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T20:32:24.163490+08:00)
+2026-05-07 14:16:24,350 | INFO | [shared/ev] 31 open trades, 18% win rate (as of 2026-05-07T21:07:35.777993+08:00)
+2026-05-07 14:16:26,450 | INFO | Found 220 weather sub-markets
+2026-05-07 14:16:29,781 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.38 model=0.40 edge=-0.9% fee=$0.00 => skip $0.00
+2026-05-07 14:16:33,064 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.03 model=0.09 edge=+1.5% fee=$0.00 => skip $0.00
+2026-05-07 14:16:49,528 | WARNING | Ensemble fetch failed for icon_seamless denver 2026-05-07: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-07 14:17:04,709 | WARNING | Ensemble fetch failed for gem_global denver 2026-05-07: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-07 14:17:19,903 | WARNING | Ensemble fetch failed for ecmwf_aifs025 denver 2026-05-07: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-07 14:17:19,904 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.02 model=0.05 edge=-2.2% fee=$0.00 => skip $0.00
+2026-05-07 14:17:19,908 | INFO | Weather scan complete. Placed 0 trades.
