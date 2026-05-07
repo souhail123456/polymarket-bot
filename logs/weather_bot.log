@@ -9412,3 +9412,12 @@
 2026-05-07 09:20:35,984 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.38 model=0.38 edge=-3.0% fee=$0.00 => skip $0.00
 2026-05-07 09:20:37,950 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.06 model=0.14 edge=+3.9% fee=$0.00 => skip $0.00
 2026-05-07 09:20:37,956 | INFO | Weather scan complete. Placed 0 trades.
+2026-05-07 10:17:34,562 | INFO | === Weather Scan | mode=paper | bankroll=$41.59 ===
+2026-05-07 10:17:34,562 | INFO | [shared/crypto] BTC $81,180, ETH $2,333, 0 open, 0% wr (as of 2026-05-07T17:02:54.270409+08:00)
+2026-05-07 10:17:34,562 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T14:54:57.235083+08:00)
+2026-05-07 10:17:34,562 | INFO | [shared/ev] 26 open trades, 18% win rate (as of 2026-05-07T17:21:10.239482+08:00)
+2026-05-07 10:17:36,765 | INFO | Found 220 weather sub-markets
+2026-05-07 10:17:39,966 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.34 model=0.38 edge=+0.8% fee=$0.00 => skip $0.00
+2026-05-07 10:17:39,966 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.02 model=0.05 edge=-2.0% fee=$0.00 => skip $0.00
+2026-05-07 10:17:43,177 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.11 model=0.14 edge=-0.6% fee=$0.00 => skip $0.00
+2026-05-07 10:17:43,183 | INFO | Weather scan complete. Placed 0 trades.
