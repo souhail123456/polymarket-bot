@@ -6901,3 +6901,41 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 16:14:08,394 | INFO | [2168977] "Internazionali BNL d'Italia: Cristian Garin vs Juan Manuel C" mkt=0.91 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 16:14:08,394 | INFO | [2126515] 'Israel x Iran permanent peace deal by May 31, 2026?' mkt=0.06 est=0.06 conf=0.80 edge=-4.6% fee=$0.05 => skip $0.00
 2026-05-07 16:14:08,395 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
+2026-05-07 20:01:28,856 | INFO | === Scan | mode=paper | bankroll=$41.48 ===
+2026-05-07 20:01:28,856 | INFO | [shared/weather] 28 open trades, 65% win rate (as of 2026-05-08T03:07:01.941820+08:00)
+2026-05-07 20:01:28,856 | INFO | [shared/crypto] BTC $80,076, ETH $2,291, 0 open, 0% wr (as of 2026-05-08T03:08:20.375463+08:00)
+2026-05-07 20:01:28,856 | INFO | [shared/econ] CPI ok, GDP ok (as of 2026-05-08T02:30:59.009910+08:00)
+2026-05-07 20:01:30,055 | INFO | Resolved 2166361: YES -> LOSS pnl=$-5.42 balance=$36.06
+2026-05-07 20:01:31,239 | INFO | Resolved 2125964: YES -> LOSS pnl=$-10.00 balance=$26.06
+2026-05-07 20:01:31,972 | INFO | Resolved 2121081: NO -> LOSS pnl=$-4.23 balance=$21.83
+2026-05-07 20:01:32,719 | INFO | Resolved 2125965: YES -> LOSS pnl=$-10.00 balance=$11.83
+2026-05-07 20:01:33,448 | INFO | Resolved 2175577: NO -> LOSS pnl=$-2.97 balance=$8.86
+2026-05-07 20:01:34,148 | INFO | Resolved 2121105: NO -> LOSS pnl=$-4.03 balance=$4.83
+2026-05-07 20:01:34,892 | INFO | Resolved 2168979: YES -> LOSS pnl=$-4.77 balance=$0.06
+2026-05-07 20:01:35,617 | INFO | Resolved 2155942: YES -> LOSS pnl=$-3.02 balance=$-2.96
+2026-05-07 20:01:36,347 | INFO | Resolved 2175571: NO -> WIN pnl=$9.61 balance=$6.65
+2026-05-07 20:01:36,990 | INFO | Fetched 150 active markets
+2026-05-07 20:01:36,991 | INFO | 15 candidates after filters
+2026-05-07 20:01:37,109 | INFO | [2133309] Pre-filter hit: 'Will the price of Bitcoin be above $78,000 on May 8?' => true_p=0.99 conf=0.97 | BITCOIN is $80,151, 1001788% above threshold $8 — very likely YES
+2026-05-07 20:01:37,109 | INFO | 1 markets resolved by pre-filter (no LLM needed)
+2026-05-07 20:01:37,110 | INFO | [2132779] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 20:01:37,110 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 20:01:37,110 | INFO | [2132780] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-07 20:01:51,667 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
+2026-05-07 20:01:51,754 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-07 20:01:52,940 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-07 20:01:52,940 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 11 markets
+2026-05-07 20:01:52,940 | INFO | Batch evaluation succeeded: 11 markets in 1 LLM call
+2026-05-07 20:01:52,940 | INFO | [2144505] 'Knicks vs. 76ers' mkt=0.51 est=0.50 conf=0.80 edge=-2.0% fee=$0.03 => skip $0.00
+2026-05-07 20:01:52,940 | INFO | [2132513] 'Baltimore Orioles vs. Miami Marlins' mkt=0.46 est=0.46 conf=0.60 edge=-2.7% fee=$0.03 => skip $0.00
+2026-05-07 20:01:52,940 | INFO | [2137011] 'Spurs vs. Timberwolves' mkt=0.67 est=0.67 conf=0.90 edge=-1.7% fee=$0.02 => skip $0.00
+2026-05-07 20:01:52,940 | INFO | [2136846] 'Valorant: Team Liquid vs Team Vitality (BO3) - VCT EMEA Play' mkt=0.30 est=0.30 conf=0.50 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 20:01:52,940 | INFO | [2115533] 'New York Mets vs. Colorado Rockies' mkt=0.73 est=0.73 conf=0.80 edge=-1.3% fee=$0.01 => skip $0.00
+2026-05-07 20:01:52,940 | INFO | [2128535] 'Epstein suicide note released by May 8?' mkt=0.21 est=0.21 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 20:01:52,940 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.18 est=0.18 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 20:01:52,941 | INFO | [2168974] "Internazionali BNL d'Italia: Andrea Pellegrino vs Luca Nardi" mkt=0.91 est=0.91 conf=0.90 edge=-0.4% fee=$0.00 => skip $0.00
+2026-05-07 20:01:52,941 | INFO | [2133404] 'Iran closes its airspace by May 8?' mkt=0.08 est=0.08 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 20:01:52,941 | INFO | [2132501] 'Minnesota Twins vs. Washington Nationals' mkt=0.07 est=0.07 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 20:01:52,941 | INFO | [2132506] 'Cleveland Guardians vs. Kansas City Royals' mkt=0.93 est=0.93 conf=0.90 edge=-0.4% fee=$0.00 => skip $0.00
+2026-05-07 20:01:52,941 | INFO | [2133309] 'Will the price of Bitcoin be above $78,000 on May 8?' mkt=0.93 est=0.99 conf=0.97 edge=+5.3% fee=$0.00 => skip $0.00
+2026-05-07 20:01:52,943 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 11
