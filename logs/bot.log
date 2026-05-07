@@ -6465,3 +6465,38 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 01:37:17,478 | INFO | [2126542] 'Iran agrees to surrender enriched uranium stockpile by May 3' mkt=0.14 est=0.14 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 01:37:17,478 | INFO | [2139310] 'Lakers vs. Thunder' mkt=0.12 est=0.12 conf=0.70 edge=-0.2% fee=$0.01 => skip $0.00
 2026-05-07 01:37:17,479 | INFO | Scan complete. Placed 1 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 12
+2026-05-07 03:08:35,797 | INFO | === Scan | mode=paper | bankroll=$59.96 ===
+2026-05-07 03:08:35,797 | INFO | [shared/weather] 37 open trades, 66% win rate (as of 2026-05-07T09:36:41.745938+08:00)
+2026-05-07 03:08:35,797 | INFO | [shared/crypto] BTC $81,240, ETH $2,334, 0 open, 0% wr (as of 2026-05-07T09:43:47.954834+08:00)
+2026-05-07 03:08:35,797 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T08:21:14.635298+08:00)
+2026-05-07 03:08:38,762 | INFO | Fetched 150 active markets
+2026-05-07 03:08:38,763 | INFO | 15 candidates after filters
+2026-05-07 03:08:38,763 | INFO | [2141907] Cache hit — price 0.54 unchanged, skipping LLM
+2026-05-07 03:08:38,763 | INFO | [1809560] Cache hit — price 0.29 unchanged, skipping LLM
+2026-05-07 03:08:38,763 | INFO | [2109450] Cache hit — price 0.72 unchanged, skipping LLM
+2026-05-07 03:08:38,764 | INFO | [2097821] Cache hit — price 0.25 unchanged, skipping LLM
+2026-05-07 03:08:38,764 | INFO | [2047424] Cache hit — price 0.23 unchanged, skipping LLM
+2026-05-07 03:08:38,764 | INFO | [2156002] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-07 03:08:38,764 | INFO | [2168958] Cache hit — price 0.82 unchanged, skipping LLM
+2026-05-07 03:08:38,764 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 03:08:38,764 | INFO | [2170230] Cache hit — price 0.15 unchanged, skipping LLM
+2026-05-07 03:08:38,764 | INFO | [2126542] Cache hit — price 0.14 unchanged, skipping LLM
+2026-05-07 03:08:44,093 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-07 03:08:44,093 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 5 markets
+2026-05-07 03:08:44,093 | WARNING | Batch evaluation failed (Unterminated string starting at: line 5 column 5 (char 66)), falling back to individual calls
+2026-05-07 03:08:44,776 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 03:08:44,776 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2166361
+2026-05-07 03:08:45,325 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 03:08:45,325 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2125009
+2026-05-07 03:08:45,860 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 03:08:45,860 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2121127
+2026-05-07 03:08:46,556 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 03:08:46,556 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2168964
+2026-05-07 03:08:47,163 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 03:08:47,163 | INFO | LLM response from groq/llama-3.3-70b-versatile for 842019
+2026-05-07 03:08:47,164 | INFO | [2166361] 'Bitcoin Up or Down on May 7?' mkt=0.29 est=0.55 conf=0.72 edge=+22.0% fee=$0.19 => YES $5.42
+2026-05-07 03:08:49,687 | INFO | [2125009] 'Pittsburgh Pirates vs. Arizona Diamondbacks' mkt=0.71 est=0.55 conf=0.58 edge=+12.9% fee=$0.11 => NO $3.15
+2026-05-07 03:08:52,181 | INFO | [2121127] 'LoL: Ultra Prime vs LNG Esports (BO3) - LPL Group Nirvana' mkt=0.20 est=0.35 conf=0.55 edge=+11.0% fee=$0.10 => YES $2.41
+2026-05-07 03:08:54,667 | INFO | [2168964] "Internazionali BNL d'Italia: Marton Fucsovics vs Dino Prizmi" mkt=0.12 est=0.60 conf=0.55 edge=+43.1% fee=$0.29 => YES $6.65
+2026-05-07 03:08:57,150 | INFO | [842019] 'Will Greece win Eurovision 2026?' mkt=0.12 est=0.06 conf=0.73 edge=+4.9% fee=$0.01 => skip $0.00
+2026-05-07 03:08:57,152 | INFO | Scan complete. Placed 4 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
