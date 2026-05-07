@@ -772,3 +772,13 @@
 2026-05-07 23:23:53,235 | INFO | ethereum 30d annualised vol: 47.0%
 2026-05-07 23:23:58,071 | INFO | Fetched 50 raw crypto markets from Polymarket
 2026-05-07 23:23:58,073 | INFO | Crypto scan complete. Placed 0 trades.
+2026-05-07 23:49:53,405 | INFO | === Crypto Scan | mode=paper | bankroll=$100.00 ===
+2026-05-07 23:49:53,406 | INFO | [shared/weather] 34 open trades, 65% win rate (as of 2026-05-08T07:22:28.463908+08:00)
+2026-05-07 23:49:53,406 | INFO | [shared/econ] CPI ok, GDP ok (as of 2026-05-08T02:30:59.009910+08:00)
+2026-05-07 23:49:53,406 | INFO | [shared/ev] 31 open trades, 13% win rate (as of 2026-05-08T07:48:30.894579+08:00)
+2026-05-07 23:49:53,456 | INFO | Prices — BTC: $80,009  ETH: $2,292
+2026-05-07 23:49:53,521 | INFO | bitcoin 30d annualised vol: 34.0%
+2026-05-07 23:49:54,589 | INFO | ethereum 30d annualised vol: 46.9%
+2026-05-07 23:49:59,369 | INFO | Fetched 50 raw crypto markets from Polymarket
+2026-05-07 23:49:59,372 | INFO | Crypto scan complete. Placed 0 trades.
+2026-05-07 23:50:09,641 | WARNING | Telegram send failed: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=10)
