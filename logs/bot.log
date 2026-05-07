@@ -6617,3 +6617,29 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 08:23:26,721 | INFO | [2047424] 'US x Iran diplomatic meeting by May 15, 2026?' mkt=0.18 est=0.05 conf=0.75 edge=+12.6% fee=$0.06 => NO $6.78
 2026-05-07 08:23:29,092 | INFO | [2099029] 'US x Iran permanent peace deal by May 15, 2026?' mkt=0.16 est=0.05 conf=0.75 edge=+10.1% fee=$0.04 => NO $5.20
 2026-05-07 08:23:31,497 | INFO | Scan complete. Placed 4 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 7 | LLM evals: 8
+2026-05-07 09:21:03,383 | INFO | === Scan | mode=paper | bankroll=$52.61 ===
+2026-05-07 09:21:03,383 | INFO | [shared/weather] 17 open trades, 65% win rate (as of 2026-05-07T17:20:37.956034+08:00)
+2026-05-07 09:21:03,383 | INFO | [shared/crypto] BTC $81,180, ETH $2,333, 0 open, 0% wr (as of 2026-05-07T17:02:54.270409+08:00)
+2026-05-07 09:21:03,383 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T14:54:57.235083+08:00)
+2026-05-07 09:21:04,984 | INFO | Fetched 150 active markets
+2026-05-07 09:21:04,985 | INFO | 15 candidates after filters
+2026-05-07 09:21:04,986 | INFO | [2149579] Cache hit — price 0.59 unchanged, skipping LLM
+2026-05-07 09:21:04,986 | INFO | [2141931] Cache hit — price 0.34 unchanged, skipping LLM
+2026-05-07 09:21:04,986 | INFO | [2156002] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-07 09:21:04,986 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 09:21:04,986 | INFO | [2101900] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 09:21:04,986 | INFO | [2168958] Cache hit — price 0.83 unchanged, skipping LLM
+2026-05-07 09:21:04,986 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 09:21:04,986 | INFO | [2166353] Cache hit — price 0.10 unchanged, skipping LLM
+2026-05-07 09:21:04,986 | INFO | [2168955] Cache hit — price 0.09 unchanged, skipping LLM
+2026-05-07 09:21:09,057 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
+2026-05-07 09:21:10,238 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 09:21:10,238 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 6 markets
+2026-05-07 09:21:10,238 | INFO | Batch evaluation succeeded: 6 markets in 1 LLM call
+2026-05-07 09:21:10,238 | INFO | [2141907] 'LoL: Dplus KIA vs KT Rolster (BO3) - LCK Rounds 1-2' mkt=0.45 est=0.45 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 09:21:10,238 | INFO | [2149574] 'Valorant: Rex Regum Qeon vs Global Esports (BO3) - VCT Pacif' mkt=0.40 est=0.40 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 09:21:10,238 | INFO | [2155929] "Internazionali BNL d'Italia: Roman Andres Burruchaga vs Matt" mkt=0.70 est=0.70 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 09:21:10,238 | INFO | [2141909] 'LoL: Dplus KIA vs KT Rolster - Game 2 Winner' mkt=0.83 est=0.85 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 09:21:10,238 | INFO | [2119226] 'Will Donald Trump announce that the United States blockade o' mkt=0.11 est=0.10 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 09:21:10,238 | INFO | [2074241] 'Will WTI Crude Oil (WTI) hit (LOW) $70 in May?' mkt=0.09 est=0.05 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 09:21:10,240 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 9 | LLM evals: 6
