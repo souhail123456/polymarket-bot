@@ -14,7 +14,7 @@
     "status": "ok"
   },
   "econ": {
-    "last_run": "2026-05-07T20:32:27.018792+08:00",
+    "last_run": "2026-05-08T02:31:06.528535+08:00",
     "trades_placed": 0,
     "trades_skipped": 0,
     "next_run": "every 6h",
