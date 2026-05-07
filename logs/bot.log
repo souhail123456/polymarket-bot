@@ -6901,33 +6901,3 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 16:14:08,394 | INFO | [2168977] "Internazionali BNL d'Italia: Cristian Garin vs Juan Manuel C" mkt=0.91 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 16:14:08,394 | INFO | [2126515] 'Israel x Iran permanent peace deal by May 31, 2026?' mkt=0.06 est=0.06 conf=0.80 edge=-4.6% fee=$0.05 => skip $0.00
 2026-05-07 16:14:08,395 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
-2026-05-07 18:03:21,849 | INFO | === Scan | mode=paper | bankroll=$41.48 ===
-2026-05-07 18:03:21,849 | INFO | [shared/weather] 20 open trades, 65% win rate (as of 2026-05-08T01:08:59.298109+08:00)
-2026-05-07 18:03:21,849 | INFO | [shared/crypto] BTC $79,893, ETH $2,294, 0 open, 0% wr (as of 2026-05-08T01:10:16.411936+08:00)
-2026-05-07 18:03:21,849 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T20:32:24.163490+08:00)
-2026-05-07 18:03:22,502 | INFO | Resolved 2166361: YES -> LOSS pnl=$-5.42 balance=$36.06
-2026-05-07 18:03:23,500 | INFO | Resolved 2121081: NO -> LOSS pnl=$-4.23 balance=$31.83
-2026-05-07 18:03:23,946 | INFO | Resolved 2175577: NO -> LOSS pnl=$-2.97 balance=$28.86
-2026-05-07 18:03:24,403 | INFO | Resolved 2121105: NO -> LOSS pnl=$-4.03 balance=$24.83
-2026-05-07 18:03:25,180 | INFO | Fetched 150 active markets
-2026-05-07 18:03:25,181 | INFO | 15 candidates after filters
-2026-05-07 18:03:25,181 | INFO | [2170666] Cache hit — price 0.51 unchanged, skipping LLM
-2026-05-07 18:03:25,181 | INFO | [2132501] Cache hit — price 0.49 unchanged, skipping LLM
-2026-05-07 18:03:25,181 | INFO | [2132509] Cache hit — price 0.35 unchanged, skipping LLM
-2026-05-07 18:03:25,181 | INFO | [2132779] Cache hit — price 0.17 unchanged, skipping LLM
-2026-05-07 18:03:25,181 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
-2026-05-07 18:03:25,181 | INFO | [2166353] Cache hit — price 0.12 unchanged, skipping LLM
-2026-05-07 18:03:25,181 | INFO | [2132780] Cache hit — price 0.07 unchanged, skipping LLM
-2026-05-07 18:03:31,898 | WARNING | LLM call failed gemini/gemini-2.5-flash: HTTP Error 503: Service Unavailable
-2026-05-07 18:03:34,312 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-07 18:03:34,312 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 8 markets
-2026-05-07 18:03:34,312 | INFO | Batch evaluation succeeded: 8 markets in 1 LLM call
-2026-05-07 18:03:34,312 | INFO | [2144505] 'Knicks vs. 76ers' mkt=0.51 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-07 18:03:34,312 | INFO | [2132518] 'Tampa Bay Rays vs. Boston Red Sox' mkt=0.49 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-07 18:03:34,312 | INFO | [2132506] 'Cleveland Guardians vs. Kansas City Royals' mkt=0.47 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-07 18:03:34,313 | INFO | [2132513] 'Baltimore Orioles vs. Miami Marlins' mkt=0.46 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-07 18:03:34,313 | INFO | [2160065] 'Indian Premier League: Lucknow Super Giants vs Royal Challen' mkt=0.62 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-07 18:03:34,313 | INFO | [2137011] 'Spurs vs. Timberwolves' mkt=0.67 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-07 18:03:34,313 | INFO | [2175581] "Internazionali BNL d'Italia: Marie Bouzkova vs Taylor Townse" mkt=0.23 est=0.50 conf=0.40 edge=+0.0% fee=$0.00 => skip $0.00
-2026-05-07 18:03:34,313 | INFO | [2128535] 'Epstein suicide note released by May 8?' mkt=0.17 est=0.20 conf=0.60 edge=-1.3% fee=$0.04 => skip $0.00
-2026-05-07 18:03:34,315 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 7 | LLM evals: 8
