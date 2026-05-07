@@ -6643,3 +6643,32 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 09:21:10,238 | INFO | [2119226] 'Will Donald Trump announce that the United States blockade o' mkt=0.11 est=0.10 conf=0.30 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 09:21:10,238 | INFO | [2074241] 'Will WTI Crude Oil (WTI) hit (LOW) $70 in May?' mkt=0.09 est=0.05 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 09:21:10,240 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 9 | LLM evals: 6
+2026-05-07 10:17:59,130 | INFO | === Scan | mode=paper | bankroll=$52.61 ===
+2026-05-07 10:17:59,130 | INFO | [shared/weather] 17 open trades, 65% win rate (as of 2026-05-07T18:17:43.183580+08:00)
+2026-05-07 10:17:59,130 | INFO | [shared/crypto] BTC $81,180, ETH $2,333, 0 open, 0% wr (as of 2026-05-07T17:02:54.270409+08:00)
+2026-05-07 10:17:59,130 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-07T14:54:57.235083+08:00)
+2026-05-07 10:18:00,460 | INFO | Fetched 150 active markets
+2026-05-07 10:18:00,462 | INFO | 15 candidates after filters
+2026-05-07 10:18:00,540 | INFO | [2125964] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 7?' => true_p=0.99 conf=0.97 | BITCOIN is $80,862, 1155071% above threshold $7 — very likely YES
+2026-05-07 10:18:00,541 | INFO | 1 markets resolved by pre-filter (no LLM needed)
+2026-05-07 10:18:00,541 | INFO | [2149579] Cache hit — price 0.59 unchanged, skipping LLM
+2026-05-07 10:18:00,541 | INFO | [2141931] Cache hit — price 0.34 unchanged, skipping LLM
+2026-05-07 10:18:00,541 | INFO | [2155929] Cache hit — price 0.71 unchanged, skipping LLM
+2026-05-07 10:18:00,541 | INFO | [2156002] Cache hit — price 0.20 unchanged, skipping LLM
+2026-05-07 10:18:00,541 | INFO | [2168958] Cache hit — price 0.82 unchanged, skipping LLM
+2026-05-07 10:18:00,541 | INFO | [2017273] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 10:18:00,541 | INFO | [2101900] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-07 10:18:00,541 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
+2026-05-07 10:18:00,542 | INFO | [2119226] Cache hit — price 0.11 unchanged, skipping LLM
+2026-05-07 10:18:00,542 | INFO | [2166353] Cache hit — price 0.10 unchanged, skipping LLM
+2026-05-07 10:18:00,542 | INFO | [2168955] Cache hit — price 0.08 unchanged, skipping LLM
+2026-05-07 10:18:08,417 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
+2026-05-07 10:18:08,520 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-07 10:18:09,103 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-07 10:18:09,103 | INFO | Batch LLM response from groq/llama-3.3-70b-versatile for 3 markets
+2026-05-07 10:18:09,103 | INFO | Batch evaluation succeeded: 3 markets in 1 LLM call
+2026-05-07 10:18:09,103 | INFO | [2137011] 'Spurs vs. Timberwolves' mkt=0.64 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 10:18:09,103 | INFO | [2125964] 'Will the price of Bitcoin be above $80,000 on May 7?' mkt=0.88 est=0.99 conf=0.97 edge=+10.9% fee=$0.06 => YES $10.00
+2026-05-07 10:18:11,486 | INFO | [2121081] 'LoL: Weibo Gaming vs Team WE (BO3) - LPL Group Ascend' mkt=0.90 est=0.54 conf=0.70 edge=+31.1% fee=$0.19 => NO $4.23
+2026-05-07 10:18:13,767 | INFO | [2155934] "Internazionali BNL d'Italia: Zizou Bergs vs Terence Atmane" mkt=0.09 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-07 10:18:13,769 | INFO | Scan complete. Placed 2 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 11 | LLM evals: 3
