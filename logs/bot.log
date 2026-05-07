@@ -6901,6 +6901,7 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 16:14:08,394 | INFO | [2168977] "Internazionali BNL d'Italia: Cristian Garin vs Juan Manuel C" mkt=0.91 est=0.50 conf=0.20 edge=+0.0% fee=$0.00 => skip $0.00
 2026-05-07 16:14:08,394 | INFO | [2126515] 'Israel x Iran permanent peace deal by May 31, 2026?' mkt=0.06 est=0.06 conf=0.80 edge=-4.6% fee=$0.05 => skip $0.00
 2026-05-07 16:14:08,395 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 10 | LLM evals: 5
+<<<<<<< Updated upstream
 2026-05-07 21:22:29,362 | INFO | === Scan | mode=paper | bankroll=$41.48 ===
 2026-05-07 21:22:29,363 | INFO | [shared/weather] 25 open trades, 65% win rate (as of 2026-05-08T04:53:45.477207+08:00)
 2026-05-07 21:22:29,363 | INFO | [shared/crypto] BTC $80,160, ETH $2,295, 0 open, 0% wr (as of 2026-05-08T04:03:26.636506+08:00)
@@ -6973,3 +6974,5 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-07 21:23:07,701 | INFO | [2166353] 'Iran closes its airspace by May 15?' mkt=0.23 est=0.65 conf=0.85 edge=+38.2% fee=$0.20 => YES $5.26
 2026-05-07 21:23:10,267 | INFO | [2133309] 'Will the price of Bitcoin be above $78,000 on May 8?' mkt=0.91 est=0.99 conf=0.97 edge=+7.8% fee=$0.00 => skip $0.00
 2026-05-07 21:23:10,269 | INFO | Scan complete. Placed 2 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 5 | LLM evals: 9
+=======
+>>>>>>> Stashed changes
