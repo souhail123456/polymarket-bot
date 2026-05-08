@@ -310,3 +310,20 @@
 2026-05-08 06:32:28,707 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.10 model=0.10 edge=+0.3% => skip $0.00
 2026-05-08 06:32:28,708 | INFO | [1087313] type=unemployment | Will US unemployment reach at least 10.0% in 2026? | mkt=0.04 model=0.10 edge=+4.1% => skip $0.00
 2026-05-08 06:32:28,708 | INFO | Econ scan complete. Placed 0 trades.
+2026-05-08 12:23:54,477 | INFO | === Econ Scan | mode=paper | bankroll=$100.00 ===
+2026-05-08 12:23:54,478 | INFO | [shared/weather] 36 open trades, 65% win rate (as of 2026-05-08T19:35:47.477168+08:00)
+2026-05-08 12:23:54,478 | INFO | [shared/crypto] BTC $80,256, ETH $2,292, 0 open, 0% wr (as of 2026-05-08T19:36:32.625467+08:00)
+2026-05-08 12:23:54,478 | INFO | [shared/ev] 31 open trades, 13% win rate (as of 2026-05-08T08:38:26.657296+08:00)
+2026-05-08 12:23:55,006 | INFO | Fetching nowcast data sources...
+2026-05-08 12:23:56,533 | INFO | Cleveland Fed 1Y inflation expectation (FRED): 3.25872162
+2026-05-08 12:23:57,115 | INFO | GDPNow estimate: 3.7%
+2026-05-08 12:23:57,552 | INFO | Fed Funds actual rate (FRED): 3.64%
+2026-05-08 12:23:57,683 | INFO | Unemployment (FRED): 4.3% (prev: 4.4%)
+2026-05-08 12:23:57,822 | INFO | Nonfarm payrolls change (FRED): +178.0K
+2026-05-08 12:23:57,967 | INFO | Core PCE YoY (FRED): 3.20276%
+2026-05-08 12:23:57,968 | INFO | Data sources: CPI=ok | GDP=ok | FedWatch=ok | Unemployment=ok | Payrolls=ok | PCE=ok
+2026-05-08 12:24:00,691 | INFO | Found 164 unique econ markets
+2026-05-08 12:24:00,695 | INFO | [1123360] type=cpi | Will the UK’s 2026 inflation be at least 4.5%? | mkt=0.41 model=0.10 edge=+30.7% => NO $11.39
+2026-05-08 12:24:00,697 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.10 model=0.10 edge=+0.3% => skip $0.00
+2026-05-08 12:24:00,697 | INFO | [1087313] type=unemployment | Will US unemployment reach at least 10.0% in 2026? | mkt=0.04 model=0.10 edge=+4.1% => skip $0.00
+2026-05-08 12:24:02,170 | INFO | Econ scan complete. Placed 1 trades.
