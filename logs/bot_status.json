@@ -1,8 +1,8 @@
 {
   "weather": {
-    "last_run": "2026-05-09T02:31:54.426428+08:00",
+    "last_run": "2026-05-09T03:00:39.733410+08:00",
     "trades_placed": 1,
-    "trades_skipped": 201,
+    "trades_skipped": 200,
     "next_run": "every 30min",
     "status": "ok"
   },
