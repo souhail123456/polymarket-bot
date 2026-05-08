@@ -6965,3 +6965,42 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-08 00:38:24,344 | INFO | [2074241] 'Will WTI Crude Oil (WTI) hit (LOW) $70 in May?' mkt=0.12 est=0.65 conf=0.85 edge=+49.1% fee=$0.21 => YES $4.82
 2026-05-08 00:38:26,655 | INFO | [2133309] 'Will the price of Bitcoin be above $78,000 on May 8?' mkt=0.94 est=0.99 conf=0.97 edge=+4.3% fee=$0.00 => skip $0.00
 2026-05-08 00:38:26,658 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 9
+2026-05-08 06:38:33,137 | INFO | === Scan | mode=paper | bankroll=$3.85 ===
+2026-05-08 06:38:33,137 | INFO | [shared/weather] 38 open trades, 65% win rate (as of 2026-05-08T13:48:17.051232+08:00)
+2026-05-08 06:38:33,137 | INFO | [shared/crypto] BTC $79,683, ETH $2,281, 0 open, 0% wr (as of 2026-05-08T12:34:51.525197+08:00)
+2026-05-08 06:38:33,137 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-08T14:32:25.214176+08:00)
+2026-05-08 06:38:34,877 | INFO | Resolved 2132513: YES -> LOSS pnl=$-4.35 balance=$-0.50
+2026-05-08 06:38:35,599 | INFO | Fetched 150 active markets
+2026-05-08 06:38:35,601 | INFO | 11 candidates after filters
+2026-05-08 06:38:35,684 | INFO | [2133311] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 8?' => true_p=0.99 conf=0.97 | BITCOIN is $79,438, 992875% above threshold $8 — very likely YES
+2026-05-08 06:38:35,684 | INFO | [2133309] Pre-filter hit: 'Will the price of Bitcoin be above $78,000 on May 8?' => true_p=0.99 conf=0.97 | BITCOIN is $79,438, 992875% above threshold $8 — very likely YES
+2026-05-08 06:38:35,684 | INFO | 2 markets resolved by pre-filter (no LLM needed)
+2026-05-08 06:38:35,684 | INFO | [ARBITRAGE] Threshold ordering violation: BTC above $8=0.28 vs above $8=0.94
+2026-05-08 06:38:35,685 | INFO | [ARBITRAGE] Detected 2 arbitrage opportunities total
+2026-05-08 06:38:35,685 | INFO | [2144505] Cache hit — price 0.48 unchanged, skipping LLM
+2026-05-08 06:38:35,685 | INFO | [2132780] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-08 06:38:35,685 | INFO | [1808970] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-08 06:38:42,291 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-08 06:38:42,291 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 6 markets
+2026-05-08 06:38:42,291 | WARNING | Batch evaluation failed (Expecting property name enclosed in double quotes: line 5 column 23 (char 84)), falling back to individual calls
+2026-05-08 06:38:42,872 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 06:38:42,872 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2092843
+2026-05-08 06:38:43,462 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 06:38:43,462 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2152553
+2026-05-08 06:38:43,928 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 06:38:43,928 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2177509
+2026-05-08 06:38:44,453 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 06:38:44,454 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2132779
+2026-05-08 06:38:44,795 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 06:38:44,795 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2182249
+2026-05-08 06:38:45,193 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 06:38:45,193 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2034747
+2026-05-08 06:38:45,193 | INFO | [2092843] 'Will FC Barcelona win on 2026-05-10?' mkt=0.59 est=0.55 conf=0.58 edge=+1.5% fee=$0.03 => skip $0.00
+2026-05-08 06:38:45,193 | INFO | [2152553] 'Pistons vs. Cavaliers' mkt=0.40 est=0.45 conf=0.55 edge=+2.5% fee=$0.03 => skip $0.00
+2026-05-08 06:38:45,193 | INFO | [2133311] 'Will the price of Bitcoin be above $80,000 on May 8?' mkt=0.28 est=0.99 conf=0.97 edge=+66.9% fee=$0.04 => skip $0.00
+2026-05-08 06:38:45,193 | INFO | [2177509] "Internazionali BNL d'Italia: Nuno Borges vs Rafael Jodar" mkt=0.20 est=0.60 conf=0.55 edge=+35.5% fee=$0.04 => skip $0.00
+2026-05-08 06:38:45,193 | INFO | [2132779] 'Will Bitcoin dip to $70,000 in May?' mkt=0.20 est=0.12 conf=0.75 edge=+6.5% fee=$0.01 => skip $0.00
+2026-05-08 06:38:45,193 | INFO | [2182249] 'US x Iran permanent peace deal by May 11, 2026?' mkt=0.10 est=0.02 conf=0.75 edge=+8.0% fee=$0.01 => skip $0.00
+2026-05-08 06:38:45,193 | INFO | [2133309] 'Will the price of Bitcoin be above $78,000 on May 8?' mkt=0.94 est=0.99 conf=0.97 edge=+4.6% fee=$0.00 => skip $0.00
+2026-05-08 06:38:45,194 | INFO | [2034747] 'Will the US confirm that aliens exist by May 31?' mkt=0.06 est=0.01 conf=0.85 edge=+4.3% fee=$0.00 => skip $0.00
+2026-05-08 06:38:45,196 | INFO | Scan complete. Placed 0 trades. Pre-filter: 2 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 6
