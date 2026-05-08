@@ -7044,3 +7044,17 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-08 19:32:52,512 | INFO | Batch evaluation succeeded: 13 markets in 1 LLM call
 2026-05-08 19:32:52,512 | INFO | Bankroll $-3.93 too low — stopping scan
 2026-05-08 19:32:52,513 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 13
+2026-05-08 21:23:41,150 | INFO | === Scan | mode=paper | bankroll=$-6.34 ===
+2026-05-08 21:23:41,150 | INFO | [shared/weather] 39 open trades, 65% win rate (as of 2026-05-09T04:50:40.615696+08:00)
+2026-05-08 21:23:41,150 | INFO | [shared/crypto] BTC $80,166, ETH $2,307, 0 open, 0% wr (as of 2026-05-09T04:55:21.080329+08:00)
+2026-05-08 21:23:41,150 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok (as of 2026-05-09T02:26:06.646209+08:00)
+2026-05-08 21:23:42,438 | INFO | Resolved 2101897: NO -> LOSS pnl=$-3.54 balance=$-9.88
+2026-05-08 21:23:43,738 | INFO | Resolved 2101900: YES -> LOSS pnl=$-4.05 balance=$-13.93
+2026-05-08 21:23:44,651 | INFO | Fetched 150 active markets
+2026-05-08 21:23:44,652 | INFO | 15 candidates after filters
+2026-05-08 21:23:44,653 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
+2026-05-08 21:24:03,273 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-08 21:24:03,273 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 14 markets
+2026-05-08 21:24:03,273 | INFO | Batch evaluation succeeded: 14 markets in 1 LLM call
+2026-05-08 21:24:03,273 | INFO | Bankroll $-6.34 too low — stopping scan
+2026-05-08 21:24:03,275 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
