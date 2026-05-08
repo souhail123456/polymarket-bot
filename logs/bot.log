@@ -7031,3 +7031,19 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-08 13:35:39,362 | INFO | [2182437] 'Francavilla: Ryan Seggerman vs Jay Clarke' mkt=0.84 est=0.55 conf=0.70 edge=+24.8% fee=$0.04 => skip $0.00
 2026-05-08 13:35:39,362 | INFO | [2121150] 'LoL: JD Gaming vs Bilibili Gaming (BO3) - LPL Group Ascend' mkt=0.15 est=0.55 conf=0.75 edge=+35.3% fee=$0.04 => skip $0.00
 2026-05-08 13:35:39,364 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 11
+2026-05-08 15:34:18,166 | INFO | === Scan | mode=paper | bankroll=$-3.93 ===
+2026-05-08 15:34:18,166 | INFO | [shared/weather] 38 open trades, 65% win rate (as of 2026-05-08T22:41:11.642969+08:00)
+2026-05-08 15:34:18,166 | INFO | [shared/crypto] BTC $80,201, ETH $2,286, 0 open, 0% wr (as of 2026-05-08T22:42:40.803153+08:00)
+2026-05-08 15:34:18,166 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-08T20:23:57.969004+08:00)
+2026-05-08 15:34:21,881 | INFO | Fetched 150 active markets
+2026-05-08 15:34:21,882 | INFO | 15 candidates after filters
+2026-05-08 15:34:21,882 | INFO | [2144505] Cache hit — price 0.48 unchanged, skipping LLM
+2026-05-08 15:34:21,882 | INFO | [2092843] Cache hit — price 0.58 unchanged, skipping LLM
+2026-05-08 15:34:21,882 | INFO | [2182400] Cache hit — price 0.34 unchanged, skipping LLM
+2026-05-08 15:34:21,882 | INFO | [2132780] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-08 15:34:21,882 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
+2026-05-08 15:34:38,980 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-08 15:34:38,980 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 10 markets
+2026-05-08 15:34:38,981 | INFO | Batch evaluation succeeded: 10 markets in 1 LLM call
+2026-05-08 15:34:38,981 | INFO | Bankroll $-3.93 too low — stopping scan
+2026-05-08 15:34:38,982 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 5 | LLM evals: 10
