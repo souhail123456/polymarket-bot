@@ -7,7 +7,7 @@
     "status": "ok"
   },
   "crypto": {
-    "last_run": "2026-05-08T14:45:49.687993+08:00",
+    "last_run": "2026-05-08T16:40:43.802694+08:00",
     "trades_placed": 0,
     "trades_skipped": 0,
     "next_run": "every 30min",
@@ -21,15 +21,9 @@
     "status": "ok"
   },
   "ev": {
-<<<<<<< Updated upstream
-    "last_run": "2026-05-08T16:34:09.027943+08:00",
-    "trades_placed": 0,
-    "trades_skipped": 12,
-=======
     "last_run": "2026-05-08T08:38:26.658554+08:00",
     "trades_placed": 4,
     "trades_skipped": 9,
->>>>>>> Stashed changes
     "next_run": "every 30min",
     "status": "ok"
   }
