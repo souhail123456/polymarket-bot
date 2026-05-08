@@ -6965,36 +6965,3 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-08 00:38:24,344 | INFO | [2074241] 'Will WTI Crude Oil (WTI) hit (LOW) $70 in May?' mkt=0.12 est=0.65 conf=0.85 edge=+49.1% fee=$0.21 => YES $4.82
 2026-05-08 00:38:26,655 | INFO | [2133309] 'Will the price of Bitcoin be above $78,000 on May 8?' mkt=0.94 est=0.99 conf=0.97 edge=+4.3% fee=$0.00 => skip $0.00
 2026-05-08 00:38:26,658 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 9
-2026-05-08 04:32:20,595 | INFO | === Scan | mode=paper | bankroll=$3.85 ===
-2026-05-08 04:32:20,595 | INFO | [shared/weather] 33 open trades, 65% win rate (as of 2026-05-08T11:07:17.453838+08:00)
-2026-05-08 04:32:20,595 | INFO | [shared/crypto] BTC $79,419, ETH $2,271, 0 open, 0% wr (as of 2026-05-08T11:13:36.345313+08:00)
-2026-05-08 04:32:20,595 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-08T08:22:35.852624+08:00)
-2026-05-08 04:32:22,019 | INFO | Resolved 2132513: YES -> LOSS pnl=$-4.35 balance=$-0.50
-2026-05-08 04:32:22,839 | INFO | Fetched 150 active markets
-2026-05-08 04:32:22,840 | INFO | 9 candidates after filters
-2026-05-08 04:32:22,980 | INFO | [2133311] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 8?' => true_p=0.99 conf=0.97 | BITCOIN is $79,698, 996125% above threshold $8 — very likely YES
-2026-05-08 04:32:22,981 | INFO | [2133309] Pre-filter hit: 'Will the price of Bitcoin be above $78,000 on May 8?' => true_p=0.99 conf=0.97 | BITCOIN is $79,698, 996125% above threshold $8 — very likely YES
-2026-05-08 04:32:22,981 | INFO | 2 markets resolved by pre-filter (no LLM needed)
-2026-05-08 04:32:22,981 | INFO | [ARBITRAGE] Threshold ordering violation: BTC above $8=0.36 vs above $8=0.94
-2026-05-08 04:32:22,981 | INFO | [ARBITRAGE] Detected 2 arbitrage opportunities total
-2026-05-08 04:32:22,981 | INFO | [2144505] Cache hit — price 0.48 unchanged, skipping LLM
-2026-05-08 04:32:22,981 | INFO | [2132780] Cache hit — price 0.07 unchanged, skipping LLM
-2026-05-08 04:32:22,981 | INFO | [1808970] Cache hit — price 0.07 unchanged, skipping LLM
-2026-05-08 04:32:45,353 | INFO | LLM call OK: gemini/gemini-2.5-flash
-2026-05-08 04:32:45,354 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 4 markets
-2026-05-08 04:32:45,354 | WARNING | Batch evaluation failed (Expecting value: line 4 column 24 (char 55)), falling back to individual calls
-2026-05-08 04:32:45,740 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-08 04:32:45,740 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2177509
-2026-05-08 04:32:46,339 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-08 04:32:46,339 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2132779
-2026-05-08 04:32:46,917 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-08 04:32:46,917 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2132520
-2026-05-08 04:32:47,481 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-08 04:32:47,481 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2182249
-2026-05-08 04:32:47,481 | INFO | [2133311] 'Will the price of Bitcoin be above $80,000 on May 8?' mkt=0.36 est=0.99 conf=0.97 edge=+59.3% fee=$0.03 => skip $0.00
-2026-05-08 04:32:47,481 | INFO | [2177509] "Internazionali BNL d'Italia: Nuno Borges vs Rafael Jodar" mkt=0.20 est=0.60 conf=0.55 edge=+35.5% fee=$0.04 => skip $0.00
-2026-05-08 04:32:47,481 | INFO | [2132779] 'Will Bitcoin dip to $70,000 in May?' mkt=0.18 est=0.12 conf=0.75 edge=+5.6% fee=$0.01 => skip $0.00
-2026-05-08 04:32:47,481 | INFO | [2132520] 'St. Louis Cardinals vs. San Diego Padres' mkt=0.83 est=0.55 conf=0.58 edge=+24.3% fee=$0.04 => skip $0.00
-2026-05-08 04:32:47,481 | INFO | [2182249] 'US x Iran permanent peace deal by May 11, 2026?' mkt=0.10 est=0.02 conf=0.75 edge=+7.0% fee=$0.00 => skip $0.00
-2026-05-08 04:32:47,481 | INFO | [2133309] 'Will the price of Bitcoin be above $78,000 on May 8?' mkt=0.94 est=0.99 conf=0.97 edge=+4.8% fee=$0.00 => skip $0.00
-2026-05-08 04:32:47,483 | INFO | Scan complete. Placed 0 trades. Pre-filter: 2 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 4
