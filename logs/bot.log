@@ -6965,3 +6965,49 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-08 00:38:24,344 | INFO | [2074241] 'Will WTI Crude Oil (WTI) hit (LOW) $70 in May?' mkt=0.12 est=0.65 conf=0.85 edge=+49.1% fee=$0.21 => YES $4.82
 2026-05-08 00:38:26,655 | INFO | [2133309] 'Will the price of Bitcoin be above $78,000 on May 8?' mkt=0.94 est=0.99 conf=0.97 edge=+4.3% fee=$0.00 => skip $0.00
 2026-05-08 00:38:26,658 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 9
+2026-05-08 11:31:40,500 | INFO | === Scan | mode=paper | bankroll=$3.85 ===
+2026-05-08 11:31:40,501 | INFO | [shared/weather] 35 open trades, 65% win rate (as of 2026-05-08T18:35:46.007774+08:00)
+2026-05-08 11:31:40,501 | INFO | [shared/crypto] BTC $80,002, ETH $2,287, 0 open, 0% wr (as of 2026-05-08T18:38:44.379705+08:00)
+2026-05-08 11:31:40,501 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-08T14:32:25.214176+08:00)
+2026-05-08 11:31:41,127 | INFO | Resolved 2101893: YES -> LOSS pnl=$-3.43 balance=$0.42
+2026-05-08 11:31:42,273 | INFO | Resolved 2132513: YES -> LOSS pnl=$-4.35 balance=$-3.93
+2026-05-08 11:31:42,827 | INFO | Fetched 150 active markets
+2026-05-08 11:31:42,828 | INFO | 12 candidates after filters
+2026-05-08 11:31:42,901 | INFO | [2133311] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 8?' => true_p=0.99 conf=0.97 | BITCOIN is $80,291, 1003538% above threshold $8 — very likely YES
+2026-05-08 11:31:42,901 | INFO | 1 markets resolved by pre-filter (no LLM needed)
+2026-05-08 11:31:42,902 | INFO | [2017273] Cache hit — price 0.18 unchanged, skipping LLM
+2026-05-08 11:31:42,902 | INFO | [2132779] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-08 11:31:42,902 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
+2026-05-08 11:32:06,873 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-08 11:32:06,873 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 8 markets
+2026-05-08 11:32:06,873 | WARNING | Batch evaluation failed (Unterminated string starting at: line 6 column 18 (char 102)), falling back to individual calls
+2026-05-08 11:32:07,435 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 11:32:07,436 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2177498
+2026-05-08 11:32:07,915 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 11:32:07,916 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2092843
+2026-05-08 11:32:08,433 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 11:32:08,433 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2177513
+2026-05-08 11:32:08,933 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 11:32:08,933 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2152553
+2026-05-08 11:32:08,985 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-08 11:32:09,289 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-08 11:32:09,289 | INFO | LLM response from groq/llama-3.1-8b-instant for 2182400
+2026-05-08 11:32:09,336 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-08 11:32:09,669 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-08 11:32:09,669 | INFO | LLM response from groq/llama-3.1-8b-instant for 2121150
+2026-05-08 11:32:09,722 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-08 11:32:10,409 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-08 11:32:10,409 | INFO | LLM response from groq/llama-3.1-8b-instant for 2182249
+2026-05-08 11:32:10,466 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-08 11:32:10,798 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-08 11:32:10,798 | INFO | LLM response from groq/llama-3.1-8b-instant for 2177511
+2026-05-08 11:32:10,798 | INFO | [2177498] "Internazionali BNL d'Italia: Anastasia Potapova vs Karolina " mkt=0.46 est=0.42 conf=0.55 edge=+1.2% fee=$0.02 => skip $0.00
+2026-05-08 11:32:10,798 | INFO | [2092843] 'Will FC Barcelona win on 2026-05-10?' mkt=0.59 est=0.55 conf=0.57 edge=+1.5% fee=$0.03 => skip $0.00
+2026-05-08 11:32:10,798 | INFO | [2177513] "Internazionali BNL d'Italia: Alex de Minaur vs Matteo Arnald" mkt=0.60 est=0.55 conf=0.58 edge=+2.5% fee=$0.03 => skip $0.00
+2026-05-08 11:32:10,798 | INFO | [2152553] 'Pistons vs. Cavaliers' mkt=0.40 est=0.45 conf=0.55 edge=+2.5% fee=$0.03 => skip $0.00
+2026-05-08 11:32:10,798 | INFO | [2182400] "Internazionali BNL d'Italia: Dino Prizmic vs Novak Djokovic" mkt=0.35 est=0.15 conf=0.70 edge=+18.7% fee=$0.02 => skip $0.00
+2026-05-08 11:32:10,798 | INFO | [2133311] 'Will the price of Bitcoin be above $80,000 on May 8?' mkt=0.68 est=0.99 conf=0.97 edge=+29.9% fee=$0.02 => skip $0.00
+2026-05-08 11:32:10,798 | INFO | [2121150] 'LoL: JD Gaming vs Bilibili Gaming (BO3) - LPL Group Ascend' mkt=0.32 est=0.55 conf=0.75 edge=+20.1% fee=$0.03 => skip $0.00
+2026-05-08 11:32:10,798 | INFO | [2182249] 'US x Iran permanent peace deal by May 11, 2026?' mkt=0.09 est=0.35 conf=0.85 edge=+21.9% fee=$0.05 => skip $0.00
+2026-05-08 11:32:10,799 | INFO | [2177511] "Internazionali BNL d'Italia: Caty McNally vs Iga Swiatek" mkt=0.07 est=0.25 conf=0.70 edge=+13.2% fee=$0.05 => skip $0.00
+2026-05-08 11:32:10,801 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 8
