@@ -6965,3 +6965,58 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-08 00:38:24,344 | INFO | [2074241] 'Will WTI Crude Oil (WTI) hit (LOW) $70 in May?' mkt=0.12 est=0.65 conf=0.85 edge=+49.1% fee=$0.21 => YES $4.82
 2026-05-08 00:38:26,655 | INFO | [2133309] 'Will the price of Bitcoin be above $78,000 on May 8?' mkt=0.94 est=0.99 conf=0.97 edge=+4.3% fee=$0.00 => skip $0.00
 2026-05-08 00:38:26,658 | INFO | Scan complete. Placed 4 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 3 | LLM evals: 9
+2026-05-08 12:31:05,646 | INFO | === Scan | mode=paper | bankroll=$3.85 ===
+2026-05-08 12:31:05,646 | INFO | [shared/weather] 36 open trades, 65% win rate (as of 2026-05-08T19:35:47.477168+08:00)
+2026-05-08 12:31:05,646 | INFO | [shared/crypto] BTC $80,256, ETH $2,292, 0 open, 0% wr (as of 2026-05-08T19:36:32.625467+08:00)
+2026-05-08 12:31:05,647 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-08T20:23:57.969004+08:00)
+2026-05-08 12:31:06,435 | INFO | Resolved 2101893: YES -> LOSS pnl=$-3.43 balance=$0.42
+2026-05-08 12:31:07,543 | INFO | Resolved 2132513: YES -> LOSS pnl=$-4.35 balance=$-3.93
+2026-05-08 12:31:08,172 | INFO | Fetched 150 active markets
+2026-05-08 12:31:08,173 | INFO | 12 candidates after filters
+2026-05-08 12:31:08,267 | INFO | [2133311] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 8?' => true_p=0.99 conf=0.97 | BITCOIN is $80,292, 1003550% above threshold $8 — very likely YES
+2026-05-08 12:31:08,267 | INFO | 1 markets resolved by pre-filter (no LLM needed)
+2026-05-08 12:31:08,267 | INFO | [2132779] Cache hit — price 0.17 unchanged, skipping LLM
+2026-05-08 12:31:08,267 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
+2026-05-08 12:31:16,960 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-08 12:31:16,960 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 9 markets
+2026-05-08 12:31:16,960 | WARNING | Batch evaluation failed (Unterminated string starting at: line 6 column 18 (char 102)), falling back to individual calls
+2026-05-08 12:31:17,524 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 12:31:17,524 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2183801
+2026-05-08 12:31:18,068 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 12:31:18,069 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2092843
+2026-05-08 12:31:18,750 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-08 12:31:18,751 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2152553
+2026-05-08 12:31:18,787 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-08 12:31:19,035 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-08 12:31:19,035 | INFO | LLM response from groq/llama-3.1-8b-instant for 2182400
+2026-05-08 12:31:19,070 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-08 12:31:19,316 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-08 12:31:19,316 | INFO | LLM response from groq/llama-3.1-8b-instant for 2121150
+2026-05-08 12:31:19,378 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-08 12:31:19,635 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-08 12:31:19,635 | INFO | LLM response from groq/llama-3.1-8b-instant for 2175538
+2026-05-08 12:31:19,669 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-08 12:31:20,035 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-08 12:31:20,035 | INFO | LLM response from groq/llama-3.1-8b-instant for 2177498
+2026-05-08 12:31:20,074 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-08 12:31:20,350 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-08 12:31:20,350 | INFO | LLM response from groq/llama-3.1-8b-instant for 2182249
+2026-05-08 12:31:20,384 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-08 12:31:20,423 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-08 12:31:20,598 | WARNING | LLM call failed cerebras/llama3.1-70b: HTTP Error 404: Not Found
+2026-05-08 12:31:20,725 | WARNING | LLM call failed openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-08 12:31:20,726 | WARNING | estimate_probability failed for 2034747: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+cerebras/llama3.1-70b: HTTP Error 404: Not Found
+openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-08 12:31:20,726 | INFO | [2183801] 'Dota 2: Nigma Galaxy vs PlayTime - Game 1 Winner' mkt=0.48 est=0.55 conf=0.72 edge=+4.4% fee=$0.03 => skip $0.00
+2026-05-08 12:31:20,726 | INFO | [2092843] 'Will FC Barcelona win on 2026-05-10?' mkt=0.58 est=0.55 conf=0.52 edge=+0.0% fee=$0.00 => skip $0.00
+2026-05-08 12:31:20,726 | INFO | [2152553] 'Pistons vs. Cavaliers' mkt=0.40 est=0.45 conf=0.55 edge=+2.5% fee=$0.03 => skip $0.00
+2026-05-08 12:31:20,726 | INFO | [2182400] "Internazionali BNL d'Italia: Dino Prizmic vs Novak Djokovic" mkt=0.34 est=0.15 conf=0.75 edge=+17.8% fee=$0.02 => skip $0.00
+2026-05-08 12:31:20,726 | INFO | [2133311] 'Will the price of Bitcoin be above $80,000 on May 8?' mkt=0.68 est=0.99 conf=0.97 edge=+29.9% fee=$0.02 => skip $0.00
+2026-05-08 12:31:20,726 | INFO | [2121150] 'LoL: JD Gaming vs Bilibili Gaming (BO3) - LPL Group Ascend' mkt=0.32 est=0.55 conf=0.70 edge=+20.1% fee=$0.03 => skip $0.00
+2026-05-08 12:31:20,726 | INFO | [2175538] 'Bitcoin Up or Down on May 8?' mkt=0.73 est=0.42 conf=0.85 edge=+27.8% fee=$0.04 => skip $0.00
+2026-05-08 12:31:20,727 | INFO | [2177498] "Internazionali BNL d'Italia: Anastasia Potapova vs Karolina " mkt=0.79 est=0.55 conf=0.75 edge=+19.6% fee=$0.04 => skip $0.00
+2026-05-08 12:31:20,727 | INFO | [2182249] 'US x Iran permanent peace deal by May 11, 2026?' mkt=0.10 est=0.35 conf=0.85 edge=+21.0% fee=$0.05 => skip $0.00
+2026-05-08 12:31:20,728 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 2 | LLM evals: 9
