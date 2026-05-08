@@ -7031,3 +7031,16 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-08 13:35:39,362 | INFO | [2182437] 'Francavilla: Ryan Seggerman vs Jay Clarke' mkt=0.84 est=0.55 conf=0.70 edge=+24.8% fee=$0.04 => skip $0.00
 2026-05-08 13:35:39,362 | INFO | [2121150] 'LoL: JD Gaming vs Bilibili Gaming (BO3) - LPL Group Ascend' mkt=0.15 est=0.55 conf=0.75 edge=+35.3% fee=$0.04 => skip $0.00
 2026-05-08 13:35:39,364 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 11
+2026-05-08 19:32:28,365 | INFO | === Scan | mode=paper | bankroll=$-3.93 ===
+2026-05-08 19:32:28,366 | INFO | [shared/weather] 37 open trades, 65% win rate (as of 2026-05-09T03:00:39.732945+08:00)
+2026-05-08 19:32:28,366 | INFO | [shared/crypto] BTC $80,191, ETH $2,318, 0 open, 0% wr (as of 2026-05-09T02:39:11.238845+08:00)
+2026-05-08 19:32:28,366 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok (as of 2026-05-09T02:26:06.646209+08:00)
+2026-05-08 19:32:29,412 | INFO | Resolved 2121127: YES -> LOSS pnl=$-2.41 balance=$-6.34
+2026-05-08 19:32:30,929 | INFO | Fetched 150 active markets
+2026-05-08 19:32:30,930 | INFO | 14 candidates after filters
+2026-05-08 19:32:30,930 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
+2026-05-08 19:32:52,511 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-08 19:32:52,511 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 13 markets
+2026-05-08 19:32:52,512 | INFO | Batch evaluation succeeded: 13 markets in 1 LLM call
+2026-05-08 19:32:52,512 | INFO | Bankroll $-3.93 too low — stopping scan
+2026-05-08 19:32:52,513 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 13
