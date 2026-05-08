@@ -7,14 +7,14 @@
     "updated_at": "2026-05-08T09:38:27.367132+08:00"
   },
   "crypto": {
-    "btc_price": 79782,
-    "eth_price": 2284.73,
+    "btc_price": 79780,
+    "eth_price": 2285.97,
     "btc_30d_vol": 0.336,
-    "eth_30d_vol": 0.4619,
+    "eth_30d_vol": 0.4618,
     "trades_open": 0,
     "win_rate": 0.0,
-    "summary": "BTC $79,782, ETH $2,285, 0 open, 0% wr",
-    "updated_at": "2026-05-08T08:56:30.412848+08:00"
+    "summary": "BTC $79,780, ETH $2,286, 0 open, 0% wr",
+    "updated_at": "2026-05-08T09:44:09.886687+08:00"
   },
   "econ": {
     "cpi_data_available": true,
@@ -37,6 +37,6 @@
     "trades_resolved": 23,
     "win_rate": 0.13,
     "summary": "31 open trades, 13% win rate",
-    "updated_at": "2026-05-08T09:37:49.432021+08:00"
+    "updated_at": "2026-05-08T08:38:26.657296+08:00"
   }
 }
