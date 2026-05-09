@@ -7221,18 +7221,3 @@ cerebras/llama3.1-70b: HTTP Error 404: Not Found
 openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-09 09:33:21,986 | INFO | Bankroll $-13.93 too low — stopping scan
 2026-05-09 09:33:21,988 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 13
-2026-05-09 13:32:19,395 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
-2026-05-09 13:32:19,395 | INFO | [shared/weather] 33 open trades, 65% win rate (as of 2026-05-09T20:50:24.787404+08:00)
-2026-05-09 13:32:19,395 | INFO | [shared/crypto] BTC $80,394, ETH $2,316, 0 open, 0% wr (as of 2026-05-09T20:55:39.536601+08:00)
-2026-05-09 13:32:19,395 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-09T20:15:01.808240+08:00)
-2026-05-09 13:32:20,578 | INFO | Fetched 150 active markets
-2026-05-09 13:32:20,579 | INFO | 13 candidates after filters
-2026-05-09 13:32:20,690 | INFO | [2141003] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 9?' => true_p=0.99 conf=0.97 | BITCOIN is $80,354, 892722% above threshold $9 — very likely YES
-2026-05-09 13:32:20,690 | INFO | 1 markets resolved by pre-filter (no LLM needed)
-2026-05-09 13:32:20,691 | INFO | [566187] Cache hit — price 0.81 unchanged, skipping LLM
-2026-05-09 13:32:20,691 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
-2026-05-09 13:32:34,459 | INFO | LLM call OK: gemini/gemini-2.5-flash
-2026-05-09 13:32:34,459 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 10 markets
-2026-05-09 13:32:34,459 | INFO | Batch evaluation succeeded: 10 markets in 1 LLM call
-2026-05-09 13:32:34,459 | INFO | Bankroll $-13.93 too low — stopping scan
-2026-05-09 13:32:34,461 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 2 | LLM evals: 10
