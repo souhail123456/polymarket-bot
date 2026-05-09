@@ -7221,33 +7221,3 @@ cerebras/llama3.1-70b: HTTP Error 404: Not Found
 openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-09 09:33:21,986 | INFO | Bankroll $-13.93 too low — stopping scan
 2026-05-09 09:33:21,988 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 13
-2026-05-09 14:25:06,684 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
-2026-05-09 14:25:06,684 | INFO | [shared/weather] 36 open trades, 65% win rate (as of 2026-05-09T21:33:56.702367+08:00)
-2026-05-09 14:25:06,684 | INFO | [shared/crypto] BTC $80,348, ETH $2,314, 0 open, 0% wr (as of 2026-05-09T21:36:06.017606+08:00)
-2026-05-09 14:25:06,684 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-09T20:15:01.808240+08:00)
-2026-05-09 14:25:08,291 | INFO | Fetched 150 active markets
-2026-05-09 14:25:08,293 | INFO | 10 candidates after filters
-2026-05-09 14:25:08,293 | INFO | [566187] Cache hit — price 0.81 unchanged, skipping LLM
-2026-05-09 14:25:08,293 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
-2026-05-09 14:25:33,757 | INFO | LLM call OK: gemini/gemini-2.5-flash
-2026-05-09 14:25:33,757 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 8 markets
-2026-05-09 14:25:33,757 | WARNING | Batch evaluation failed (Unterminated string starting at: line 6 column 18 (char 102)), falling back to individual calls
-2026-05-09 14:25:34,200 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-09 14:25:34,201 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2184805
-2026-05-09 14:25:34,542 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-09 14:25:34,542 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2207358
-2026-05-09 14:25:35,088 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-09 14:25:35,088 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2149038
-2026-05-09 14:25:35,685 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-09 14:25:35,685 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2017413
-2026-05-09 14:25:36,188 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-09 14:25:36,188 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2184837
-2026-05-09 14:25:36,839 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-09 14:25:36,840 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2017344
-2026-05-09 14:25:37,428 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-09 14:25:37,428 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2017395
-2026-05-09 14:25:37,528 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-09 14:25:37,841 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-09 14:25:37,841 | INFO | LLM response from groq/llama-3.1-8b-instant for 2184790
-2026-05-09 14:25:37,841 | INFO | Bankroll $-13.93 too low — stopping scan
-2026-05-09 14:25:37,843 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 2 | LLM evals: 8
