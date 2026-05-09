@@ -1,10 +1,10 @@
 {
   "weather": {
-    "trades_open": 42,
+    "trades_open": 44,
     "trades_resolved": 330,
     "win_rate": 0.65,
-    "summary": "42 open trades, 65% win rate",
-    "updated_at": "2026-05-10T06:48:08.830362+08:00"
+    "summary": "44 open trades, 65% win rate",
+    "updated_at": "2026-05-10T07:20:49.425309+08:00"
   },
   "crypto": {
     "btc_price": 80797,
