@@ -7221,21 +7221,3 @@ cerebras/llama3.1-70b: HTTP Error 404: Not Found
 openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-09 09:33:21,986 | INFO | Bankroll $-13.93 too low — stopping scan
 2026-05-09 09:33:21,988 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 13
-2026-05-09 10:48:07,348 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
-2026-05-09 10:48:07,348 | INFO | [shared/weather] 32 open trades, 65% win rate (as of 2026-05-09T18:24:36.526490+08:00)
-2026-05-09 10:48:07,348 | INFO | [shared/crypto] BTC $80,208, ETH $2,312, 0 open, 0% wr (as of 2026-05-09T18:27:36.415025+08:00)
-2026-05-09 10:48:07,348 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-09T14:39:23.624915+08:00)
-2026-05-09 10:48:10,319 | INFO | Fetched 150 active markets
-2026-05-09 10:48:10,320 | INFO | 15 candidates after filters
-2026-05-09 10:48:10,522 | INFO | [2141003] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 9?' => true_p=0.99 conf=0.97 | BITCOIN is $80,308, 892211% above threshold $9 — very likely YES
-2026-05-09 10:48:10,522 | INFO | 1 markets resolved by pre-filter (no LLM needed)
-2026-05-09 10:48:10,523 | INFO | [566187] Cache hit — price 0.81 unchanged, skipping LLM
-2026-05-09 10:48:10,523 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
-2026-05-09 10:48:34,475 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
-2026-05-09 10:48:34,697 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
-2026-05-09 10:48:34,927 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-09 10:48:36,309 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-09 10:48:36,309 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 12 markets
-2026-05-09 10:48:36,310 | INFO | Batch evaluation succeeded: 12 markets in 1 LLM call
-2026-05-09 10:48:36,310 | INFO | Bankroll $-13.93 too low — stopping scan
-2026-05-09 10:48:36,311 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 2 | LLM evals: 12
