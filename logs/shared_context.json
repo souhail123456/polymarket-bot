@@ -28,8 +28,9 @@
     "unemp_data_available": true,
     "unemp_rate": null,
     "payroll_data_available": true,
-    "summary": "CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok",
-    "updated_at": "2026-05-09T02:26:06.646209+08:00"
+    "pce_data_available": true,
+    "summary": "CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok",
+    "updated_at": "2026-05-09T08:23:00.798779+08:00"
   },
   "ev": {
     "trades_open": 28,
