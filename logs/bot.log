@@ -7153,3 +7153,35 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-09 01:36:58,052 | INFO | Batch evaluation succeeded: 14 markets in 1 LLM call
 2026-05-09 01:36:58,052 | INFO | Bankroll $-13.93 too low — stopping scan
 2026-05-09 01:36:58,054 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
+2026-05-09 04:36:17,511 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
+2026-05-09 04:36:17,511 | INFO | [shared/weather] 40 open trades, 65% win rate (as of 2026-05-09T11:08:10.453627+08:00)
+2026-05-09 04:36:17,511 | INFO | [shared/crypto] BTC $80,454, ETH $2,318, 0 open, 0% wr (as of 2026-05-09T11:15:32.733582+08:00)
+2026-05-09 04:36:17,511 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-09T08:23:00.798779+08:00)
+2026-05-09 04:36:19,385 | INFO | Fetched 150 active markets
+2026-05-09 04:36:19,386 | INFO | 11 candidates after filters
+2026-05-09 04:36:19,508 | INFO | [2141003] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 9?' => true_p=0.99 conf=0.97 | BITCOIN is $80,453, 893822% above threshold $9 — very likely YES
+2026-05-09 04:36:19,508 | INFO | 1 markets resolved by pre-filter (no LLM needed)
+2026-05-09 04:36:19,508 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
+2026-05-09 04:36:34,105 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-09 04:36:34,105 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 9 markets
+2026-05-09 04:36:34,105 | WARNING | Batch evaluation failed (Unterminated string starting at: line 6 column 18 (char 101)), falling back to individual calls
+2026-05-09 04:36:34,576 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-09 04:36:34,576 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2017413
+2026-05-09 04:36:35,088 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-09 04:36:35,088 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2155802
+2026-05-09 04:36:35,555 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-09 04:36:35,556 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2128330
+2026-05-09 04:36:36,065 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-09 04:36:36,066 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2158568
+2026-05-09 04:36:36,705 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-09 04:36:36,705 | INFO | LLM response from groq/llama-3.3-70b-versatile for 1795527
+2026-05-09 04:36:37,333 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-09 04:36:37,333 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2158591
+2026-05-09 04:36:37,796 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-09 04:36:37,796 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2017344
+2026-05-09 04:36:38,191 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-09 04:36:38,191 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2139990
+2026-05-09 04:36:38,694 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-09 04:36:38,694 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2017395
+2026-05-09 04:36:38,694 | INFO | Bankroll $-13.93 too low — stopping scan
+2026-05-09 04:36:38,696 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 9
