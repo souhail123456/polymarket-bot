@@ -12747,8 +12747,6 @@
 2026-05-10 10:38:19,782 | INFO | [Shanghai] Will the highest temperature in Shanghai be 31°C o mkt=0.17 model=0.05 edge=+11.6% fee=$0.04 => NO $4.00
 2026-05-10 10:38:19,782 | INFO | [Shanghai] Will the highest temperature in Shanghai be 32°C o mkt=0.07 model=0.05 edge=+1.9% fee=$0.00 => skip $0.00
 2026-05-10 10:38:24,328 | INFO | Weather scan complete. Placed 3 trades.
-<<<<<<< Updated upstream
-=======
 2026-05-10 11:20:38,453 | INFO | === Weather Scan | mode=paper | bankroll=$48.58 ===
 2026-05-10 11:20:38,453 | INFO | [shared/crypto] BTC $80,746, ETH $2,329, 0 open, 0% wr (as of 2026-05-10T15:21:58.807214+08:00)
 2026-05-10 11:20:38,453 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T14:50:57.886601+08:00)
@@ -12788,4 +12786,3 @@
 2026-05-10 11:25:07,575 | INFO | [Shanghai] Will the highest temperature in Shanghai be 30°C o mkt=0.14 model=0.05 edge=+8.6% fee=$0.00 => skip $0.00
 2026-05-10 11:25:07,575 | INFO | [Shanghai] Will the highest temperature in Shanghai be 32°C o mkt=0.07 model=0.05 edge=+1.9% fee=$0.00 => skip $0.00
 2026-05-10 11:25:07,578 | INFO | Weather scan complete. Placed 0 trades.
->>>>>>> Stashed changes
