@@ -7242,41 +7242,9 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-10 07:19:03,937 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T14:50:57.886601+08:00)
 2026-05-10 07:19:05,346 | INFO | Fetched 150 active markets
 2026-05-10 07:19:05,347 | INFO | 15 candidates after filters
-2026-05-10 15:47:42,220 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
-2026-05-10 15:47:42,221 | INFO | [shared/weather] 47 open trades, 64% win rate (as of 2026-05-10T23:25:14.231429+08:00)
-2026-05-10 15:47:42,221 | INFO | [shared/crypto] BTC $80,982, ETH $2,334, 0 open, 0% wr (as of 2026-05-10T23:26:06.481908+08:00)
-2026-05-10 15:47:42,221 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T20:14:30.278501+08:00)
-2026-05-10 15:47:43,957 | INFO | Fetched 150 active markets
-2026-05-10 15:47:43,958 | INFO | 8 candidates after filters
-2026-05-10 15:47:43,959 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
-2026-05-10 15:48:04,714 | INFO | LLM call OK: gemini/gemini-2.5-flash
-2026-05-10 15:48:04,715 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 7 markets
-2026-05-10 15:48:04,715 | WARNING | Batch evaluation failed (Unterminated string starting at: line 6 column 18 (char 104)), falling back to individual calls
-2026-05-10 15:48:04,994 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-10 15:48:04,994 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2154786
-2026-05-10 15:48:05,028 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-10 15:48:05,353 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-10 15:48:05,353 | INFO | LLM response from groq/llama-3.1-8b-instant for 2202780
-2026-05-10 15:48:05,410 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-10 15:48:05,873 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-10 15:48:05,874 | INFO | LLM response from groq/llama-3.1-8b-instant for 566188
-2026-05-10 15:48:05,909 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-10 15:48:06,511 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-10 15:48:06,511 | INFO | LLM response from groq/llama-3.1-8b-instant for 2167256
-2026-05-10 15:48:06,548 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-10 15:48:07,324 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-10 15:48:07,324 | INFO | LLM response from groq/llama-3.1-8b-instant for 2186842
-2026-05-10 15:48:07,361 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-10 15:48:07,640 | INFO | LLM call OK: groq/llama-3.1-8b-instant
-2026-05-10 15:48:07,640 | INFO | LLM response from groq/llama-3.1-8b-instant for 2136974
-2026-05-10 15:48:07,680 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-2026-05-10 15:48:07,713 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
-2026-05-10 15:48:07,892 | WARNING | LLM call failed cerebras/llama3.1-70b: HTTP Error 404: Not Found
-2026-05-10 15:48:08,027 | WARNING | LLM call failed openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
-2026-05-10 15:48:08,027 | WARNING | estimate_probability failed for 2214591: All LLM providers failed:
-groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
-groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
-cerebras/llama3.1-70b: HTTP Error 404: Not Found
-openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
-2026-05-10 15:48:08,027 | INFO | Bankroll $-13.93 too low — stopping scan
-2026-05-10 15:48:08,029 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 7
+2026-05-10 16:20:05,969 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
+2026-05-10 16:20:05,969 | INFO | [shared/weather] 47 open trades, 64% win rate (as of 2026-05-10T23:51:50.433792+08:00)
+2026-05-10 16:20:05,969 | INFO | [shared/crypto] BTC $80,982, ETH $2,334, 0 open, 0% wr (as of 2026-05-10T23:26:06.481908+08:00)
+2026-05-10 16:20:05,970 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T20:14:30.278501+08:00)
+2026-05-10 16:20:07,469 | INFO | Fetched 150 active markets
+2026-05-10 16:20:07,470 | INFO | 11 candidates after filters
