@@ -1348,3 +1348,9 @@
 2026-05-10 15:26:01,748 | INFO | ethereum 30d annualised vol: 45.5%
 2026-05-10 15:26:06,480 | INFO | Fetched 50 raw crypto markets from Polymarket
 2026-05-10 15:26:06,482 | INFO | Crypto scan complete. Placed 0 trades.
+2026-05-10 15:50:42,708 | INFO | === Crypto Scan | mode=paper | bankroll=$100.00 ===
+2026-05-10 15:50:42,708 | INFO | [shared/weather] 47 open trades, 64% win rate (as of 2026-05-10T23:25:14.231429+08:00)
+2026-05-10 15:50:42,708 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T20:14:30.278501+08:00)
+2026-05-10 15:50:42,708 | INFO | [shared/ev] 26 open trades, 11% win rate (as of 2026-05-10T23:48:08.028684+08:00)
+2026-05-10 15:50:42,795 | ERROR | Failed to fetch CoinGecko prices: 429 Client Error: Too Many Requests for url: https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum&vs_currencies=usd
+2026-05-10 15:50:42,796 | ERROR | Cannot fetch current prices — aborting scan.
