@@ -7242,3 +7242,47 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-10 07:19:03,937 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T14:50:57.886601+08:00)
 2026-05-10 07:19:05,346 | INFO | Fetched 150 active markets
 2026-05-10 07:19:05,347 | INFO | 15 candidates after filters
+2026-05-10 08:15:38,393 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
+2026-05-10 08:15:38,394 | INFO | [shared/weather] 45 open trades, 64% win rate (as of 2026-05-10T14:07:13.854698+08:00)
+2026-05-10 08:15:38,394 | INFO | [shared/crypto] BTC $80,746, ETH $2,329, 0 open, 0% wr (as of 2026-05-10T15:21:58.807214+08:00)
+2026-05-10 08:15:38,394 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T14:50:57.886601+08:00)
+2026-05-10 08:15:39,993 | INFO | Fetched 150 active markets
+2026-05-10 08:15:39,995 | INFO | 15 candidates after filters
+2026-05-10 08:16:06,167 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-10 08:16:06,167 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 15 markets
+2026-05-10 08:16:06,167 | WARNING | Batch evaluation failed (Expecting value: line 1 column 1 (char 0)), falling back to individual calls
+2026-05-10 08:16:06,452 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:06,453 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2154786
+2026-05-10 08:16:06,767 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:06,767 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2140591
+2026-05-10 08:16:07,186 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:07,186 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2092390
+2026-05-10 08:16:07,665 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:07,665 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2093058
+2026-05-10 08:16:08,130 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:08,130 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2136980
+2026-05-10 08:16:08,507 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:08,507 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2142054
+2026-05-10 08:16:08,940 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:08,941 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2093047
+2026-05-10 08:16:09,288 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:09,288 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2142053
+2026-05-10 08:16:09,729 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:09,729 | INFO | LLM response from groq/llama-3.3-70b-versatile for 566188
+2026-05-10 08:16:10,115 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:10,115 | INFO | LLM response from groq/llama-3.3-70b-versatile for 566187
+2026-05-10 08:16:10,618 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:10,619 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2189920
+2026-05-10 08:16:11,110 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-10 08:16:11,110 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2214546
+2026-05-10 08:16:11,161 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-10 08:16:11,671 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-10 08:16:11,671 | INFO | LLM response from groq/llama-3.1-8b-instant for 2092847
+2026-05-10 08:16:11,725 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-10 08:16:12,136 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-10 08:16:12,137 | INFO | LLM response from groq/llama-3.1-8b-instant for 2202784
+2026-05-10 08:16:12,184 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-10 08:16:12,558 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-10 08:16:12,558 | INFO | LLM response from groq/llama-3.1-8b-instant for 2154469
+2026-05-10 08:16:12,558 | INFO | Bankroll $-13.93 too low — stopping scan
+2026-05-10 08:16:12,560 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 0 | LLM evals: 15
