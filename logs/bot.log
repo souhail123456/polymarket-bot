@@ -7242,9 +7242,3 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-10 07:19:03,937 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T14:50:57.886601+08:00)
 2026-05-10 07:19:05,346 | INFO | Fetched 150 active markets
 2026-05-10 07:19:05,347 | INFO | 15 candidates after filters
-2026-05-10 20:17:17,664 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
-2026-05-10 20:17:17,665 | INFO | [shared/weather] 49 open trades, 64% win rate (as of 2026-05-11T03:54:30.121766+08:00)
-2026-05-10 20:17:17,665 | INFO | [shared/crypto] BTC $81,329, ETH $2,362, 0 open, 0% wr (as of 2026-05-11T03:56:28.948834+08:00)
-2026-05-10 20:17:17,665 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-11T02:16:33.054321+08:00)
-2026-05-10 20:17:19,326 | INFO | Fetched 150 active markets
-2026-05-10 20:17:19,327 | INFO | 15 candidates after filters
