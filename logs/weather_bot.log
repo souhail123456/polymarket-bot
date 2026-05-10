@@ -12557,8 +12557,6 @@
 2026-05-10 06:07:02,321 | INFO | [Shanghai] Skip — only 31 ensemble members
 2026-05-10 06:07:02,321 | INFO | [Shanghai] Skip — only 31 ensemble members
 2026-05-10 06:07:13,854 | INFO | Weather scan complete. Placed 8 trades.
-<<<<<<< Updated upstream
-=======
 2026-05-10 08:15:09,853 | INFO | === Weather Scan | mode=paper | bankroll=$57.79 ===
 2026-05-10 08:15:09,854 | INFO | [shared/crypto] BTC $80,746, ETH $2,329, 0 open, 0% wr (as of 2026-05-10T15:21:58.807214+08:00)
 2026-05-10 08:15:09,854 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T14:50:57.886601+08:00)
@@ -12612,4 +12610,3 @@
 2026-05-10 08:19:33,707 | INFO | [Shanghai] Will the highest temperature in Shanghai be 32°C o mkt=0.06 model=0.05 edge=+0.7% fee=$0.00 => skip $0.00
 2026-05-10 08:19:33,707 | INFO | [Shanghai] Will the highest temperature in Shanghai be 34°C o mkt=0.02 model=0.05 edge=-2.0% fee=$0.00 => skip $0.00
 2026-05-10 08:19:37,978 | INFO | Weather scan complete. Placed 3 trades.
->>>>>>> Stashed changes
