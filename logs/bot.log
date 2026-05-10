@@ -7236,28 +7236,3 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-10 00:39:23,687 | INFO | Batch evaluation succeeded: 14 markets in 1 LLM call
 2026-05-10 00:39:23,688 | INFO | Bankroll $-13.93 too low — stopping scan
 2026-05-10 00:39:23,689 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
-2026-05-10 04:46:09,238 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
-2026-05-10 04:46:09,239 | INFO | [shared/weather] 42 open trades, 64% win rate (as of 2026-05-10T11:11:32.386989+08:00)
-2026-05-10 04:46:09,239 | INFO | [shared/crypto] BTC $80,812, ETH $2,329, 0 open, 0% wr (as of 2026-05-10T11:48:03.834680+08:00)
-2026-05-10 04:46:09,239 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T08:21:42.402266+08:00)
-2026-05-10 04:46:12,436 | INFO | Fetched 150 active markets
-2026-05-10 04:46:12,437 | INFO | 8 candidates after filters
-2026-05-10 04:46:12,437 | INFO | [842019] Cache hit — price 0.12 unchanged, skipping LLM
-2026-05-10 04:46:12,437 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
-2026-05-10 04:46:23,439 | INFO | LLM call OK: gemini/gemini-2.5-flash
-2026-05-10 04:46:23,439 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 6 markets
-2026-05-10 04:46:23,439 | WARNING | Batch evaluation failed (Invalid control character at: line 6 column 12 (char 95)), falling back to individual calls
-2026-05-10 04:46:23,910 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-10 04:46:23,910 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2154786
-2026-05-10 04:46:24,313 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-10 04:46:24,313 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2214524
-2026-05-10 04:46:24,702 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-10 04:46:24,702 | INFO | LLM response from groq/llama-3.3-70b-versatile for 566187
-2026-05-10 04:46:25,281 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-10 04:46:25,281 | INFO | LLM response from groq/llama-3.3-70b-versatile for 566188
-2026-05-10 04:46:25,857 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-10 04:46:25,857 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2154469
-2026-05-10 04:46:26,287 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
-2026-05-10 04:46:26,288 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2136974
-2026-05-10 04:46:26,288 | INFO | Bankroll $-13.93 too low — stopping scan
-2026-05-10 04:46:26,289 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 2 | LLM evals: 6
