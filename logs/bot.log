@@ -7242,6 +7242,7 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-10 07:19:03,937 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-10T14:50:57.886601+08:00)
 2026-05-10 07:19:05,346 | INFO | Fetched 150 active markets
 2026-05-10 07:19:05,347 | INFO | 15 candidates after filters
+<<<<<<< Updated upstream
 2026-05-10 19:50:12,762 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
 2026-05-10 19:50:12,762 | INFO | [shared/weather] 48 open trades, 64% win rate (as of 2026-05-11T03:30:54.391906+08:00)
 2026-05-10 19:50:12,762 | INFO | [shared/crypto] BTC $81,248, ETH $2,359, 0 open, 0% wr (as of 2026-05-11T02:53:06.333365+08:00)
@@ -7324,3 +7325,5 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-10 19:50:40,043 | INFO | LLM response from groq/llama-3.1-8b-instant for 566187
 2026-05-10 19:50:40,043 | INFO | Bankroll $-13.93 too low — stopping scan
 2026-05-10 19:50:40,045 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 0 | LLM evals: 15
+=======
+>>>>>>> Stashed changes
