@@ -7248,3 +7248,34 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-11 00:39:58,072 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-11T08:22:27.661536+08:00)
 2026-05-11 00:39:59,283 | INFO | Fetched 150 active markets
 2026-05-11 00:39:59,284 | INFO | 8 candidates after filters
+2026-05-11 03:09:35,233 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
+2026-05-11 03:09:35,234 | INFO | [shared/weather] 42 open trades, 64% win rate (as of 2026-05-11T09:39:07.296433+08:00)
+2026-05-11 03:09:35,234 | INFO | [shared/crypto] BTC $81,246, ETH $2,352, 0 open, 0% wr (as of 2026-05-11T10:23:44.526959+08:00)
+2026-05-11 03:09:35,234 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-11T08:22:27.661536+08:00)
+2026-05-11 03:09:36,603 | INFO | Fetched 150 active markets
+2026-05-11 03:09:36,604 | INFO | 10 candidates after filters
+2026-05-11 03:09:36,759 | INFO | [2155896] Pre-filter hit: 'Will the price of Bitcoin be above $82,000 on May 11?' => true_p=0.99 conf=0.97 | BITCOIN is $81,057, 8105600% above threshold $1 — very likely YES
+2026-05-11 03:09:36,760 | INFO | [2155893] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 11?' => true_p=0.99 conf=0.97 | BITCOIN is $81,057, 8105600% above threshold $1 — very likely YES
+2026-05-11 03:09:36,760 | INFO | 2 markets resolved by pre-filter (no LLM needed)
+2026-05-11 03:09:36,760 | INFO | [ARBITRAGE] Threshold ordering violation: BTC above $1=0.18 vs above $1=0.85
+2026-05-11 03:09:36,760 | INFO | [ARBITRAGE] Detected 2 arbitrage opportunities total
+2026-05-11 03:09:36,760 | INFO | [1808970] Cache hit — price 0.06 unchanged, skipping LLM
+2026-05-11 03:09:43,041 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-11 03:09:43,041 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 7 markets
+2026-05-11 03:09:43,041 | WARNING | Batch evaluation failed (Expecting value: line 1 column 1 (char 0)), falling back to individual calls
+2026-05-11 03:09:43,400 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-11 03:09:43,400 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2150550
+2026-05-11 03:09:43,906 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-11 03:09:43,906 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2214715
+2026-05-11 03:09:44,361 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-11 03:09:44,361 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2167112
+2026-05-11 03:09:44,887 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-11 03:09:44,887 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2182330
+2026-05-11 03:09:45,514 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-11 03:09:45,514 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2136974
+2026-05-11 03:09:45,979 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-11 03:09:45,979 | INFO | LLM response from groq/llama-3.3-70b-versatile for 566188
+2026-05-11 03:09:46,595 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-11 03:09:46,595 | INFO | LLM response from groq/llama-3.3-70b-versatile for 566187
+2026-05-11 03:09:46,595 | INFO | Bankroll $-13.93 too low — stopping scan
+2026-05-11 03:09:46,597 | INFO | Scan complete. Placed 0 trades. Pre-filter: 2 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 7
