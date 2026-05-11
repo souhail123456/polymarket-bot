@@ -7248,3 +7248,10 @@ openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-11 00:39:58,072 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-11T08:22:27.661536+08:00)
 2026-05-11 00:39:59,283 | INFO | Fetched 150 active markets
 2026-05-11 00:39:59,284 | INFO | 8 candidates after filters
+2026-05-11 01:37:51,684 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
+2026-05-11 01:37:51,684 | INFO | [shared/weather] 43 open trades, 64% win rate (as of 2026-05-11T08:37:27.260656+08:00)
+2026-05-11 01:37:51,684 | INFO | [shared/crypto] BTC $81,446, ETH $2,352, 0 open, 0% wr (as of 2026-05-11T09:01:18.834341+08:00)
+2026-05-11 01:37:51,684 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-11T08:22:27.661536+08:00)
+2026-05-11 01:37:52,939 | INFO | Fetched 150 active markets
+2026-05-11 01:37:52,941 | INFO | 9 candidates after filters
+2026-05-11 01:37:53,037 | INFO | [2155893] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 11?' => true_p=0.99 conf=0.97 | BITCOIN is $81,522, 8152100% above threshold $1 — very likely YES
