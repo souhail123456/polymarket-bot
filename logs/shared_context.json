@@ -1,20 +1,20 @@
 {
   "weather": {
-    "trades_open": 40,
-    "trades_resolved": 356,
-    "win_rate": 0.63,
-    "summary": "40 open trades, 63% win rate",
-    "updated_at": "2026-05-11T11:09:44.065767+08:00"
+    "trades_open": 42,
+    "trades_resolved": 354,
+    "win_rate": 0.64,
+    "summary": "42 open trades, 64% win rate",
+    "updated_at": "2026-05-11T09:39:07.296433+08:00"
   },
   "crypto": {
-    "btc_price": 81246,
-    "eth_price": 2352.42,
-    "btc_30d_vol": 0.3394,
-    "eth_30d_vol": 0.4558,
+    "btc_price": 80706,
+    "eth_price": 2328.68,
+    "btc_30d_vol": 0.3436,
+    "eth_30d_vol": 0.4593,
     "trades_open": 0,
     "win_rate": 0.0,
-    "summary": "BTC $81,246, ETH $2,352, 0 open, 0% wr",
-    "updated_at": "2026-05-11T10:23:44.526959+08:00"
+    "summary": "BTC $80,706, ETH $2,329, 0 open, 0% wr",
+    "updated_at": "2026-05-11T11:48:22.311981+08:00"
   },
   "econ": {
     "cpi_data_available": true,
