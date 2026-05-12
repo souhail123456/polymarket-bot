@@ -7,16 +7,6 @@
     "updated_at": "2026-05-12T20:15:35.816281+08:00"
   },
   "crypto": {
-<<<<<<< Updated upstream
-    "btc_price": 80803,
-    "eth_price": 2286.77,
-    "btc_30d_vol": 0.3164,
-    "eth_30d_vol": 0.4396,
-    "trades_open": 0,
-    "win_rate": 0.0,
-    "summary": "BTC $80,803, ETH $2,287, 0 open, 0% wr",
-    "updated_at": "2026-05-12T20:13:46.035376+08:00"
-=======
     "btc_price": 80784,
     "eth_price": 2291.35,
     "btc_30d_vol": 0.3166,
@@ -25,7 +15,6 @@
     "win_rate": 0.0,
     "summary": "BTC $80,784, ETH $2,291, 0 open, 0% wr",
     "updated_at": "2026-05-12T18:23:13.288834+08:00"
->>>>>>> Stashed changes
   },
   "econ": {
     "cpi_data_available": true,
@@ -41,17 +30,13 @@
     "payroll_data_available": true,
     "pce_data_available": true,
     "summary": "CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok",
-    "updated_at": "2026-05-12T14:53:30.637583+08:00"
+    "updated_at": "2026-05-12T20:37:40.669917+08:00"
   },
   "ev": {
     "trades_open": 26,
     "trades_resolved": 28,
     "win_rate": 0.11,
     "summary": "26 open trades, 11% win rate",
-<<<<<<< Updated upstream
-    "updated_at": "2026-05-12T20:12:04.755106+08:00"
-=======
     "updated_at": "2026-05-12T08:37:07.107325+08:00"
->>>>>>> Stashed changes
   }
 }
