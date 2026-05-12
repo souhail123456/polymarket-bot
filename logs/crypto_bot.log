@@ -1753,3 +1753,12 @@
 2026-05-12 20:39:00,333 | INFO | ethereum 30d annualised vol: 44.1%
 2026-05-12 20:39:05,135 | INFO | Fetched 50 raw crypto markets from Polymarket
 2026-05-12 20:39:05,138 | INFO | Crypto scan complete. Placed 0 trades.
+2026-05-12 21:33:37,237 | INFO | === Crypto Scan | mode=paper | bankroll=$100.00 ===
+2026-05-12 21:33:37,237 | INFO | [shared/weather] 35 open trades, 62% win rate (as of 2026-05-13T05:05:12.735561+08:00)
+2026-05-12 21:33:37,237 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-13T02:33:39.235958+08:00)
+2026-05-12 21:33:37,237 | INFO | [shared/ev] 26 open trades, 11% win rate (as of 2026-05-12T08:37:07.107325+08:00)
+2026-05-12 21:33:37,371 | INFO | Prices — BTC: $80,633  ETH: $2,286
+2026-05-12 21:33:37,434 | INFO | bitcoin 30d annualised vol: 31.8%
+2026-05-12 21:33:38,498 | INFO | ethereum 30d annualised vol: 44.0%
+2026-05-12 21:33:43,274 | INFO | Fetched 50 raw crypto markets from Polymarket
+2026-05-12 21:33:43,276 | INFO | Crypto scan complete. Placed 0 trades.
