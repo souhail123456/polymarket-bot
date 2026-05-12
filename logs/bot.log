@@ -7444,15 +7444,3 @@ cerebras/llama3.1-70b: HTTP Error 404: Not Found
 openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-11 22:25:22,436 | INFO | Bankroll $-13.93 too low — stopping scan
 2026-05-11 22:25:22,438 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
-2026-05-11 23:48:18,913 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
-2026-05-11 23:48:18,913 | INFO | [shared/weather] 48 open trades, 63% win rate (as of 2026-05-12T07:22:37.911001+08:00)
-2026-05-11 23:48:18,913 | INFO | [shared/crypto] BTC $81,633, ETH $2,337, 0 open, 0% wr (as of 2026-05-12T07:25:09.533781+08:00)
-2026-05-11 23:48:18,913 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-12T02:33:57.020429+08:00)
-2026-05-11 23:48:20,363 | INFO | Fetched 150 active markets
-2026-05-11 23:48:20,364 | INFO | 15 candidates after filters
-2026-05-11 23:48:20,365 | INFO | [1808970] Cache hit — price 0.07 unchanged, skipping LLM
-2026-05-11 23:48:38,762 | INFO | LLM call OK: gemini/gemini-2.5-flash
-2026-05-11 23:48:38,763 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 14 markets
-2026-05-11 23:48:38,763 | INFO | Batch evaluation succeeded: 14 markets in 1 LLM call
-2026-05-11 23:48:38,763 | INFO | Bankroll $-13.93 too low — stopping scan
-2026-05-11 23:48:38,765 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 14
