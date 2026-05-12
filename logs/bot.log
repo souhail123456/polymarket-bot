@@ -7490,6 +7490,7 @@ cerebras/llama3.1-70b: HTTP Error 404: Not Found
 openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-12 00:37:07,106 | INFO | Bankroll $-13.93 too low — stopping scan
 2026-05-12 00:37:07,108 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 11
+<<<<<<< Updated upstream
 2026-05-12 10:19:14,452 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
 2026-05-12 10:19:14,453 | INFO | [shared/weather] 39 open trades, 62% win rate (as of 2026-05-12T17:27:08.758850+08:00)
 2026-05-12 10:19:14,453 | INFO | [shared/crypto] BTC $80,822, ETH $2,285, 0 open, 0% wr (as of 2026-05-12T16:27:20.805728+08:00)
@@ -7536,3 +7537,5 @@ cerebras/llama3.1-70b: HTTP Error 404: Not Found
 openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-12 10:19:38,547 | INFO | Bankroll $-13.93 too low — stopping scan
 2026-05-12 10:19:38,549 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 10
+=======
+>>>>>>> Stashed changes
