@@ -1,13 +1,17 @@
 {
   "weather": {
-    "last_run": "2026-05-12T12:48:07.387422+08:00",
-    "trades_placed": 1,
-    "trades_skipped": 225,
+    "last_run": "2026-05-12T14:07:27.668671+08:00",
+    "trades_placed": 2,
+    "trades_skipped": 234,
     "next_run": "every 30min",
     "status": "ok"
   },
   "crypto": {
+<<<<<<< Updated upstream
     "last_run": "2026-05-12T14:06:48.653761+08:00",
+=======
+    "last_run": "2026-05-12T11:16:29.720530+08:00",
+>>>>>>> Stashed changes
     "trades_placed": 0,
     "trades_skipped": 0,
     "next_run": "every 30min",
@@ -21,9 +25,15 @@
     "status": "ok"
   },
   "ev": {
+<<<<<<< Updated upstream
     "last_run": "2026-05-12T14:04:10.010179+08:00",
     "trades_placed": 0,
     "trades_skipped": 7,
+=======
+    "last_run": "2026-05-12T08:37:07.108516+08:00",
+    "trades_placed": 0,
+    "trades_skipped": 12,
+>>>>>>> Stashed changes
     "next_run": "every 30min",
     "status": "ok"
   }
