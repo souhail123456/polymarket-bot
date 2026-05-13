@@ -15779,3 +15779,41 @@
 2026-05-13 00:39:21,625 | INFO | [Shanghai] Will the highest temperature in Shanghai be 27°C o mkt=0.10 model=0.05 edge=+4.3% fee=$0.00 => skip $0.00
 2026-05-13 00:39:21,625 | INFO | [Shanghai] Will the highest temperature in Shanghai be 28°C o mkt=0.02 model=0.05 edge=-2.0% fee=$0.00 => skip $0.00
 2026-05-13 00:39:21,630 | INFO | Weather scan complete. Placed 0 trades.
+2026-05-13 01:37:30,721 | INFO | === Weather Scan | mode=paper | bankroll=$3.53 ===
+2026-05-13 01:37:30,721 | INFO | [shared/crypto] BTC $80,693, ETH $2,282, 0 open, 0% wr (as of 2026-05-13T09:01:48.264450+08:00)
+2026-05-13 01:37:30,721 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-13T08:25:39.928329+08:00)
+2026-05-13 01:37:30,721 | INFO | [shared/ev] 26 open trades, 11% win rate (as of 2026-05-13T08:42:16.022731+08:00)
+2026-05-13 01:37:36,636 | INFO | Resolved 2227576: YES -> LOSS pnl=$-1.94 balance=$1.59
+2026-05-13 01:37:42,065 | INFO | Found 242 weather sub-markets
+2026-05-13 01:37:45,037 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.35 model=0.10 edge=+22.9% fee=$0.00 => skip $0.00
+2026-05-13 01:37:45,038 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.15 model=0.27 edge=+7.8% fee=$0.00 => skip $0.00
+2026-05-13 01:37:45,038 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.03 model=0.37 edge=+28.7% fee=$0.00 => skip $0.00
+2026-05-13 01:37:48,040 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.09 model=0.05 edge=+3.1% fee=$0.00 => skip $0.00
+2026-05-13 01:37:48,041 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.28 model=0.24 edge=+2.8% fee=$0.00 => skip $0.00
+2026-05-13 01:37:48,041 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.30 model=0.27 edge=+2.2% fee=$0.00 => skip $0.00
+2026-05-13 01:37:48,041 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.20 model=0.21 edge=-3.9% fee=$0.00 => skip $0.00
+2026-05-13 01:37:48,041 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.10 model=0.18 edge=+2.6% fee=$0.00 => skip $0.00
+2026-05-13 01:37:48,042 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.03 model=0.06 edge=-1.4% fee=$0.00 => skip $0.00
+2026-05-13 01:38:04,388 | WARNING | Ensemble fetch failed for icon_seamless la 2026-05-13: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:38:19,568 | WARNING | Ensemble fetch failed for gem_global la 2026-05-13: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:38:34,747 | WARNING | Ensemble fetch failed for ecmwf_aifs025 la 2026-05-13: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:38:34,747 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.03 model=0.05 edge=-2.6% fee=$0.00 => skip $0.00
+2026-05-13 01:38:49,929 | WARNING | Ensemble fetch failed for gfs_seamless la 2026-05-14: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:39:05,102 | WARNING | Ensemble fetch failed for ecmwf_ifs025 la 2026-05-14: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:39:20,287 | WARNING | Ensemble fetch failed for icon_seamless la 2026-05-14: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:39:35,477 | WARNING | Ensemble fetch failed for gem_global la 2026-05-14: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:39:50,659 | WARNING | Ensemble fetch failed for ecmwf_aifs025 la 2026-05-14: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:39:53,605 | INFO | [Seoul] Will the highest temperature in Seoul be 23°C on M mkt=0.03 model=0.20 edge=+11.8% fee=$0.00 => skip $0.00
+2026-05-13 01:39:53,606 | INFO | [Seoul] Will the highest temperature in Seoul be 24°C on M mkt=0.08 model=0.27 edge=+14.7% fee=$0.00 => skip $0.00
+2026-05-13 01:39:53,606 | INFO | [Seoul] Will the highest temperature in Seoul be 25°C on M mkt=0.23 model=0.10 edge=+12.0% fee=$0.00 => skip $0.00
+2026-05-13 01:39:56,594 | INFO | [Shanghai] Will the highest temperature in Shanghai be 24°C o mkt=0.05 model=0.34 edge=+24.3% fee=$0.00 => skip $0.00
+2026-05-13 01:39:56,595 | INFO | [Shanghai] Will the highest temperature in Shanghai be 28°C o mkt=0.04 model=0.05 edge=-4.1% fee=$0.00 => skip $0.00
+2026-05-13 01:39:56,595 | INFO | [Shanghai] Will the highest temperature in Shanghai be 29°C o mkt=0.03 model=0.07 edge=-0.3% fee=$0.00 => skip $0.00
+2026-05-13 01:40:13,001 | WARNING | Ensemble fetch failed for icon_seamless shanghai 2026-05-14: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:40:28,186 | WARNING | Ensemble fetch failed for gem_global shanghai 2026-05-14: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:40:43,358 | WARNING | Ensemble fetch failed for ecmwf_aifs025 shanghai 2026-05-14: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
+2026-05-13 01:40:43,358 | INFO | [Shanghai] Will the highest temperature in Shanghai be 23°C o mkt=0.13 model=0.13 edge=-4.2% fee=$0.00 => skip $0.00
+2026-05-13 01:40:43,359 | INFO | [Shanghai] Will the highest temperature in Shanghai be 25°C o mkt=0.28 model=0.17 edge=+9.5% fee=$0.00 => skip $0.00
+2026-05-13 01:40:43,359 | INFO | [Shanghai] Will the highest temperature in Shanghai be 27°C o mkt=0.10 model=0.05 edge=+4.3% fee=$0.00 => skip $0.00
+2026-05-13 01:40:43,359 | INFO | [Shanghai] Will the highest temperature in Shanghai be 28°C o mkt=0.04 model=0.05 edge=-3.8% fee=$0.00 => skip $0.00
+2026-05-13 01:40:43,368 | INFO | Weather scan complete. Placed 0 trades.
