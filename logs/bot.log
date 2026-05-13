@@ -8149,3 +8149,63 @@ cerebras/llama3.1-70b: HTTP Error 404: Not Found
 openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-13 20:35:46,911 | INFO | Bankroll $-16.66 too low — stopping scan
 2026-05-13 20:35:46,913 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 12
+2026-05-13 21:32:37,243 | INFO | === Scan | mode=paper | bankroll=$-16.66 ===
+2026-05-13 21:32:37,243 | INFO | [shared/weather] 17 open trades, 62% win rate (as of 2026-05-14T05:08:16.508529+08:00)
+2026-05-13 21:32:37,243 | INFO | [shared/crypto] BTC $79,621, ETH $2,261, 0 open, 0% wr (as of 2026-05-14T04:40:21.100088+08:00)
+2026-05-13 21:32:37,243 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-14T02:34:22.117042+08:00)
+2026-05-13 21:32:39,842 | INFO | Fetched 150 active markets
+2026-05-13 21:32:39,843 | INFO | 12 candidates after filters
+2026-05-13 21:32:39,844 | INFO | [842019] Cache hit — price 0.14 unchanged, skipping LLM
+2026-05-13 21:33:01,657 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-13 21:33:01,657 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 11 markets
+2026-05-13 21:33:01,657 | WARNING | Batch evaluation failed (Expecting value: line 1 column 1 (char 0)), falling back to individual calls
+2026-05-13 21:33:02,469 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-13 21:33:02,469 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2181676
+2026-05-13 21:33:02,941 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-13 21:33:02,941 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2161607
+2026-05-13 21:33:03,513 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-13 21:33:03,513 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2181667
+2026-05-13 21:33:03,579 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:03,996 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-13 21:33:03,996 | INFO | LLM response from groq/llama-3.1-8b-instant for 2181663
+2026-05-13 21:33:04,111 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:04,599 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-13 21:33:04,599 | INFO | LLM response from groq/llama-3.1-8b-instant for 2242200
+2026-05-13 21:33:04,707 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:05,212 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-13 21:33:05,212 | INFO | LLM response from groq/llama-3.1-8b-instant for 2222924
+2026-05-13 21:33:05,277 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:05,851 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-13 21:33:05,851 | INFO | LLM response from groq/llama-3.1-8b-instant for 2246622
+2026-05-13 21:33:05,934 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:06,306 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-13 21:33:06,306 | INFO | LLM response from groq/llama-3.1-8b-instant for 2246042
+2026-05-13 21:33:06,378 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:06,443 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:06,655 | WARNING | LLM call failed cerebras/llama3.1-70b: HTTP Error 404: Not Found
+2026-05-13 21:33:06,871 | WARNING | LLM call failed openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-13 21:33:06,871 | WARNING | estimate_probability failed for 2161596: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+cerebras/llama3.1-70b: HTTP Error 404: Not Found
+openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-13 21:33:06,961 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:07,020 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:07,096 | WARNING | LLM call failed cerebras/llama3.1-70b: HTTP Error 404: Not Found
+2026-05-13 21:33:07,217 | WARNING | LLM call failed openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-13 21:33:07,217 | WARNING | estimate_probability failed for 2235806: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+cerebras/llama3.1-70b: HTTP Error 404: Not Found
+openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-13 21:33:07,339 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:07,403 | WARNING | LLM call failed groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+2026-05-13 21:33:07,477 | WARNING | LLM call failed cerebras/llama3.1-70b: HTTP Error 404: Not Found
+2026-05-13 21:33:07,565 | WARNING | LLM call failed openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-13 21:33:07,565 | WARNING | estimate_probability failed for 842020: All LLM providers failed:
+groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+groq/llama-3.1-8b-instant: HTTP Error 429: Too Many Requests
+cerebras/llama3.1-70b: HTTP Error 404: Not Found
+openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
+2026-05-13 21:33:07,565 | INFO | Bankroll $-16.66 too low — stopping scan
+2026-05-13 21:33:07,567 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 11
