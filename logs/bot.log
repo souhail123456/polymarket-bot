@@ -7611,3 +7611,20 @@ cerebras/llama3.1-70b: HTTP Error 404: Not Found
 openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-13 03:09:08,724 | INFO | Bankroll $-13.93 too low — stopping scan
 2026-05-13 03:09:08,725 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 11
+2026-05-13 13:16:25,671 | INFO | === Scan | mode=paper | bankroll=$-13.93 ===
+2026-05-13 13:16:25,671 | INFO | [shared/weather] 27 open trades, 62% win rate (as of 2026-05-13T20:17:21.389166+08:00)
+2026-05-13 13:16:25,671 | INFO | [shared/crypto] BTC $80,618, ETH $2,303, 0 open, 0% wr (as of 2026-05-13T19:23:11.413243+08:00)
+2026-05-13 13:16:25,671 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-13T20:38:17.704975+08:00)
+2026-05-13 13:16:28,641 | INFO | Fetched 150 active markets
+2026-05-13 13:16:28,642 | INFO | 15 candidates after filters
+2026-05-13 13:16:28,805 | INFO | [2175606] Pre-filter hit: 'Will the price of Bitcoin be above $80,000 on May 13?' => true_p=0.99 conf=0.97 | BITCOIN is $80,276, 2675767% above threshold $3 — very likely YES
+2026-05-13 13:16:28,805 | INFO | 1 markets resolved by pre-filter (no LLM needed)
+2026-05-13 13:16:28,805 | INFO | [842019] Cache hit — price 0.14 unchanged, skipping LLM
+2026-05-13 13:16:42,049 | WARNING | LLM call failed gemini/gemini-2.5-flash: 'parts'
+2026-05-13 13:16:42,164 | WARNING | LLM call failed gemini/gemini-2.0-flash: HTTP Error 429: Too Many Requests
+2026-05-13 13:16:42,315 | WARNING | LLM call failed groq/llama-3.3-70b-versatile: HTTP Error 429: Too Many Requests
+2026-05-13 13:16:43,580 | INFO | LLM call OK: groq/llama-3.1-8b-instant
+2026-05-13 13:16:43,580 | INFO | Batch LLM response from groq/llama-3.1-8b-instant for 13 markets
+2026-05-13 13:16:43,580 | INFO | Batch evaluation succeeded: 13 markets in 1 LLM call
+2026-05-13 13:16:43,580 | INFO | Bankroll $-13.93 too low — stopping scan
+2026-05-13 13:16:43,582 | INFO | Scan complete. Placed 0 trades. Pre-filter: 1 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 13
