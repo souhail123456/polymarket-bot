@@ -8459,3 +8459,27 @@ cerebras/llama3.1-70b: HTTP Error 404: Not Found
 openrouter/meta-llama/llama-4-maverick:free: HTTP Error 404: Not Found
 2026-05-14 00:43:05,739 | INFO | Bankroll $-16.66 too low — stopping scan
 2026-05-14 00:43:05,740 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 0 | LLM evals: 15
+2026-05-14 04:46:13,985 | INFO | === Scan | mode=paper | bankroll=$-16.66 ===
+2026-05-14 04:46:13,985 | INFO | [shared/weather] 15 open trades, 62% win rate (as of 2026-05-14T11:09:46.156883+08:00)
+2026-05-14 04:46:13,985 | INFO | [shared/crypto] BTC $79,151, ETH $2,245, 0 open, 0% wr (as of 2026-05-14T11:48:10.645196+08:00)
+2026-05-14 04:46:13,985 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-14T08:26:35.046308+08:00)
+2026-05-14 04:46:15,869 | INFO | Fetched 150 active markets
+2026-05-14 04:46:15,870 | INFO | 7 candidates after filters
+2026-05-14 04:46:15,871 | INFO | [1808970] Cache hit — price 0.07 unchanged, skipping LLM
+2026-05-14 04:46:32,740 | INFO | LLM call OK: gemini/gemini-2.5-flash
+2026-05-14 04:46:32,740 | INFO | Batch LLM response from gemini/gemini-2.5-flash for 6 markets
+2026-05-14 04:46:32,740 | WARNING | Batch evaluation failed (Expecting value: line 1 column 1 (char 0)), falling back to individual calls
+2026-05-14 04:46:33,339 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-14 04:46:33,339 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2161607
+2026-05-14 04:46:33,741 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-14 04:46:33,741 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2161618
+2026-05-14 04:46:34,129 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-14 04:46:34,129 | INFO | LLM response from groq/llama-3.3-70b-versatile for 678929
+2026-05-14 04:46:34,619 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-14 04:46:34,619 | INFO | LLM response from groq/llama-3.3-70b-versatile for 2154992
+2026-05-14 04:46:35,036 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-14 04:46:35,036 | INFO | LLM response from groq/llama-3.3-70b-versatile for 842005
+2026-05-14 04:46:35,516 | INFO | LLM call OK: groq/llama-3.3-70b-versatile
+2026-05-14 04:46:35,516 | INFO | LLM response from groq/llama-3.3-70b-versatile for 842020
+2026-05-14 04:46:35,516 | INFO | Bankroll $-16.66 too low — stopping scan
+2026-05-14 04:46:35,518 | INFO | Scan complete. Placed 0 trades. Pre-filter: 0 | Arbitrage: 0 | Cache hits: 1 | LLM evals: 6
