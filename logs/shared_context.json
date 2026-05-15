@@ -21,16 +21,10 @@
     "cpi_nowcast": null,
     "gdp_data_available": true,
     "gdp_nowcast": null,
-    "fed_data_available": true,
-    "fed_cut_prob": null,
-    "fed_hold_prob": null,
-    "fed_hike_prob": null,
     "unemp_data_available": true,
     "unemp_rate": null,
-    "payroll_data_available": true,
-    "pce_data_available": true,
-    "summary": "CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok",
-    "updated_at": "2026-05-15T15:01:30.172660+08:00"
+    "summary": "CPI ok, GDP ok, Unemp ok",
+    "updated_at": "2026-05-15T20:32:46.039515+08:00"
   },
   "ev": {
     "trades_open": 25,
