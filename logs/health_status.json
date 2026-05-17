@@ -1,34 +1,36 @@
 {
-  "checked_at": "2026-05-18T07:22:31.683861+08:00",
+  "checked_at": "2026-05-04T04:12:34.267081+08:00",
   "repo": "polymarket-bot",
   "services": {
     "polymarket_gamma": {
       "status": "ok",
-      "latency_ms": 65
+      "latency_ms": 77
     },
     "coingecko": {
       "status": "ok",
-      "latency_ms": 134
+      "latency_ms": 167
     },
     "fred": {
       "status": "ok",
-      "latency_ms": 204
+      "latency_ms": 281
     },
     "groq": {
-      "status": "ok",
-      "latency_ms": 78
+      "status": "error",
+      "latency_ms": 94,
+      "error": "403"
     },
     "gemini": {
       "status": "ok",
-      "latency_ms": 196
+      "latency_ms": 154
     },
     "cerebras": {
-      "status": "ok",
-      "latency_ms": 160
+      "status": "error",
+      "latency_ms": 56,
+      "error": "403"
     },
     "telegram": {
       "status": "ok",
-      "latency_ms": 540
+      "latency_ms": 514
     }
   }
 }
