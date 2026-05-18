@@ -26011,3 +26011,16 @@
 2026-05-18 01:44:15,384 | WARNING | Ensemble fetch failed for gem_global shanghai 2026-05-19: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
 2026-05-18 01:44:30,517 | WARNING | Ensemble fetch failed for ecmwf_aifs025 shanghai 2026-05-19: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=15)
 2026-05-18 01:44:30,522 | INFO | Weather scan complete. Placed 0 trades.
+2026-05-18 03:07:49,183 | INFO | === Weather Scan | mode=paper | bankroll=$-17.03 ===
+2026-05-18 03:07:49,183 | INFO | [shared/crypto] BTC $79,488, ETH $2,259, 0 open, 0% wr (as of 2026-05-14T13:24:16.354486+08:00)
+2026-05-18 03:07:49,183 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-18T08:24:11.662487+08:00)
+2026-05-18 03:07:49,183 | INFO | [shared/ev] 25 open trades, 10% win rate (as of 2026-05-14T08:43:05.739849+08:00)
+2026-05-18 03:07:50,167 | INFO | Found 186 weather sub-markets
+2026-05-18 03:07:52,259 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.04 model=0.05 edge=-3.8% fee=$0.00 => skip $0.00
+2026-05-18 03:07:52,260 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.06 model=0.05 edge=+0.7% fee=$0.00 => skip $0.00
+2026-05-18 03:07:52,260 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.27 model=0.12 edge=+13.3% fee=$0.00 => skip $0.00
+2026-05-18 03:07:52,260 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be bet mkt=0.35 model=0.15 edge=+18.3% fee=$0.00 => skip $0.00
+2026-05-18 03:07:52,260 | INFO | [Los Angeles] Will the highest temperature in Los Angeles be 74° mkt=0.35 model=0.69 edge=+30.8% fee=$0.00 => skip $0.00
+2026-05-18 03:07:54,225 | INFO | [Denver] Will the highest temperature in Denver be 55°F or  mkt=0.92 model=0.86 edge=+2.2% fee=$0.00 => skip $0.00
+2026-05-18 03:07:54,225 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.03 model=0.12 edge=+4.4% fee=$0.00 => skip $0.00
+2026-05-18 03:07:54,229 | INFO | Weather scan complete. Placed 0 trades.
