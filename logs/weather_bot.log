@@ -26198,3 +26198,9 @@
 2026-05-19 09:09:15,795 | INFO | [shared/ev] 25 open trades, 10% win rate (as of 2026-05-14T08:43:05.739849+08:00)
 2026-05-19 09:09:18,408 | INFO | Found 183 weather sub-markets
 2026-05-19 09:09:18,423 | INFO | Weather scan complete. Placed 0 trades.
+2026-05-19 10:41:48,620 | INFO | === Weather Scan | mode=paper | bankroll=$-17.03 ===
+2026-05-19 10:41:48,620 | INFO | [shared/crypto] BTC $79,488, ETH $2,259, 0 open, 0% wr (as of 2026-05-14T13:24:16.354486+08:00)
+2026-05-19 10:41:48,620 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-19T15:06:38.949432+08:00)
+2026-05-19 10:41:48,620 | INFO | [shared/ev] 25 open trades, 10% win rate (as of 2026-05-14T08:43:05.739849+08:00)
+2026-05-19 10:41:51,184 | INFO | Found 183 weather sub-markets
+2026-05-19 10:41:51,212 | INFO | Weather scan complete. Placed 0 trades.
