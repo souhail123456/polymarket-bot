@@ -1133,3 +1133,16 @@
 2026-05-21 07:11:34,300 | INFO | Found 183 unique econ markets
 2026-05-21 07:11:34,305 | INFO | [1087312] type=unemployment | Will US unemployment reach at least 7.0% in 2026? | mkt=0.10 model=0.10 edge=-1.8% => skip $0.00
 2026-05-21 07:11:34,307 | INFO | Econ scan complete. Placed 0 trades.
+2026-05-21 12:59:57,665 | INFO | === Econ Scan | mode=paper | bankroll=$85.16 ===
+2026-05-21 12:59:57,665 | INFO | [shared/weather] 0 open trades, 62% win rate (as of 2026-05-21T20:07:49.455938+08:00)
+2026-05-21 12:59:57,665 | INFO | [shared/crypto] BTC $79,488, ETH $2,259, 0 open, 0% wr (as of 2026-05-14T13:24:16.354486+08:00)
+2026-05-21 12:59:57,665 | INFO | [shared/ev] 25 open trades, 10% win rate (as of 2026-05-14T08:43:05.739849+08:00)
+2026-05-21 13:00:00,230 | INFO | Fetching nowcast data sources...
+2026-05-21 13:00:04,255 | INFO | Cleveland Fed 1Y inflation expectation (FRED): 3.53651546
+2026-05-21 13:00:04,619 | INFO | GDPNow estimate: 4.0%
+2026-05-21 13:00:07,416 | INFO | Fed Funds actual rate (FRED): 3.64%
+2026-05-21 13:00:09,298 | INFO | Nonfarm payrolls change (FRED): +115.0K
+2026-05-21 13:00:10,869 | INFO | Core PCE YoY (FRED): 3.20276%
+2026-05-21 13:00:10,870 | INFO | Data sources: CPI=ok | GDP=ok | FedWatch=ok | Unemployment=SKIP | Payrolls=ok | PCE=ok
+2026-05-21 13:00:15,625 | INFO | Found 183 unique econ markets
+2026-05-21 13:00:15,631 | INFO | Econ scan complete. Placed 0 trades.
