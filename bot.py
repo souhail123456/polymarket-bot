@@ -212,295 +212,280 @@ def classify_market_category(question: str, description: str = "") -> str:
 
 def fetch_live_context(category: str, question: str) -> str:
     """Fetch live data relevant to the market category."""
-    if category == "crypto":
-        return _fetch_crypto_prices()
     if category == "commodity":
-        return _fetch_commodity_context(question)
+        return "NOTE: You have NO live commodity price data. For price-threshold markets (e.g., 'Will oil hit $X'), be very conservative."
     if category == "sports":
         return "NOTE: You have NO live sports data. Be honest about uncertainty. If you cannot determine a clear edge from public knowledge alone, set confidence below 0.5."
     return ""
 
 
-def _fetch_crypto_prices() -> str:
-    """Fetch BTC/ETH prices from CoinGecko free API."""
-    try:
-        url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd&include_24hr_change=true"
-        req = urllib.request.Request(url)
-        req.add_header("User-Agent", "polymarket-bot/1.0")
-        resp = urllib.request.urlopen(req, timeout=10)
-        data = json.loads(resp.read())
-        lines = ["LIVE CRYPTO PRICES (use these for your estimate):"]
-        for coin, info in data.items():
-            price = info.get("usd", "?")
-            change = info.get("usd_24h_change", 0)
-            lines.append(f"  {coin.upper()}: ${price:,.2f} (24h: {change:+.1f}%)")
-        return "\n".join(lines)
-    except Exception as e:
-        return f"WARNING: Could not fetch live crypto prices ({e}). Be very cautious with probability estimates."
-
-
-def _fetch_commodity_context(question: str) -> str:
-    """Return a warning about commodity prices — no free reliable API for WTI etc."""
-    return "NOTE: You have NO live commodity price data. For price-threshold markets (e.g., 'Will oil hit $X'), be very conservative. If the threshold seems extreme (e.g., oil >$120, gold >$3000), the base rate for such spikes is very low."
-
-
 # ---------- Pre-filter: math-obvious markets ----------
-# Cached live prices so we only fetch once per scan
-_LIVE_PRICES_CACHE: dict = {}
-
-def _get_live_prices() -> dict:
-    """Return {coin: price_usd} dict — cached within a scan run."""
-    global _LIVE_PRICES_CACHE
-    if _LIVE_PRICES_CACHE:
-        return _LIVE_PRICES_CACHE
-    try:
-        url = (
-            "https://api.coingecko.com/api/v3/simple/price"
-            "?ids=bitcoin,ethereum,solana,dogecoin&vs_currencies=usd"
-        )
-        req = urllib.request.Request(url)
-        req.add_header("User-Agent", "polymarket-bot/1.0")
-        resp = urllib.request.urlopen(req, timeout=10)
-        data = json.loads(resp.read())
-        # Normalise to flat {ticker: price} map
-        mapping = {
-            "bitcoin": data.get("bitcoin", {}).get("usd"),
-            "btc":     data.get("bitcoin", {}).get("usd"),
-            "ethereum": data.get("ethereum", {}).get("usd"),
-            "eth":     data.get("ethereum", {}).get("usd"),
-            "solana":  data.get("solana",   {}).get("usd"),
-            "sol":     data.get("solana",   {}).get("usd"),
-            "dogecoin": data.get("dogecoin", {}).get("usd"),
-            "doge":    data.get("dogecoin",  {}).get("usd"),
-        }
-        _LIVE_PRICES_CACHE = {k: v for k, v in mapping.items() if v is not None}
-        return _LIVE_PRICES_CACHE
-    except Exception as e:
-        log.debug(f"_get_live_prices failed: {e}")
-        return {}
-
-
-def _reset_live_prices_cache():
-    """Call once per scan so prices are re-fetched fresh next scan."""
-    global _LIVE_PRICES_CACHE
-    _LIVE_PRICES_CACHE = {}
-
-
 import re
-
-# Patterns: "Will BTC be above $50,000" / "below $50k" / "exceed $50,000" / "reach $50k"
-_PRICE_THRESHOLD_RE = re.compile(
-    r"\b(bitcoin|btc|ethereum|eth|solana|sol|dogecoin|doge)\b"
-    r".{0,80}"
-    r"\b(above|over|exceed|reach|hit|below|under|drop below|fall below)\b"
-    r".{0,30}"
-    r"\$?([\d,]+(?:\.\d+)?)\s*([km]?)",
-    re.IGNORECASE,
-)
-
-
-def _parse_price_threshold(question: str):
-    """
-    Try to extract (coin, direction, threshold_usd) from question.
-    direction is 'above' or 'below'.
-    Returns None if no clear threshold found.
-    """
-    m = _PRICE_THRESHOLD_RE.search(question)
-    if not m:
-        return None
-    coin = m.group(1).lower()
-    verb = m.group(2).lower()
-    raw_num = m.group(3).replace(",", "")
-    suffix = m.group(4).lower()
-
-    try:
-        threshold = float(raw_num)
-    except ValueError:
-        return None
-
-    if suffix == "k":
-        threshold *= 1_000
-    elif suffix == "m":
-        threshold *= 1_000_000
-
-    direction = "above" if any(w in verb for w in ("above", "over", "exceed", "reach", "hit")) else "below"
-    return coin, direction, threshold
 
 
 def pre_filter_market(market) -> "tuple[float, float, str] | None":
     """
     Fast math-based pre-filter. No LLM needed.
-
-    Returns (true_probability, confidence, reasoning) when the outcome is
-    mathematically obvious, or None when LLM evaluation is required.
-
-    Currently handles:
-    - Crypto price threshold markets (BTC/ETH/SOL/DOGE above/below $X)
-    - Markets whose resolution date has already passed
+    Returns (true_probability, confidence, reasoning) when obvious, or None.
     """
-    question = market.get("question", "")
     hours_left = market.get("_hours_left", 999)
 
-    # --- Guard: resolution already passed ---
-    # (filter_markets already enforces min_hours_to_resolve > 0, but belt-and-suspenders)
+    # Guard: resolution already passed
     if hours_left <= 0:
         return 0.5, 0.5, "Resolution date already passed — outcome ambiguous"
 
-    # --- Crypto price threshold ---
-    parsed = _parse_price_threshold(question)
-    if parsed is None:
-        return None  # not a price-threshold market — let LLM handle it
-
-    coin, direction, threshold = parsed
-    prices = _get_live_prices()
-    current_price = prices.get(coin)
-    if current_price is None:
-        return None  # can't determine live price — fall back to LLM
-
-    ratio = current_price / threshold  # >1 means current > threshold
-
-    if direction == "above":
-        pct_above = (current_price - threshold) / threshold  # positive = current above threshold
-        if pct_above >= 0.20:
-            # Current price is ≥20% above threshold — very likely YES even with time left
-            conf = min(0.97, 0.80 + pct_above * 0.5)
-            return (
-                min(0.99, 0.92 + pct_above * 0.3),
-                round(conf, 2),
-                f"{coin.upper()} is ${current_price:,.0f}, {pct_above:.0%} above threshold ${threshold:,.0f} — very likely YES",
-            )
-        if pct_above <= -0.20:
-            # Current price is ≥20% below threshold — very likely NO
-            pct_below = abs(pct_above)
-            conf = min(0.97, 0.80 + pct_below * 0.5)
-            return (
-                max(0.01, 0.08 - pct_below * 0.3),
-                round(conf, 2),
-                f"{coin.upper()} is ${current_price:,.0f}, {pct_below:.0%} below threshold ${threshold:,.0f} — very likely NO",
-            )
-    else:  # direction == "below"
-        pct_below = (threshold - current_price) / threshold  # positive = current below threshold
-        if pct_below >= 0.20:
-            # Current price is ≥20% below threshold — very likely YES (below target)
-            conf = min(0.97, 0.80 + pct_below * 0.5)
-            return (
-                min(0.99, 0.92 + pct_below * 0.3),
-                round(conf, 2),
-                f"{coin.upper()} is ${current_price:,.0f}, {pct_below:.0%} below threshold ${threshold:,.0f} — very likely YES (below target)",
-            )
-        if pct_below <= -0.20:
-            # Current price is ≥20% above threshold — very likely NO (not below target)
-            pct_above = abs(pct_below)
-            conf = min(0.97, 0.80 + pct_above * 0.5)
-            return (
-                max(0.01, 0.08 - pct_above * 0.3),
-                round(conf, 2),
-                f"{coin.upper()} is ${current_price:,.0f}, {pct_above:.0%} above threshold ${threshold:,.0f} — very likely NO (not below target)",
-            )
-
-    # Price is within 20% of threshold — not obvious, send to LLM
     return None
 
 
-# ---------- Resolution source scraping ----------
-def check_resolution_source(market) -> "tuple[float, float, str] | None":
+# ---------- Resolution source scraping (sniper) ----------
+SNIPER_PROMPT = """You are a resolution source checker for prediction markets. Your ONLY job: determine if the outcome of this market is ALREADY KNOWN from publicly available data.
+
+MARKET QUESTION: {question}
+
+MARKET DESCRIPTION (includes resolution criteria):
+{description}
+
+RESOLUTION SOURCE: {resolution_source}
+
+CURRENT MARKET PRICE (YES): {yes_price:.1%}
+HOURS UNTIL RESOLUTION: {hours_left:.1f}
+
+INSTRUCTIONS:
+1. The description/resolution source tells you EXACTLY how this market resolves (e.g., "based on CoinGecko price at 11:59 PM ET" or "based on the official BLS report").
+2. Use your search capabilities to CHECK THE ACTUAL DATA SOURCE RIGHT NOW.
+3. Determine if the outcome is ALREADY KNOWN or NEARLY CERTAIN based on current data.
+
+CRITICAL RULES:
+- Only return high confidence (>0.90) if the data source CLEARLY shows the answer RIGHT NOW
+- For price markets: check the CURRENT price vs the threshold. If BTC is at $105k and market asks "above $100k by tomorrow", that's clearly YES
+- For event markets: check if the event already happened or if official results are published
+- For sports: check if the game already finished and scores are available
+- If the data is ambiguous or the event hasn't happened yet, return confidence 0.50
+- Do NOT speculate. Only use VERIFIED current data from the actual resolution source
+
+Output ONLY this JSON, no other text:
+{{"outcome": "YES" or "NO" or "UNKNOWN", "confidence": <0.50-0.99>, "data_found": "<what you found from the actual source — specific numbers/facts>", "reasoning": "<why this data means the market resolves this way>"}}"""
+
+
+def snipe_resolving_markets(markets_raw, cfg, already_traded_ids, bankroll, mode):
     """
-    For markets <2h from resolution, check the actual data source used for resolution.
-    If the outcome is near-certain from the source data, return (true_p, confidence, reason).
-    Returns None if outcome cannot be determined with high confidence.
+    Resolution source sniper: find markets expiring in 2-6 hours, check if
+    the actual resolution data is already available, and bet aggressively
+    when the answer is clearly known.
 
-    This gives us an edge: when resolution source clearly shows the outcome,
-    we can bet with near-certainty before the market fully prices it in.
+    This runs BEFORE regular evaluation and uses Gemini with search grounding
+    to check real data sources.
+
+    Returns: (sniper_trades_placed, updated_bankroll)
     """
-    hours_left = market.get("_hours_left", 999)
-    if hours_left >= 2:
-        return None  # only trigger for markets very close to resolution
+    now = datetime.now(timezone.utc)
+    sniper_candidates = []
 
-    question = market.get("question", "")
-    description = market.get("description", "")
-    resolution_source = market.get("resolutionSource", "") or ""
+    for m in markets_raw:
+        try:
+            mid = str(m.get("id"))
+            if mid in already_traded_ids:
+                continue
 
-    # --- Crypto price threshold (enhanced confidence when <2h left) ---
-    parsed = _parse_price_threshold(question)
-    if parsed is not None:
-        coin, direction, threshold = parsed
-        prices = _get_live_prices()
-        current_price = prices.get(coin)
-        if current_price is None:
-            return None
+            end_str = m.get("endDate") or m.get("end_date_iso")
+            if not end_str:
+                continue
+            end = datetime.fromisoformat(end_str.replace("Z", "+00:00"))
+            hours_left = (end - now).total_seconds() / 3600
 
-        # With <2h left, even a 10% gap is near-certain (not enough time to move)
-        pct_diff = (current_price - threshold) / threshold
+            # Sniper window: 2-6 hours before resolution
+            if not (2.0 <= hours_left <= 6.0):
+                continue
 
-        if direction == "above":
-            if pct_diff >= 0.10:
-                # Price is 10%+ above threshold with <2h left — near certain YES
-                true_p = min(0.99, 0.95 + abs(pct_diff) * 0.2)
-                reason = (
-                    f"[RESOLUTION SCRAPE] {coin.upper()} at ${current_price:,.0f}, "
-                    f"{abs(pct_diff):.1%} above ${threshold:,.0f} with only {hours_left:.1f}h left — "
-                    f"near-certain YES"
-                )
-                log.info(f"Resolution source confirmed: {reason}")
-                return true_p, 0.95, reason
-            elif pct_diff <= -0.10:
-                # Price is 10%+ below threshold with <2h left — near certain NO
-                true_p = max(0.01, 0.05 - abs(pct_diff) * 0.2)
-                reason = (
-                    f"[RESOLUTION SCRAPE] {coin.upper()} at ${current_price:,.0f}, "
-                    f"{abs(pct_diff):.1%} below ${threshold:,.0f} with only {hours_left:.1f}h left — "
-                    f"near-certain NO"
-                )
-                log.info(f"Resolution source confirmed: {reason}")
-                return true_p, 0.95, reason
+            liq = float(m.get("liquidity", 0) or 0)
+            if liq < 200:  # lower liquidity threshold for sniper
+                continue
 
-        else:  # direction == "below"
-            if pct_diff <= -0.10:
-                # Price is 10%+ below threshold with <2h left — near certain YES (below target)
-                true_p = min(0.99, 0.95 + abs(pct_diff) * 0.2)
-                reason = (
-                    f"[RESOLUTION SCRAPE] {coin.upper()} at ${current_price:,.0f}, "
-                    f"{abs(pct_diff):.1%} below ${threshold:,.0f} with only {hours_left:.1f}h left — "
-                    f"near-certain YES (below target)"
-                )
-                log.info(f"Resolution source confirmed: {reason}")
-                return true_p, 0.95, reason
-            elif pct_diff >= 0.10:
-                # Price is 10%+ above threshold with <2h left — near certain NO (not below)
-                true_p = max(0.01, 0.05 - abs(pct_diff) * 0.2)
-                reason = (
-                    f"[RESOLUTION SCRAPE] {coin.upper()} at ${current_price:,.0f}, "
-                    f"{abs(pct_diff):.1%} above ${threshold:,.0f} with only {hours_left:.1f}h left — "
-                    f"near-certain NO (not below target)"
-                )
-                log.info(f"Resolution source confirmed: {reason}")
-                return true_p, 0.95, reason
+            outcome_prices = m.get("outcomePrices")
+            if not outcome_prices:
+                continue
+            if isinstance(outcome_prices, str):
+                outcome_prices = json.loads(outcome_prices)
+            if len(outcome_prices) != 2:
+                continue
 
-    # --- Resolution source mentions a URL (government data, official sources) ---
-    # We can't reliably scrape arbitrary sites, but note it for confidence boost
-    if hours_left < 2 and resolution_source:
-        # Check if resolution source mentions a known data provider URL
-        source_lower = resolution_source.lower()
-        has_url = "http" in source_lower or "www." in source_lower
-        if has_url:
-            # We can't scrape the actual source, but the fact that we're <2h from
-            # resolution with an official source means market should be well-priced.
-            # Log it but don't override — let LLM + time-decay handle it.
-            log.debug(
-                f"[{market.get('_market_id', '?')[:8]}] Resolution source has URL "
-                f"({resolution_source[:80]}), <2h left — time-decay will boost"
+            yes_price = float(outcome_prices[0])
+
+            # Must have value — skip if already priced at 97%+ or 3%-
+            # (no edge left even if we know the answer)
+            if yes_price > 0.97 or yes_price < 0.03:
+                continue
+
+            m["_yes_price"] = yes_price
+            m["_hours_left"] = hours_left
+            m["_market_id"] = mid
+            sniper_candidates.append(m)
+        except Exception as e:
+            log.debug(f"Sniper skip market {m.get('id')}: {e}")
+
+    if not sniper_candidates:
+        return 0, bankroll
+
+    log.info(f"[SNIPER] {len(sniper_candidates)} markets in sniper window (2-6h to resolution)")
+
+    trades_placed = 0
+    for m in sniper_candidates:
+        if bankroll < 2.0:
+            break
+
+        question = (m.get("question") or "")[:500]
+        description = (m.get("description") or "")[:2000]
+        resolution_source = (m.get("resolutionSource") or "See market description")[:500]
+
+        # Use Gemini with search grounding to check actual resolution data
+        prompt = SNIPER_PROMPT.format(
+            question=question,
+            description=description,
+            resolution_source=resolution_source,
+            yes_price=m["_yes_price"],
+            hours_left=m["_hours_left"],
+        )
+
+        try:
+            text, provider, model = call_llm(prompt, max_tokens=500, temperature=0.1, prefer="gemini")
+            log.info(f"[SNIPER] LLM response from {provider}/{model} for {m['_market_id'][:8]}")
+
+            text = text.strip()
+            if text.startswith("```"):
+                text = text.split("```", 2)[1]
+                if text.startswith("json"):
+                    text = text[4:]
+                text = text.strip()
+            if "{" in text:
+                text = text[text.index("{"):text.rindex("}") + 1]
+
+            data = json.loads(text)
+            outcome = data.get("outcome", "UNKNOWN").upper()
+            confidence = float(data.get("confidence", 0.5))
+            data_found = data.get("data_found", "")
+            reasoning = data.get("reasoning", "")
+
+            log.info(
+                f"[SNIPER] {m['_market_id'][:8]} {question[:60]!r} => "
+                f"outcome={outcome} conf={confidence:.2f} | {data_found[:100]}"
             )
 
-    return None
+            # Only act if confidence >= 0.90 and outcome is known
+            if outcome == "UNKNOWN" or confidence < 0.90:
+                continue
+
+            # Determine true probability and side
+            if outcome == "YES":
+                true_p = confidence
+                market_p = m["_yes_price"]
+                # Only bet if there's value: known YES but market hasn't fully priced it
+                if market_p >= 0.93:
+                    log.info(f"[SNIPER] {m['_market_id'][:8]} Already priced in ({market_p:.2f}), skip")
+                    continue
+                side = "YES"
+                entry_price = market_p
+                edge = true_p - market_p
+            elif outcome == "NO":
+                true_p = 1.0 - confidence  # true_p for YES is low
+                market_p = m["_yes_price"]
+                no_price = 1.0 - market_p
+                # Only bet if there's value: known NO but market hasn't fully priced it
+                if no_price >= 0.93:
+                    log.info(f"[SNIPER] {m['_market_id'][:8]} Already priced in (NO={no_price:.2f}), skip")
+                    continue
+                side = "NO"
+                entry_price = no_price
+                edge = confidence - no_price
+            else:
+                continue
+
+            # Minimum edge of 5% for sniper (lower than regular since we have data)
+            if edge < 0.05:
+                log.info(f"[SNIPER] {m['_market_id'][:8]} Edge too small ({edge:.1%}), skip")
+                continue
+
+            # Aggressive sizing: 2x normal max position, half-Kelly
+            sniper_max = cfg["max_position_usd"] * 2.0
+            sniper_kelly = 0.50  # half-Kelly (more aggressive than regular quarter-Kelly)
+            b = (1 - entry_price) / entry_price if entry_price > 0 else 0
+            p = confidence
+            q = 1 - p
+            kelly_full = (b * p - q) / b if b > 0 else 0
+            size = bankroll * sniper_kelly * max(0, kelly_full)
+            size = min(size, sniper_max)
+            if size < 1.0:
+                continue
+
+            fee_usd = calculate_fee(entry_price, size, cfg["taker_fee_rate"])
+            bankroll -= size
+
+            record = {
+                "timestamp": datetime.now(SHANGHAI_TZ).isoformat(),
+                "date": datetime.now(SHANGHAI_TZ).date().isoformat(),
+                "mode": mode,
+                "market_id": m["_market_id"],
+                "question": m["question"][:200],
+                "category": classify_market_category(m.get("question", ""), m.get("description", "")),
+                "hours_to_resolve": round(m["_hours_left"], 2),
+                "market_price": m["_yes_price"],
+                "estimated_prob": true_p,
+                "confidence": confidence,
+                "reasoning": f"[SNIPER] {reasoning} | Data: {data_found[:200]}",
+                "side": side,
+                "entry_price": round(entry_price, 4),
+                "size_usd": round(size, 2),
+                "edge": round(edge, 4),
+                "fee_usd": round(fee_usd, 4),
+                "balance": round(bankroll, 2),
+                "resolved": False,
+                "sniper": True,
+            }
+
+            if mode == "live":
+                try:
+                    submit_live_order(m, side, size, entry_price)
+                    record["live_submitted"] = True
+                except NotImplementedError as e:
+                    log.error(str(e))
+                    return trades_placed, bankroll
+
+            log_trade(record)
+            trades_placed += 1
+
+            send_telegram(
+                f"🎯 *SNIPER Trade*\n"
+                f"Market: {question[:80]}\n"
+                f"Side: *{side}* @ {entry_price:.2f}\n"
+                f"Size: ${size:.2f} (2x aggressive) | Edge: {edge:+.1%}\n"
+                f"Data: {data_found[:150]}\n"
+                f"Confidence: {confidence:.0%}\n"
+                f"Hours left: {m['_hours_left']:.1f}h\n"
+                f"Balance: ${bankroll:.2f}"
+            )
+
+            log.info(
+                f"[SNIPER] TRADE: {m['_market_id'][:8]} {side} ${size:.2f} @ {entry_price:.2f} "
+                f"edge={edge:+.1%} conf={confidence:.0%} | {data_found[:80]}"
+            )
+
+            time.sleep(2)
+
+        except Exception as e:
+            log.warning(f"[SNIPER] Failed for {m['_market_id'][:8]}: {e}")
+            continue
+
+    if trades_placed:
+        log.info(f"[SNIPER] Placed {trades_placed} sniper trades")
+
+    return trades_placed, bankroll
 
 
 # ---------- Cross-market arbitrage detection ----------
+
 _THRESHOLD_EXTRACT_RE = re.compile(
-    r"\b(bitcoin|btc|ethereum|eth|solana|sol|dogecoin|doge)\b"
-    r".{0,80}"
-    r"\b(above|over|exceed|reach|hit|below|under|drop below|fall below)\b"
-    r".{0,30}"
-    r"\$?([\d,]+(?:\.\d+)?)\s*([km]?)",
+    r"(bitcoin|btc|ethereum|eth|solana|sol|dogecoin|doge)\s+"
+    r"(above|over|exceed|reach|hit|below|under|drop)\w*\s+"
+    r"\$?([\d,]+\.?\d*)\s*(k|m)?",
     re.IGNORECASE,
 )
 
@@ -519,6 +504,13 @@ _MONTH_MAP = {
     "november": 11, "nov": 11, "december": 12, "dec": 12,
 }
 
+# Polymarket fee on winnings — arb must exceed this to be profitable
+ARB_FEE_RATE = 0.02
+# Minimum edge after fees to act on an arbitrage opportunity
+ARB_MIN_EDGE = 0.03
+# Max position per leg of an arbitrage trade
+ARB_MAX_PER_LEG = 20.0
+
 
 def _extract_threshold_info(question: str):
     """Extract (coin, direction, threshold) from a price-threshold question."""
@@ -530,7 +522,7 @@ def _extract_threshold_info(question: str):
     coin = coin_map.get(coin, coin)
     verb = m.group(2).lower()
     raw_num = m.group(3).replace(",", "")
-    suffix = m.group(4).lower()
+    suffix = (m.group(4) or "").lower()
     try:
         threshold = float(raw_num)
     except ValueError:
@@ -561,9 +553,218 @@ def _extract_date_info(question: str):
         return None
 
 
+def fetch_grouped_events(limit=20):
+    """
+    Fetch active events from the Gamma API /events endpoint.
+    Events with multiple markets represent mutually exclusive outcomes
+    (e.g., "World Cup Winner" with one market per team).
+
+    Returns list of events, each containing a 'markets' array.
+    """
+    try:
+        r = requests.get(
+            f"{GAMMA_API}/events",
+            params={
+                "active": "true",
+                "closed": "false",
+                "limit": limit,
+                "order": "volume24hr",
+                "ascending": "false",
+            },
+            timeout=15,
+        )
+        r.raise_for_status()
+        return r.json()
+    except Exception as e:
+        log.warning(f"fetch_grouped_events failed: {e}")
+        return []
+
+
+def _detect_mutually_exclusive_arb(events, already_traded_ids):
+    """
+    Pattern 4: Mutually exclusive outcome groups.
+
+    For events with N markets (each representing one outcome), the YES prices
+    across all markets should sum to ~1.0 (exactly one outcome wins).
+
+    If sum > 1.0 + fees: overround — sell the overpriced side (buy NO on each).
+    If sum < 1.0 - fees: underround — buy YES on every market (guaranteed profit).
+
+    Returns list of actionable arb trade dicts.
+    """
+    arb_trades = []
+
+    for event in events:
+        event_markets = event.get("markets", [])
+        if len(event_markets) < 3:
+            continue  # need at least 3 outcomes for a meaningful group
+
+        # Only consider negRisk events — Polymarket's mechanism for mutually exclusive groups
+        if not event.get("negRisk"):
+            continue
+
+        event_title = event.get("title", "Unknown")
+        event_slug = event.get("slug", "")
+
+        # Parse YES prices for all active markets in this event
+        priced_markets = []
+        for m in event_markets:
+            if m.get("closed") or not m.get("active"):
+                continue
+            outcome_prices = m.get("outcomePrices")
+            if not outcome_prices:
+                continue
+            if isinstance(outcome_prices, str):
+                try:
+                    outcome_prices = json.loads(outcome_prices)
+                except Exception:
+                    continue
+            if len(outcome_prices) < 2:
+                continue
+            try:
+                yes_p = float(outcome_prices[0])
+            except (ValueError, TypeError):
+                continue
+            mid = str(m.get("id", ""))
+            if not mid:
+                continue
+            liq = float(m.get("liquidity", 0) or 0)
+            if liq < 100:  # skip illiquid sub-markets
+                continue
+            priced_markets.append({
+                "market_id": mid,
+                "question": m.get("question", ""),
+                "group_item": m.get("groupItemTitle", ""),
+                "yes_price": yes_p,
+                "no_price": 1.0 - yes_p,
+                "liquidity": liq,
+                "market_raw": m,
+            })
+
+        if len(priced_markets) < 3:
+            continue
+
+        total_yes = sum(pm["yes_price"] for pm in priced_markets)
+        deviation = total_yes - 1.0
+
+        log.debug(
+            f"[ARB-GROUP] Event '{event_title}' ({len(priced_markets)} outcomes): "
+            f"sum(YES)={total_yes:.4f} deviation={deviation:+.4f}"
+        )
+
+        # --- Underround: sum < 1.0 (buy YES on all — guaranteed profit) ---
+        if deviation < -(ARB_FEE_RATE + ARB_MIN_EDGE):
+            edge = abs(deviation) - ARB_FEE_RATE
+            log.info(
+                f"[ARB-GROUP] UNDERROUND in '{event_title}': sum(YES)={total_yes:.4f}, "
+                f"edge={edge:.2%} after fees. Buy YES on all {len(priced_markets)} outcomes."
+            )
+            # Buy YES on every outcome — one must win, total cost < $1 per share set
+            for pm in priced_markets:
+                if pm["market_id"] in already_traded_ids:
+                    continue
+                # Full Kelly: since this is mathematical, use aggressive sizing
+                # Max $20 per leg; size proportional to how cheap the YES is
+                size = min(ARB_MAX_PER_LEG, ARB_MAX_PER_LEG * (1.0 - pm["yes_price"]))
+                size = max(1.0, size)
+                arb_trades.append({
+                    "market_id": pm["market_id"],
+                    "question": pm["question"],
+                    "group_item": pm["group_item"],
+                    "event_title": event_title,
+                    "side": "YES",
+                    "entry_price": pm["yes_price"],
+                    "size_usd": round(size, 2),
+                    "edge": round(edge, 4),
+                    "arb_type": "underround",
+                    "group_sum": round(total_yes, 4),
+                    "n_outcomes": len(priced_markets),
+                    "reasoning": (
+                        f"ARBITRAGE: Mutually exclusive group '{event_title}' has "
+                        f"{len(priced_markets)} outcomes summing to {total_yes:.4f} "
+                        f"(should be ~1.0). Underround: buy YES on all for guaranteed "
+                        f"profit. Edge: {edge:.2%} after {ARB_FEE_RATE:.0%} fee."
+                    ),
+                    "market_raw": pm["market_raw"],
+                })
+
+        # --- Overround: sum > 1.0 (buy NO on all — guaranteed profit) ---
+        elif deviation > (ARB_FEE_RATE + ARB_MIN_EDGE):
+            edge = deviation - ARB_FEE_RATE
+            log.info(
+                f"[ARB-GROUP] OVERROUND in '{event_title}': sum(YES)={total_yes:.4f}, "
+                f"edge={edge:.2%} after fees. Buy NO on all {len(priced_markets)} outcomes."
+            )
+            # Buy NO on every outcome — all but one pay out, total cost of NOs < combined payout
+            for pm in priced_markets:
+                if pm["market_id"] in already_traded_ids:
+                    continue
+                size = min(ARB_MAX_PER_LEG, ARB_MAX_PER_LEG * pm["yes_price"])
+                size = max(1.0, size)
+                arb_trades.append({
+                    "market_id": pm["market_id"],
+                    "question": pm["question"],
+                    "group_item": pm["group_item"],
+                    "event_title": event_title,
+                    "side": "NO",
+                    "entry_price": pm["no_price"],
+                    "size_usd": round(size, 2),
+                    "edge": round(edge, 4),
+                    "arb_type": "overround",
+                    "group_sum": round(total_yes, 4),
+                    "n_outcomes": len(priced_markets),
+                    "reasoning": (
+                        f"ARBITRAGE: Mutually exclusive group '{event_title}' has "
+                        f"{len(priced_markets)} outcomes summing to {total_yes:.4f} "
+                        f"(should be ~1.0). Overround: buy NO on all for guaranteed "
+                        f"profit. Edge: {edge:.2%} after {ARB_FEE_RATE:.0%} fee."
+                    ),
+                    "market_raw": pm["market_raw"],
+                })
+
+        # --- Single-outcome mispricing within the group ---
+        # Even if sum is ~1.0, one outcome may be wildly mispriced vs its peers.
+        # Check if any single outcome has YES price > its fair share by a lot.
+        # Fair share = current price * (1.0 / total_yes) — normalized.
+        elif len(priced_markets) >= 3 and abs(deviation) > 0.01:
+            for pm in priced_markets:
+                if pm["market_id"] in already_traded_ids:
+                    continue
+                fair_price = pm["yes_price"] / total_yes if total_yes > 0 else pm["yes_price"]
+                mispricing = pm["yes_price"] - fair_price
+                if abs(mispricing) > ARB_FEE_RATE + ARB_MIN_EDGE:
+                    side = "NO" if mispricing > 0 else "YES"
+                    entry_p = pm["no_price"] if side == "NO" else pm["yes_price"]
+                    size = min(ARB_MAX_PER_LEG, 10.0)
+                    arb_trades.append({
+                        "market_id": pm["market_id"],
+                        "question": pm["question"],
+                        "group_item": pm["group_item"],
+                        "event_title": event_title,
+                        "side": side,
+                        "entry_price": entry_p,
+                        "size_usd": round(size, 2),
+                        "edge": round(abs(mispricing) - ARB_FEE_RATE, 4),
+                        "arb_type": "group_mispricing",
+                        "group_sum": round(total_yes, 4),
+                        "n_outcomes": len(priced_markets),
+                        "reasoning": (
+                            f"ARBITRAGE: In group '{event_title}', "
+                            f"'{pm['group_item'] or pm['question'][:40]}' YES is "
+                            f"{pm['yes_price']:.2f} but fair (normalized) is {fair_price:.2f}. "
+                            f"{'Overpriced' if mispricing > 0 else 'Underpriced'} by "
+                            f"{abs(mispricing):.2%}. Buy {side}."
+                        ),
+                        "market_raw": pm["market_raw"],
+                    })
+
+    return arb_trades
+
+
 def detect_arbitrage(candidates):
     """
-    Detect cross-market arbitrage from mathematical inconsistencies.
+    Detect cross-market arbitrage from mathematical inconsistencies
+    among the filtered candidate markets (same-scan, pairwise checks).
 
     Patterns detected:
     1. Threshold ordering: "BTC above $100k" must be >= "BTC above $110k"
@@ -721,6 +922,110 @@ def detect_arbitrage(candidates):
     if arb_results:
         log.info(f"[ARBITRAGE] Detected {len(arb_results)} arbitrage opportunities total")
     return arb_results
+
+
+def find_arbitrage_opportunities(markets_raw, already_traded_ids, bankroll, cfg, mode):
+    """
+    Master arbitrage scanner. Runs ALL arbitrage detection strategies:
+
+    1. Mutually exclusive groups (via /events endpoint) — overround/underround
+    2. Threshold ordering violations (BTC > $100k vs BTC > $110k)
+    3. Time ordering violations (by June vs by July)
+    4. Complement violations (YES + NO != 1.0)
+
+    Executes trades directly for mathematical arbs (full Kelly, capped at $20/leg).
+    Returns: (trades_placed, updated_bankroll)
+    """
+    trades_placed = 0
+
+    # --- Strategy A: Mutually exclusive group arbs (from /events endpoint) ---
+    events = fetch_grouped_events(limit=30)
+    group_arb_trades = _detect_mutually_exclusive_arb(events, already_traded_ids)
+
+    if group_arb_trades:
+        log.info(
+            f"[ARB-SCAN] Found {len(group_arb_trades)} group arbitrage trades "
+            f"across {len(set(t['event_title'] for t in group_arb_trades))} events"
+        )
+
+    for trade in group_arb_trades:
+        if bankroll < 2.0:
+            log.info(f"[ARB-SCAN] Bankroll ${bankroll:.2f} too low, stopping arb execution")
+            break
+
+        size = min(trade["size_usd"], bankroll, ARB_MAX_PER_LEG)
+        if size < 1.0:
+            continue
+
+        entry_price = trade["entry_price"]
+        fee_usd = calculate_fee(entry_price, size, cfg["taker_fee_rate"])
+        bankroll -= size
+
+        record = {
+            "timestamp": datetime.now(SHANGHAI_TZ).isoformat(),
+            "date": datetime.now(SHANGHAI_TZ).date().isoformat(),
+            "mode": mode,
+            "market_id": trade["market_id"],
+            "question": trade["question"][:200],
+            "category": "arbitrage",
+            "hours_to_resolve": 0,  # arb is time-insensitive
+            "market_price": trade["entry_price"] if trade["side"] == "YES" else 1.0 - trade["entry_price"],
+            "estimated_prob": 0.99 if trade["side"] == "YES" else 0.01,  # mathematical certainty
+            "confidence": 0.95,
+            "reasoning": trade["reasoning"],
+            "side": trade["side"],
+            "entry_price": round(entry_price, 4),
+            "size_usd": round(size, 2),
+            "edge": trade["edge"],
+            "fee_usd": round(fee_usd, 4),
+            "balance": round(bankroll, 2),
+            "resolved": False,
+            "arb_type": trade["arb_type"],
+            "arb_group": trade["event_title"],
+            "arb_group_sum": trade["group_sum"],
+        }
+
+        if mode == "live":
+            try:
+                submit_live_order(trade["market_raw"], trade["side"], size, entry_price)
+                record["live_submitted"] = True
+            except NotImplementedError as e:
+                log.error(str(e))
+                return trades_placed, bankroll
+
+        log_trade(record)
+        trades_placed += 1
+
+        send_telegram(
+            f"*ARB Trade*\n"
+            f"Event: {trade['event_title'][:60]}\n"
+            f"Market: {(trade['group_item'] or trade['question'])[:60]}\n"
+            f"Type: {trade['arb_type']} | Sum: {trade['group_sum']:.4f}\n"
+            f"Side: *{trade['side']}* @ {entry_price:.2f}\n"
+            f"Size: ${size:.2f} | Edge: {trade['edge']:+.2%}\n"
+            f"Balance: ${bankroll:.2f}"
+        )
+
+        log.info(
+            f"[ARB-TRADE] {trade['arb_type']}: {trade['market_id'][:8]} "
+            f"{trade['side']} ${size:.2f} @ {entry_price:.2f} "
+            f"edge={trade['edge']:+.2%} | {trade['event_title'][:40]}"
+        )
+
+        time.sleep(1)
+
+    # Update traded IDs after group arb trades
+    if trades_placed > 0:
+        already_traded_ids = already_traded_market_ids()
+
+    # --- Strategy B: Threshold/time/complement arbs (from regular market list) ---
+    # These are detected in detect_arbitrage() and fed into the regular pipeline
+    # via pre_filtered_results in run_scan(). No separate execution needed here.
+
+    if trades_placed:
+        log.info(f"[ARB-SCAN] Executed {trades_placed} arbitrage trades total")
+
+    return trades_placed, bankroll
 
 
 # ---------- Time-decay sniper ----------
@@ -1222,6 +1527,16 @@ def update_bot_status(bot_name, trades_placed, trades_skipped, next_run):
         log.warning(f"update_bot_status failed: {e}")
 
 
+# ---------- Live price cache ----------
+_live_prices_cache = {}
+
+
+def _reset_live_prices_cache():
+    """Clear the live prices cache at the start of each scan."""
+    global _live_prices_cache
+    _live_prices_cache = {}
+
+
 # ---------- Main scan ----------
 def run_scan(cfg, mode, bankroll):
     log.info(f"=== Scan | mode={mode} | bankroll=${bankroll:.2f} ===")
@@ -1243,35 +1558,44 @@ def run_scan(cfg, mode, bankroll):
     markets = fetch_active_markets()
     log.info(f"Fetched {len(markets)} active markets")
     traded_ids = already_traded_market_ids()
+
+    # --- Resolution source sniper: run FIRST, before regular evaluation ---
+    # Checks markets 2-6h from resolution using Gemini search grounding
+    # to verify if outcome is already known from actual data sources
+    sniper_trades, bankroll = snipe_resolving_markets(
+        markets, cfg, traded_ids, bankroll, mode
+    )
+    # Update traded_ids to include any sniper trades
+    if sniper_trades > 0:
+        traded_ids = already_traded_market_ids()
+
+    # --- Cross-market arbitrage: run AFTER sniper, BEFORE regular evaluation ---
+    # Fetches grouped events from /events endpoint, detects mathematical
+    # mispricings (overround/underround in mutually exclusive groups),
+    # and executes trades directly with aggressive sizing.
+    arb_group_trades, bankroll = find_arbitrage_opportunities(
+        markets, traded_ids, bankroll, cfg, mode
+    )
+    if arb_group_trades > 0:
+        traded_ids = already_traded_market_ids()
+
     candidates = filter_markets(markets, cfg, traded_ids)
     log.info(f"{len(candidates)} candidates after filters")
 
     eval_cache = load_eval_cache()
     cache_hits = 0
-    trades_placed = 0
+    trades_placed = sniper_trades + arb_group_trades  # count sniper + arb trades in total
 
     # Reset live-price cache so we get fresh prices for this scan
     _reset_live_prices_cache()
 
-    # Resolution source scraping: for markets <2h from resolution, check actual data
+    # Pre-filter results (math-obvious, arbitrage)
     pre_filtered_results: dict = {}
-    resolution_scrape_hits = 0
-    post_resolution_candidates = []
-    for m in candidates:
-        rs = check_resolution_source(m)
-        if rs is not None:
-            true_p, conf, reason = rs
-            pre_filtered_results[m["_market_id"]] = (true_p, conf, reason)
-            resolution_scrape_hits += 1
-        else:
-            post_resolution_candidates.append(m)
-    if resolution_scrape_hits:
-        log.info(f"{resolution_scrape_hits} markets resolved by resolution source scraping (near-certain)")
 
     # Pre-filter: resolve mathematically obvious markets without LLM
     pre_filter_hits = 0
     remaining_candidates = []
-    for m in post_resolution_candidates:
+    for m in candidates:
         pf = pre_filter_market(m)
         if pf is not None:
             true_p, conf, reason = pf
@@ -1391,7 +1715,7 @@ def run_scan(cfg, mode, bankroll):
         # Small delay to avoid hammering APIs
         time.sleep(2)
 
-    trades_skipped = len(candidates) - trades_placed
+    trades_skipped = len(candidates) - (trades_placed - sniper_trades - arb_group_trades)
 
     # Save shared context
     all_trades = load_trades()
@@ -1408,14 +1732,14 @@ def run_scan(cfg, mode, bankroll):
 
     save_eval_cache(eval_cache)
     log.info(
-        f"Scan complete. Placed {trades_placed} trades. "
+        f"Scan complete. Placed {trades_placed} trades (sniper: {sniper_trades}, arb-group: {arb_group_trades}). "
         f"Pre-filter: {pre_filter_hits} | Arbitrage: {arb_hits} | Cache hits: {cache_hits} | LLM evals: {len(needs_eval)}"
     )
     update_bot_status("ev", trades_placed, trades_skipped, "every 30min")
     send_telegram(
         f"🔄 *EV Bot Scan Complete*\n"
-        f"Placed: {trades_placed} | Skipped: {trades_skipped}\n"
-        f"Pre-filter: {pre_filter_hits} | Arb: {arb_hits} | Cached: {cache_hits} | LLM: {len(needs_eval)}\n"
+        f"Placed: {trades_placed} | Sniper: {sniper_trades} | Arb: {arb_group_trades}+{arb_hits} | Skipped: {trades_skipped}\n"
+        f"Pre-filter: {pre_filter_hits} | Cached: {cache_hits} | LLM: {len(needs_eval)}\n"
         f"🕐 {datetime.now(SHANGHAI_TZ).strftime('%H:%M')} Shanghai | Next: 30min"
     )
 
