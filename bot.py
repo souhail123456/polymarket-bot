@@ -178,6 +178,11 @@ def filter_markets(markets, cfg, already_traded_ids):
             if not (cfg["price_floor"] <= yes_price <= cfg["price_ceiling"]):
                 continue
 
+            # Skip excluded categories (e.g., crypto — no live price feed)
+            cat = classify_market_category(m.get("question", ""), m.get("description", ""))
+            if cat in EXCLUDED_CATEGORIES:
+                continue
+
             m["_yes_price"] = yes_price
             m["_hours_left"] = hours_left
             m["_market_id"] = mid
@@ -208,6 +213,10 @@ def classify_market_category(question: str, description: str = "") -> str:
     if any(w in text for w in ["stock", "s&p", "nasdaq", "dow jones", "spy", "qqq", "share price"]):
         return "stocks"
     return "general"  # politics, geopolitics, celebrity, etc.
+
+
+# Crypto price-level markets removed — LLM has no live price feed (0/6, -$55)
+EXCLUDED_CATEGORIES = {"crypto"}
 
 
 def fetch_live_context(category: str, question: str) -> str:
