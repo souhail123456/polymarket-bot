@@ -1,3 +1,4 @@
+# DISABLED — see fix/execution-hardening for bug fixes. Do not re-enable until validated.
 """
 Polymarket Economic Data Trading Bot
 -------------------------------------
@@ -705,11 +706,41 @@ def fetch_core_pce() -> dict | None:
 # ==========================================================================
 
 def _is_us_market(question: str) -> bool:
-    """Check if market is about US economy. Skip foreign markets we have no data for."""
+    """Check if market is about US economy. Skip foreign markets we have no data for.
+
+    BUG FIX: The original blocklist missed many foreign countries. For example,
+    "UK inflation" matched because "uk " (with trailing space) didn't match "uk's"
+    or "uk\u2019s". "South African" was not in the list at all. This caused the bot
+    to evaluate foreign markets using US FRED data, leading to absurd trades like
+    betting on China's inflation using Cleveland Fed CPI nowcasts.
+    """
     q = question.lower()
-    foreign = ["china", "chinese", "india", "indian", "argentina", "canada", "canadian",
-               "uk ", "britain", "europe", "euro zone", "eurozone", "japan", "mexico",
-               "brazil", "australia", "germany", "france", "turkey", "russia"]
+    # Comprehensive blocklist of foreign country names, demonyms, and abbreviations.
+    # Any market mentioning these is NOT a US market and should be skipped.
+    foreign = [
+        # Major economies
+        "china", "chinese", "india", "indian", "japan", "japanese",
+        "germany", "german", "france", "french", "italy", "italian",
+        # English-speaking
+        "uk", "britain", "british", "england", "canada", "canadian",
+        "australia", "australian", "new zealand",
+        # Americas
+        "argentina", "argentine", "brazil", "brazilian", "mexico", "mexican",
+        "colombia", "colombian", "chile", "chilean", "peru", "peruvian",
+        # Europe
+        "europe", "european", "euro zone", "eurozone", "ecb",
+        "spain", "spanish", "portugal", "portuguese", "netherlands", "dutch",
+        "sweden", "swedish", "norway", "norwegian", "denmark", "danish",
+        "switzerland", "swiss", "poland", "polish", "greece", "greek",
+        # Asia-Pacific
+        "south korea", "korean", "taiwan", "taiwanese", "indonesia", "indonesian",
+        "thailand", "thai", "vietnam", "vietnamese", "philippines", "filipino",
+        "malaysia", "malaysian", "singapore",
+        # Other
+        "turkey", "turkish", "russia", "russian", "south africa", "south african",
+        "nigeria", "nigerian", "egypt", "egyptian", "saudi", "israel", "israeli",
+        "pakistan", "pakistani", "bangladesh",
+    ]
     if any(f in q for f in foreign):
         return False
     # Explicitly US or no country mentioned (assume US for Fed/CPI/etc)
@@ -1131,6 +1162,11 @@ def update_resolutions():
     changed = False
     for t in trades:
         if t.get("resolved"):
+            # Fix: trades marked bot_disabled_abandoned should have pnl=0
+            if t.get("resolution_note") == "bot_disabled_abandoned" and t.get("realized_pnl", 0) != 0:
+                t["realized_pnl"] = 0.0
+                t["won"] = None
+                changed = True
             continue
         try:
             r = requests.get(f"{GAMMA_API}/markets/{t['market_id']}", timeout=10)
