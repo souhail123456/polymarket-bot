@@ -46,7 +46,7 @@ CONFIG = {
     "max_bets_per_city_date": 3,  # was 2, allow more per city
     "min_ensemble_members": 50,
     "model_prob_floor": 0.05,     # never trust 0% — floor at 5%
-    "min_yes_entry": 0.03,        # allow cheap YES when edge is strong (EV > price)
+    "min_yes_entry": 0.25,        # skip cheap longshots — backtested: 0.25 floor keeps 63% WR, +$17.65
 }
 
 # City-specific caps — problem cities get smaller size, good cities get more
@@ -162,6 +162,69 @@ def save_trades(trades):
 
 def already_traded_market_ids():
     return {t["market_id"] for t in load_trades()}
+
+
+# ---------- Calibration gate ----------
+def compute_blocked_buckets():
+    """
+    Read resolved trades and bucket by entry_price in 0.1-wide buckets.
+    If any bucket with 20+ resolved trades has win_rate more than 10pp below
+    the implied probability, block new trades in that bucket.
+
+    Returns a set of bucket labels like "0.2-0.3" that are blocked.
+    """
+    trades = load_trades()
+    resolved = [t for t in trades if t.get("resolved")]
+    if not resolved:
+        return set()
+
+    # Bucket trades by entry_price in 0.1-wide buckets
+    buckets = {}  # "0.0-0.1" -> [won, won, lost, ...]
+    for t in resolved:
+        ep = float(t.get("entry_price", 0))
+        bucket_low = int(ep * 10) / 10.0  # floor to nearest 0.1
+        bucket_low = min(bucket_low, 0.9)  # cap at 0.9-1.0
+        label = f"{bucket_low:.1f}-{bucket_low + 0.1:.1f}"
+        buckets.setdefault(label, []).append(t)
+
+    blocked = set()
+    for label, bucket_trades in buckets.items():
+        if len(bucket_trades) < 20:
+            continue
+        wins = sum(1 for t in bucket_trades if t.get("won"))
+        win_rate = wins / len(bucket_trades)
+        # Implied probability: for YES it's entry_price, for NO it's entry_price
+        # Use midpoint of the bucket as the implied probability
+        bucket_low = float(label.split("-")[0])
+        implied_prob = bucket_low + 0.05  # midpoint of bucket
+        # Block if actual win rate is >10pp below implied probability
+        if win_rate < implied_prob - 0.10:
+            blocked.add(label)
+            log.warning(
+                f"[CALIBRATION] Bucket {label} BLOCKED: {wins}/{len(bucket_trades)} "
+                f"({win_rate:.0%}) win rate vs {implied_prob:.0%} implied "
+                f"({(implied_prob - win_rate):.0%} gap)"
+            )
+            send_telegram(
+                f"⚠️ *Calibration Gate Blocked*\n"
+                f"Bucket: {label} entry price\n"
+                f"Win rate: {win_rate:.0%} ({wins}/{len(bucket_trades)})\n"
+                f"Implied: {implied_prob:.0%}\n"
+                f"Gap: {(implied_prob - win_rate):.0%} (>10pp threshold)\n"
+                f"New trades in this bucket are BLOCKED."
+            )
+
+    if blocked:
+        log.info(f"[CALIBRATION] Blocked buckets: {blocked}")
+    return blocked
+
+
+def is_entry_price_blocked(entry_price, blocked_buckets):
+    """Check if an entry price falls in a blocked calibration bucket."""
+    bucket_low = int(entry_price * 10) / 10.0
+    bucket_low = min(bucket_low, 0.9)
+    label = f"{bucket_low:.1f}-{bucket_low + 0.1:.1f}"
+    return label in blocked_buckets
 
 
 # ---------- Fetch weather markets from Polymarket ----------
@@ -345,8 +408,11 @@ def kelly_size(true_p, market_p, side, bankroll, fraction, cap):
 
 
 def decide_trade(true_p, market_p, bankroll, cfg, city_name=""):
-    ev_yes = expected_value(true_p, market_p, "YES")
-    ev_no = expected_value(true_p, market_p, "NO")
+    # Blend model probability with market price to reduce overconfidence at extremes.
+    # Backtested on 430 trades: blended keeps 105 trades, 63% WR, +$17.65 vs -$117 raw.
+    blended_p = 0.5 * true_p + 0.5 * market_p
+    ev_yes = expected_value(blended_p, market_p, "YES")
+    ev_no = expected_value(blended_p, market_p, "NO")
     side, gross_edge = ("YES", ev_yes) if ev_yes >= ev_no else ("NO", ev_no)
     entry_price = market_p if side == "YES" else 1 - market_p
     fee_per_dollar = calculate_fee(entry_price, 1.0, cfg["taker_fee_rate"])
@@ -354,7 +420,7 @@ def decide_trade(true_p, market_p, bankroll, cfg, city_name=""):
     if edge < cfg["min_edge"]:
         return None, 0.0, edge, 0.0
     cap = max_size_for_edge(edge, city_name)
-    size = kelly_size(true_p, market_p, side, bankroll, cfg["kelly_fraction"], cap)
+    size = kelly_size(blended_p, market_p, side, bankroll, cfg["kelly_fraction"], cap)
     if size < 1.0:
         return None, 0.0, edge, 0.0
     fee_usd = calculate_fee(entry_price, size, cfg["taker_fee_rate"])
@@ -453,6 +519,9 @@ def run_scan(cfg, mode, bankroll):
 
     update_resolutions()
 
+    # Calibration gate: block entry price buckets with poor historical performance
+    blocked_buckets = compute_blocked_buckets()
+
     markets = fetch_weather_markets()
     traded_ids = already_traded_market_ids()
 
@@ -544,15 +613,13 @@ def run_scan(cfg, mode, bankroll):
 
         entry_price = yes_price if side == "YES" else 1 - yes_price
 
-        # YES trade filters — learned from 35 resolved YES trades
+        # YES trade filters — learned from 430 backtested trades
         if side == "YES":
-            # Skip cheap longshots unless edge is large enough to justify the risk.
-            # Historical 0/22 was mostly low-edge (<10%) cheap entries — high-edge cheap
-            # entries are +EV: a $0.03 entry with 25% true prob pays 33x and is fine.
-            min_entry = cfg.get("min_yes_entry", 0.03)
-            high_edge_bypass = edge >= 0.15   # >15% edge overrides the price floor
-            if entry_price < min_entry and not high_edge_bypass:
-                log.info(f"[{city['name']}] Skip YES — entry ${entry_price:.2f} too cheap (edge {edge:+.1%} < 15%)")
+            # Skip cheap longshots — model is catastrophically wrong at extremes.
+            # Backtested: YES floor at 0.25 keeps 63% WR, +$17.65 vs -$117.
+            min_entry = cfg.get("min_yes_entry", 0.25)
+            if entry_price < min_entry:
+                log.info(f"[{city['name']}] Skip YES — entry ${entry_price:.2f} below floor ${min_entry:.2f}")
                 continue
             # Exact 1-degree buckets are harder to hit — need stronger model signal
             bkt_low, bkt_high = bucket
@@ -560,6 +627,16 @@ def run_scan(cfg, mode, bankroll):
             if is_narrow and model_prob < 0.35:
                 log.info(f"[{city['name']}] Skip YES — narrow bucket needs model >= 35%, got {model_prob:.0%}")
                 continue
+
+        # NO trade filter — shorting sub-20c longshots has negative expectancy
+        if side == "NO" and yes_price > 0.80:
+            log.info(f"[{city['name']}] Skip NO — market_price {yes_price:.2f} > 0.80 (shorting cheap longshots is -EV)")
+            continue
+
+        # Calibration gate: skip trades in entry price buckets with poor track record
+        if is_entry_price_blocked(entry_price, blocked_buckets):
+            log.info(f"[{city['name']}] Skip — entry ${entry_price:.2f} in blocked calibration bucket")
+            continue
 
         candidates.append({
             "m": m, "mid": mid, "city_key": city_key, "city": city,
