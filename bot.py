@@ -216,7 +216,7 @@ def classify_market_category(question: str, description: str = "") -> str:
 
 
 # Crypto price-level markets removed — LLM has no live price feed (0/6, -$55)
-EXCLUDED_CATEGORIES = {"crypto"}
+EXCLUDED_CATEGORIES = {"crypto", "sports"}  # crypto: no price feed. sports: 19% WR, -$29 across 16 trades
 
 
 def fetch_live_context(category: str, question: str) -> str:

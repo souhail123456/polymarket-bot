@@ -36,29 +36,29 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 CONFIG = {
-    "min_edge": 0.10,             # 10% min edge — open it up
-    "max_position_usd": 15.0,
-    "kelly_fraction": 0.15,
+    "min_edge": 0.12,             # 12% min edge — be more selective
+    "max_position_usd": 12.0,
+    "kelly_fraction": 0.12,
     "taker_fee_rate": 0.05,
     "starting_bankroll": 100.0,
-    "daily_loss_cap_usd": 20.0,
+    "daily_loss_cap_usd": 15.0,
     "max_days_ahead": 1,          # same-day and next-day
-    "max_bets_per_city_date": 3,  # was 2, allow more per city
+    "max_bets_per_city_date": 2,  # back to 2 — fewer, higher-conviction bets
     "min_ensemble_members": 50,
     "model_prob_floor": 0.05,     # never trust 0% — floor at 5%
     "min_yes_entry": 0.25,        # skip cheap longshots — backtested: 0.25 floor keeps 63% WR, +$17.65
+    "min_no_entry": 0.50,         # NO below 0.50 is 20% WR — skip (was losing $22)
+    "max_no_entry": 0.80,         # NO above 0.80 is -EV despite 81% WR (tiny wins, big losses)
 }
 
-# City-specific caps — problem cities get smaller size, good cities get more
+# City-specific caps — based on 430 trades backtested data
 CITY_MAX_SIZE = {
-    "Miami": 3.0,       # 50% WR, -$40 — model can't handle tropical storms
-    "Shanghai": 4.0,    # 67% WR but P&L negative — limit damage
-    "Paris": 15.0,      # best performer +$30
-    "Chicago": 12.0,    # solid +$6
-    "Denver": 12.0,     # solid +$5
-    "NYC": 10.0,        # decent +$10
-    "Seoul": 8.0,       # 72% WR but small P&L
-    "Los Angeles": 8.0, # 68% WR, barely positive
+    "Chicago": 12.0,    # 70% WR, +$15 — best performer
+    "Paris": 10.0,      # 56% WR, +$11 — decent
+    "NYC": 8.0,         # 65% WR, -$2 — borderline, keep small
+    "Denver": 8.0,      # 63% WR, -$7 — borderline, keep small
+    "Shanghai": 5.0,    # 68% WR, -$7 — limit damage
+    # Seoul, Miami, LA REMOVED — all unprofitable (58%, 57%, 57% WR)
 }
 
 # Position sizing by edge, capped per city
@@ -75,11 +75,11 @@ def max_size_for_edge(edge, city_name=""):
 CITIES = {
     "nyc":     {"lat": 40.78, "lon": -73.88, "unit": "fahrenheit", "name": "NYC"},
     "chicago": {"lat": 41.97, "lon": -87.91, "unit": "fahrenheit", "name": "Chicago"},
-    # "miami":   {"lat": 25.79, "lon": -80.29, "unit": "fahrenheit", "name": "Miami"},  # removed — 52% WR, unprofitable
-    "la":      {"lat": 33.94, "lon": -118.41, "unit": "fahrenheit", "name": "Los Angeles"},
+    # "miami":   removed — 57% WR, -$36
+    # "la":      removed — 57% WR, -$30
     "denver":  {"lat": 39.72, "lon": -104.75, "unit": "fahrenheit", "name": "Denver"},
-    # "paris":   {"lat": 48.97, "lon": 2.44,   "unit": "celsius",    "name": "Paris"},  # removed — 55% WR, unprofitable
-    "seoul":   {"lat": 37.46, "lon": 126.44, "unit": "celsius",    "name": "Seoul"},
+    # "paris":   removed — 56% WR, +$11 but inconsistent
+    # "seoul":   removed — 58% WR, -$62 (biggest loser)
     "shanghai":{"lat": 31.14, "lon": 121.81, "unit": "celsius",    "name": "Shanghai"},
 }
 
@@ -628,10 +628,17 @@ def run_scan(cfg, mode, bankroll):
                 log.info(f"[{city['name']}] Skip YES — narrow bucket needs model >= 35%, got {model_prob:.0%}")
                 continue
 
-        # NO trade filter — shorting sub-20c longshots has negative expectancy
-        if side == "NO" and yes_price > 0.80:
-            log.info(f"[{city['name']}] Skip NO — market_price {yes_price:.2f} > 0.80 (shorting cheap longshots is -EV)")
-            continue
+        # NO trade filters — based on 430 backtested trades
+        if side == "NO":
+            no_price = 1 - yes_price
+            min_no = cfg.get("min_no_entry", 0.50)
+            max_no = cfg.get("max_no_entry", 0.80)
+            if no_price < min_no:
+                log.info(f"[{city['name']}] Skip NO — entry ${no_price:.2f} below floor ${min_no:.2f} (20% WR bucket)")
+                continue
+            if no_price > max_no:
+                log.info(f"[{city['name']}] Skip NO — entry ${no_price:.2f} above cap ${max_no:.2f} (tiny wins, big losses)")
+                continue
 
         # Calibration gate: skip trades in entry price buckets with poor track record
         if is_entry_price_blocked(entry_price, blocked_buckets):
