@@ -41,21 +41,21 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 DEFAULT_CONFIG = {
     # Trade decision thresholds
-    "min_edge": 0.10,            # min EV per $1 staked
-    "min_confidence": 0.55,      # LLM self-reported confidence
+    "min_edge": 0.15,            # raised from 0.10 — LLM is miscalibrated, require stronger edge
+    "min_confidence": 0.70,      # raised from 0.55 — LLM must be more certain before we act
     # Sizing
-    "max_position_usd": 10.0,    # was $5 — size up, LLM edge pays when it hits
-    "daily_loss_cap_usd": 25.0,
-    "kelly_fraction": 0.25,      # quarter-Kelly
+    "max_position_usd": 5.0,     # halved from $10 — cut exposure until win rate improves
+    "daily_loss_cap_usd": 10.0,  # tightened from $25 — protect bankroll aggressively
+    "kelly_fraction": 0.10,      # tenth-Kelly (was 0.25) — LLM edge is unreliable, be conservative
     "taker_fee_rate": 0.05,
-    # Market filters — opened up to catch more opportunities
+    # Market filters
     "min_liquidity_usd": 500.0,
     "max_liquidity_usd": 500000.0,
-    "max_hours_to_resolve": 720, # was 168 (7d) — now 30 days. 92/150 markets were filtered out
+    "max_hours_to_resolve": 168, # back to 7 days (was 720/30d) — long-dated bets are unpredictable
     "min_hours_to_resolve": 2,
-    "price_floor": 0.05,         # was 0.15 — allow cheap YES bets (LLM can spot longshot value)
-    "price_ceiling": 0.95,       # was 0.85 — allow high-confidence NO bets
-    "max_markets_per_scan": 15,  # cap per scan to avoid draining bankroll
+    "price_floor": 0.15,         # raised from 0.05 — cheap YES longshots are a trap (0W/10 under 0.20)
+    "price_ceiling": 0.85,       # lowered from 0.95 — ban near-certainty bets where edge is tiny
+    "max_markets_per_scan": 8,   # reduced from 15 — fewer, higher-conviction trades only
     # Starting paper bankroll
     "starting_bankroll": 100.0,
 }
@@ -1131,6 +1131,15 @@ def _load_regime():
         return "UNKNOWN", ""
 
 
+def _apply_skepticism(true_p, conf, market_p):
+    """Shrink LLM's claimed edge by 30% — LLM is historically overconfident (3W/26L, -$116).
+    Pulls the estimate 30% back toward the market price, and caps confidence at 0.85."""
+    true_p = true_p + 0.30 * (market_p - true_p)
+    true_p = round(max(0.01, min(0.99, true_p)), 4)
+    conf = min(conf, 0.85)  # LLM should never be "sure"
+    return true_p, conf
+
+
 def estimate_probability(market):
     """Estimate probability for a single market (fallback if batch fails)."""
     regime, regime_guidance = _load_regime()
@@ -1159,6 +1168,8 @@ def estimate_probability(market):
         true_p = float(data["true_probability"])
         conf = float(data["confidence"])
         reason = data.get("reasoning", "")
+        # Skepticism pass: pull estimate 30% toward market price — LLM is historically overconfident
+        true_p, conf = _apply_skepticism(true_p, conf, market["_yes_price"])
         true_p, conf, reason = _apply_time_decay_sniper(
             true_p, conf, reason,
             market_p=market["_yes_price"],
@@ -1232,6 +1243,8 @@ Output ONLY a JSON array, one object per market, in order. No other text:
             conf = float(r["confidence"])
             reason = r.get("reasoning", "")
 
+            # Skepticism pass: pull estimate 30% toward market price — LLM is historically overconfident
+            true_p, conf = _apply_skepticism(true_p, conf, m["_yes_price"])
             true_p, conf, reason = _apply_time_decay_sniper(
                 true_p, conf, reason,
                 market_p=m["_yes_price"],
@@ -1287,6 +1300,13 @@ def decide_trade(true_p, market_p, confidence, bankroll, cfg):
     ev_yes = expected_value(true_p, market_p, "YES")
     ev_no = expected_value(true_p, market_p, "NO")
     side, gross_edge = ("YES", ev_yes) if ev_yes >= ev_no else ("NO", ev_no)
+    # YES bets are 0W/15L historically — block until calibration improves
+    if side == "YES":
+        return None, 0.0, ev_yes, 0.0
+    # NO entry price window: only trade NO between 0.40-0.75 (sweet spot, avoids extremes)
+    no_price = 1 - market_p
+    if no_price < 0.40 or no_price > 0.75:
+        return None, 0.0, ev_no, 0.0
     # Estimate fee as fraction of $1 staked
     entry_price = market_p if side == "YES" else 1 - market_p
     fee_per_dollar = calculate_fee(entry_price, 1.0, cfg["taker_fee_rate"])
