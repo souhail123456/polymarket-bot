@@ -36,9 +36,17 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 CONFIG = {
-    "min_edge": 0.12,             # 12% min edge — be more selective
-    "max_position_usd": 12.0,
-    "kelly_fraction": 0.12,
+    "min_edge": 0.12,             # 12% min edge — be more selective (floor requirement is 10%)
+    "min_edge_yes": 0.15,         # YES needs extra margin: raw data shows 89 YES trades, 18% WR,
+                                   # -$111.93 (almost the entire -$117 loss) — YES is total-loss-or-
+                                   # small-win, so require more edge cushion than NO before betting.
+    "max_position_usd": 12.0,     # hard $ ceiling per trade, now actually enforced (was dead config)
+    "max_position_pct": 0.15,     # half-Kelly-style hard cap: never risk more than 15% of bankroll
+                                   # on a single trade, regardless of what the Kelly formula suggests
+    "kelly_fraction": 0.12,       # fraction of full-Kelly used for NO (and default) sizing
+    "kelly_fraction_yes": 0.06,   # half the NO fraction — YES bets pay out big on a win but lose the
+                                   # whole stake on a loss, and the ensemble model is most miscalibrated
+                                   # at the cheap-longshot end, so size YES more conservatively
     "taker_fee_rate": 0.05,
     "starting_bankroll": 100.0,
     "daily_loss_cap_usd": 15.0,
@@ -393,15 +401,26 @@ def expected_value(true_p, market_p, side):
 
 
 def kelly_size(true_p, market_p, side, bankroll, fraction, cap):
+    """Fractional Kelly sizing. `fraction` scales the full-Kelly bet down (e.g. 0.12 = 12%
+    of full Kelly), and `cap` is a hard dollar ceiling applied on top — the caller is
+    responsible for making that cap reflect both a per-trade $ limit and a bankroll-%
+    limit (half-Kelly-style), since the raw Kelly formula alone will happily size up
+    a bet based on a probability estimate that may itself be wrong (garbage in,
+    garbage out) — that's exactly what happened with cheap YES longshots historically.
+    """
     if side == "YES":
+        # Payout odds if the bet wins: pay market_p per share, collect $1 -> b = (1-p)/p
         b = (1 - market_p) / market_p if market_p > 0 else 0
         p = true_p
     else:
+        # NO share costs (1 - market_p); payout odds b = market_p / (1 - market_p)
         b = market_p / (1 - market_p) if market_p < 1 else 0
         p = 1 - true_p
     if b <= 0:
         return 0.0
     q = 1 - p
+    # f* = (b*p - q) / b == p - q/b  (this already naturally shrinks bet size as b grows,
+    # i.e. as the side gets cheaper/riskier — but only if p is well-calibrated)
     kelly_full = (b * p - q) / b
     bet = bankroll * fraction * max(0, kelly_full)
     return min(bet, cap)
@@ -417,10 +436,29 @@ def decide_trade(true_p, market_p, bankroll, cfg, city_name=""):
     entry_price = market_p if side == "YES" else 1 - market_p
     fee_per_dollar = calculate_fee(entry_price, 1.0, cfg["taker_fee_rate"])
     edge = gross_edge - fee_per_dollar
-    if edge < cfg["min_edge"]:
+
+    # Global floor: never trade on noise-level edge (hard minimum 10%, default stricter at 12%).
+    min_edge_required = cfg.get("min_edge", 0.10)
+    # YES bets pay out big-but-rare and lose the full stake far more often (89 historical
+    # trades, 18% WR, -$111.93 — nearly the entire realized loss) — require extra edge
+    # margin on top of the base floor before taking a YES side at all.
+    if side == "YES":
+        min_edge_required = max(min_edge_required, cfg.get("min_edge_yes", min_edge_required))
+    if edge < min_edge_required:
         return None, 0.0, edge, 0.0
+
+    # Position sizing: fractional Kelly, scaled down further for YES since the model is
+    # most miscalibrated at the cheap-longshot end and a bad true_p estimate there
+    # otherwise still produces an oversized Kelly bet.
+    fraction = cfg.get("kelly_fraction_yes", cfg["kelly_fraction"]) if side == "YES" else cfg["kelly_fraction"]
+
+    # Cap is the tightest of: edge/city tiered cap, absolute $ ceiling, and a
+    # half-Kelly-style bankroll-percentage ceiling — whichever is smallest wins.
     cap = max_size_for_edge(edge, city_name)
-    size = kelly_size(blended_p, market_p, side, bankroll, cfg["kelly_fraction"], cap)
+    cap = min(cap, cfg.get("max_position_usd", cap))
+    cap = min(cap, bankroll * cfg.get("max_position_pct", 1.0))
+
+    size = kelly_size(blended_p, market_p, side, bankroll, fraction, cap)
     if size < 1.0:
         return None, 0.0, edge, 0.0
     fee_usd = calculate_fee(entry_price, size, cfg["taker_fee_rate"])
