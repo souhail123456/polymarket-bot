@@ -36,7 +36,7 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 CONFIG = {
-    "min_edge": 0.12,             # 12% min edge — be more selective (floor requirement is 10%)
+    "min_edge": 0.08,             # 8% for NO — Kelly sizes small bets at low edge anyway
     "min_edge_yes": 0.15,         # YES needs extra margin: raw data shows 89 YES trades, 18% WR,
                                    # -$111.93 (almost the entire -$117 loss) — YES is total-loss-or-
                                    # small-win, so require more edge cushion than NO before betting.
@@ -55,7 +55,7 @@ CONFIG = {
     "min_ensemble_members": 50,
     "model_prob_floor": 0.05,     # never trust 0% — floor at 5%
     "min_yes_entry": 0.25,        # skip cheap longshots — backtested: 0.25 floor keeps 63% WR, +$17.65
-    "min_no_entry": 0.50,         # NO below 0.50 is 20% WR — skip (was losing $22)
+    "min_no_entry": 0.35,         # NO below 0.35 is extreme longshot territory (YES > 65%)
     "max_no_entry": 0.80,         # NO above 0.80 is -EV despite 81% WR (tiny wins, big losses)
 }
 
@@ -76,8 +76,10 @@ def max_size_for_edge(edge, city_name=""):
         return min(city_cap, 15.0)
     elif edge >= 0.15:
         return min(city_cap, 10.0)
+    elif edge >= 0.10:
+        return min(city_cap, 5.0)
     else:
-        return min(city_cap, 6.0)
+        return min(city_cap, 3.0)
 
 # Cities Polymarket tracks, with coordinates and units
 CITIES = {
@@ -339,7 +341,7 @@ def fetch_ensemble_forecast(city_key, date_str):
                     "end_date": date_str,
                     "temperature_unit": city["unit"],
                 },
-                timeout=15,
+                timeout=30,
             )
             r.raise_for_status()
             maxes = compute_daily_maxes(r.json())
@@ -437,7 +439,7 @@ def decide_trade(true_p, market_p, bankroll, cfg, city_name=""):
     fee_per_dollar = calculate_fee(entry_price, 1.0, cfg["taker_fee_rate"])
     edge = gross_edge - fee_per_dollar
 
-    # Global floor: never trade on noise-level edge (hard minimum 10%, default stricter at 12%).
+    # Global floor: never trade on noise-level edge.
     min_edge_required = cfg.get("min_edge", 0.10)
     # YES bets pay out big-but-rare and lose the full stake far more often (89 historical
     # trades, 18% WR, -$111.93 — nearly the entire realized loss) — require extra edge
