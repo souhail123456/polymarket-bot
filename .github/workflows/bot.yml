@@ -37,8 +37,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: logs/
-          key: trade-logs-${{ github.run_id }}
-          restore-keys: trade-logs-
+          key: ev-logs-v2-${{ github.run_id }}
+          restore-keys: ev-logs-v2-
 
       - name: Run bot
         env:
@@ -55,7 +55,7 @@ jobs:
         if: always()
         with:
           path: logs/
-          key: trade-logs-${{ github.run_id }}
+          key: ev-logs-v2-${{ github.run_id }}
 
       - name: Commit trade logs
         if: always()

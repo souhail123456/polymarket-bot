@@ -18,13 +18,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Restore trade logs
-        uses: actions/cache/restore@v4
-        with:
-          path: logs/
-          key: trade-logs-
-          restore-keys: trade-logs-
-
       - name: Send EV bot summary
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}

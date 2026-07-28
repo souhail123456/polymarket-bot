@@ -28,13 +28,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Restore trade logs
-        uses: actions/cache/restore@v4
-        with:
-          path: logs/
-          key: trade-logs-
-          restore-keys: trade-logs-
-
       - name: Generate dashboard
         run: python generate_dashboard.py
 
