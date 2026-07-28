@@ -5,3 +5,6 @@ logs/*.log
 backtest_out/
 .env
 files copy/
+trading.db
+*.db-shm
+*.db-wal
