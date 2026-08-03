@@ -60397,3 +60397,29 @@
 2026-08-02 22:32:55,816 | INFO | [Shanghai] Will the highest temperature in Shanghai be 33°C o mkt=0.20 model=0.22 edge=-2.6% fee=$0.00 => skip $0.00
 2026-08-02 22:32:55,817 | INFO | [Shanghai] Will the highest temperature in Shanghai be 36°C o mkt=0.04 model=0.05 edge=-4.1% fee=$0.00 => skip $0.00
 2026-08-02 22:32:55,818 | INFO | Weather scan complete. Placed 0 trades.
+2026-08-03 00:00:09,557 | INFO | === Weather Scan | mode=paper | bankroll=$78.31 ===
+2026-08-03 00:00:09,557 | INFO | [shared/crypto] BTC $79,488, ETH $2,259, 0 open, 0% wr (as of 2026-05-14T13:24:16.354486+08:00)
+2026-08-03 00:00:09,557 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-30T14:56:17.649809+08:00)
+2026-08-03 00:00:09,557 | INFO | [shared/ev] 25 open trades, 10% win rate (as of 2026-05-14T08:43:05.739849+08:00)
+2026-08-03 00:00:11,425 | INFO | Found 154 weather sub-markets
+2026-08-03 00:00:13,721 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.07 model=0.18 edge=+0.6% fee=$0.00 => skip $0.00
+2026-08-03 00:00:13,721 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.20 model=0.29 edge=+0.7% fee=$0.00 => skip $0.00
+2026-08-03 00:00:13,722 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.10 model=0.07 edge=+0.9% fee=$0.00 => skip $0.00
+2026-08-03 00:00:15,980 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.04 model=0.05 edge=-4.3% fee=$0.00 => skip $0.00
+2026-08-03 00:00:15,981 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.30 model=0.23 edge=+2.4% fee=$0.00 => skip $0.00
+2026-08-03 00:00:15,981 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.42 model=0.43 edge=-2.5% fee=$0.00 => skip $0.00
+2026-08-03 00:00:18,239 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.03 model=0.05 edge=-3.5% fee=$0.00 => skip $0.00
+2026-08-03 00:00:18,240 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.14 model=0.28 edge=+3.1% fee=$0.00 => skip $0.00
+2026-08-03 00:00:18,240 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.49 model=0.48 edge=-2.0% fee=$0.00 => skip $0.00
+2026-08-03 00:00:18,240 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.32 model=0.17 edge=+5.9% fee=$0.00 => skip $0.00
+2026-08-03 00:00:18,240 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.04 model=0.05 edge=-4.5% fee=$0.00 => skip $0.00
+2026-08-03 00:00:48,386 | WARNING | Ensemble fetch failed for gfs_seamless shanghai 2026-08-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-03 00:01:18,533 | WARNING | Ensemble fetch failed for ecmwf_ifs025 shanghai 2026-08-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-03 00:01:48,674 | WARNING | Ensemble fetch failed for icon_seamless shanghai 2026-08-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-03 00:02:18,834 | WARNING | Ensemble fetch failed for gem_global shanghai 2026-08-03: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-03 00:02:19,297 | INFO | [Shanghai] Will the highest temperature in Shanghai be 33°C o mkt=0.12 model=0.35 edge=+7.5% fee=$0.00 => skip $0.00
+2026-08-03 00:02:21,566 | INFO | [Shanghai] Will the highest temperature in Shanghai be 31°C o mkt=0.03 model=0.16 edge=+1.9% fee=$0.00 => skip $0.00
+2026-08-03 00:02:21,566 | INFO | [Shanghai] Will the highest temperature in Shanghai be 32°C o mkt=0.07 model=0.38 edge=+10.4% fee=$0.00 => skip $0.00
+2026-08-03 00:02:21,566 | INFO | [Shanghai] Will the highest temperature in Shanghai be 33°C o mkt=0.20 model=0.30 edge=+1.4% fee=$0.00 => skip $0.00
+2026-08-03 00:02:21,567 | INFO | [Shanghai] Will the highest temperature in Shanghai be 36°C o mkt=0.04 model=0.05 edge=-4.1% fee=$0.00 => skip $0.00
+2026-08-03 00:02:21,569 | INFO | Weather scan complete. Placed 0 trades.
