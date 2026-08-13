@@ -67228,3 +67228,46 @@
 2026-08-13 16:06:07,843 | INFO | [Shanghai] Will the highest temperature in Shanghai be 31°C o mkt=0.12 model=0.07 edge=+1.5% fee=$0.00 => skip $0.00
 2026-08-13 16:06:07,843 | INFO | [Shanghai] Will the highest temperature in Shanghai be 32°C o mkt=0.04 model=0.05 edge=-4.1% fee=$0.00 => skip $0.00
 2026-08-13 16:06:07,845 | INFO | Weather scan complete. Placed 0 trades.
+2026-08-13 17:28:59,511 | INFO | === Weather Scan | mode=paper | bankroll=$78.95 ===
+2026-08-13 17:28:59,512 | INFO | [shared/crypto] BTC $79,488, ETH $2,259, 0 open, 0% wr (as of 2026-05-14T13:24:16.354486+08:00)
+2026-08-13 17:28:59,512 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-30T14:56:17.649809+08:00)
+2026-08-13 17:28:59,512 | INFO | [shared/ev] 25 open trades, 10% win rate (as of 2026-05-14T08:43:05.739849+08:00)
+2026-08-13 17:28:59,617 | INFO | Resolved 3506300: NO -> WIN pnl=$1.88 balance=$80.84
+2026-08-13 17:29:00,149 | INFO | Resolved 3506299: NO -> LOSS pnl=$-2.34 balance=$78.50
+2026-08-13 17:29:01,344 | WARNING | [CALIBRATION] Bucket 0.5-0.6 BLOCKED: 13/30 (43%) win rate vs 55% implied (12% gap)
+2026-08-13 17:29:01,678 | INFO | [CALIBRATION] Blocked buckets: {'0.5-0.6'}
+2026-08-13 17:29:02,540 | INFO | Found 154 weather sub-markets
+2026-08-13 17:29:04,493 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.14 model=0.13 edge=-0.4% fee=$0.00 => skip $0.00
+2026-08-13 17:29:04,493 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.30 model=0.36 edge=-0.5% fee=$0.00 => skip $0.00
+2026-08-13 17:29:06,415 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.06 model=0.05 edge=-0.0% fee=$0.00 => skip $0.00
+2026-08-13 17:29:06,416 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.17 model=0.12 edge=+1.9% fee=$0.00 => skip $0.00
+2026-08-13 17:29:06,416 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.49 model=0.33 edge=+5.6% fee=$0.00 => skip $0.00
+2026-08-13 17:29:06,416 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.22 model=0.30 edge=+0.3% fee=$0.00 => skip $0.00
+2026-08-13 17:29:06,416 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.05 model=0.15 edge=+0.2% fee=$0.00 => skip $0.00
+2026-08-13 17:29:08,382 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.15 model=0.45 edge=+10.4% fee=$0.00 => skip $0.00
+2026-08-13 17:29:10,355 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.04 model=0.09 edge=-2.2% fee=$0.00 => skip $0.00
+2026-08-13 17:29:10,355 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.14 model=0.15 edge=-3.6% fee=$0.00 => skip $0.00
+2026-08-13 17:29:10,355 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.29 model=0.24 edge=+1.2% fee=$0.00 => skip $0.00
+2026-08-13 17:29:10,355 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.10 model=0.07 edge=+1.1% fee=$0.00 => skip $0.00
+2026-08-13 17:29:10,356 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.03 model=0.05 edge=-3.9% fee=$0.00 => skip $0.00
+2026-08-13 17:29:40,862 | WARNING | Ensemble fetch failed for ecmwf_ifs025 denver 2026-08-13: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-13 17:30:11,004 | WARNING | Ensemble fetch failed for icon_seamless denver 2026-08-13: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-13 17:30:41,126 | WARNING | Ensemble fetch failed for gem_global denver 2026-08-13: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-13 17:31:11,275 | WARNING | Ensemble fetch failed for ecmwf_aifs025 denver 2026-08-13: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-13 17:31:11,276 | INFO | [Denver] Skip — only 31 ensemble members
+2026-08-13 17:31:11,276 | INFO | [Denver] Skip — only 31 ensemble members
+2026-08-13 17:31:11,276 | INFO | [Denver] Skip — only 31 ensemble members
+2026-08-13 17:31:11,276 | INFO | [Denver] Skip — only 31 ensemble members
+2026-08-13 17:31:13,247 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.04 model=0.11 edge=-1.6% fee=$0.00 => skip $0.00
+2026-08-13 17:31:13,247 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.06 model=0.19 edge=+1.6% fee=$0.00 => skip $0.00
+2026-08-13 17:31:13,247 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.20 model=0.19 edge=-0.5% fee=$0.00 => skip $0.00
+2026-08-13 17:31:13,248 | INFO | [Denver] Will the highest temperature in Denver be 88°F or  mkt=0.04 model=0.10 edge=-1.7% fee=$0.00 => skip $0.00
+2026-08-13 17:31:15,236 | INFO | [Shanghai] Will the highest temperature in Shanghai be 27°C o mkt=0.10 model=0.22 edge=+1.4% fee=$0.00 => skip $0.00
+2026-08-13 17:31:15,237 | INFO | [Shanghai] Will the highest temperature in Shanghai be 28°C o mkt=0.34 model=0.59 edge=+9.6% fee=$0.00 => skip $0.00
+2026-08-13 17:31:17,212 | INFO | [Shanghai] Will the highest temperature in Shanghai be 27°C o mkt=0.03 model=0.20 edge=+3.7% fee=$0.00 => skip $0.00
+2026-08-13 17:31:17,213 | INFO | [Shanghai] Will the highest temperature in Shanghai be 28°C o mkt=0.12 model=0.30 edge=+4.3% fee=$0.00 => skip $0.00
+2026-08-13 17:31:17,213 | INFO | [Shanghai] Will the highest temperature in Shanghai be 29°C o mkt=0.47 model=0.23 edge=+9.3% fee=$0.06 => NO $2.37
+2026-08-13 17:31:17,213 | INFO | [Shanghai] Skip — entry $0.53 in blocked calibration bucket
+2026-08-13 17:31:17,213 | INFO | [Shanghai] Will the highest temperature in Shanghai be 31°C o mkt=0.12 model=0.05 edge=+2.7% fee=$0.00 => skip $0.00
+2026-08-13 17:31:17,213 | INFO | [Shanghai] Will the highest temperature in Shanghai be 32°C o mkt=0.03 model=0.05 edge=-3.9% fee=$0.00 => skip $0.00
+2026-08-13 17:31:17,215 | INFO | Weather scan complete. Placed 0 trades.
