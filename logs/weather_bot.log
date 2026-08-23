@@ -78523,3 +78523,53 @@
 2026-08-23 06:47:25,088 | INFO | [Shanghai] Will the highest temperature in Shanghai be 33°C o mkt=0.07 model=0.05 edge=+0.9% fee=$0.00 => skip $0.00
 2026-08-23 06:47:25,088 | INFO | [Shanghai] Will the highest temperature in Shanghai be 34°C o mkt=0.03 model=0.05 edge=-3.9% fee=$0.00 => skip $0.00
 2026-08-23 06:47:25,090 | INFO | Weather scan complete. Placed 0 trades.
+2026-08-23 07:34:37,891 | INFO | === Weather Scan | mode=paper | bankroll=$83.90 ===
+2026-08-23 07:34:37,891 | INFO | [shared/crypto] BTC $79,488, ETH $2,259, 0 open, 0% wr (as of 2026-05-14T13:24:16.354486+08:00)
+2026-08-23 07:34:37,891 | INFO | [shared/econ] CPI ok, GDP ok, FedWatch ok, Unemp ok, Payrolls ok, PCE ok (as of 2026-05-30T14:56:17.649809+08:00)
+2026-08-23 07:34:37,891 | INFO | [shared/ev] 25 open trades, 10% win rate (as of 2026-05-14T08:43:05.739849+08:00)
+2026-08-23 07:34:38,466 | INFO | Resolved 3754925: NO -> WIN pnl=$1.14 balance=$85.03
+2026-08-23 07:34:39,226 | INFO | Resolved 3754924: NO -> LOSS pnl=$-3.77 balance=$81.26
+2026-08-23 07:34:40,180 | WARNING | [CALIBRATION] Bucket 0.5-0.6 BLOCKED: 13/30 (43%) win rate vs 55% implied (12% gap)
+2026-08-23 07:34:40,681 | INFO | [CALIBRATION] Blocked buckets: {'0.5-0.6'}
+2026-08-23 07:34:41,811 | INFO | Found 209 weather sub-markets
+2026-08-23 07:34:44,922 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.04 model=0.21 edge=+3.8% fee=$0.00 => skip $0.00
+2026-08-23 07:34:44,923 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.28 model=0.29 edge=-2.9% fee=$0.00 => skip $0.00
+2026-08-23 07:34:44,923 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.14 model=0.09 edge=+1.4% fee=$0.00 => skip $0.00
+2026-08-23 07:34:47,985 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.04 model=0.21 edge=+3.5% fee=$0.00 => skip $0.00
+2026-08-23 07:34:47,986 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.27 model=0.32 edge=-1.2% fee=$0.00 => skip $0.00
+2026-08-23 07:34:47,986 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.13 model=0.12 edge=-0.3% fee=$0.00 => skip $0.00
+2026-08-23 07:34:47,986 | INFO | [NYC] Will the highest temperature in New York City be b mkt=0.03 model=0.05 edge=-3.6% fee=$0.00 => skip $0.00
+2026-08-23 07:35:19,423 | WARNING | Ensemble fetch failed for icon_seamless chicago 2026-08-23: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-23 07:35:49,628 | WARNING | Ensemble fetch failed for gem_global chicago 2026-08-23: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-23 07:36:19,812 | WARNING | Ensemble fetch failed for ecmwf_aifs025 chicago 2026-08-23: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-23 07:36:19,812 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.07 model=0.05 edge=+0.4% fee=$0.00 => skip $0.00
+2026-08-23 07:36:50,009 | WARNING | Ensemble fetch failed for gfs_seamless chicago 2026-08-24: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-23 07:36:52,455 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.04 model=0.05 edge=-4.1% fee=$0.00 => skip $0.00
+2026-08-23 07:36:52,456 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.13 model=0.26 edge=+2.0% fee=$0.00 => skip $0.00
+2026-08-23 07:36:52,456 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.40 model=0.39 edge=-1.6% fee=$0.00 => skip $0.00
+2026-08-23 07:36:52,456 | INFO | [Chicago] Will the highest temperature in Chicago be between mkt=0.06 model=0.07 edge=-3.8% fee=$0.00 => skip $0.00
+2026-08-23 07:36:55,529 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.06 model=0.17 edge=+1.0% fee=$0.00 => skip $0.00
+2026-08-23 07:36:55,530 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.34 model=0.56 edge=+7.3% fee=$0.00 => skip $0.00
+2026-08-23 07:36:55,530 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.11 model=0.05 edge=+2.4% fee=$0.00 => skip $0.00
+2026-08-23 07:36:55,530 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.03 model=0.05 edge=-3.6% fee=$0.00 => skip $0.00
+2026-08-23 07:37:27,568 | WARNING | Ensemble fetch failed for gem_global denver 2026-08-24: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-23 07:37:57,773 | WARNING | Ensemble fetch failed for ecmwf_aifs025 denver 2026-08-24: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-23 07:37:57,774 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.04 model=0.08 edge=-2.9% fee=$0.00 => skip $0.00
+2026-08-23 07:37:57,774 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.10 model=0.32 edge=+6.7% fee=$0.00 => skip $0.00
+2026-08-23 07:37:57,774 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.45 model=0.38 edge=+1.2% fee=$0.00 => skip $0.00
+2026-08-23 07:37:57,774 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.38 model=0.20 edge=+7.0% fee=$0.00 => skip $0.00
+2026-08-23 07:37:57,775 | INFO | [Denver] Will the highest temperature in Denver be between  mkt=0.06 model=0.05 edge=+0.2% fee=$0.00 => skip $0.00
+2026-08-23 07:37:57,775 | INFO | [Denver] Will the highest temperature in Denver be 98°F or  mkt=0.03 model=0.05 edge=-3.6% fee=$0.00 => skip $0.00
+2026-08-23 07:38:27,958 | WARNING | Ensemble fetch failed for gfs_seamless shanghai 2026-08-24: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-23 07:38:58,153 | WARNING | Ensemble fetch failed for ecmwf_ifs025 shanghai 2026-08-24: HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=30)
+2026-08-23 07:39:00,009 | INFO | [Shanghai] Will the highest temperature in Shanghai be 30°C o mkt=0.06 model=0.46 edge=+15.3% fee=$0.05 => YES $1.07
+2026-08-23 07:39:00,009 | INFO | [Shanghai] Skip YES — entry $0.06 below floor $0.25
+2026-08-23 07:39:00,009 | INFO | [Shanghai] Will the highest temperature in Shanghai be 33°C o mkt=0.04 model=0.05 edge=-4.1% fee=$0.00 => skip $0.00
+2026-08-23 07:39:03,067 | INFO | [Shanghai] Will the highest temperature in Shanghai be 29°C o mkt=0.06 model=0.39 edge=+11.9% fee=$0.00 => skip $0.00
+2026-08-23 07:39:03,068 | INFO | [Shanghai] Will the highest temperature in Shanghai be 30°C o mkt=0.14 model=0.40 edge=+9.0% fee=$0.00 => skip $0.00
+2026-08-23 07:39:03,068 | INFO | [Shanghai] Will the highest temperature in Shanghai be 31°C o mkt=0.42 model=0.06 edge=+16.0% fee=$0.09 => NO $4.30
+2026-08-23 07:39:03,068 | INFO | [Shanghai] Skip — entry $0.57 in blocked calibration bucket
+2026-08-23 07:39:03,068 | INFO | [Shanghai] Will the highest temperature in Shanghai be 32°C o mkt=0.32 model=0.05 edge=+11.7% fee=$0.07 => NO $4.23
+2026-08-23 07:39:03,068 | INFO | [Shanghai] Will the highest temperature in Shanghai be 33°C o mkt=0.08 model=0.05 edge=+1.1% fee=$0.00 => skip $0.00
+2026-08-23 07:39:03,068 | INFO | [Shanghai] Will the highest temperature in Shanghai be 34°C o mkt=0.03 model=0.05 edge=-3.9% fee=$0.00 => skip $0.00
+2026-08-23 07:39:04,590 | INFO | Weather scan complete. Placed 1 trades.
